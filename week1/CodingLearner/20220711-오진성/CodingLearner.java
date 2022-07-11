@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class CodingLearner {
     public static void main(String[] args){
 
-
         int count = 0;
 
         //첫문제
