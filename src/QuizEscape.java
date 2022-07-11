@@ -38,7 +38,7 @@ public class QuizEscape {
             System.out.println("2단계 탈출에 실패하였습니다.");
             System.exit(0);
         }
-        System.out.println("2단계 문제를 통과하셨습니다!");
+        System.out.println("2단계 문제를 통과하셨습니다! ");
 
         //3단계
         System.out.println("------3단계 문제------");
@@ -93,3 +93,4 @@ public class QuizEscape {
         System.out.println("자바감옥 탈출에 성공하셨습니다!");
     }
 }
+
