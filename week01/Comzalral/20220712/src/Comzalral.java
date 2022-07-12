@@ -56,12 +56,10 @@ public class Comzalral {
             count = count + 1;
 
             System.out.println("정답입니다. 점수: " + count + "점");
-
         }
         if ((!input3.replaceAll(" ", "").equalsIgnoreCase(answer3))) {
 
             System.out.println("틀렸습니다. 정답: " + answer3);
-
         }
         //문제4
         System.out.println("\n------------ 문제 4 ------------");
@@ -76,12 +74,10 @@ public class Comzalral {
             count = count + 1;
 
             System.out.println("정답입니다. 점수: " + count + "점");
-
         }
         if ((!input4.replaceAll(" ", "").equalsIgnoreCase(answer4))) {
 
             System.out.println("틀렸습니다. 정답: " + answer4);
-
         }
         //문제5
         System.out.println("\n------------ 문제 5 ------------");
@@ -96,7 +92,6 @@ public class Comzalral {
             count = count + 1;
 
             System.out.println("정답입니다. 점수: " + count + "점");
-
         }
         if ((!input5.replaceAll(" ", "").equalsIgnoreCase(answer5))) {
             //문제6
@@ -112,12 +107,10 @@ public class Comzalral {
                 count = count + 1;
 
                 System.out.println("정답입니다. 점수: " + count + "점");
-
             }
             if ((!input6.replaceAll(" ", "").equalsIgnoreCase(answer6))) {
 
                 System.out.println("틀렸습니다. 정답: " + answer6);
-
             }
             //문제7
             System.out.println("\n------------ 문제 7 ------------");
@@ -132,7 +125,6 @@ public class Comzalral {
                 count = count + 1;
 
                 System.out.println("정답입니다. 점수: " + count + "점");
-
             }
             if ((!input7.replaceAll(" ", "").equalsIgnoreCase(answer7))) {
 
@@ -152,12 +144,10 @@ public class Comzalral {
                 count = count + 1;
 
                 System.out.println("정답입니다. 점수: " + count + "점");
-
             }
             if ((!input8.replaceAll(" ", "").equalsIgnoreCase(answer8))) {
 
                 System.out.println("틀렸습니다. 정답: " + answer8);
-
             }
             //문제9
             System.out.println("\n------------ 문제 9 ------------");
@@ -172,12 +162,10 @@ public class Comzalral {
                 count = count + 1;
 
                 System.out.println("정답입니다. 점수: " + count + "점");
-
             }
             if ((!input9.replaceAll(" ", "").equalsIgnoreCase(answer9))) {
 
                 System.out.println("틀렸습니다. 정답: " + answer9);
-
             }
             //문제10
             System.out.println("\n------------ 문제 10 ------------");
@@ -197,7 +185,6 @@ public class Comzalral {
             if ((!input10.replaceAll(" ", "").equalsIgnoreCase(answer10))) {
 
                 System.out.println("틀렸습니다. 정답: " + answer10);
-
             }
 
             //총 점수
