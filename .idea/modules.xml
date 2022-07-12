@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CodingLearner/CodingLearner.iml" filepath="$PROJECT_DIR$/CodingLearner/CodingLearner.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hellotoyou/hellotoyou.iml" filepath="$PROJECT_DIR$/hellotoyou/hellotoyou.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hellotoyou2/hellotoyou2.iml" filepath="$PROJECT_DIR$/hellotoyou2/hellotoyou2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/web-02-java.iml" filepath="$PROJECT_DIR$/.idea/web-02-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/javahomework.iml" filepath="$PROJECT_DIR$/.idea/javahomework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/src.iml" filepath="$PROJECT_DIR$/src/src.iml" />
     </modules>
   </component>
 </project>
