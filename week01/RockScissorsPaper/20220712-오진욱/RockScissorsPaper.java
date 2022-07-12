@@ -30,9 +30,9 @@ public class RockScissorsPaper {
         boolean comScissor = computerPick.equals("가위");
         boolean comPaper = computerPick.equals("보");
 
-        boolean yourRock = computerPick.equals("바위");
-        boolean yourScissor = computerPick.equals("가위");
-        boolean yourPaper = computerPick.equals("보");
+        boolean yourRock = yourPick.equals("바위");
+        boolean yourScissor = yourPick.equals("가위");
+        boolean yourPaper = yourPick.equals("보");
 
         if (computerPick.equals(yourPick)){
             System.out.println("비겼다!");
