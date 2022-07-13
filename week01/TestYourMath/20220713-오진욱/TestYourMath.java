@@ -5,6 +5,7 @@ public class TestYourMath {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Input 2 numbers: ");
+
         int inputNum1 = scanner.nextInt();
         int inputNum2 = scanner.nextInt();
 
