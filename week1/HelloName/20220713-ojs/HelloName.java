@@ -1,7 +1,6 @@
 public class HelloName {
     public static void main(String[] args){
-        System.out.println("Hello, Megaptera!");
-
+        String name = "Megaptera";
+        System.out.println("Hello, " + name);
     }
 }
-
