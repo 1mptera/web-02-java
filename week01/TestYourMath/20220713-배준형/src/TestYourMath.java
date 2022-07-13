@@ -21,9 +21,11 @@ public class TestYourMath {
         if (result1 && result2){
             System.out.println("Genius!");
         }
+
         if (result1 && !result2 || !result1 && result2){
             System.out.println("Muggle!");
         }
+        
         if (!result1 && !result2){
             System.out.println("Stupid!");
         }
