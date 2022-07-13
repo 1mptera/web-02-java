@@ -2,22 +2,21 @@ import java.util.Scanner;
 
 public class TestYourMath {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Input 2 numbers: ");
 
-        int inputNum1 = scanner.nextInt();
-        int inputNum2 = scanner.nextInt();
+        int inputNumber1 = scanner.nextInt();
+        int inputNumber2 = scanner.nextInt();
 
-        int addResult = inputNum1 + inputNum2;
-        int multipleResult = inputNum1 * inputNum2;
+        int addResult = inputNumber1 + inputNumber2;
+        int multipleResult = inputNumber1 * inputNumber2;
 
-        System.out.println(inputNum1 + " + " + inputNum2 + " = ?");
+        System.out.println(inputNumber1 + " + " + inputNumber2 + " = ?");
 
         int inputAddAnswer = scanner.nextInt();
 
-        System.out.println(inputNum1 + " * " + inputNum2 + " = ?");
+        System.out.println(inputNumber1 + " * " + inputNumber2 + " = ?");
 
         int inputMultipleAnswer = scanner.nextInt();
 
