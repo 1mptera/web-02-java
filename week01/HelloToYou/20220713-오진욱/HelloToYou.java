@@ -6,8 +6,8 @@ public class HelloToYou {
 
         System.out.print("What's your name? ");
 
-        String yourName = scanner.nextLine();
+        String inputName = scanner.nextLine();
 
-        System.out.println("Hello, " + yourName + "!");
+        System.out.println("Hello, " + inputName + "!");
     }
 }
