@@ -5,6 +5,7 @@ public class RandomDice {
     public static void main(String[] args) {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
+
         int diceNumber = random.nextInt(6) + 1;
 
         System.out.println("주사위를 맞춰라!");
