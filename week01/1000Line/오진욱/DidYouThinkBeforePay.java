@@ -399,9 +399,57 @@ public class DidYouThinkBeforePay {
                 }
             }
 
-//            System.out.println("선호하는 패션 스타일을 입력하세요.");
-//            System.out.println("1. 미니멀\n2. 시티보이\n3. 비즈니스 캐주얼\n4. ");
-//            inputFourSelection = scanner.nextInt();
+            System.out.println("******* 전체적인 코디를 추천해 드릴게요! *******");
+
+            System.out.println("선호하는 패션 스타일을 입력하세요.");
+            System.out.println("1. 미니멀\n2. 시티보이\n3. 비즈니스 캐주얼\n4. 스트릿");
+            inputFourSelection = scanner.nextInt();
+
+            if( isMale ){
+                if (inputFourSelection == 1){
+                    System.out.println(inputGender + " 미니멀 스타일을 보여드릴게요.");
+                    System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[],%22gender%22:[%22MEN%22],%22styleTagIds%22:[1],%22weight%22:[],%22height%22:[]}" );
+                }
+
+                if (inputFourSelection == 2){
+                    System.out.println(inputGender + " 시티보이 스타일을 보여드릴게요.");
+                    System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[],%22gender%22:[%22WOMEN%22,%22MEN%22],%22styleTagIds%22:[1],%22weight%22:[],%22height%22:[]}" );
+                }
+
+                if (inputFourSelection == 3){
+                    System.out.println(inputGender + " 비즈니스 캐주얼 스타일을 보여드릴게요.");
+                    System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[],%22gender%22:[%22WOMEN%22,%22MEN%22],%22styleTagIds%22:[1],%22weight%22:[],%22height%22:[]}" );
+                }
+
+                if (inputFourSelection == 4){
+                    System.out.println(inputGender + " 스트릿 스타일을 보여드릴게요.");
+                    System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[],%22gender%22:[%22WOMEN%22,%22MEN%22],%22styleTagIds%22:[1],%22weight%22:[],%22height%22:[]}" );
+                }
+            }
+
+            if( isFemale ){
+                if (inputFourSelection == 1){
+                    System.out.println(inputGender + " 미니멀 스타일을 보여드릴게요.");
+                    System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[],%22gender%22:[%22WOMEN%22,%22MEN%22],%22styleTagIds%22:[1],%22weight%22:[],%22height%22:[]}" );
+                }
+
+                if (inputFourSelection == 2){
+                    System.out.println(inputGender + " 시티보이 스타일을 보여드릴게요.");
+                    System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[],%22gender%22:[%22WOMEN%22,%22MEN%22],%22styleTagIds%22:[1],%22weight%22:[],%22height%22:[]}" );
+                }
+
+                if (inputFourSelection == 3){
+                    System.out.println(inputGender + " 비즈니스 캐주얼 스타일을 보여드릴게요.");
+                    System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[],%22gender%22:[%22WOMEN%22,%22MEN%22],%22styleTagIds%22:[1],%22weight%22:[],%22height%22:[]}" );
+                }
+
+                if (inputFourSelection == 4){
+                    System.out.println(inputGender + " 미니멀 스타일을 보여드릴게요.");
+                    System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[],%22gender%22:[%22WOMEN%22,%22MEN%22],%22styleTagIds%22:[1],%22weight%22:[],%22height%22:[]}" );
+                }
+            }
+
+
 
 
 
