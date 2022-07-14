@@ -32,16 +32,16 @@ public class LaunchWorldCup {
             int answer4 = scanner.nextInt();
 
             //점심결정!!
-            if ((answer2 == 1 && answer3 == 1 && answer4 == 1) || (answer2 == 1 && answer3 == 2 && answer4 == 1)) {
+            if (answer2 == 1 && answer4 == 1) {
                 System.out.println("오늘의 점심은 짜장입니다!");
             }
-            if ((answer2 == 2 && answer3 == 1 && answer4 == 1) || (answer2 == 2 && answer3 == 2 && answer4 == 1)) {
+            if (answer2 == 2 && answer4 == 1) {
                 System.out.println("오늘의 점심은 짬뽕입니다!");
             }
-            if ((answer2 == 1 && answer3 == 1 && answer4 == 2) || (answer2 == 2 && answer3 == 1 && answer4 == 2)) {
+            if (answer3 == 1 && answer4 == 2) {
                 System.out.println("오늘의 점심은 볶음밥입니다!");
             }
-            if ((answer2 == 1 && answer3 == 2 && answer4 == 2) || (answer2 == 2 && answer3 == 2 && answer4 == 2)) {
+            if (answer3 == 2 && answer4 == 2) {
                 System.out.println("오늘의 점심은 잡채밥입니다!");
             }
         }
