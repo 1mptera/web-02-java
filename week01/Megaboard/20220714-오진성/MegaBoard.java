@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class MegaBoard {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         //이용시간 입력
         System.out.print("이용시간(분): ");
 
