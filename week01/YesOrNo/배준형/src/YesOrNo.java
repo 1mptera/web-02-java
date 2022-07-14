@@ -50,14 +50,9 @@ public class YesOrNo {
                 if (option4 == 2) {
                     System.out.println("트레이너에게 DM을 보내 질문하세요.");
                     return;
-
                 }
             }
-
         }
-
         System.out.println("이제 스스로 더 고민해보면서 문제를 해결해보세요!");
-
-
     }
 }
