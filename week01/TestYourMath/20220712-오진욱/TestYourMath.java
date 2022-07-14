@@ -2,11 +2,9 @@ import java.util.Scanner;
 
 public class TestYourMath {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Input 2 numbers: ");
-
         int inputNum1 = scanner.nextInt();
         int inputNum2 = scanner.nextInt();
 
