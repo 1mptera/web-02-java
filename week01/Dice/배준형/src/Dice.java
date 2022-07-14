@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Dice {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
@@ -10,7 +11,8 @@ public class Dice {
         System.out.print("예측 수: ");
 
         int number = scanner.nextInt();
-        int dice = random.nextInt((6) + 1);
+
+        int dice = random.nextInt(6) + 1;
 
         System.out.println("주사위 수: " + dice);
 
@@ -22,3 +24,4 @@ public class Dice {
         }
     }
 }
+
