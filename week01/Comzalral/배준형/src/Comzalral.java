@@ -8,14 +8,14 @@ public class Comzalral {
 
         System.out.println("컴잘알 테스트!!");
         //문제1
-        System.out.println("\n------------ 문제 1 ------------");
-        System.out.println("cpu 는 무엇의 줄임날 일까요?");
+        System.out.println("------------ 문제 1 ------------");
+        System.out.println("cpu 는 무엇의 줄임말 일까요?");
         System.out.println("정답 입력: ");
 
         String input1 = scanner.nextLine();
-        String answer1 = "centralprocessingunit";
-
         input1 = input1.replaceAll(" ", "");
+
+        String answer1 = "centralprocessingunit";
 
         if (input1.equalsIgnoreCase(answer1)) {
 
@@ -27,15 +27,16 @@ public class Comzalral {
 
             System.out.println("틀렸습니다. 정답: " + answer1);
         }
+        
         //문제2
-        System.out.println("\n------------ 문제 2 ------------");
+        System.out.println("------------ 문제 2 ------------");
         System.out.println("RAM 는 무엇의 줄임말 일까요?");
         System.out.println("정답 입력: ");
 
         String input2 = scanner.nextLine();
-        String answer2 = "randomaccessmemory";
-
         input2 = input2.replaceAll(" ", "");
+
+        String answer2 = "randomaccessmemory";
 
         if (input2.equalsIgnoreCase(answer2)) {
 
@@ -47,15 +48,16 @@ public class Comzalral {
 
             System.out.println("틀렸습니다. 정답: " + answer2);
         }
+
         //문제3
-        System.out.println("\n------------ 문제 3 ------------");
-        System.out.println("SSD 는 무엇의 줄임날 일까요?");
+        System.out.println("------------ 문제 3 ------------");
+        System.out.println("SSD 는 무엇의 줄임말 일까요?");
         System.out.println("정답 입력: ");
 
         String input3 = scanner.nextLine();
-        String answer3 = "solidstatedisk";
-
         input3 = input3.replaceAll(" ", "");
+
+        String answer3 = "solidstatedisk";
 
         if (input3.equalsIgnoreCase(answer3)) {
 
@@ -67,15 +69,16 @@ public class Comzalral {
 
             System.out.println("틀렸습니다. 정답: " + answer3);
         }
+
         //문제4
-        System.out.println("\n------------ 문제 4 ------------");
-        System.out.println("HDD 는 무엇의 줄임날 일까요?");
+        System.out.println("------------ 문제 4 ------------");
+        System.out.println("HDD 는 무엇의 줄임말 일까요?");
         System.out.println("정답 입력: ");
 
         String input4 = scanner.nextLine();
-        String answer4 = "harddiskdrive";
-
         input4 = input4.replaceAll(" ", "");
+
+        String answer4 = "harddiskdrive";
 
         if (input4.equalsIgnoreCase(answer4)) {
 
@@ -87,15 +90,16 @@ public class Comzalral {
 
             System.out.println("틀렸습니다. 정답: " + answer4);
         }
+
         //문제5
-        System.out.println("\n------------ 문제 5 ------------");
-        System.out.println("API 는 무엇의 줄임날 일까요?");
+        System.out.println("------------ 문제 5 ------------");
+        System.out.println("API 는 무엇의 줄임말 일까요?");
         System.out.println("정답 입력: ");
 
         String input5 = scanner.nextLine();
-        String answer5 = "applicationprogramminginterface";
-
         input5 = input5.replaceAll(" ", "");
+
+        String answer5 = "applicationprogramminginterface";
 
         if (input5.equalsIgnoreCase(answer5)) {
 
@@ -107,15 +111,16 @@ public class Comzalral {
 
             System.out.println("틀렸습니다. 정답: " + answer5);
         }
+
         //문제6
-        System.out.println("\n------------ 문제 6 ------------");
-        System.out.println("GitHub에서 사용하는 PR 무엇의 줄임날 일까요?");
+        System.out.println("------------ 문제 6 ------------");
+        System.out.println("GitHub에서 사용하는 PR 무엇의 줄임말 일까요?");
         System.out.println("정답 입력: ");
 
         String input6 = scanner.nextLine();
-        String answer6 = "pullrequest";
-
         input6 = input6.replaceAll(" ", "");
+
+        String answer6 = "pullrequest";
 
         if (input6.equalsIgnoreCase(answer6)) {
 
@@ -127,15 +132,16 @@ public class Comzalral {
 
             System.out.println("틀렸습니다. 정답: " + answer6);
         }
+
         //문제7
-        System.out.println("\n------------ 문제 7 ------------");
-        System.out.println("java -cp 명령어세서 cp 는 무엇의 줄임날 일까요?");
+        System.out.println("------------ 문제 7 ------------");
+        System.out.println("java -cp 명령어세서 cp 는 무엇의 줄임말 일까요?");
         System.out.println("정답 입력: ");
 
         String input7 = scanner.nextLine();
-        String answer7 = "classpath";
-
         input7 = input7.replaceAll(" ", "");
+
+        String answer7 = "classpath";
 
         if (input7.equalsIgnoreCase(answer7)) {
 
@@ -146,17 +152,17 @@ public class Comzalral {
         if (!input7.equalsIgnoreCase(answer7)) {
 
             System.out.println("틀렸습니다. 정답: " + answer7);
-
         }
+
         //문제8
-        System.out.println("\n------------ 문제 8 ------------");
-        System.out.println("javac -d 명령어세서 d 는 무엇의 줄임날 일까요?");
+        System.out.println("------------ 문제 8 ------------");
+        System.out.println("javac -d 명령어세서 d 는 무엇의 줄임말 일까요?");
         System.out.println("정답 입력: ");
 
         String input8 = scanner.nextLine();
-        String answer8 = "directory";
-
         input8 = input8.replaceAll(" ", "");
+
+        String answer8 = "directory";
 
         if (input8.equalsIgnoreCase(answer8)) {
 
@@ -168,15 +174,16 @@ public class Comzalral {
 
             System.out.println("틀렸습니다. 정답: " + answer8);
         }
+
         //문제9
-        System.out.println("\n------------ 문제 9 ------------");
-        System.out.println("저장장치의 단위인 MB 는 무엇의 줄임날 일까요?");
+        System.out.println("------------ 문제 9 ------------");
+        System.out.println("저장장치의 단위인 MB 는 무엇의 줄임말 일까요?");
         System.out.println("정답 입력: ");
 
         String input9 = scanner.nextLine();
-        String answer9 = "megabyte";
-
         input9 = input9.replaceAll(" ", "");
+
+        String answer9 = "megabyte";
 
         if (input9.equalsIgnoreCase(answer9)) {
 
@@ -188,15 +195,16 @@ public class Comzalral {
 
             System.out.println("틀렸습니다. 정답: " + answer9);
         }
+
         //문제10
-        System.out.println("\n------------ 문제 10 ------------");
-        System.out.println("JVM 은 무엇의 줄임날 일까요?");
+        System.out.println("------------ 문제 10 ------------");
+        System.out.println("JVM 은 무엇의 줄임말 일까요?");
         System.out.println("정답 입력: ");
 
         String input10 = scanner.nextLine();
-        String answer10 = "javavirtualmachine";
-
         input10 = input10.replaceAll(" ", "");
+
+        String answer10 = "javavirtualmachine";
 
         if (input10.equalsIgnoreCase(answer10)) {
 
