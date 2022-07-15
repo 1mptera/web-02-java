@@ -21,24 +21,33 @@ public class HealthTraining {
         System.out.println("삼대 운동 1rm을 입력하시오.");
         System.out.print("벤치프레스(kg): ");
 
+        double benchpress1rm = scanner.nextDouble();
 
-        double num1 = scanner.nextDouble();
         System.out.print("데드리프트(kg): ");
-        double num2 = scanner.nextDouble();
+
+        double deadlift1rm = scanner.nextDouble();
+
         System.out.print("스쿼트(kg): ");
-        double num3 = scanner.nextDouble();
+
+        double squt1rm = scanner.nextDouble();
 
         //나이와 키,몸무게,성별 기입!
         System.out.println("나이와 키,몸무게,성별를 입력하시오.");
         System.out.print("나이(세): ");
 
-        double num4 = scanner.nextDouble();
+        double age = scanner.nextDouble();
+
         System.out.print("키(cm): ");
-        double num5 = scanner.nextDouble();
+
+        double height = scanner.nextDouble();
+
         System.out.print("몸무게(kg): ");
-        double num6 = scanner.nextDouble();
+
+        double bodyweight = scanner.nextDouble();
+
         System.out.print("성별(남성,여성): ");
-        String answer2 = scanner.next();
+
+        String gender = scanner.next();
 
         //생활습관 체크!
         System.out.println("평소의 생활습관을 고르시오!");
@@ -46,80 +55,80 @@ public class HealthTraining {
         System.out.println("2. 돌아다니는 업무");
         System.out.println("3. 활동적인 업무");
 
-        double num7 = scanner.nextDouble();
+        double lifestyle = scanner.nextDouble();
 
         //(좌식 업무)칼로리와 탄단지 계산!
         //남성일때:
-        if (num7 == 1) {
-            double calorie1 = ((66 + 13.8 * num6 + 5 * num5 - 6.8 * num4) * 1.5 + 500);
-            double calorie4 = ((655 + 9.6 * num6 + 1.8 * num5 - 4.7 * num4) * 1.5 + 300);
-            double calorie2 = calorie1 * 0.2;
-            double calorie3 = num6 * 8;
+        if (lifestyle == 1) {
+            double calorie = ((66 + 13.8 * bodyweight + 5 * height - 6.8 * age) * 1.5 + 500);
+            double carbohidratoamount = ((655 + 9.6 * bodyweight + 1.8 * height - 4.7 * age) * 1.5 + 300);
+            double fatamount = calorie * 0.2 / 9;
+            double proteinamount = bodyweight * 2;
 
-            if (answer2.equals("남성")) {
-                System.out.println("하루 먹어야할 칼로리량: " + calorie1 + "칼로리");
-                System.out.println("탄수화물량: " + (calorie1 - calorie2 - calorie3) / 4 + "g");
-                System.out.println("단백질량: " + calorie3 / 4 + "g");
-                System.out.println("지방량: " + calorie2 / 9 + "g");
+            if (gender.equals("남성")) {
+                System.out.println("하루 먹어야할 칼로리량: " + calorie + "칼로리");
+                System.out.println("탄수화물량: " + (calorie - fatamount - proteinamount) / 4 + "g");
+                System.out.println("단백질량: " + proteinamount / 4 + "g");
+                System.out.println("지방량: " + fatamount / 9 + "g");
             }
 
 
             //여성일때:
-            if (answer2.equals("여성")) {
-                System.out.println("하루 먹어야할 칼로리량: " + calorie4 + "칼로리");
-                System.out.println("탄수화물량: " + (calorie4 - calorie2 - calorie3) + "g");
-                System.out.println("단백질량: " + calorie3 / 4 + "g");
-                System.out.println("지방량: " + calorie2 / 9 + "g");
+            if (gender.equals("여성")) {
+                System.out.println("하루 먹어야할 칼로리량: " + carbohidratoamount + "칼로리");
+                System.out.println("탄수화물량: " + (carbohidratoamount - fatamount - proteinamount) + "g");
+                System.out.println("단백질량: " + proteinamount / 4 + "g");
+                System.out.println("지방량: " + fatamount / 9 + "g");
             }
         }
 
         //(돌아다니는 업무)칼로리와 탄단지 계산!
         //남성일때:
-        if (num7 == 2) {
-            double calorie1 = ((66 + 13.8 * num6 + 5 * num5 - 6.8 * num4) * 1.75 + 500);
-            double calorie4 = ((655 + 9.6 * num6 + 1.8 * num5 - 4.7 * num4) * 1.75 + 300);
-            double calorie2 = calorie1 * 0.2;
-            double calorie3 = num6 * 8;
+        if (lifestyle == 2) {
+            double calorie = ((66 + 13.8 * bodyweight + 5 * height - 6.8 * age) * 1.75 + 500);
+            double carbohidratoamount = ((655 + 9.6 * bodyweight + 1.8 * height - 4.7 * age) * 1.75 + 300);
+            double fatamount = calorie * 0.2 / 9;
+            double proteinamount = bodyweight * 2;
 
-            if (answer2.equals("남성")) {
-                System.out.println("하루 먹어야할 칼로리량: " + calorie1 + "칼로리");
-                System.out.println("탄수화물량: " + (calorie1 - calorie2 - calorie3) / 4 + "g");
-                System.out.println("단백질량: " + calorie3 / 4 + "g");
-                System.out.println("지방량: " + calorie2 / 9 + "g");
+            if (gender.equals("남성")) {
+                System.out.println("하루 먹어야할 칼로리량: " + calorie + "칼로리");
+                System.out.println("탄수화물량: " + (calorie - fatamount - proteinamount) / 4 + "g");
+                System.out.println("단백질량: " + proteinamount / 4 + "g");
+                System.out.println("지방량: " + fatamount + "g");
             }
 
 
             //여성일때:
-            if (answer2.equals("여성")) {
-                System.out.println("하루 먹어야할 칼로리량: " + calorie4 + "칼로리");
-                System.out.println("탄수화물량: " + (calorie4 - calorie2 - calorie3) + "g");
-                System.out.println("단백질량: " + calorie3 / 4 + "g");
-                System.out.println("지방량: " + calorie2 / 9 + "g");
+            if (gender.equals("여성")) {
+                System.out.println("하루 먹어야할 칼로리량: " + carbohidratoamount + "칼로리");
+                System.out.println("탄수화물량: " + (carbohidratoamount - fatamount - proteinamount) + "g");
+                System.out.println("단백질량: " + proteinamount / 4 + "g");
+                System.out.println("지방량: " + fatamount + "g");
             }
         }
 
         //(활동적인 업무)칼로리와 탄단지 계산!
         //남성일때:
-        if (num7 == 3) {
-            double calorie1 = ((66 + 13.8 * num6 + 5 * num5 - 6.8 * num4) * 2 + 500);
-            double calorie4 = ((655 + 9.6 * num6 + 1.8 * num5 - 4.7 * num4) * 2 + 300);
-            double calorie2 = calorie1 * 0.2;
-            double calorie3 = num6 * 8;
+        if (lifestyle == 3) {
+            double calorie = ((66 + 13.8 * bodyweight + 5 * height - 6.8 * age) * 2 + 500);
+            double carbohidratoamount = ((655 + 9.6 * bodyweight + 1.8 * height - 4.7 * age) * 2 + 300);
+            double fatamount = calorie * 0.2 / 9;
+            double proteinamount = bodyweight * 2;
 
-            if (answer2.equals("남성")) {
-                System.out.println("하루 먹어야할 칼로리량: " + calorie1 + "칼로리");
-                System.out.println("탄수화물량: " + (calorie1 - calorie2 - calorie3) / 4 + "g");
-                System.out.println("단백질량: " + calorie3 / 4 + "g");
-                System.out.println("지방량: " + calorie2 / 9 + "g");
+            if (gender.equals("남성")) {
+                System.out.println("하루 먹어야할 칼로리량: " + calorie + "칼로리");
+                System.out.println("탄수화물량: " + (calorie - fatamount - proteinamount) / 4 + "g");
+                System.out.println("단백질량: " + proteinamount / 4 + "g");
+                System.out.println("지방량: " + fatamount + "g");
             }
 
 
             //여성일때:
-            if (answer2.equals("여성")) {
-                System.out.println("하루 먹어야할 칼로리량: " + calorie4 + "칼로리");
-                System.out.println("탄수화물량: " + (calorie4 - calorie2 - calorie3) + "g");
-                System.out.println("단백질량: " + calorie3 / 4 + "g");
-                System.out.println("지방량: " + calorie2 / 9 + "g");
+            if (gender.equals("여성")) {
+                System.out.println("하루 먹어야할 칼로리량: " + carbohidratoamount + "칼로리");
+                System.out.println("탄수화물량: " + (carbohidratoamount - fatamount - proteinamount) + "g");
+                System.out.println("단백질량: " + proteinamount / 4 + "g");
+                System.out.println("지방량: " + fatamount + "g");
             }
         }
 
@@ -138,308 +147,312 @@ public class HealthTraining {
             return;
         }
 
-        ///////
         System.out.println("-----------1주차------------");
         System.out.println("월요일 벤치프레스");
 
-        double weight1 = num1 * 0.75;
-        double a1 = Math.round(weight1 / 10) * 10;
+        double benchpressweight1 = benchpress1rm * 0.75;
+        double benchpressroundoff1 = Math.round(benchpressweight1 / 10) * 10;
+        double standardWeight = 2.5;
 
-        if (weight1 < a1 && a1 <= (weight1 + 5)) {
-            if ((a1 - 1.25) <= weight1) {
-                System.out.println("1.Set 벤치프레스 " + a1 + "kg(권장 Reps 5회)");
+        if (benchpressweight1 != standardWeight - 1) {
+
+        }
+
+        if (benchpressweight1 < benchpressroundoff1 && benchpressroundoff1 <= (benchpressweight1 + 5)) {
+            if ((benchpressroundoff1 - 1.25) <= benchpressweight1) {
+                System.out.println("1.Set 벤치프레스 " + benchpressroundoff1 + "kg(권장 Reps2 5회)");
             }
-            if ((a1 - 3.75) <= weight1 && weight1 < (a1 - 1.25)) {
-                System.out.println("1.Set 벤치프레스 " + (a1 - 2.5) + "kg(권장 Reps 5회)");
+            if ((benchpressroundoff1 - 3.75) <= benchpressweight1 && benchpressweight1 < (benchpressroundoff1 - 1.25)) {
+                System.out.println("1.Set 벤치프레스 " + (benchpressroundoff1 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((a1 - 5) <= weight1 && weight1 < (a1 - 3.75)) {
-                System.out.println("1.Set 벤치프레스 " + (a1 - 5) + "kg(권장 Reps 5회)");
+            if ((benchpressroundoff1 - 5) <= benchpressweight1 && benchpressweight1 < (benchpressroundoff1 - 3.75)) {
+                System.out.println("1.Set 벤치프레스 " + (benchpressroundoff1 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (weight1 < (a1 + 1.25)) {
-                System.out.println("1.Set 벤치프레스 " + a1 + "kg(권장 Reps 5회)");
+            if (benchpressweight1 < (benchpressroundoff1 + 1.25)) {
+                System.out.println("1.Set 벤치프레스 " + benchpressroundoff1 + "kg(권장 Reps2 5회)");
             }
-            if ((a1 + 1.25) <= weight1 && weight1 < (a1 + 3.75)) {
-                System.out.println("1.Set 벤치프레스 " + (a1 + 2.5) + "kg(권장 Reps 5회)");
+            if ((benchpressroundoff1 + 1.25) <= benchpressweight1 && benchpressweight1 < (benchpressroundoff1 + 3.75)) {
+                System.out.println("1.Set 벤치프레스 " + (benchpressroundoff1 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((a1 + 3.75) <= weight1 && weight1 < (a1 + 5)) {
-                System.out.println("1.Set 벤치프레스 " + (a1 + 5) + "kg(권장 Reps 5회)");
+            if ((benchpressroundoff1 + 3.75) <= benchpressweight1 && benchpressweight1 < (benchpressroundoff1 + 5)) {
+                System.out.println("1.Set 벤치프레스 " + (benchpressroundoff1 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps1 = scanner.nextDouble();
+        double reps21 = scanner.nextDouble();
 
-        double weight2 = num1 * 0.85;
-        double a2 = Math.round(weight2 / 10) * 10;
+        double benchpressweight2 = benchpress1rm * 0.85;
+        double benchpressroundoff2 = Math.round(benchpressweight2 / 10) * 10;
 
-        if (weight2 < a2 && a2 <= (weight2 + 5)) {
-            if ((a2 - 1.25) <= weight2) {
-                System.out.println("2.Set 벤치프레스 " + a2 + "kg(권장 Reps 3회)");
+        if (benchpressweight2 < benchpressroundoff2 && benchpressroundoff2 <= (benchpressweight2 + 5)) {
+            if ((benchpressroundoff2 - 1.25) <= benchpressweight2) {
+                System.out.println("2.Set 벤치프레스 " + benchpressroundoff2 + "kg(권장 Reps2 3회)");
             }
-            if ((a2 - 3.75) <= weight2 && weight2 < (a2 - 1.25)) {
-                System.out.println("2.Set 벤치프레스 " + (a2 - 2.5) + "kg(권장 Reps 3회)");
+            if ((benchpressroundoff2 - 3.75) <= benchpressweight2 && benchpressweight2 < (benchpressroundoff2 - 1.25)) {
+                System.out.println("2.Set 벤치프레스 " + (benchpressroundoff2 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a2 - 5) <= weight2 && weight2 < (a2 - 3.75)) {
-                System.out.println("2.Set 벤치프레스 " + (a2 - 5) + "kg(권장 Reps 3회)");
+            if ((benchpressroundoff2 - 5) <= benchpressweight2 && benchpressweight2 < (benchpressroundoff2 - 3.75)) {
+                System.out.println("2.Set 벤치프레스 " + (benchpressroundoff2 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weight2 < (a2 + 1.25)) {
-                System.out.println("2.Set 벤치프레스 " + a2 + "kg(권장 Reps 3회)");
+            if (benchpressweight2 < (benchpressroundoff2 + 1.25)) {
+                System.out.println("2.Set 벤치프레스 " + benchpressroundoff2 + "kg(권장 Reps2 3회)");
             }
-            if ((a2 + 1.25) <= weight2 && weight2 < (a2 + 3.75)) {
-                System.out.println("2.Set 벤치프레스 " + (a2 + 2.5) + "kg(권장 Reps 3회)");
+            if ((benchpressroundoff2 + 1.25) <= benchpressweight2 && benchpressweight2 < (benchpressroundoff2 + 3.75)) {
+                System.out.println("2.Set 벤치프레스 " + (benchpressroundoff2 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a2 + 3.75) <= weight2 && weight2 < (a2 + 5)) {
-                System.out.println("2.Set 벤치프레스 " + (a2 + 5) + "kg(권장 Reps 3회)");
+            if ((benchpressroundoff2 + 3.75) <= benchpressweight2 && benchpressweight2 < (benchpressroundoff2 + 5)) {
+                System.out.println("2.Set 벤치프레스 " + (benchpressroundoff2 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps2 = scanner.nextDouble();
+        double reps22 = scanner.nextDouble();
 
-        double weight3 = num1 * 0.95;
-        double a3 = Math.round(weight3 / 10) * 10;
+        double benchpressweight3 = benchpress1rm * 0.95;
+        double benchpressroundoff3 = Math.round(benchpressweight3 / 10) * 10;
 
-        if (weight3 < a3 && a3 <= (weight3 + 5)) {
-            if ((a3 - 1.25) <= weight3) {
-                System.out.println("3.Set 벤치프레스 " + a3 + "kg(권장 Reps 1회)");
+        if (benchpressweight3 < benchpressroundoff3 && benchpressroundoff3 <= (benchpressweight3 + 5)) {
+            if ((benchpressroundoff3 - 1.25) <= benchpressweight3) {
+                System.out.println("3.Set 벤치프레스 " + benchpressroundoff3 + "kg(권장 Reps2 1회)");
             }
-            if ((a3 - 3.75) <= weight3 && weight3 < (a3 - 1.25)) {
-                System.out.println("3.Set 벤치프레스 " + (a3 - 2.5) + "kg(권장 Reps 1회)");
+            if ((benchpressroundoff3 - 3.75) <= benchpressweight3 && benchpressweight3 < (benchpressroundoff3 - 1.25)) {
+                System.out.println("3.Set 벤치프레스 " + (benchpressroundoff3 - 2.5) + "kg(권장 Reps2 1회)");
             }
-            if ((a3 - 5) <= weight3 && weight3 < (a3 - 3.75)) {
-                System.out.println("3.Set 벤치프레스 " + (a3 - 5) + "kg(권장 Reps 1회)");
+            if ((benchpressroundoff3 - 5) <= benchpressweight3 && benchpressweight3 < (benchpressroundoff3 - 3.75)) {
+                System.out.println("3.Set 벤치프레스 " + (benchpressroundoff3 - 5) + "kg(권장 Reps2 1회)");
             }
         } else {
-            if (weight3 < (a3 + 1.25)) {
-                System.out.println("3.Set 벤치프레스 " + a3 + "kg(권장 Reps 1회)");
+            if (benchpressweight3 < (benchpressroundoff3 + 1.25)) {
+                System.out.println("3.Set 벤치프레스 " + benchpressroundoff3 + "kg(권장 Reps2 1회)");
             }
-            if ((a3 + 1.25) <= weight3 && weight3 < (a3 + 3.75)) {
-                System.out.println("3.Set 벤치프레스 " + (a3 + 2.5) + "kg(권장 Reps 1회)");
+            if ((benchpressroundoff3 + 1.25) <= benchpressweight3 && benchpressweight3 < (benchpressroundoff3 + 3.75)) {
+                System.out.println("3.Set 벤치프레스 " + (benchpressroundoff3 + 2.5) + "kg(권장 Reps2 1회)");
             }
-            if ((a3 + 3.75) <= weight3 && weight3 < (a3 + 5)) {
-                System.out.println("3.Set 벤치프레스 " + (a3 + 5) + "kg(권장 Reps 1회)");
+            if ((benchpressroundoff3 + 3.75) <= benchpressweight3 && benchpressweight3 < (benchpressroundoff3 + 5)) {
+                System.out.println("3.Set 벤치프레스 " + (benchpressroundoff3 + 5) + "kg(권장 Reps2 1회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps3 = scanner.nextDouble();
+        double reps23 = scanner.nextDouble();
 
-        double weight4 = num1 * 0.90;
-        double a4 = Math.round(weight4 / 10) * 10;
+        double benchpressweight4 = benchpress1rm * 0.90;
+        double benchpressroundoff4= Math.round(benchpressweight4 / 10) * 10;
 
-        if (weight4 < a4 && a4 <= (weight4 + 5)) {
-            if ((a4 - 1.25) <= weight4) {
-                System.out.println("4.Set 벤치프레스 " + a4 + "kg(권장 Reps 3회)");
+        if (benchpressweight4 < benchpressroundoff4&& benchpressroundoff4<= (benchpressweight4 + 5)) {
+            if ((benchpressroundoff4- 1.25) <= benchpressweight4) {
+                System.out.println("4.Set 벤치프레스 " + benchpressroundoff4+ "kg(권장 Reps2 3회)");
             }
-            if ((a4 - 3.75) <= weight4 && weight4 < (a4 - 1.25)) {
-                System.out.println("4.Set 벤치프레스 " + (a4 - 2.5) + "kg(권장 Reps 3회)");
+            if ((benchpressroundoff4- 3.75) <= benchpressweight4 && benchpressweight4 < (benchpressroundoff4- 1.25)) {
+                System.out.println("4.Set 벤치프레스 " + (benchpressroundoff4- 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a4 - 5) <= weight4 && weight4 < (a4 - 3.75)) {
-                System.out.println("4.Set 벤치프레스 " + (a4 - 5) + "kg(권장 Reps 3회)");
+            if ((benchpressroundoff4- 5) <= benchpressweight4 && benchpressweight4 < (benchpressroundoff4- 3.75)) {
+                System.out.println("4.Set 벤치프레스 " + (benchpressroundoff4- 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weight4 < (a4 + 1.25)) {
-                System.out.println("4.Set 벤치프레스 " + a4 + "kg(권장 Reps 3회)");
+            if (benchpressweight4 < (benchpressroundoff4+ 1.25)) {
+                System.out.println("4.Set 벤치프레스 " + benchpressroundoff4+ "kg(권장 Reps2 3회)");
             }
-            if ((a4 + 1.25) <= weight4 && weight4 < (a4 + 3.75)) {
-                System.out.println("4.Set 벤치프레스 " + (a4 + 2.5) + "kg(권장 Reps 3회)");
+            if ((benchpressroundoff4+ 1.25) <= benchpressweight4 && benchpressweight4 < (benchpressroundoff4+ 3.75)) {
+                System.out.println("4.Set 벤치프레스 " + (benchpressroundoff4+ 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a4 + 3.75) <= weight4 && weight4 < (a4 + 5)) {
-                System.out.println("4.Set 벤치프레스 " + (a4 + 5) + "kg(권장 Reps 3회)");
+            if ((benchpressroundoff4+ 3.75) <= benchpressweight4 && benchpressweight4 < (benchpressroundoff4+ 5)) {
+                System.out.println("4.Set 벤치프레스 " + (benchpressroundoff4+ 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps4 = scanner.nextDouble();
+        double reps24 = scanner.nextDouble();
 
-        double weight5 = num1 * 0.85;
-        double a5 = Math.round(weight5 / 10) * 10;
+        double benchpressweight5 = benchpress1rm * 0.85;
+        double benchpressroundoff5 = Math.round(benchpressweight5 / 10) * 10;
 
-        if (weight5 < a5 && a5 <= (weight5 + 5)) {
-            if ((a5 - 1.25) <= weight5) {
-                System.out.println("5.Set 벤치프레스 " + a5 + "kg(권장 Reps 5회)");
+        if (benchpressweight5 < benchpressroundoff5 && benchpressroundoff5 <= (benchpressweight5 + 5)) {
+            if ((benchpressroundoff5 - 1.25) <= benchpressweight5) {
+                System.out.println("5.Set 벤치프레스 " + benchpressroundoff5 + "kg(권장 Reps2 5회)");
             }
-            if ((a5 - 3.75) <= weight5 && weight5 < (a5 - 1.25)) {
-                System.out.println("5.Set 벤치프레스 " + (a5 - 2.5) + "kg(권장 Reps 5회)");
+            if ((benchpressroundoff5 - 3.75) <= benchpressweight5 && benchpressweight5 < (benchpressroundoff5 - 1.25)) {
+                System.out.println("5.Set 벤치프레스 " + (benchpressroundoff5 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((a5 - 5) <= weight5 && weight5 < (a5 - 3.75)) {
-                System.out.println("5.Set 벤치프레스 " + (a5 - 5) + "kg(권장 Reps 5회)");
+            if ((benchpressroundoff5 - 5) <= benchpressweight5 && benchpressweight5 < (benchpressroundoff5 - 3.75)) {
+                System.out.println("5.Set 벤치프레스 " + (benchpressroundoff5 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (weight5 < (a5 + 1.25)) {
-                System.out.println("5.Set 벤치프레스 " + a5 + "kg(권장 Reps 5회)");
+            if (benchpressweight5 < (benchpressroundoff5 + 1.25)) {
+                System.out.println("5.Set 벤치프레스 " + benchpressroundoff5 + "kg(권장 Reps2 5회)");
             }
-            if ((a5 + 1.25) <= weight5 && weight5 < (a5 + 3.75)) {
-                System.out.println("5.Set 벤치프레스 " + (a5 + 2.5) + "kg(권장 Reps 5회)");
+            if ((benchpressroundoff5 + 1.25) <= benchpressweight5 && benchpressweight5 < (benchpressroundoff5 + 3.75)) {
+                System.out.println("5.Set 벤치프레스 " + (benchpressroundoff5 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((a5 + 3.75) <= weight5 && weight5 < (a5 + 5)) {
-                System.out.println("5.Set 벤치프레스 " + (a5 + 5) + "kg(권장 Reps 5회)");
+            if ((benchpressroundoff5 + 3.75) <= benchpressweight5 && benchpressweight5 < (benchpressroundoff5 + 5)) {
+                System.out.println("5.Set 벤치프레스 " + (benchpressroundoff5 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps5 = scanner.nextDouble();
+        double reps25 = scanner.nextDouble();
 
-        double weight6 = num1 * 0.80;
-        double a6 = Math.round(weight6 / 10) * 10;
+        double benchpressweight6 = benchpress1rm * 0.80;
+        double benchpressroundoff6 = Math.round(benchpressweight6 / 10) * 10;
 
-        if (weight6 < a6 && a6 <= (weight6 + 5)) {
-            if ((a6 - 1.25) <= weight6) {
-                System.out.println("6.Set 벤치프레스 " + a6 + "kg(권장 Reps 3회)");
+        if (benchpressweight6 < benchpressroundoff6 && benchpressroundoff6 <= (benchpressweight6 + 5)) {
+            if ((benchpressroundoff6 - 1.25) <= benchpressweight6) {
+                System.out.println("6.Set 벤치프레스 " + benchpressroundoff6 + "kg(권장 Reps2 3회)");
             }
-            if ((a6 - 3.75) <= weight6 && weight6 < (a6 - 1.25)) {
-                System.out.println("6.Set 벤치프레스 " + (a6 - 2.5) + "kg(권장 Reps 3회)");
+            if ((benchpressroundoff6 - 3.75) <= benchpressweight6 && benchpressweight6 < (benchpressroundoff6 - 1.25)) {
+                System.out.println("6.Set 벤치프레스 " + (benchpressroundoff6 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a6 - 5) <= weight6 && weight6 < (a6 - 3.75)) {
-                System.out.println("6.Set 벤치프레스 " + (a6 - 5) + "kg(권장 Reps 3회)");
+            if ((benchpressroundoff6 - 5) <= benchpressweight6 && benchpressweight6 < (benchpressroundoff6 - 3.75)) {
+                System.out.println("6.Set 벤치프레스 " + (benchpressroundoff6 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weight6 < (a6 + 1.25)) {
-                System.out.println("6.Set 벤치프레스 " + a6 + "kg(권장 Reps 3회)");
+            if (benchpressweight6 < (benchpressroundoff6 + 1.25)) {
+                System.out.println("6.Set 벤치프레스 " + benchpressroundoff6 + "kg(권장 Reps2 3회)");
             }
-            if ((a6 + 1.25) <= weight6 && weight6 < (a6 + 3.75)) {
-                System.out.println("6.Set 벤치프레스 " + (a6 + 2.5) + "kg(권장 Reps 3회)");
+            if ((benchpressroundoff6 + 1.25) <= benchpressweight6 && benchpressweight6 < (benchpressroundoff6 + 3.75)) {
+                System.out.println("6.Set 벤치프레스 " + (benchpressroundoff6 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a6 + 3.75) <= weight6 && weight6 < (a6 + 5)) {
-                System.out.println("6.Set 벤치프레스 " + (a6 + 5) + "kg(권장 Reps 3회)");
+            if ((benchpressroundoff6 + 3.75) <= benchpressweight6 && benchpressweight6 < (benchpressroundoff6 + 5)) {
+                System.out.println("6.Set 벤치프레스 " + (benchpressroundoff6 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps6 = scanner.nextDouble();
+        double reps26 = scanner.nextDouble();
 
-        double weight7 = num1 * 0.75;
-        double a7 = Math.round(weight7 / 10) * 10;
+        double benchpressweight7 = benchpress1rm * 0.75;
+        double benchpressroundoff7 = Math.round(benchpressweight7 / 10) * 10;
 
-        if (weight7 < a7 && a7 <= (weight7 + 5)) {
-            if ((a7 - 1.25) <= weight7) {
-                System.out.println("7.Set 벤치프레스 " + a7 + "kg(권장 Reps 5회)");
+        if (benchpressweight7 < benchpressroundoff7 && benchpressroundoff7 <= (benchpressweight7 + 5)) {
+            if ((benchpressroundoff7 - 1.25) <= benchpressweight7) {
+                System.out.println("7.Set 벤치프레스 " + benchpressroundoff7 + "kg(권장 Reps2 5회)");
             }
-            if ((a7 - 3.75) <= weight7 && weight7 < (a7 - 1.25)) {
-                System.out.println("7.Set 벤치프레스 " + (a7 - 2.5) + "kg(권장 Reps 5회)");
+            if ((benchpressroundoff7 - 3.75) <= benchpressweight7 && benchpressweight7 < (benchpressroundoff7 - 1.25)) {
+                System.out.println("7.Set 벤치프레스 " + (benchpressroundoff7 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((a7 - 5) <= weight7 && weight7 < (a7 - 3.75)) {
-                System.out.println("7.Set 벤치프레스 " + (a7 - 5) + "kg(권장 Reps 5회)");
+            if ((benchpressroundoff7 - 5) <= benchpressweight7 && benchpressweight7 < (benchpressroundoff7 - 3.75)) {
+                System.out.println("7.Set 벤치프레스 " + (benchpressroundoff7 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (weight7 < (a7 + 1.25)) {
-                System.out.println("7.Set 벤치프레스 " + a7 + "kg(권장 Reps 5회)");
+            if (benchpressweight7 < (benchpressroundoff7 + 1.25)) {
+                System.out.println("7.Set 벤치프레스 " + benchpressroundoff7 + "kg(권장 Reps2 5회)");
             }
-            if ((a7 + 1.25) <= weight7 && weight7 < (a7 + 3.75)) {
-                System.out.println("7.Set 벤치프레스 " + (a7 + 2.5) + "kg(권장 Reps 5회)");
+            if ((benchpressroundoff7 + 1.25) <= benchpressweight7 && benchpressweight7 < (benchpressroundoff7 + 3.75)) {
+                System.out.println("7.Set 벤치프레스 " + (benchpressroundoff7 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((a7 + 3.75) <= weight7 && weight7 < (a7 + 5)) {
-                System.out.println("7.Set 벤치프레스 " + (a7 + 5) + "kg(권장 Reps 5회)");
+            if ((benchpressroundoff7 + 3.75) <= benchpressweight7 && benchpressweight7 < (benchpressroundoff7 + 5)) {
+                System.out.println("7.Set 벤치프레스 " + (benchpressroundoff7 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps7 = scanner.nextDouble();
+        double reps27 = scanner.nextDouble();
 
-        double weight8 = num1 * 0.70;
-        double a8 = Math.round(weight8 / 10) * 10;
+        double benchpressweight8 = benchpress1rm * 0.70;
+        double benchpressroundoff8 = Math.round(benchpressweight8 / 10) * 10;
 
-        if (weight8 < a8 && a8 <= (weight8 + 5)) {
-            if ((a8 - 1.25) <= weight8) {
-                System.out.println("8.Set 벤치프레스 " + a8 + "kg(권장 Reps 3회)");
+        if (benchpressweight8 < benchpressroundoff8 && benchpressroundoff8 <= (benchpressweight8 + 5)) {
+            if ((benchpressroundoff8 - 1.25) <= benchpressweight8) {
+                System.out.println("8.Set 벤치프레스 " + benchpressroundoff8 + "kg(권장 Reps2 3회)");
             }
-            if ((a8 - 3.75) <= weight8 && weight8 < (a8 - 1.25)) {
-                System.out.println("8.Set 벤치프레스 " + (a8 - 2.5) + "kg(권장 Reps 3회)");
+            if ((benchpressroundoff8 - 3.75) <= benchpressweight8 && benchpressweight8 < (benchpressroundoff8 - 1.25)) {
+                System.out.println("8.Set 벤치프레스 " + (benchpressroundoff8 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a8 - 5) <= weight8 && weight8 < (a8 - 3.75)) {
-                System.out.println("8.Set 벤치프레스 " + (a8 - 5) + "kg(권장 Reps 3회)");
+            if ((benchpressroundoff8 - 5) <= benchpressweight8 && benchpressweight8 < (benchpressroundoff8 - 3.75)) {
+                System.out.println("8.Set 벤치프레스 " + (benchpressroundoff8 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weight8 < (a8 + 1.25)) {
-                System.out.println("8.Set 벤치프레스 " + a8 + "kg(권장 Reps 3회)");
+            if (benchpressweight8 < (benchpressroundoff8 + 1.25)) {
+                System.out.println("8.Set 벤치프레스 " + benchpressroundoff8 + "kg(권장 Reps2 3회)");
             }
-            if ((a8 + 1.25) <= weight8 && weight8 < (a8 + 3.75)) {
-                System.out.println("8.Set 벤치프레스 " + (a8 + 2.5) + "kg(권장 Reps 3회)");
+            if ((benchpressroundoff8 + 1.25) <= benchpressweight8 && benchpressweight8 < (benchpressroundoff8 + 3.75)) {
+                System.out.println("8.Set 벤치프레스 " + (benchpressroundoff8 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a8 + 3.75) <= weight8 && weight8 < (a8 + 5)) {
-                System.out.println("8.Set 벤치프레스 " + (a8 + 5) + "kg(권장 Reps 3회)");
+            if ((benchpressroundoff8 + 3.75) <= benchpressweight8 && benchpressweight8 < (benchpressroundoff8 + 5)) {
+                System.out.println("8.Set 벤치프레스 " + (benchpressroundoff8 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps8 = scanner.nextDouble();
+        double reps28 = scanner.nextDouble();
 
-        double weight9 = num1 * 0.65;
-        double a9 = Math.round(weight9 / 10) * 10;
+        double benchpressweight9 = benchpress1rm * 0.65;
+        double benchpressroundoff9 = Math.round(benchpressweight9 / 10) * 10;
 
-        if (weight9 < a9 && a9 <= (weight9 + 5)) {
-            if ((a9 - 1.25) <= weight9) {
-                System.out.println("9.Set 벤치프레스 " + a9 + "kg(권장 Reps 1회 이상)");
+        if (benchpressweight9 < benchpressroundoff9 && benchpressroundoff9 <= (benchpressweight9 + 5)) {
+            if ((benchpressroundoff9 - 1.25) <= benchpressweight9) {
+                System.out.println("9.Set 벤치프레스 " + benchpressroundoff9 + "kg(권장 Reps2 1회 이상)");
             }
-            if ((a9 - 3.75) <= weight9 && weight9 < (a9 - 1.25)) {
-                System.out.println("9.Set 벤치프레스 " + (a9 - 2.5) + "kg(권장 Reps 1회 이상)");
+            if ((benchpressroundoff9 - 3.75) <= benchpressweight9 && benchpressweight9 < (benchpressroundoff9 - 1.25)) {
+                System.out.println("9.Set 벤치프레스 " + (benchpressroundoff9 - 2.5) + "kg(권장 Reps2 1회 이상)");
             }
-            if ((a9 - 5) <= weight9 && weight9 < (a9 - 3.75)) {
-                System.out.println("9.Set 벤치프레스 " + (a9 - 5) + "kg(권장 Reps 1회 이상)");
+            if ((benchpressroundoff9 - 5) <= benchpressweight9 && benchpressweight9 < (benchpressroundoff9 - 3.75)) {
+                System.out.println("9.Set 벤치프레스 " + (benchpressroundoff9 - 5) + "kg(권장 Reps2 1회 이상)");
             }
         } else {
-            if (weight9 < (a9 + 1.25)) {
-                System.out.println("9.Set 벤치프레스 " + a9 + "kg(권장 Reps 1회 이상)");
+            if (benchpressweight9 < (benchpressroundoff9 + 1.25)) {
+                System.out.println("9.Set 벤치프레스 " + benchpressroundoff9 + "kg(권장 Reps2 1회 이상)");
             }
-            if ((a9 + 1.25) <= weight9 && weight9 < (a9 + 3.75)) {
-                System.out.println("9.Set 벤치프레스 " + (a9 + 2.5) + "kg(권장 Reps 1회 이상)");
+            if ((benchpressroundoff9 + 1.25) <= benchpressweight9 && benchpressweight9 < (benchpressroundoff9 + 3.75)) {
+                System.out.println("9.Set 벤치프레스 " + (benchpressroundoff9 + 2.5) + "kg(권장 Reps2 1회 이상)");
             }
-            if ((a9 + 3.75) <= weight9 && weight9 < (a9 + 5)) {
-                System.out.println("9.Set 벤치프레스 " + (a9 + 5) + "kg(권장 Reps 1회 이상)");
+            if ((benchpressroundoff9 + 3.75) <= benchpressweight9 && benchpressweight9 < (benchpressroundoff9 + 5)) {
+                System.out.println("9.Set 벤치프레스 " + (benchpressroundoff9 + 5) + "kg(권장 Reps2 1회 이상)");
             }
         }
 
-        System.out.println("몇 Reps 수행하셨습니까?");
+        System.out.println("몇 Reps2 수행하셨습니까?");
 
-        int asist = random.nextInt(4);
+        int asistworkout = random.nextInt(4);
 
-        double reps9 = scanner.nextDouble();
+        double reps29 = scanner.nextDouble();
 
-        if (reps3 >= 11) {
-            num1 = (num1 + 10);
+        if (reps23 >= 11) {
+            benchpress1rm = (benchpress1rm + 10);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 10kg 증량후 시작합니다!!");
         }
-        if (reps3 >= 8 && reps3 < 11) {
-            num1 = (num1 + 7.5);
+        if (reps23 >= 8 && reps23 < 11) {
+            benchpress1rm = (benchpress1rm + 7.5);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 7.5kg 증량후 시작합니다!!");
         }
-        if (reps3 >= 5 && reps3 < 8) {
-            num1 = (num1 + 5);
+        if (reps23 >= 5 && reps23 < 8) {
+            benchpress1rm = (benchpress1rm + 5);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 5kg 증량후 시작합니다!!");
         }
-        if (reps3 >= 2 && reps3 < 5) {
-            num1 = (num1 + 2.5);
+        if (reps23 >= 2 && reps23 < 5) {
+            benchpress1rm = (benchpress1rm + 2.5);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 2.5kg 증량후 시작합니다!!");
         }
-        if (reps3 < 2) {
-            num1 = (num1);
+        if (reps23 < 2) {
+            benchpress1rm = (benchpress1rm);
             System.out.println("아쉽네요!! 컨디션 조절후 다시 증량 해봅시다!!");
         }
 
         //보조운동
-        if (asist == 0) {
+        if (asistworkout == 0) {
             System.out.println("마무리 보조운동 추천!!!! 인클라인 덤벨프레스 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        if (asist == 1) {
+        if (asistworkout == 1) {
             System.out.println("마무리 보조운동 추천!!!! 딥스 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        if (asist == 2) {
+        if (asistworkout == 2) {
             System.out.println("마무리 보조운동 추천!!!! 클로즈그립 데드리프트 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        if (asist == 3) {
+        if (asistworkout == 3) {
             System.out.println("마무리 보조운동 추천!!!! 덤벨 플라이 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
@@ -457,306 +470,305 @@ public class HealthTraining {
         System.out.println("-----------1주차------------");
         System.out.println("수요일 데드리프트");
 
-        double weighta1 = num2 * 0.75;
-        double b1 = Math.round(weighta1 / 10) * 10;
+        double deadliftweight1 = deadlift1rm * 0.75;
+        double deadliftroundoff1 = Math.round(deadliftweight1 / 10) * 10;
 
-        if (weighta1 < b1 && b1 <= (weighta1 + 5)) {
-            if ((b1 - 1.25) <= weighta1) {
-                System.out.println("1.Set 데드리프트 " + b1 + "kg(권장 Reps 5회)");
+        if (deadliftweight1 < deadliftroundoff1 && deadliftroundoff1 <= (deadliftweight1 + 5)) {
+            if ((deadliftroundoff1 - 1.25) <= deadliftweight1) {
+                System.out.println("1.Set 데드리프트 " + deadliftroundoff1 + "kg(권장 Reps2 5회)");
             }
-            if ((b1 - 3.75) <= weighta1 && weighta1 < (b1 - 1.25)) {
-                System.out.println("1.Set 데드리프트 " + (b1 - 2.5) + "kg(권장 Reps 5회)");
+            if ((deadliftroundoff1 - 3.75) <= deadliftweight1 && deadliftweight1 < (deadliftroundoff1 - 1.25)) {
+                System.out.println("1.Set 데드리프트 " + (deadliftroundoff1 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((b1 - 5) <= weighta1 && weighta1 < (b1 - 3.75)) {
-                System.out.println("1.Set 데드리프트 " + (b1 - 5) + "kg(권장 Reps 5회)");
+            if ((deadliftroundoff1 - 5) <= deadliftweight1 && deadliftweight1 < (deadliftroundoff1 - 3.75)) {
+                System.out.println("1.Set 데드리프트 " + (deadliftroundoff1 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (weighta1 < (b1 + 1.25)) {
-                System.out.println("1.Set 데드리프트 " + b1 + "kg(권장 Reps 5회)");
+            if (deadliftweight1 < (deadliftroundoff1 + 1.25)) {
+                System.out.println("1.Set 데드리프트 " + deadliftroundoff1 + "kg(권장 Reps2 5회)");
             }
-            if ((b1 + 1.25) <= weighta1 && weighta1 < (b1 + 3.75)) {
-                System.out.println("1.Set 데드리프트 " + (b1 + 2.5) + "kg(권장 Reps 5회)");
+            if ((deadliftroundoff1 + 1.25) <= deadliftweight1 && deadliftweight1 < (deadliftroundoff1 + 3.75)) {
+                System.out.println("1.Set 데드리프트 " + (deadliftroundoff1 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((b1 + 3.75) <= weighta1 && weighta1 < (b1 + 5)) {
-                System.out.println("1.Set 데드리프트 " + (b1 + 5) + "kg(권장 Reps 5회)");
+            if ((deadliftroundoff1 + 3.75) <= deadliftweight1 && deadliftweight1 < (deadliftroundoff1 + 5)) {
+                System.out.println("1.Set 데드리프트 " + (deadliftroundoff1 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps11 = scanner.nextDouble();
+        double reps211 = scanner.nextDouble();
 
-        double weighta2 = num2 * 0.85;
-        double b2 = Math.round(weighta2 / 10) * 10;
+        double deadliftweight2 = deadlift1rm * 0.85;
+        double deadliftroundoff2 = Math.round(deadliftweight2 / 10) * 10;
 
-        if (weighta2 < b2 && b2 <= (weighta2 + 5)) {
-            if ((b2 - 1.25) <= weighta2) {
-                System.out.println("2.Set 데드리프트 " + b2 + "kg(권장 Reps 3회)");
+        if (deadliftweight2 < deadliftroundoff2 && deadliftroundoff2 <= (deadliftweight2 + 5)) {
+            if ((deadliftroundoff2 - 1.25) <= deadliftweight2) {
+                System.out.println("2.Set 데드리프트 " + deadliftroundoff2 + "kg(권장 Reps2 3회)");
             }
-            if ((b2 - 3.75) <= weighta2 && weighta2 < (b2 - 1.25)) {
-                System.out.println("2.Set 데드리프트 " + (b2 - 2.5) + "kg(권장 Reps 3회)");
+            if ((deadliftroundoff2 - 3.75) <= deadliftweight2 && deadliftweight2 < (deadliftroundoff2 - 1.25)) {
+                System.out.println("2.Set 데드리프트 " + (deadliftroundoff2 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b2 - 5) <= weighta2 && weighta2 < (b2 - 3.75)) {
-                System.out.println("2.Set 데드리프트 " + (b2 - 5) + "kg(권장 Reps 3회)");
+            if ((deadliftroundoff2 - 5) <= deadliftweight2 && deadliftweight2 < (deadliftroundoff2 - 3.75)) {
+                System.out.println("2.Set 데드리프트 " + (deadliftroundoff2 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weighta2 < (b2 + 1.25)) {
-                System.out.println("2.Set 데드리프트 " + b2 + "kg(권장 Reps 3회)");
+            if (deadliftweight2 < (deadliftroundoff2 + 1.25)) {
+                System.out.println("2.Set 데드리프트 " + deadliftroundoff2 + "kg(권장 Reps2 3회)");
             }
-            if ((b2 + 1.25) <= weighta2 && weighta2 < (b2 + 3.75)) {
-                System.out.println("2.Set 데드리프트 " + (b2 + 2.5) + "kg(권장 Reps 3회)");
+            if ((deadliftroundoff2 + 1.25) <= deadliftweight2 && deadliftweight2 < (deadliftroundoff2 + 3.75)) {
+                System.out.println("2.Set 데드리프트 " + (deadliftroundoff2 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b2 + 3.75) <= weighta2 && weighta2 < (b2 + 5)) {
-                System.out.println("2.Set 데드리프트 " + (b2 + 5) + "kg(권장 Reps 3회)");
+            if ((deadliftroundoff2 + 3.75) <= deadliftweight2 && deadliftweight2 < (deadliftroundoff2 + 5)) {
+                System.out.println("2.Set 데드리프트 " + (deadliftroundoff2 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        double reps212 = scanner.nextDouble();
 
-        double reps12 = scanner.nextDouble();
+        double deadliftweight3 = deadlift1rm * 0.95;
+        double deadliftroundoff3 = Math.round(deadliftweight3 / 10) * 10;
 
-        double weighta3 = num2 * 0.95;
-        double b3 = Math.round(weighta3 / 10) * 10;
-
-        if (weighta3 < b3 && b3 <= (weighta3 + 5)) {
-            if ((b3 - 1.25) <= weighta3) {
-                System.out.println("3.Set 데드리프트 " + b3 + "kg(권장 Reps 1회)");
+        if (deadliftweight3 < deadliftroundoff3 && deadliftroundoff3 <= (deadliftweight3 + 5)) {
+            if ((deadliftroundoff3 - 1.25) <= deadliftweight3) {
+                System.out.println("3.Set 데드리프트 " + deadliftroundoff3 + "kg(권장 Reps2 1회)");
             }
-            if ((b3 - 3.75) <= weighta3 && weighta3 < (b3 - 1.25)) {
-                System.out.println("3.Set 데드리프트 " + (b3 - 2.5) + "kg(권장 Reps 1회)");
+            if ((deadliftroundoff3 - 3.75) <= deadliftweight3 && deadliftweight3 < (deadliftroundoff3 - 1.25)) {
+                System.out.println("3.Set 데드리프트 " + (deadliftroundoff3 - 2.5) + "kg(권장 Reps2 1회)");
             }
-            if ((b3 - 5) <= weighta3 && weighta3 < (b3 - 3.75)) {
-                System.out.println("3.Set 데드리프트 " + (b3 - 5) + "kg(권장 Reps 1회)");
+            if ((deadliftroundoff3 - 5) <= deadliftweight3 && deadliftweight3 < (deadliftroundoff3 - 3.75)) {
+                System.out.println("3.Set 데드리프트 " + (deadliftroundoff3 - 5) + "kg(권장 Reps2 1회)");
             }
         } else {
-            if (weighta3 < (b3 + 1.25)) {
-                System.out.println("3.Set 데드리프트 " + b3 + "kg(권장 Reps 1회)");
+            if (deadliftweight3 < (deadliftroundoff3 + 1.25)) {
+                System.out.println("3.Set 데드리프트 " + deadliftroundoff3 + "kg(권장 Reps2 1회)");
             }
-            if ((b3 + 1.25) <= weighta3 && weighta3 < (b3 + 3.75)) {
-                System.out.println("3.Set 데드리프트 " + (b3 + 2.5) + "kg(권장 Reps 1회)");
+            if ((deadliftroundoff3 + 1.25) <= deadliftweight3 && deadliftweight3 < (deadliftroundoff3 + 3.75)) {
+                System.out.println("3.Set 데드리프트 " + (deadliftroundoff3 + 2.5) + "kg(권장 Reps2 1회)");
             }
-            if ((b3 + 3.75) <= weighta3 && weighta3 < (b3 + 5)) {
-                System.out.println("3.Set 데드리프트 " + (b3 + 5) + "kg(권장 Reps 1회)");
+            if ((deadliftroundoff3 + 3.75) <= deadliftweight3 && deadliftweight3 < (deadliftroundoff3 + 5)) {
+                System.out.println("3.Set 데드리프트 " + (deadliftroundoff3 + 5) + "kg(권장 Reps2 1회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps13 = scanner.nextDouble();
+        double reps213 = scanner.nextDouble();
 
-        double weighta4 = num2 * 0.90;
-        double b4 = Math.round(weighta4 / 10) * 10;
+        double deadliftweight4 = deadlift1rm * 0.90;
+        double deadliftroundoff4 = Math.round(deadliftweight4 / 10) * 10;
 
-        if (weighta4 < b4 && b4 <= (weighta4 + 5)) {
-            if ((b4 - 1.25) <= weighta4) {
-                System.out.println("4.Set 데드리프트 " + b4 + "kg(권장 Reps 3회)");
+        if (deadliftweight4 < deadliftroundoff4 && deadliftroundoff4 <= (deadliftweight4 + 5)) {
+            if ((deadliftroundoff4 - 1.25) <= deadliftweight4) {
+                System.out.println("4.Set 데드리프트 " + deadliftroundoff4 + "kg(권장 Reps2 3회)");
             }
-            if ((b4 - 3.75) <= weighta4 && weighta4 < (b4 - 1.25)) {
-                System.out.println("4.Set 데드리프트 " + (b4 - 2.5) + "kg(권장 Reps 3회)");
+            if ((deadliftroundoff4 - 3.75) <= deadliftweight4 && deadliftweight4 < (deadliftroundoff4 - 1.25)) {
+                System.out.println("4.Set 데드리프트 " + (deadliftroundoff4 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b4 - 5) <= weighta4 && weighta4 < (b4 - 3.75)) {
-                System.out.println("4.Set 데드리프트 " + (b4 - 5) + "kg(권장 Reps 3회)");
+            if ((deadliftroundoff4 - 5) <= deadliftweight4 && deadliftweight4 < (deadliftroundoff4 - 3.75)) {
+                System.out.println("4.Set 데드리프트 " + (deadliftroundoff4 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weighta4 < (b4 + 1.25)) {
-                System.out.println("4.Set 데드리프트 " + b4 + "kg(권장 Reps 3회)");
+            if (deadliftweight4 < (deadliftroundoff4 + 1.25)) {
+                System.out.println("4.Set 데드리프트 " + deadliftroundoff4 + "kg(권장 Reps2 3회)");
             }
-            if ((b4 + 1.25) <= weighta4 && weighta4 < (b4 + 3.75)) {
-                System.out.println("4.Set 데드리프트 " + (b4 + 2.5) + "kg(권장 Reps 3회)");
+            if ((deadliftroundoff4 + 1.25) <= deadliftweight4 && deadliftweight4 < (deadliftroundoff4 + 3.75)) {
+                System.out.println("4.Set 데드리프트 " + (deadliftroundoff4 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b4 + 3.75) <= weighta4 && weighta4 < (b4 + 5)) {
-                System.out.println("4.Set 데드리프트 " + (b4 + 5) + "kg(권장 Reps 3회)");
+            if ((deadliftroundoff4 + 3.75) <= deadliftweight4 && deadliftweight4 < (deadliftroundoff4 + 5)) {
+                System.out.println("4.Set 데드리프트 " + (deadliftroundoff4 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps14 = scanner.nextDouble();
+        double reps214 = scanner.nextDouble();
 
-        double weighta5 = num2 * 0.85;
-        double b5 = Math.round(weighta5 / 10) * 10;
+        double deadliftweight5 = deadlift1rm * 0.85;
+        double deadliftroundoff5 = Math.round(deadliftweight5 / 10) * 10;
 
-        if (weighta5 < b5 && b5 <= (weighta5 + 5)) {
-            if ((b5 - 1.25) <= weighta5) {
-                System.out.println("5.Set 데드리프트 " + b5 + "kg(권장 Reps 5회)");
+        if (deadliftweight5 < deadliftroundoff5 && deadliftroundoff5 <= (deadliftweight5 + 5)) {
+            if ((deadliftroundoff5 - 1.25) <= deadliftweight5) {
+                System.out.println("5.Set 데드리프트 " + deadliftroundoff5 + "kg(권장 Reps2 5회)");
             }
-            if ((b5 - 3.75) <= weighta5 && weighta5 < (b5 - 1.25)) {
-                System.out.println("5.Set 데드리프트 " + (b5 - 2.5) + "kg(권장 Reps 5회)");
+            if ((deadliftroundoff5 - 3.75) <= deadliftweight5 && deadliftweight5 < (deadliftroundoff5 - 1.25)) {
+                System.out.println("5.Set 데드리프트 " + (deadliftroundoff5 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((b5 - 5) <= weighta5 && weighta5 < (b5 - 3.75)) {
-                System.out.println("5.Set 데드리프트 " + (b5 - 5) + "kg(권장 Reps 5회)");
+            if ((deadliftroundoff5 - 5) <= deadliftweight5 && deadliftweight5 < (deadliftroundoff5 - 3.75)) {
+                System.out.println("5.Set 데드리프트 " + (deadliftroundoff5 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (weighta5 < (b5 + 1.25)) {
-                System.out.println("5.Set 데드리프트 " + b5 + "kg(권장 Reps 5회)");
+            if (deadliftweight5 < (deadliftroundoff5 + 1.25)) {
+                System.out.println("5.Set 데드리프트 " + deadliftroundoff5 + "kg(권장 Reps2 5회)");
             }
-            if ((b5 + 1.25) <= weighta5 && weighta5 < (b5 + 3.75)) {
-                System.out.println("5.Set 데드리프트 " + (b5 + 2.5) + "kg(권장 Reps 5회)");
+            if ((deadliftroundoff5 + 1.25) <= deadliftweight5 && deadliftweight5 < (deadliftroundoff5 + 3.75)) {
+                System.out.println("5.Set 데드리프트 " + (deadliftroundoff5 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((b5 + 3.75) <= weighta5 && weighta5 < (b5 + 5)) {
-                System.out.println("5.Set 데드리프트 " + (b5 + 5) + "kg(권장 Reps 5회)");
+            if ((deadliftroundoff5 + 3.75) <= deadliftweight5 && deadliftweight5 < (deadliftroundoff5 + 5)) {
+                System.out.println("5.Set 데드리프트 " + (deadliftroundoff5 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps15 = scanner.nextDouble();
+        double reps215 = scanner.nextDouble();
 
-        double weighta6 = num2 * 0.80;
-        double b6 = Math.round(weighta6 / 10) * 10;
+        double deadliftweight6 = deadlift1rm * 0.80;
+        double deadliftroundoff6 = Math.round(deadliftweight6 / 10) * 10;
 
-        if (weighta6 < b6 && b6 <= (weighta6 + 5)) {
-            if ((b6 - 1.25) <= weighta6) {
-                System.out.println("6.Set 데드리프트 " + b6 + "kg(권장 Reps 3회)");
+        if (deadliftweight6 < deadliftroundoff6 && deadliftroundoff6 <= (deadliftweight6 + 5)) {
+            if ((deadliftroundoff6 - 1.25) <= deadliftweight6) {
+                System.out.println("6.Set 데드리프트 " + deadliftroundoff6 + "kg(권장 Reps2 3회)");
             }
-            if ((b6 - 3.75) <= weighta6 && weighta6 < (b6 - 1.25)) {
-                System.out.println("6.Set 데드리프트 " + (b6 - 2.5) + "kg(권장 Reps 3회)");
+            if ((deadliftroundoff6 - 3.75) <= deadliftweight6 && deadliftweight6 < (deadliftroundoff6 - 1.25)) {
+                System.out.println("6.Set 데드리프트 " + (deadliftroundoff6 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b6 - 5) <= weighta6 && weighta6 < (b6 - 3.75)) {
-                System.out.println("6.Set 데드리프트 " + (b6 - 5) + "kg(권장 Reps 3회)");
+            if ((deadliftroundoff6 - 5) <= deadliftweight6 && deadliftweight6 < (deadliftroundoff6 - 3.75)) {
+                System.out.println("6.Set 데드리프트 " + (deadliftroundoff6 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weighta6 < (b6 + 1.25)) {
-                System.out.println("6.Set 데드리프트 " + b6 + "kg(권장 Reps 3회)");
+            if (deadliftweight6 < (deadliftroundoff6 + 1.25)) {
+                System.out.println("6.Set 데드리프트 " + deadliftroundoff6 + "kg(권장 Reps2 3회)");
             }
-            if ((b6 + 1.25) <= weighta6 && weighta6 < (b6 + 3.75)) {
-                System.out.println("6.Set 데드리프트 " + (b6 + 2.5) + "kg(권장 Reps 3회)");
+            if ((deadliftroundoff6 + 1.25) <= deadliftweight6 && deadliftweight6 < (deadliftroundoff6 + 3.75)) {
+                System.out.println("6.Set 데드리프트 " + (deadliftroundoff6 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b6 + 3.75) <= weighta6 && weighta6 < (b6 + 5)) {
-                System.out.println("6.Set 데드리프트 " + (b6 + 5) + "kg(권장 Reps 3회)");
+            if ((deadliftroundoff6 + 3.75) <= deadliftweight6 && deadliftweight6 < (deadliftroundoff6 + 5)) {
+                System.out.println("6.Set 데드리프트 " + (deadliftroundoff6 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps16 = scanner.nextDouble();
+        double reps216 = scanner.nextDouble();
 
-        double weighta7 = num2 * 0.75;
-        double b7 = Math.round(weighta7 / 10) * 10;
+        double deadliftweight7 = deadlift1rm * 0.75;
+        double deadliftroundoff7 = Math.round(deadliftweight7 / 10) * 10;
 
-        if (weighta7 < b7 && b7 <= (weighta7 + 5)) {
-            if ((b7 - 1.25) <= weighta7) {
-                System.out.println("7.Set 데드리프트 " + b7 + "kg(권장 Reps 5회)");
+        if (deadliftweight7 < deadliftroundoff7 && deadliftroundoff7 <= (deadliftweight7 + 5)) {
+            if ((deadliftroundoff7 - 1.25) <= deadliftweight7) {
+                System.out.println("7.Set 데드리프트 " + deadliftroundoff7 + "kg(권장 Reps2 5회)");
             }
-            if ((b7 - 3.75) <= weighta7 && weighta7 < (b7 - 1.25)) {
-                System.out.println("7.Set 데드리프트 " + (b7 - 2.5) + "kg(권장 Reps 5회)");
+            if ((deadliftroundoff7 - 3.75) <= deadliftweight7 && deadliftweight7 < (deadliftroundoff7 - 1.25)) {
+                System.out.println("7.Set 데드리프트 " + (deadliftroundoff7 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((b7 - 5) <= weighta7 && weighta7 < (b7 - 3.75)) {
-                System.out.println("7.Set 데드리프트 " + (b7 - 5) + "kg(권장 Reps 5회)");
+            if ((deadliftroundoff7 - 5) <= deadliftweight7 && deadliftweight7 < (deadliftroundoff7 - 3.75)) {
+                System.out.println("7.Set 데드리프트 " + (deadliftroundoff7 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (weighta7 < (b7 + 1.25)) {
-                System.out.println("7.Set 데드리프트 " + b7 + "kg(권장 Reps 5회)");
+            if (deadliftweight7 < (deadliftroundoff7 + 1.25)) {
+                System.out.println("7.Set 데드리프트 " + deadliftroundoff7 + "kg(권장 Reps2 5회)");
             }
-            if ((b7 + 1.25) <= weighta7 && weighta7 < (b7 + 3.75)) {
-                System.out.println("7.Set 데드리프트 " + (b7 + 2.5) + "kg(권장 Reps 5회)");
+            if ((deadliftroundoff7 + 1.25) <= deadliftweight7 && deadliftweight7 < (deadliftroundoff7 + 3.75)) {
+                System.out.println("7.Set 데드리프트 " + (deadliftroundoff7 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((b7 + 3.75) <= weighta7 && weighta7 < (b7 + 5)) {
-                System.out.println("7.Set 데드리프트 " + (b7 + 5) + "kg(권장 Reps 5회)");
+            if ((deadliftroundoff7 + 3.75) <= deadliftweight7 && deadliftweight7 < (deadliftroundoff7 + 5)) {
+                System.out.println("7.Set 데드리프트 " + (deadliftroundoff7 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps17 = scanner.nextDouble();
+        double reps217 = scanner.nextDouble();
 
-        double weighta8 = num2 * 0.70;
-        double b8 = Math.round(weighta8 / 10) * 10;
+        double deadliftweight8 = deadlift1rm * 0.70;
+        double deadliftroundoff8 = Math.round(deadliftweight8 / 10) * 10;
 
-        if (weighta8 < b8 && b8 <= (weighta8 + 5)) {
-            if ((b8 - 1.25) <= weighta8) {
-                System.out.println("8.Set 데드리프트 " + b8 + "kg(권장 Reps 3회)");
+        if (deadliftweight8 < deadliftroundoff8 && deadliftroundoff8 <= (deadliftweight8 + 5)) {
+            if ((deadliftroundoff8 - 1.25) <= deadliftweight8) {
+                System.out.println("8.Set 데드리프트 " + deadliftroundoff8 + "kg(권장 Reps2 3회)");
             }
-            if ((b8 - 3.75) <= weighta8 && weighta8 < (b8 - 1.25)) {
-                System.out.println("8.Set 데드리프트 " + (b8 - 2.5) + "kg(권장 Reps 3회)");
+            if ((deadliftroundoff8 - 3.75) <= deadliftweight8 && deadliftweight8 < (deadliftroundoff8 - 1.25)) {
+                System.out.println("8.Set 데드리프트 " + (deadliftroundoff8 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b8 - 5) <= weighta8 && weighta8 < (b8 - 3.75)) {
-                System.out.println("8.Set 데드리프트 " + (b8 - 5) + "kg(권장 Reps 3회)");
+            if ((deadliftroundoff8 - 5) <= deadliftweight8 && deadliftweight8 < (deadliftroundoff8 - 3.75)) {
+                System.out.println("8.Set 데드리프트 " + (deadliftroundoff8 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weighta8 < (b8 + 1.25)) {
-                System.out.println("8.Set 데드리프트 " + b8 + "kg(권장 Reps 3회)");
+            if (deadliftweight8 < (deadliftroundoff8 + 1.25)) {
+                System.out.println("8.Set 데드리프트 " + deadliftroundoff8 + "kg(권장 Reps2 3회)");
             }
-            if ((b8 + 1.25) <= weighta8 && weighta8 < (b8 + 3.75)) {
-                System.out.println("8.Set 데드리프트 " + (b8 + 2.5) + "kg(권장 Reps 3회)");
+            if ((deadliftroundoff8 + 1.25) <= deadliftweight8 && deadliftweight8 < (deadliftroundoff8 + 3.75)) {
+                System.out.println("8.Set 데드리프트 " + (deadliftroundoff8 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b8 + 3.75) <= weighta8 && weighta8 < (b8 + 5)) {
-                System.out.println("8.Set 데드리프트 " + (b8 + 5) + "kg(권장 Reps 3회)");
+            if ((deadliftroundoff8 + 3.75) <= deadliftweight8 && deadliftweight8 < (deadliftroundoff8 + 5)) {
+                System.out.println("8.Set 데드리프트 " + (deadliftroundoff8 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps18 = scanner.nextDouble();
+        double reps218 = scanner.nextDouble();
 
-        double weighta9 = num2 * 0.65;
-        double b9 = Math.round(weighta9 / 10) * 10;
+        double deadliftweight9 = deadlift1rm * 0.65;
+        double deadliftroundoff9 = Math.round(deadliftweight9 / 10) * 10;
 
-        if (weighta9 < b9 && b9 <= (weighta9 + 5)) {
-            if ((b9 - 1.25) <= weighta9) {
-                System.out.println("9.Set 데드리프트 " + b9 + "kg(권장 Reps 1회 이상)");
+        if (deadliftweight9 < deadliftroundoff9 && deadliftroundoff9 <= (deadliftweight9 + 5)) {
+            if ((deadliftroundoff9 - 1.25) <= deadliftweight9) {
+                System.out.println("9.Set 데드리프트 " + deadliftroundoff9 + "kg(권장 Reps2 1회 이상)");
             }
-            if ((b9 - 3.75) <= weighta9 && weighta9 < (b9 - 1.25)) {
-                System.out.println("9.Set 데드리프트 " + (b9 - 2.5) + "kg(권장 Reps 1회 이상)");
+            if ((deadliftroundoff9 - 3.75) <= deadliftweight9 && deadliftweight9 < (deadliftroundoff9 - 1.25)) {
+                System.out.println("9.Set 데드리프트 " + (deadliftroundoff9 - 2.5) + "kg(권장 Reps2 1회 이상)");
             }
-            if ((b9 - 5) <= weighta9 && weighta9 < (b9 - 3.75)) {
-                System.out.println("9.Set 데드리프트 " + (b9 - 5) + "kg(권장 Reps 1회 이상)");
+            if ((deadliftroundoff9 - 5) <= deadliftweight9 && deadliftweight9 < (deadliftroundoff9 - 3.75)) {
+                System.out.println("9.Set 데드리프트 " + (deadliftroundoff9 - 5) + "kg(권장 Reps2 1회 이상)");
             }
         } else {
-            if (weighta9 < (b9 + 1.25)) {
-                System.out.println("9.Set 데드리프트 " + b9 + "kg(권장 Reps 1회 이상)");
+            if (deadliftweight9 < (deadliftroundoff9 + 1.25)) {
+                System.out.println("9.Set 데드리프트 " + deadliftroundoff9 + "kg(권장 Reps2 1회 이상)");
             }
-            if ((b9 + 1.25) <= weighta9 && weighta9 < (b9 + 3.75)) {
-                System.out.println("9.Set 데드리프트 " + (b9 + 2.5) + "kg(권장 Reps 1회 이상)");
+            if ((deadliftroundoff9 + 1.25) <= deadliftweight9 && deadliftweight9 < (deadliftroundoff9 + 3.75)) {
+                System.out.println("9.Set 데드리프트 " + (deadliftroundoff9 + 2.5) + "kg(권장 Reps2 1회 이상)");
             }
-            if ((b9 + 3.75) <= weighta9 && weighta9 < (b9 + 5)) {
-                System.out.println("9.Set 데드리프트 " + (b9 + 5) + "kg(권장 Reps 1회 이상)");
+            if ((deadliftroundoff9 + 3.75) <= deadliftweight9 && deadliftweight9 < (deadliftroundoff9 + 5)) {
+                System.out.println("9.Set 데드리프트 " + (deadliftroundoff9 + 5) + "kg(권장 Reps2 1회 이상)");
             }
         }
 
-        System.out.println("몇 Reps 수행하셨습니까?");
+        System.out.println("몇 Reps2 수행하셨습니까?");
 
-        int asist2 = random.nextInt(4);
+        int asistworkout2 = random.nextInt(4);
 
-        double reps19 = scanner.nextDouble();
+        double reps219 = scanner.nextDouble();
 
-        if (reps13 >= 11) {
-            num2 = (num2 + 10);
+        if (reps213 >= 11) {
+            deadlift1rm = (deadlift1rm + 10);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 10kg 증량후 시작합니다!!");
         }
-        if (reps13 >= 8 && reps13 < 11) {
-            num2 = (num2 + 7.5);
+        if (reps213 >= 8 && reps213 < 11) {
+            deadlift1rm = (deadlift1rm + 7.5);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 7.5kg 증량후 시작합니다!!");
         }
-        if (reps13 >= 5 && reps13 < 8) {
-            num2 = (num2 + 5);
+        if (reps213 >= 5 && reps213 < 8) {
+            deadlift1rm = (deadlift1rm + 5);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 5kg 증량후 시작합니다!!");
         }
-        if (reps13 >= 2 && reps13 < 5) {
-            num2 = (num2 + 2.5);
+        if (reps213 >= 2 && reps213 < 5) {
+            deadlift1rm = (deadlift1rm + 2.5);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 2.5kg 증량후 시작합니다!!");
         }
-        if (reps13 < 2) {
-            num2 = (num2);
+        if (reps213 < 2) {
+            deadlift1rm = (deadlift1rm);
             System.out.println("아쉽네요!! 컨디션 조절후 다시 증량 해봅시다!!");
         }
 
         //보조운동
-        if (asist2 == 0) {
+        if (asistworkout2 == 0) {
             System.out.println("마무리 보조운동 추천!!!! 랫풀 다운 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        if (asist2 == 1) {
+        if (asistworkout2 == 1) {
             System.out.println("마무리 보조운동 추천!!!! 바벨 로우 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        if (asist2 == 2) {
+        if (asistworkout2 == 2) {
             System.out.println("마무리 보조운동 추천!!!! 케이블 로우 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        if (asist2 == 3) {
+        if (asistworkout2 == 3) {
             System.out.println("마무리 보조운동 추천!!!! 풀업 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
@@ -774,308 +786,307 @@ public class HealthTraining {
         System.out.println("-----------1주차------------");
         System.out.println("금요일 스쿼트");
 
-        double weightb1 = num3 * 0.75;
-        double c1 = Math.round(weightb1 / 10) * 10;
+        double squtweight1 = squt1rm * 0.75;
+        double squtroundoff1 = Math.round(squtweight1 / 10) * 10;
 
-        if (weightb1 < c1 && c1 <= (weightb1 + 5)) {
-            if ((c1 - 1.25) <= weightb1) {
-                System.out.println("1.Set 스쿼트 " + c1 + "kg(권장 Reps 5회)");
+        if (squtweight1 < squtroundoff1 && squtroundoff1 <= (squtweight1 + 5)) {
+            if ((squtroundoff1 - 1.25) <= squtweight1) {
+                System.out.println("1.Set 스쿼트 " + squtroundoff1 + "kg(권장 Reps2 5회)");
             }
-            if ((c1 - 3.75) <= weightb1 && weightb1 < (c1 - 1.25)) {
-                System.out.println("1.Set 스쿼트 " + (c1 - 2.5) + "kg(권장 Reps 5회)");
+            if ((squtroundoff1 - 3.75) <= squtweight1 && squtweight1 < (squtroundoff1 - 1.25)) {
+                System.out.println("1.Set 스쿼트 " + (squtroundoff1 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((c1 - 5) <= weightb1 && weightb1 < (c1 - 3.75)) {
-                System.out.println("1.Set 스쿼트 " + (c1 - 5) + "kg(권장 Reps 5회)");
+            if ((squtroundoff1 - 5) <= squtweight1 && squtweight1 < (squtroundoff1 - 3.75)) {
+                System.out.println("1.Set 스쿼트 " + (squtroundoff1 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (weightb1 < (c1 + 1.25)) {
-                System.out.println("1.Set 스쿼트 " + c1 + "kg(권장 Reps 5회)");
+            if (squtweight1 < (squtroundoff1 + 1.25)) {
+                System.out.println("1.Set 스쿼트 " + squtroundoff1 + "kg(권장 Reps2 5회)");
             }
-            if ((c1 + 1.25) <= weightb1 && weightb1 < (c1 + 3.75)) {
-                System.out.println("1.Set 스쿼트 " + (c1 + 2.5) + "kg(권장 Reps 5회)");
+            if ((squtroundoff1 + 1.25) <= squtweight1 && squtweight1 < (squtroundoff1 + 3.75)) {
+                System.out.println("1.Set 스쿼트 " + (squtroundoff1 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((c1 + 3.75) <= weightb1 && weightb1 < (c1 + 5)) {
-                System.out.println("1.Set 스쿼트 " + (c1 + 5) + "kg(권장 Reps 5회)");
+            if ((squtroundoff1 + 3.75) <= squtweight1 && squtweight1 < (squtroundoff1 + 5)) {
+                System.out.println("1.Set 스쿼트 " + (squtroundoff1 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps21 = scanner.nextDouble();
+        double reps221 = scanner.nextDouble();
 
-        double weightb2 = num3 * 0.85;
-        double c2 = Math.round(weightb2 / 10) * 10;
+        double squtweight2 = squt1rm * 0.85;
+        double squtroundoff2 = Math.round(squtweight2 / 10) * 10;
 
-        if (weightb2 < c2 && c2 <= (weightb2 + 5)) {
-            if ((c2 - 1.25) <= weightb2) {
-                System.out.println("2.Set 스쿼트 " + c2 + "kg(권장 Reps 3회)");
+        if (squtweight2 < squtroundoff2 && squtroundoff2 <= (squtweight2 + 5)) {
+            if ((squtroundoff2 - 1.25) <= squtweight2) {
+                System.out.println("2.Set 스쿼트 " + squtroundoff2 + "kg(권장 Reps2 3회)");
             }
-            if ((c2 - 3.75) <= weightb2 && weightb2 < (c2 - 1.25)) {
-                System.out.println("2.Set 스쿼트 " + (c2 - 2.5) + "kg(권장 Reps 3회)");
+            if ((squtroundoff2 - 3.75) <= squtweight2 && squtweight2 < (squtroundoff2 - 1.25)) {
+                System.out.println("2.Set 스쿼트 " + (squtroundoff2 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((c2 - 5) <= weightb2 && weightb2 < (c2 - 3.75)) {
-                System.out.println("2.Set 스쿼트 " + (c2 - 5) + "kg(권장 Reps 3회)");
+            if ((squtroundoff2 - 5) <= squtweight2 && squtweight2 < (squtroundoff2 - 3.75)) {
+                System.out.println("2.Set 스쿼트 " + (squtroundoff2 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weightb2 < (c2 + 1.25)) {
-                System.out.println("2.Set 스쿼트 " + c2 + "kg(권장 Reps 3회)");
+            if (squtweight2 < (squtroundoff2 + 1.25)) {
+                System.out.println("2.Set 스쿼트 " + squtroundoff2 + "kg(권장 Reps2 3회)");
             }
-            if ((c2 + 1.25) <= weightb2 && weightb2 < (c2 + 3.75)) {
-                System.out.println("2.Set 스쿼트 " + (c2 + 2.5) + "kg(권장 Reps 3회)");
+            if ((squtroundoff2 + 1.25) <= squtweight2 && squtweight2 < (squtroundoff2 + 3.75)) {
+                System.out.println("2.Set 스쿼트 " + (squtroundoff2 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((c2 + 3.75) <= weightb2 && weightb2 < (c2 + 5)) {
-                System.out.println("2.Set 스쿼트 " + (c2 + 5) + "kg(권장 Reps 3회)");
+            if ((squtroundoff2 + 3.75) <= squtweight2 && squtweight2 < (squtroundoff2 + 5)) {
+                System.out.println("2.Set 스쿼트 " + (squtroundoff2 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps22 = scanner.nextDouble();
+        double reps222 = scanner.nextDouble();
 
-        double weightb3 = num3 * 0.95;
-        double c3 = Math.round(weightb3 / 10) * 10;
+        double squtweight3 = squt1rm * 0.95;
+        double squtroundoff3 = Math.round(squtweight3 / 10) * 10;
 
-        if (weightb3 < c3 && c3 <= (weightb3 + 5)) {
-            if ((c3 - 1.25) <= weightb3) {
-                System.out.println("3.Set 스쿼트 " + c3 + "kg(권장 Reps 1회)");
+        if (squtweight3 < squtroundoff3 && squtroundoff3 <= (squtweight3 + 5)) {
+            if ((squtroundoff3 - 1.25) <= squtweight3) {
+                System.out.println("3.Set 스쿼트 " + squtroundoff3 + "kg(권장 Reps2 1회)");
             }
-            if ((c3 - 3.75) <= weightb3 && weightb3 < (c3 - 1.25)) {
-                System.out.println("3.Set 스쿼트 " + (c3 - 2.5) + "kg(권장 Reps 1회)");
+            if ((squtroundoff3 - 3.75) <= squtweight3 && squtweight3 < (squtroundoff3 - 1.25)) {
+                System.out.println("3.Set 스쿼트 " + (squtroundoff3 - 2.5) + "kg(권장 Reps2 1회)");
             }
-            if ((c3 - 5) <= weightb3 && weightb3 < (c3 - 3.75)) {
-                System.out.println("3.Set 스쿼트 " + (c3 - 5) + "kg(권장 Reps 1회)");
+            if ((squtroundoff3 - 5) <= squtweight3 && squtweight3 < (squtroundoff3 - 3.75)) {
+                System.out.println("3.Set 스쿼트 " + (squtroundoff3 - 5) + "kg(권장 Reps2 1회)");
             }
         } else {
-            if (weightb3 < (c3 + 1.25)) {
-                System.out.println("3.Set 스쿼트 " + c3 + "kg(권장 Reps 1회)");
+            if (squtweight3 < (squtroundoff3 + 1.25)) {
+                System.out.println("3.Set 스쿼트 " + squtroundoff3 + "kg(권장 Reps2 1회)");
             }
-            if ((c3 + 1.25) <= weightb3 && weightb3 < (c3 + 3.75)) {
-                System.out.println("3.Set 스쿼트 " + (c3 + 2.5) + "kg(권장 Reps 1회)");
+            if ((squtroundoff3 + 1.25) <= squtweight3 && squtweight3 < (squtroundoff3 + 3.75)) {
+                System.out.println("3.Set 스쿼트 " + (squtroundoff3 + 2.5) + "kg(권장 Reps2 1회)");
             }
-            if ((c3 + 3.75) <= weightb3 && weightb3 < (c3 + 5)) {
-                System.out.println("3.Set 스쿼트 " + (c3 + 5) + "kg(권장 Reps 1회)");
+            if ((squtroundoff3 + 3.75) <= squtweight3 && squtweight3 < (squtroundoff3 + 5)) {
+                System.out.println("3.Set 스쿼트 " + (squtroundoff3 + 5) + "kg(권장 Reps2 1회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps23 = scanner.nextDouble();
+        double reps223 = scanner.nextDouble();
 
-        double weightb4 = num3 * 0.90;
-        double c4 = Math.round(weightb4 / 10) * 10;
+        double squtweight4 = squt1rm * 0.90;
+        double squtroundoff4 = Math.round(squtweight4 / 10) * 10;
 
-        if (weightb4 < c4 && c4 <= (weightb4 + 5)) {
-            if ((c4 - 1.25) <= weightb4) {
-                System.out.println("4.Set 스쿼트 " + c4 + "kg(권장 Reps 3회)");
+        if (squtweight4 < squtroundoff4 && squtroundoff4 <= (squtweight4 + 5)) {
+            if ((squtroundoff4 - 1.25) <= squtweight4) {
+                System.out.println("4.Set 스쿼트 " + squtroundoff4 + "kg(권장 Reps2 3회)");
             }
-            if ((c4 - 3.75) <= weightb4 && weightb4 < (c4 - 1.25)) {
-                System.out.println("4.Set 스쿼트 " + (c4 - 2.5) + "kg(권장 Reps 3회)");
+            if ((squtroundoff4 - 3.75) <= squtweight4 && squtweight4 < (squtroundoff4 - 1.25)) {
+                System.out.println("4.Set 스쿼트 " + (squtroundoff4 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((c4 - 5) <= weightb4 && weightb4 < (c4 - 3.75)) {
-                System.out.println("4.Set 스쿼트 " + (c4 - 5) + "kg(권장 Reps 3회)");
+            if ((squtroundoff4 - 5) <= squtweight4 && squtweight4 < (squtroundoff4 - 3.75)) {
+                System.out.println("4.Set 스쿼트 " + (squtroundoff4 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weightb4 < (c4 + 1.25)) {
-                System.out.println("4.Set 스쿼트 " + c4 + "kg(권장 Reps 3회)");
+            if (squtweight4 < (squtroundoff4 + 1.25)) {
+                System.out.println("4.Set 스쿼트 " + squtroundoff4 + "kg(권장 Reps2 3회)");
             }
-            if ((c4 + 1.25) <= weightb4 && weightb4 < (c4 + 3.75)) {
-                System.out.println("4.Set 스쿼트 " + (c4 + 2.5) + "kg(권장 Reps 3회)");
+            if ((squtroundoff4 + 1.25) <= squtweight4 && squtweight4 < (squtroundoff4 + 3.75)) {
+                System.out.println("4.Set 스쿼트 " + (squtroundoff4 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((c4 + 3.75) <= weightb4 && weightb4 < (c4 + 5)) {
-                System.out.println("4.Set 스쿼트 " + (c4 + 5) + "kg(권장 Reps 3회)");
+            if ((squtroundoff4 + 3.75) <= squtweight4 && squtweight4 < (squtroundoff4 + 5)) {
+                System.out.println("4.Set 스쿼트 " + (squtroundoff4 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps24 = scanner.nextDouble();
+        double reps224 = scanner.nextDouble();
 
-        double weightb5 = num3 * 0.85;
-        double c5 = Math.round(weightb5 / 10) * 10;
+        double squtweight5 = squt1rm * 0.85;
+        double squtroundoff5 = Math.round(squtweight5 / 10) * 10;
 
-        if (weightb5 < c5 && c5 <= (weightb5 + 5)) {
-            if ((c5 - 1.25) <= weightb5) {
-                System.out.println("5.Set 스쿼트 " + c5 + "kg(권장 Reps 5회)");
+        if (squtweight5 < squtroundoff5 && squtroundoff5 <= (squtweight5 + 5)) {
+            if ((squtroundoff5 - 1.25) <= squtweight5) {
+                System.out.println("5.Set 스쿼트 " + squtroundoff5 + "kg(권장 Reps2 5회)");
             }
-            if ((c5 - 3.75) <= weightb5 && weightb5 < (c5 - 1.25)) {
-                System.out.println("5.Set 스쿼트 " + (c5 - 2.5) + "kg(권장 Reps 5회)");
+            if ((squtroundoff5 - 3.75) <= squtweight5 && squtweight5 < (squtroundoff5 - 1.25)) {
+                System.out.println("5.Set 스쿼트 " + (squtroundoff5 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((c5 - 5) <= weightb5 && weightb5 < (c5 - 3.75)) {
-                System.out.println("5.Set 스쿼트 " + (c5 - 5) + "kg(권장 Reps 5회)");
+            if ((squtroundoff5 - 5) <= squtweight5 && squtweight5 < (squtroundoff5 - 3.75)) {
+                System.out.println("5.Set 스쿼트 " + (squtroundoff5 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (weightb5 < (c5 + 1.25)) {
-                System.out.println("5.Set 스쿼트 " + c5 + "kg(권장 Reps 5회)");
+            if (squtweight5 < (squtroundoff5 + 1.25)) {
+                System.out.println("5.Set 스쿼트 " + squtroundoff5 + "kg(권장 Reps2 5회)");
             }
-            if ((c5 + 1.25) <= weightb5 && weightb5 < (c5 + 3.75)) {
-                System.out.println("5.Set 스쿼트 " + (c5 + 2.5) + "kg(권장 Reps 5회)");
+            if ((squtroundoff5 + 1.25) <= squtweight5 && squtweight5 < (squtroundoff5 + 3.75)) {
+                System.out.println("5.Set 스쿼트 " + (squtroundoff5 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((c5 + 3.75) <= weightb5 && weightb5 < (c5 + 5)) {
-                System.out.println("5.Set 스쿼트 " + (c5 + 5) + "kg(권장 Reps 5회)");
+            if ((squtroundoff5 + 3.75) <= squtweight5 && squtweight5 < (squtroundoff5 + 5)) {
+                System.out.println("5.Set 스쿼트 " + (squtroundoff5 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps25 = scanner.nextDouble();
+        double reps225 = scanner.nextDouble();
 
-        double weightb6 = num3 * 0.80;
-        double c6 = Math.round(weightb6 / 10) * 10;
+        double squtweight6 = squt1rm * 0.80;
+        double squtroundoff6 = Math.round(squtweight6 / 10) * 10;
 
-        if (weightb6 < c6 && c6 <= (weightb6 + 5)) {
-            if ((c6 - 1.25) <= weightb6) {
-                System.out.println("6.Set 스쿼트 " + c6 + "kg(권장 Reps 3회)");
+        if (squtweight6 < squtroundoff6 && squtroundoff6 <= (squtweight6 + 5)) {
+            if ((squtroundoff6 - 1.25) <= squtweight6) {
+                System.out.println("6.Set 스쿼트 " + squtroundoff6 + "kg(권장 Reps2 3회)");
             }
-            if ((c6 - 3.75) <= weightb6 && weightb6 < (c6 - 1.25)) {
-                System.out.println("6.Set 스쿼트 " + (c6 - 2.5) + "kg(권장 Reps 3회)");
+            if ((squtroundoff6 - 3.75) <= squtweight6 && squtweight6 < (squtroundoff6 - 1.25)) {
+                System.out.println("6.Set 스쿼트 " + (squtroundoff6 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((c6 - 5) <= weightb6 && weightb6 < (c6 - 3.75)) {
-                System.out.println("6.Set 스쿼트 " + (c6 - 5) + "kg(권장 Reps 3회)");
+            if ((squtroundoff6 - 5) <= squtweight6 && squtweight6 < (squtroundoff6 - 3.75)) {
+                System.out.println("6.Set 스쿼트 " + (squtroundoff6 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weightb6 < (c6 + 1.25)) {
-                System.out.println("6.Set 스쿼트 " + c6 + "kg(권장 Reps 3회)");
+            if (squtweight6 < (squtroundoff6 + 1.25)) {
+                System.out.println("6.Set 스쿼트 " + squtroundoff6 + "kg(권장 Reps2 3회)");
             }
-            if ((c6 + 1.25) <= weightb6 && weightb6 < (c6 + 3.75)) {
-                System.out.println("6.Set 스쿼트 " + (c6 + 2.5) + "kg(권장 Reps 3회)");
+            if ((squtroundoff6 + 1.25) <= squtweight6 && squtweight6 < (squtroundoff6 + 3.75)) {
+                System.out.println("6.Set 스쿼트 " + (squtroundoff6 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((c6 + 3.75) <= weightb6 && weightb6 < (c6 + 5)) {
-                System.out.println("6.Set 스쿼트 " + (c6 + 5) + "kg(권장 Reps 3회)");
+            if ((squtroundoff6 + 3.75) <= squtweight6 && squtweight6 < (squtroundoff6 + 5)) {
+                System.out.println("6.Set 스쿼트 " + (squtroundoff6 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps26 = scanner.nextDouble();
+        double reps226 = scanner.nextDouble();
 
-        double weightb7 = num3 * 0.75;
-        double c7 = Math.round(weightb7 / 10) * 10;
+        double squtweight7 = squt1rm * 0.75;
+        double squtroundoff7 = Math.round(squtweight7 / 10) * 10;
 
-        if (weightb7 < c7 && c7 <= (weightb7 + 5)) {
-            if ((c7 - 1.25) <= weightb7) {
-                System.out.println("7.Set 스쿼트 " + c7 + "kg(권장 Reps 5회)");
+        if (squtweight7 < squtroundoff7 && squtroundoff7 <= (squtweight7 + 5)) {
+            if ((squtroundoff7 - 1.25) <= squtweight7) {
+                System.out.println("7.Set 스쿼트 " + squtroundoff7 + "kg(권장 Reps2 5회)");
             }
-            if ((c7 - 3.75) <= weightb7 && weightb7 < (c7 - 1.25)) {
-                System.out.println("7.Set 스쿼트 " + (c7 - 2.5) + "kg(권장 Reps 5회)");
+            if ((squtroundoff7 - 3.75) <= squtweight7 && squtweight7 < (squtroundoff7 - 1.25)) {
+                System.out.println("7.Set 스쿼트 " + (squtroundoff7 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((c7 - 5) <= weightb7 && weightb7 < (c7 - 3.75)) {
-                System.out.println("7.Set 스쿼트 " + (c7 - 5) + "kg(권장 Reps 5회)");
+            if ((squtroundoff7 - 5) <= squtweight7 && squtweight7 < (squtroundoff7 - 3.75)) {
+                System.out.println("7.Set 스쿼트 " + (squtroundoff7 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (weightb7 < (c7 + 1.25)) {
-                System.out.println("7.Set 스쿼트 " + c7 + "kg(권장 Reps 5회)");
+            if (squtweight7 < (squtroundoff7 + 1.25)) {
+                System.out.println("7.Set 스쿼트 " + squtroundoff7 + "kg(권장 Reps2 5회)");
             }
-            if ((c7 + 1.25) <= weightb7 && weightb7 < (c7 + 3.75)) {
-                System.out.println("7.Set 스쿼트 " + (c7 + 2.5) + "kg(권장 Reps 5회)");
+            if ((squtroundoff7 + 1.25) <= squtweight7 && squtweight7 < (squtroundoff7 + 3.75)) {
+                System.out.println("7.Set 스쿼트 " + (squtroundoff7 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((c7 + 3.75) <= weightb7 && weightb7 < (c7 + 5)) {
-                System.out.println("7.Set 스쿼트 " + (c7 + 5) + "kg(권장 Reps 5회)");
+            if ((squtroundoff7 + 3.75) <= squtweight7 && squtweight7 < (squtroundoff7 + 5)) {
+                System.out.println("7.Set 스쿼트 " + (squtroundoff7 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps27 = scanner.nextDouble();
+        double reps227 = scanner.nextDouble();
 
-        double weightb8 = num3 * 0.70;
-        double c8 = Math.round(weightb8 / 10) * 10;
+        double squtweight8 = squt1rm * 0.70;
+        double squtroundoff8 = Math.round(squtweight8 / 10) * 10;
 
-        if (weightb8 < c8 && c8 <= (weightb8 + 5)) {
-            if ((c8 - 1.25) <= weightb8) {
-                System.out.println("8.Set 스쿼트 " + c8 + "kg(권장 Reps 3회)");
+        if (squtweight8 < squtroundoff8 && squtroundoff8 <= (squtweight8 + 5)) {
+            if ((squtroundoff8 - 1.25) <= squtweight8) {
+                System.out.println("8.Set 스쿼트 " + squtroundoff8 + "kg(권장 Reps2 3회)");
             }
-            if ((c8 - 3.75) <= weightb8 && weightb8 < (c8 - 1.25)) {
-                System.out.println("8.Set 스쿼트 " + (c8 - 2.5) + "kg(권장 Reps 3회)");
+            if ((squtroundoff8 - 3.75) <= squtweight8 && squtweight8 < (squtroundoff8 - 1.25)) {
+                System.out.println("8.Set 스쿼트 " + (squtroundoff8 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((c8 - 5) <= weightb8 && weightb8 < (c8 - 3.75)) {
-                System.out.println("8.Set 스쿼트 " + (c8 - 5) + "kg(권장 Reps 3회)");
+            if ((squtroundoff8 - 5) <= squtweight8 && squtweight8 < (squtroundoff8 - 3.75)) {
+                System.out.println("8.Set 스쿼트 " + (squtroundoff8 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weightb8 < (c8 + 1.25)) {
-                System.out.println("8.Set 스쿼트 " + c8 + "kg(권장 Reps 3회)");
+            if (squtweight8 < (squtroundoff8 + 1.25)) {
+                System.out.println("8.Set 스쿼트 " + squtroundoff8 + "kg(권장 Reps2 3회)");
             }
-            if ((c8 + 1.25) <= weightb8 && weightb8 < (c8 + 3.75)) {
-                System.out.println("8.Set 스쿼트 " + (c8 + 2.5) + "kg(권장 Reps 3회)");
+            if ((squtroundoff8 + 1.25) <= squtweight8 && squtweight8 < (squtroundoff8 + 3.75)) {
+                System.out.println("8.Set 스쿼트 " + (squtroundoff8 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((c8 + 3.75) <= weightb8 && weightb8 < (c8 + 5)) {
-                System.out.println("8.Set 스쿼트 " + (c8 + 5) + "kg(권장 Reps 3회)");
+            if ((squtroundoff8 + 3.75) <= squtweight8 && squtweight8 < (squtroundoff8 + 5)) {
+                System.out.println("8.Set 스쿼트 " + (squtroundoff8 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps28 = scanner.nextDouble();
+        double reps228 = scanner.nextDouble();
 
-        double weightb9 = num3 * 0.65;
-        double c9 = Math.round(weightb9 / 10) * 10;
+        double squtweight9 = squt1rm * 0.65;
+        double squtroundoff9 = Math.round(squtweight9 / 10) * 10;
 
-        if (weightb9 < c9 && c9 <= (weightb9 + 5)) {
-            if ((c9 - 1.25) <= weightb9) {
-                System.out.println("9.Set 스쿼트 " + c9 + "kg(권장 Reps 1회 이상)");
+        if (squtweight9 < squtroundoff9 && squtroundoff9 <= (squtweight9 + 5)) {
+            if ((squtroundoff9 - 1.25) <= squtweight9) {
+                System.out.println("9.Set 스쿼트 " + squtroundoff9 + "kg(권장 Reps2 1회 이상)");
             }
-            if ((c9 - 3.75) <= weightb9 && weightb9 < (c9 - 1.25)) {
-                System.out.println("9.Set 스쿼트 " + (c9 - 2.5) + "kg(권장 Reps 1회 이상)");
+            if ((squtroundoff9 - 3.75) <= squtweight9 && squtweight9 < (squtroundoff9 - 1.25)) {
+                System.out.println("9.Set 스쿼트 " + (squtroundoff9 - 2.5) + "kg(권장 Reps2 1회 이상)");
             }
-            if ((c9 - 5) <= weightb9 && weightb9 < (c9 - 3.75)) {
-                System.out.println("9.Set 스쿼트 " + (c9 - 5) + "kg(권장 Reps 1회 이상)");
+            if ((squtroundoff9 - 5) <= squtweight9 && squtweight9 < (squtroundoff9 - 3.75)) {
+                System.out.println("9.Set 스쿼트 " + (squtroundoff9 - 5) + "kg(권장 Reps2 1회 이상)");
             }
         } else {
-            if (weightb9 < (c9 + 1.25)) {
-                System.out.println("9.Set 스쿼트 " + c9 + "kg(권장 Reps 1회 이상)");
+            if (squtweight9 < (squtroundoff9 + 1.25)) {
+                System.out.println("9.Set 스쿼트 " + squtroundoff9 + "kg(권장 Reps2 1회 이상)");
             }
-            if ((c9 + 1.25) <= weightb9 && weightb9 < (c9 + 3.75)) {
-                System.out.println("9.Set 스쿼트 " + (c9 + 2.5) + "kg(권장 Reps 1회 이상)");
+            if ((squtroundoff9 + 1.25) <= squtweight9 && squtweight9 < (squtroundoff9 + 3.75)) {
+                System.out.println("9.Set 스쿼트 " + (squtroundoff9 + 2.5) + "kg(권장 Reps2 1회 이상)");
             }
-            if ((c9 + 3.75) <= weightb9 && weightb9 < (c9 + 5)) {
-                System.out.println("9.Set 스쿼트 " + (c9 + 5) + "kg(권장 Reps 1회 이상)");
+            if ((squtroundoff9 + 3.75) <= squtweight9 && squtweight9 < (squtroundoff9 + 5)) {
+                System.out.println("9.Set 스쿼트 " + (squtroundoff9 + 5) + "kg(권장 Reps2 1회 이상)");
             }
         }
 
-        System.out.println("몇 Reps 수행하셨습니까?");
+        System.out.println("몇 Reps2 수행하셨습니까?");
 
-        int asist3 = random.nextInt(4);
+        int asistworkout3 = random.nextInt(4);
 
-        double reps29 = scanner.nextDouble();
+        double reps229 = scanner.nextDouble();
 
-        if (reps23 >= 11) {
-            num3 = (num3 + 10);
+        if (reps223 >= 11) {
+            squt1rm = (squt1rm + 10);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 10kg 증량후 시작합니다!!");
         }
-        if (reps23 >= 8 && reps23 < 11) {
-            num3 = (num3 + 7.5);
+        if (reps223 >= 8 && reps223 < 11) {
+            squt1rm = (squt1rm + 7.5);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 7.5kg 증량후 시작합니다!!");
         }
-        if (reps23 >= 5 && reps23 < 8) {
-            num3 = (num3 + 5);
+        if (reps223 >= 5 && reps223 < 8) {
+            squt1rm = (squt1rm + 5);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 5kg 증량후 시작합니다!!");
         }
-        if (reps23 >= 2 && reps23 < 5) {
-            num3 = (num3 + 2.5);
+        if (reps223 >= 2 && reps223 < 5) {
+            squt1rm = (squt1rm + 2.5);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 2.5kg 증량후 시작합니다!!");
         }
-        if (reps23 < 2) {
-            num3 = (num3);
+        if (reps223 < 2) {
+            squt1rm = (squt1rm);
             System.out.println("아쉽네요!! 컨디션 조절후 다시 증량 해봅시다!!");
         }
 
         //보조운동
-        if (asist3 == 0) {
+        if (asistworkout3 == 0) {
             System.out.println("마무리 보조운동 추천!!!! 레그 익스텐션 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        if (asist3 == 1) {
+        if (asistworkout3 == 1) {
             System.out.println("마무리 보조운동 추천!!!! 레그 프레스 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        if (asist3 == 2) {
+        if (asistworkout3 == 2) {
             System.out.println("마무리 보조운동 추천!!!! 레그 컬 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        if (asist == 3) {
+        if (asistworkout == 3) {
             System.out.println("마무리 보조운동 추천!!!! 핵 스쿼트 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        ///////
 
         //다음 프로그램 시작!!
         System.out.println("다음 프로그램을 수행하시려면 start를 입력하시오!");
@@ -1089,304 +1100,304 @@ public class HealthTraining {
         System.out.println("-----------2주차------------");
         System.out.println("월요일 벤치프레스");
 
-        double weight11 = num1 * 0.75;
-        double a11 = Math.round(weight11 / 10) * 10;
+        double benchpressweight11 = benchpress1rm * 0.75;
+        double benchroundoff11 = Math.round(benchpressweight11 / 10) * 10;
 
-        if (weight11 < a11 && a11 <= (weight11 + 5)) {
-            if ((a11 - 1.25) <= weight11) {
-                System.out.println("1.Set 벤치프레스 " + a11 + "kg(권장 Reps 5회)");
+        if (benchpressweight11 < benchroundoff11 && benchroundoff11 <= (benchpressweight11 + 5)) {
+            if ((benchroundoff11 - 1.25) <= benchpressweight11) {
+                System.out.println("1.Set 벤치프레스 " + benchroundoff11 + "kg(권장 Reps2 5회)");
             }
-            if ((a11 - 3.75) <= weight11 && weight11 < (a11 - 1.25)) {
-                System.out.println("1.Set 벤치프레스 " + (a11 - 2.5) + "kg(권장 Reps 5회)");
+            if ((benchroundoff11 - 3.75) <= benchpressweight11 && benchpressweight11 < (benchroundoff11 - 1.25)) {
+                System.out.println("1.Set 벤치프레스 " + (benchroundoff11 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((a11 - 5) <= weight11 && weight11 < (a11 - 3.75)) {
-                System.out.println("1.Set 벤치프레스 " + (a11 - 5) + "kg(권장 Reps 5회)");
+            if ((benchroundoff11 - 5) <= benchpressweight11 && benchpressweight11 < (benchroundoff11 - 3.75)) {
+                System.out.println("1.Set 벤치프레스 " + (benchroundoff11 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (weight11 < (a11 + 1.25)) {
-                System.out.println("1.Set 벤치프레스 " + a11 + "kg(권장 Reps 5회)");
+            if (benchpressweight11 < (benchroundoff11 + 1.25)) {
+                System.out.println("1.Set 벤치프레스 " + benchroundoff11 + "kg(권장 Reps2 5회)");
             }
-            if ((a11 + 1.25) <= weight11 && weight11 < (a11 + 3.75)) {
-                System.out.println("1.Set 벤치프레스 " + (a11 + 2.5) + "kg(권장 Reps 5회)");
+            if ((benchroundoff11 + 1.25) <= benchpressweight11 && benchpressweight11 < (benchroundoff11 + 3.75)) {
+                System.out.println("1.Set 벤치프레스 " + (benchroundoff11 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((a11 + 3.75) <= weight11 && weight11 < (a11 + 5)) {
-                System.out.println("1.Set 벤치프레스 " + (a11 + 5) + "kg(권장 Reps 5회)");
+            if ((benchroundoff11 + 3.75) <= benchpressweight11 && benchpressweight11 < (benchroundoff11 + 5)) {
+                System.out.println("1.Set 벤치프레스 " + (benchroundoff11 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps1a = scanner.nextDouble();
+        double reps21a = scanner.nextDouble();
 
-        double weight12 = num1 * 0.85;
-        double a22 = Math.round(weight12 / 10) * 10;
+        double benchpressweight12 = benchpress1rm * 0.85;
+        double benchroundoff22 = Math.round(benchpressweight12 / 10) * 10;
 
-        if (weight12 < a22 && a22 <= (weight12 + 5)) {
-            if ((a22 - 1.25) <= weight12) {
-                System.out.println("2.Set 벤치프레스 " + a22 + "kg(권장 Reps 3회)");
+        if (benchpressweight12 < benchroundoff22 && benchroundoff22 <= (benchpressweight12 + 5)) {
+            if ((benchroundoff22 - 1.25) <= benchpressweight12) {
+                System.out.println("2.Set 벤치프레스 " + benchroundoff22 + "kg(권장 Reps2 3회)");
             }
-            if ((a22 - 3.75) <= weight12 && weight12 < (a22 - 1.25)) {
-                System.out.println("2.Set 벤치프레스 " + (a22 - 2.5) + "kg(권장 Reps 3회)");
+            if ((benchroundoff22 - 3.75) <= benchpressweight12 && benchpressweight12 < (benchroundoff22 - 1.25)) {
+                System.out.println("2.Set 벤치프레스 " + (benchroundoff22 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a22 - 5) <= weight12 && weight12 < (a22 - 3.75)) {
-                System.out.println("2.Set 벤치프레스 " + (a22 - 5) + "kg(권장 Reps 3회)");
+            if ((benchroundoff22 - 5) <= benchpressweight12 && benchpressweight12 < (benchroundoff22 - 3.75)) {
+                System.out.println("2.Set 벤치프레스 " + (benchroundoff22 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weight12 < (a22 + 1.25)) {
-                System.out.println("2.Set 벤치프레스 " + a22 + "kg(권장 Reps 3회)");
+            if (benchpressweight12 < (benchroundoff22 + 1.25)) {
+                System.out.println("2.Set 벤치프레스 " + benchroundoff22 + "kg(권장 Reps2 3회)");
             }
-            if ((a22 + 1.25) <= weight12 && weight12 < (a22 + 3.75)) {
-                System.out.println("2.Set 벤치프레스 " + (a22 + 2.5) + "kg(권장 Reps 3회)");
+            if ((benchroundoff22 + 1.25) <= benchpressweight12 && benchpressweight12 < (benchroundoff22 + 3.75)) {
+                System.out.println("2.Set 벤치프레스 " + (benchroundoff22 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a22 + 3.75) <= weight12 && weight12 < (a22 + 5)) {
-                System.out.println("2.Set 벤치프레스 " + (a22 + 5) + "kg(권장 Reps 3회)");
+            if ((benchroundoff22 + 3.75) <= benchpressweight12 && benchpressweight12 < (benchroundoff22 + 5)) {
+                System.out.println("2.Set 벤치프레스 " + (benchroundoff22 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps2a = scanner.nextDouble();
+        double reps22a = scanner.nextDouble();
 
-        double weight13 = num1 * 0.95;
-        double a33 = Math.round(weight13 / 10) * 10;
+        double benchpressweight13 = benchpress1rm * 0.95;
+        double a33 = Math.round(benchpressweight13 / 10) * 10;
 
-        if (weight13 < a33 && a33 <= (weight13 + 5)) {
-            if ((a33 - 1.25) <= weight13) {
-                System.out.println("3.Set 벤치프레스 " + a33 + "kg(권장 Reps 1회)");
+        if (benchpressweight13 < a33 && a33 <= (benchpressweight13 + 5)) {
+            if ((a33 - 1.25) <= benchpressweight13) {
+                System.out.println("3.Set 벤치프레스 " + a33 + "kg(권장 Reps2 1회)");
             }
-            if ((a33 - 3.75) <= weight13 && weight13 < (a33 - 1.25)) {
-                System.out.println("3.Set 벤치프레스 " + (a33 - 2.5) + "kg(권장 Reps 1회)");
+            if ((a33 - 3.75) <= benchpressweight13 && benchpressweight13 < (a33 - 1.25)) {
+                System.out.println("3.Set 벤치프레스 " + (a33 - 2.5) + "kg(권장 Reps2 1회)");
             }
-            if ((a33 - 5) <= weight13 && weight13 < (a33 - 3.75)) {
-                System.out.println("3.Set 벤치프레스 " + (a33 - 5) + "kg(권장 Reps 1회)");
+            if ((a33 - 5) <= benchpressweight13 && benchpressweight13 < (a33 - 3.75)) {
+                System.out.println("3.Set 벤치프레스 " + (a33 - 5) + "kg(권장 Reps2 1회)");
             }
         } else {
-            if (weight13 < (a33 + 1.25)) {
-                System.out.println("3.Set 벤치프레스 " + a33 + "kg(권장 Reps 1회)");
+            if (benchpressweight13 < (a33 + 1.25)) {
+                System.out.println("3.Set 벤치프레스 " + a33 + "kg(권장 Reps2 1회)");
             }
-            if ((a33 + 1.25) <= weight13 && weight13 < (a33 + 3.75)) {
-                System.out.println("3.Set 벤치프레스 " + (a33 + 2.5) + "kg(권장 Reps 1회)");
+            if ((a33 + 1.25) <= benchpressweight13 && benchpressweight13 < (a33 + 3.75)) {
+                System.out.println("3.Set 벤치프레스 " + (a33 + 2.5) + "kg(권장 Reps2 1회)");
             }
-            if ((a33 + 3.75) <= weight13 && weight13 < (a33 + 5)) {
-                System.out.println("3.Set 벤치프레스 " + (a33 + 5) + "kg(권장 Reps 1회)");
+            if ((a33 + 3.75) <= benchpressweight13 && benchpressweight13 < (a33 + 5)) {
+                System.out.println("3.Set 벤치프레스 " + (a33 + 5) + "kg(권장 Reps2 1회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps3a = scanner.nextDouble();
+        double reps23a = scanner.nextDouble();
 
-        double weight14 = num1 * 0.90;
-        double a44 = Math.round(weight14 / 10) * 10;
+        double benchpressweight14 = benchpress1rm * 0.90;
+        double a44 = Math.round(benchpressweight14 / 10) * 10;
 
-        if (weight14 < a44 && a44 <= (weight14 + 5)) {
-            if ((a44 - 1.25) <= weight14) {
-                System.out.println("4.Set 벤치프레스 " + a44 + "kg(권장 Reps 3회)");
+        if (benchpressweight14 < a44 && a44 <= (benchpressweight14 + 5)) {
+            if ((a44 - 1.25) <= benchpressweight14) {
+                System.out.println("4.Set 벤치프레스 " + a44 + "kg(권장 Reps2 3회)");
             }
-            if ((a44 - 3.75) <= weight14 && weight14 < (a44 - 1.25)) {
-                System.out.println("4.Set 벤치프레스 " + (a44 - 2.5) + "kg(권장 Reps 3회)");
+            if ((a44 - 3.75) <= benchpressweight14 && benchpressweight14 < (a44 - 1.25)) {
+                System.out.println("4.Set 벤치프레스 " + (a44 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a44 - 5) <= weight14 && weight14 < (a44 - 3.75)) {
-                System.out.println("4.Set 벤치프레스 " + (a44 - 5) + "kg(권장 Reps 3회)");
+            if ((a44 - 5) <= benchpressweight14 && benchpressweight14 < (a44 - 3.75)) {
+                System.out.println("4.Set 벤치프레스 " + (a44 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weight14 < (a44 + 1.25)) {
-                System.out.println("4.Set 벤치프레스 " + a44 + "kg(권장 Reps 3회)");
+            if (benchpressweight14 < (a44 + 1.25)) {
+                System.out.println("4.Set 벤치프레스 " + a44 + "kg(권장 Reps2 3회)");
             }
-            if ((a44 + 1.25) <= weight14 && weight14 < (a44 + 3.75)) {
-                System.out.println("4.Set 벤치프레스 " + (a44 + 2.5) + "kg(권장 Reps 3회)");
+            if ((a44 + 1.25) <= benchpressweight14 && benchpressweight14 < (a44 + 3.75)) {
+                System.out.println("4.Set 벤치프레스 " + (a44 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a44 + 3.75) <= weight14 && weight14 < (a44 + 5)) {
-                System.out.println("4.Set 벤치프레스 " + (a44 + 5) + "kg(권장 Reps 3회)");
+            if ((a44 + 3.75) <= benchpressweight14 && benchpressweight14 < (a44 + 5)) {
+                System.out.println("4.Set 벤치프레스 " + (a44 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps4a = scanner.nextDouble();
+        double reps24a = scanner.nextDouble();
 
-        double weight15 = num1 * 0.85;
-        double a55 = Math.round(weight15 / 10) * 10;
+        double benchpressweight15 = benchpress1rm * 0.85;
+        double a55 = Math.round(benchpressweight15 / 10) * 10;
 
-        if (weight15 < a55 && a55 <= (weight15 + 5)) {
-            if ((a55 - 1.25) <= weight15) {
-                System.out.println("5.Set 벤치프레스 " + a55 + "kg(권장 Reps 5회)");
+        if (benchpressweight15 < a55 && a55 <= (benchpressweight15 + 5)) {
+            if ((a55 - 1.25) <= benchpressweight15) {
+                System.out.println("5.Set 벤치프레스 " + a55 + "kg(권장 Reps2 5회)");
             }
-            if ((a55 - 3.75) <= weight15 && weight15 < (a55 - 1.25)) {
-                System.out.println("5.Set 벤치프레스 " + (a55 - 2.5) + "kg(권장 Reps 5회)");
+            if ((a55 - 3.75) <= benchpressweight15 && benchpressweight15 < (a55 - 1.25)) {
+                System.out.println("5.Set 벤치프레스 " + (a55 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((a55 - 5) <= weight15 && weight15 < (a55 - 3.75)) {
-                System.out.println("5.Set 벤치프레스 " + (a55 - 5) + "kg(권장 Reps 5회)");
+            if ((a55 - 5) <= benchpressweight15 && benchpressweight15 < (a55 - 3.75)) {
+                System.out.println("5.Set 벤치프레스 " + (a55 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (weight15 < (a55 + 1.25)) {
-                System.out.println("5.Set 벤치프레스 " + a55 + "kg(권장 Reps 5회)");
+            if (benchpressweight15 < (a55 + 1.25)) {
+                System.out.println("5.Set 벤치프레스 " + a55 + "kg(권장 Reps2 5회)");
             }
-            if ((a55 + 1.25) <= weight15 && weight15 < (a55 + 3.75)) {
-                System.out.println("5.Set 벤치프레스 " + (a55 + 2.5) + "kg(권장 Reps 5회)");
+            if ((a55 + 1.25) <= benchpressweight15 && benchpressweight15 < (a55 + 3.75)) {
+                System.out.println("5.Set 벤치프레스 " + (a55 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((a55 + 3.75) <= weight15 && weight15 < (a55 + 5)) {
-                System.out.println("5.Set 벤치프레스 " + (a55 + 5) + "kg(권장 Reps 5회)");
+            if ((a55 + 3.75) <= benchpressweight15 && benchpressweight15 < (a55 + 5)) {
+                System.out.println("5.Set 벤치프레스 " + (a55 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps5a = scanner.nextDouble();
+        double reps25a = scanner.nextDouble();
 
-        double weight16 = num1 * 0.80;
-        double a66 = Math.round(weight16 / 10) * 10;
+        double benchpressweight16 = benchpress1rm * 0.80;
+        double a66 = Math.round(benchpressweight16 / 10) * 10;
 
-        if (weight16 < a66 && a66 <= (weight16 + 5)) {
-            if ((a66 - 1.25) <= weight16) {
-                System.out.println("6.Set 벤치프레스 " + a66 + "kg(권장 Reps 3회)");
+        if (benchpressweight16 < a66 && a66 <= (benchpressweight16 + 5)) {
+            if ((a66 - 1.25) <= benchpressweight16) {
+                System.out.println("6.Set 벤치프레스 " + a66 + "kg(권장 Reps2 3회)");
             }
-            if ((a66 - 3.75) <= weight16 && weight16 < (a66 - 1.25)) {
-                System.out.println("6.Set 벤치프레스 " + (a66 - 2.5) + "kg(권장 Reps 3회)");
+            if ((a66 - 3.75) <= benchpressweight16 && benchpressweight16 < (a66 - 1.25)) {
+                System.out.println("6.Set 벤치프레스 " + (a66 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a66 - 5) <= weight16 && weight16 < (a66 - 3.75)) {
-                System.out.println("6.Set 벤치프레스 " + (a66 - 5) + "kg(권장 Reps 3회)");
+            if ((a66 - 5) <= benchpressweight16 && benchpressweight16 < (a66 - 3.75)) {
+                System.out.println("6.Set 벤치프레스 " + (a66 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weight16 < (a66 + 1.25)) {
-                System.out.println("6.Set 벤치프레스 " + a66 + "kg(권장 Reps 3회)");
+            if (benchpressweight16 < (a66 + 1.25)) {
+                System.out.println("6.Set 벤치프레스 " + a66 + "kg(권장 Reps2 3회)");
             }
-            if ((a66 + 1.25) <= weight16 && weight16 < (a66 + 3.75)) {
-                System.out.println("6.Set 벤치프레스 " + (a66 + 2.5) + "kg(권장 Reps 3회)");
+            if ((a66 + 1.25) <= benchpressweight16 && benchpressweight16 < (a66 + 3.75)) {
+                System.out.println("6.Set 벤치프레스 " + (a66 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a66 + 3.75) <= weight16 && weight16 < (a66 + 5)) {
-                System.out.println("6.Set 벤치프레스 " + (a66 + 5) + "kg(권장 Reps 3회)");
+            if ((a66 + 3.75) <= benchpressweight16 && benchpressweight16 < (a66 + 5)) {
+                System.out.println("6.Set 벤치프레스 " + (a66 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps6a = scanner.nextDouble();
+        double reps26a = scanner.nextDouble();
 
-        double weight17 = num1 * 0.75;
-        double a77 = Math.round(weight17 / 10) * 10;
+        double benchpressweight17 = benchpress1rm * 0.75;
+        double a77 = Math.round(benchpressweight17 / 10) * 10;
 
-        if (weight17 < a77 && a77 <= (weight17 + 5)) {
-            if ((a77 - 1.25) <= weight17) {
-                System.out.println("7.Set 벤치프레스 " + a77 + "kg(권장 Reps 5회)");
+        if (benchpressweight17 < a77 && a77 <= (benchpressweight17 + 5)) {
+            if ((a77 - 1.25) <= benchpressweight17) {
+                System.out.println("7.Set 벤치프레스 " + a77 + "kg(권장 Reps2 5회)");
             }
-            if ((a77 - 3.75) <= weight17 && weight17 < (a77 - 1.25)) {
-                System.out.println("7.Set 벤치프레스 " + (a77 - 2.5) + "kg(권장 Reps 5회)");
+            if ((a77 - 3.75) <= benchpressweight17 && benchpressweight17 < (a77 - 1.25)) {
+                System.out.println("7.Set 벤치프레스 " + (a77 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((a77 - 5) <= weight17 && weight17 < (a77 - 3.75)) {
-                System.out.println("7.Set 벤치프레스 " + (a77 - 5) + "kg(권장 Reps 5회)");
+            if ((a77 - 5) <= benchpressweight17 && benchpressweight17 < (a77 - 3.75)) {
+                System.out.println("7.Set 벤치프레스 " + (a77 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (weight17 < (a77 + 1.25)) {
-                System.out.println("7.Set 벤치프레스 " + a77 + "kg(권장 Reps 5회)");
+            if (benchpressweight17 < (a77 + 1.25)) {
+                System.out.println("7.Set 벤치프레스 " + a77 + "kg(권장 Reps2 5회)");
             }
-            if ((a77 + 1.25) <= weight17 && weight17 < (a77 + 3.75)) {
-                System.out.println("7.Set 벤치프레스 " + (a77 + 2.5) + "kg(권장 Reps 5회)");
+            if ((a77 + 1.25) <= benchpressweight17 && benchpressweight17 < (a77 + 3.75)) {
+                System.out.println("7.Set 벤치프레스 " + (a77 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((a77 + 3.75) <= weight17 && weight17 < (a77 + 5)) {
-                System.out.println("7.Set 벤치프레스 " + (a77 + 5) + "kg(권장 Reps 5회)");
+            if ((a77 + 3.75) <= benchpressweight17 && benchpressweight17 < (a77 + 5)) {
+                System.out.println("7.Set 벤치프레스 " + (a77 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps7a = scanner.nextDouble();
+        double reps27a = scanner.nextDouble();
 
-        double weight18 = num1 * 0.70;
-        double a88 = Math.round(weight18 / 10) * 10;
+        double benchpressweight18 = benchpress1rm * 0.70;
+        double a88 = Math.round(benchpressweight18 / 10) * 10;
 
-        if (weight18 < a88 && a88 <= (weight18 + 5)) {
-            if ((a88 - 1.25) <= weight18) {
-                System.out.println("8.Set 벤치프레스 " + a88 + "kg(권장 Reps 3회)");
+        if (benchpressweight18 < a88 && a88 <= (benchpressweight18 + 5)) {
+            if ((a88 - 1.25) <= benchpressweight18) {
+                System.out.println("8.Set 벤치프레스 " + a88 + "kg(권장 Reps2 3회)");
             }
-            if ((a88 - 3.75) <= weight18 && weight18 < (a88 - 1.25)) {
-                System.out.println("8.Set 벤치프레스 " + (a88 - 2.5) + "kg(권장 Reps 3회)");
+            if ((a88 - 3.75) <= benchpressweight18 && benchpressweight18 < (a88 - 1.25)) {
+                System.out.println("8.Set 벤치프레스 " + (a88 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a88 - 5) <= weight18 && weight18 < (a88 - 3.75)) {
-                System.out.println("8.Set 벤치프레스 " + (a88 - 5) + "kg(권장 Reps 3회)");
+            if ((a88 - 5) <= benchpressweight18 && benchpressweight18 < (a88 - 3.75)) {
+                System.out.println("8.Set 벤치프레스 " + (a88 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weight18 < (a88 + 1.25)) {
-                System.out.println("8.Set 벤치프레스 " + a88 + "kg(권장 Reps 3회)");
+            if (benchpressweight18 < (a88 + 1.25)) {
+                System.out.println("8.Set 벤치프레스 " + a88 + "kg(권장 Reps2 3회)");
             }
-            if ((a88 + 1.25) <= weight18 && weight18 < (a88 + 3.75)) {
-                System.out.println("8.Set 벤치프레스 " + (a88 + 2.5) + "kg(권장 Reps 3회)");
+            if ((a88 + 1.25) <= benchpressweight18 && benchpressweight18 < (a88 + 3.75)) {
+                System.out.println("8.Set 벤치프레스 " + (a88 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a88 + 3.75) <= weight18 && weight18 < (a88 + 5)) {
-                System.out.println("8.Set 벤치프레스 " + (a88 + 5) + "kg(권장 Reps 3회)");
+            if ((a88 + 3.75) <= benchpressweight18 && benchpressweight18 < (a88 + 5)) {
+                System.out.println("8.Set 벤치프레스 " + (a88 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps8a = scanner.nextDouble();
+        double reps28a = scanner.nextDouble();
 
-        double weight19 = num1 * 0.65;
-        double a99 = Math.round(weight19 / 10) * 10;
+        double benchpressweight19 = benchpress1rm * 0.65;
+        double a99 = Math.round(benchpressweight19 / 10) * 10;
 
-        if (weight19 < a99 && a99 <= (weight19 + 5)) {
-            if ((a99 - 1.25) <= weight19) {
-                System.out.println("9.Set 벤치프레스 " + a99 + "kg(권장 Reps 1회 이상)");
+        if (benchpressweight19 < a99 && a99 <= (benchpressweight19 + 5)) {
+            if ((a99 - 1.25) <= benchpressweight19) {
+                System.out.println("9.Set 벤치프레스 " + a99 + "kg(권장 Reps2 1회 이상)");
             }
-            if ((a99 - 3.75) <= weight19 && weight19 < (a99 - 1.25)) {
-                System.out.println("9.Set 벤치프레스 " + (a99 - 2.5) + "kg(권장 Reps 1회 이상)");
+            if ((a99 - 3.75) <= benchpressweight19 && benchpressweight19 < (a99 - 1.25)) {
+                System.out.println("9.Set 벤치프레스 " + (a99 - 2.5) + "kg(권장 Reps2 1회 이상)");
             }
-            if ((a99 - 5) <= weight19 && weight19 < (a99 - 3.75)) {
-                System.out.println("9.Set 벤치프레스 " + (a99 - 5) + "kg(권장 Reps 1회 이상)");
+            if ((a99 - 5) <= benchpressweight19 && benchpressweight19 < (a99 - 3.75)) {
+                System.out.println("9.Set 벤치프레스 " + (a99 - 5) + "kg(권장 Reps2 1회 이상)");
             }
         } else {
-            if (weight19 < (a99 + 1.25)) {
-                System.out.println("9.Set 벤치프레스 " + a99 + "kg(권장 Reps 1회 이상)");
+            if (benchpressweight19 < (a99 + 1.25)) {
+                System.out.println("9.Set 벤치프레스 " + a99 + "kg(권장 Reps2 1회 이상)");
             }
-            if ((a99 + 1.25) <= weight19 && weight19 < (a99 + 3.75)) {
-                System.out.println("9.Set 벤치프레스 " + (a99 + 2.5) + "kg(권장 Reps 1회 이상)");
+            if ((a99 + 1.25) <= benchpressweight19 && benchpressweight19 < (a99 + 3.75)) {
+                System.out.println("9.Set 벤치프레스 " + (a99 + 2.5) + "kg(권장 Reps2 1회 이상)");
             }
-            if ((a99 + 3.75) <= weight19 && weight19 < (a99 + 5)) {
-                System.out.println("9.Set 벤치프레스 " + (a99 + 5) + "kg(권장 Reps 1회 이상)");
+            if ((a99 + 3.75) <= benchpressweight19 && benchpressweight19 < (a99 + 5)) {
+                System.out.println("9.Set 벤치프레스 " + (a99 + 5) + "kg(권장 Reps2 1회 이상)");
             }
         }
 
-        System.out.println("몇 Reps 수행하셨습니까?");
+        System.out.println("몇 Reps2 수행하셨습니까?");
 
-        int asista = random.nextInt(4);
+        int asistworkouta = random.nextInt(4);
 
-        double reps9a = scanner.nextDouble();
+        double reps29a = scanner.nextDouble();
 
-        if (reps3a >= 11) {
-            num1 = (num1 + 10);
+        if (reps23a >= 11) {
+            benchpress1rm = (benchpress1rm + 10);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 10kg 증량후 시작합니다!!");
         }
-        if (reps3a >= 8 && reps3a < 11) {
-            num1 = (num1 + 7.5);
+        if (reps23a >= 8 && reps23a < 11) {
+            benchpress1rm = (benchpress1rm + 7.5);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 7.5kg 증량후 시작합니다!!");
         }
-        if (reps3a >= 5 && reps3a < 8) {
-            num1 = (num1 + 5);
+        if (reps23a >= 5 && reps23a < 8) {
+            benchpress1rm = (benchpress1rm + 5);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 5kg 증량후 시작합니다!!");
         }
-        if (reps3a >= 2 && reps3a < 5) {
-            num1 = (num1 + 2.5);
+        if (reps23a >= 2 && reps23a < 5) {
+            benchpress1rm = (benchpress1rm + 2.5);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 2.5kg 증량후 시작합니다!!");
         }
-        if (reps3a < 2) {
-            num1 = (num1);
+        if (reps23a < 2) {
+            benchpress1rm = (benchpress1rm);
             System.out.println("아쉽네요!! 컨디션 조절후 다시 증량 해봅시다!!");
         }
 
         //보조운동
-        if (asista == 0) {
+        if (asistworkouta == 0) {
             System.out.println("마무리 보조운동 추천!!!! 인클라인 덤벨프레스 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        if (asista == 1) {
+        if (asistworkouta == 1) {
             System.out.println("마무리 보조운동 추천!!!! 딥스 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        if (asista == 2) {
+        if (asistworkouta == 2) {
             System.out.println("마무리 보조운동 추천!!!! 클로즈그립 데드리프트 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        if (asista == 3) {
+        if (asistworkouta == 3) {
             System.out.println("마무리 보조운동 추천!!!! 덤벨 플라이 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
@@ -1404,304 +1415,304 @@ public class HealthTraining {
         System.out.println("-----------2주차------------");
         System.out.println("수요일 데드리프트");
 
-        double weight1a11 = num2 * 0.75;
-        double b11 = Math.round(weight1a11 / 10) * 10;
+        double deadliftweight11 = deadlift1rm * 0.75;
+        double b11 = Math.round(deadliftweight11 / 10) * 10;
 
-        if (weight1a11 < b11 && b11 <= (weight1a11 + 5)) {
-            if ((b11 - 1.25) <= weight1a11) {
-                System.out.println("1.Set 데드리프트 " + b11 + "kg(권장 Reps 5회)");
+        if (deadliftweight11 < b11 && b11 <= (deadliftweight11 + 5)) {
+            if ((b11 - 1.25) <= deadliftweight11) {
+                System.out.println("1.Set 데드리프트 " + b11 + "kg(권장 Reps2 5회)");
             }
-            if ((b11 - 3.75) <= weight1a11 && weight1a11 < (b11 - 1.25)) {
-                System.out.println("1.Set 데드리프트 " + (b11 - 2.5) + "kg(권장 Reps 5회)");
+            if ((b11 - 3.75) <= deadliftweight11 && deadliftweight11 < (b11 - 1.25)) {
+                System.out.println("1.Set 데드리프트 " + (b11 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((b11 - 5) <= weight1a11 && weight1a11 < (b11 - 3.75)) {
-                System.out.println("1.Set 데드리프트 " + (b11 - 5) + "kg(권장 Reps 5회)");
+            if ((b11 - 5) <= deadliftweight11 && deadliftweight11 < (b11 - 3.75)) {
+                System.out.println("1.Set 데드리프트 " + (b11 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (weight1a11 < (b11 + 1.25)) {
-                System.out.println("1.Set 데드리프트 " + b11 + "kg(권장 Reps 5회)");
+            if (deadliftweight11 < (b11 + 1.25)) {
+                System.out.println("1.Set 데드리프트 " + b11 + "kg(권장 Reps2 5회)");
             }
-            if ((b11 + 1.25) <= weight1a11 && weight1a11 < (b11 + 3.75)) {
-                System.out.println("1.Set 데드리프트 " + (b11 + 2.5) + "kg(권장 Reps 5회)");
+            if ((b11 + 1.25) <= deadliftweight11 && deadliftweight11 < (b11 + 3.75)) {
+                System.out.println("1.Set 데드리프트 " + (b11 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((b11 + 3.75) <= weight1a11 && weight1a11 < (b11 + 5)) {
-                System.out.println("1.Set 데드리프트 " + (b11 + 5) + "kg(권장 Reps 5회)");
+            if ((b11 + 3.75) <= deadliftweight11 && deadliftweight11 < (b11 + 5)) {
+                System.out.println("1.Set 데드리프트 " + (b11 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps1a1 = scanner.nextDouble();
+        double reps21a1 = scanner.nextDouble();
 
-        double weight1a22 = num2 * 0.85;
-        double b22 = Math.round(weight1a22 / 10) * 10;
+        double deadliftweight22 = deadlift1rm * 0.85;
+        double b22 = Math.round(deadliftweight22 / 10) * 10;
 
-        if (weight1a22 < b22 && b22 <= (weight1a22 + 5)) {
-            if ((b22 - 1.25) <= weight1a22) {
-                System.out.println("2.Set 데드리프트 " + b22 + "kg(권장 Reps 3회)");
+        if (deadliftweight22 < b22 && b22 <= (deadliftweight22 + 5)) {
+            if ((b22 - 1.25) <= deadliftweight22) {
+                System.out.println("2.Set 데드리프트 " + b22 + "kg(권장 Reps2 3회)");
             }
-            if ((b22 - 3.75) <= weight1a22 && weight1a22 < (b22 - 1.25)) {
-                System.out.println("2.Set 데드리프트 " + (b22 - 2.5) + "kg(권장 Reps 3회)");
+            if ((b22 - 3.75) <= deadliftweight22 && deadliftweight22 < (b22 - 1.25)) {
+                System.out.println("2.Set 데드리프트 " + (b22 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b22 - 5) <= weight1a22 && weight1a22 < (b22 - 3.75)) {
-                System.out.println("2.Set 데드리프트 " + (b22 - 5) + "kg(권장 Reps 3회)");
+            if ((b22 - 5) <= deadliftweight22 && deadliftweight22 < (b22 - 3.75)) {
+                System.out.println("2.Set 데드리프트 " + (b22 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weight1a22 < (b22 + 1.25)) {
-                System.out.println("2.Set 데드리프트 " + b22 + "kg(권장 Reps 3회)");
+            if (deadliftweight22 < (b22 + 1.25)) {
+                System.out.println("2.Set 데드리프트 " + b22 + "kg(권장 Reps2 3회)");
             }
-            if ((b22 + 1.25) <= weight1a22 && weight1a22 < (b22 + 3.75)) {
-                System.out.println("2.Set 데드리프트 " + (b22 + 2.5) + "kg(권장 Reps 3회)");
+            if ((b22 + 1.25) <= deadliftweight22 && deadliftweight22 < (b22 + 3.75)) {
+                System.out.println("2.Set 데드리프트 " + (b22 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b22 + 3.75) <= weight1a22 && weight1a22 < (b22 + 5)) {
-                System.out.println("2.Set 데드리프트 " + (b22 + 5) + "kg(권장 Reps 3회)");
+            if ((b22 + 3.75) <= deadliftweight22 && deadliftweight22 < (b22 + 5)) {
+                System.out.println("2.Set 데드리프트 " + (b22 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps1a2 = scanner.nextDouble();
+        double reps21a2 = scanner.nextDouble();
 
-        double weight1a33 = num2 * 0.95;
-        double b33 = Math.round(weight1a33 / 10) * 10;
+        double deadliftweight33 = deadlift1rm * 0.95;
+        double b33 = Math.round(deadliftweight33 / 10) * 10;
 
-        if (weight1a33 < b33 && b33 <= (weight1a33 + 5)) {
-            if ((b33 - 1.25) <= weight1a33) {
-                System.out.println("3.Set 데드리프트 " + b33 + "kg(권장 Reps 1회)");
+        if (deadliftweight33 < b33 && b33 <= (deadliftweight33 + 5)) {
+            if ((b33 - 1.25) <= deadliftweight33) {
+                System.out.println("3.Set 데드리프트 " + b33 + "kg(권장 Reps2 1회)");
             }
-            if ((b33 - 3.75) <= weight1a33 && weight1a33 < (b33 - 1.25)) {
-                System.out.println("3.Set 데드리프트 " + (b33 - 2.5) + "kg(권장 Reps 1회)");
+            if ((b33 - 3.75) <= deadliftweight33 && deadliftweight33 < (b33 - 1.25)) {
+                System.out.println("3.Set 데드리프트 " + (b33 - 2.5) + "kg(권장 Reps2 1회)");
             }
-            if ((b33 - 5) <= weight1a33 && weight1a33 < (b33 - 3.75)) {
-                System.out.println("3.Set 데드리프트 " + (b33 - 5) + "kg(권장 Reps 1회)");
+            if ((b33 - 5) <= deadliftweight33 && deadliftweight33 < (b33 - 3.75)) {
+                System.out.println("3.Set 데드리프트 " + (b33 - 5) + "kg(권장 Reps2 1회)");
             }
         } else {
-            if (weight1a33 < (b33 + 1.25)) {
-                System.out.println("3.Set 데드리프트 " + b33 + "kg(권장 Reps 1회)");
+            if (deadliftweight33 < (b33 + 1.25)) {
+                System.out.println("3.Set 데드리프트 " + b33 + "kg(권장 Reps2 1회)");
             }
-            if ((b33 + 1.25) <= weight1a33 && weight1a33 < (b33 + 3.75)) {
-                System.out.println("3.Set 데드리프트 " + (b33 + 2.5) + "kg(권장 Reps 1회)");
+            if ((b33 + 1.25) <= deadliftweight33 && deadliftweight33 < (b33 + 3.75)) {
+                System.out.println("3.Set 데드리프트 " + (b33 + 2.5) + "kg(권장 Reps2 1회)");
             }
-            if ((b33 + 3.75) <= weight1a33 && weight1a33 < (b33 + 5)) {
-                System.out.println("3.Set 데드리프트 " + (b33 + 5) + "kg(권장 Reps 1회)");
+            if ((b33 + 3.75) <= deadliftweight33 && deadliftweight33 < (b33 + 5)) {
+                System.out.println("3.Set 데드리프트 " + (b33 + 5) + "kg(권장 Reps2 1회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps1a3 = scanner.nextDouble();
+        double reps21a3 = scanner.nextDouble();
 
-        double weight1a44 = num2 * 0.90;
-        double b44 = Math.round(weight1a44 / 10) * 10;
+        double deadliftweight44 = deadlift1rm * 0.90;
+        double b44 = Math.round(deadliftweight44 / 10) * 10;
 
-        if (weight1a44 < b44 && b44 <= (weight1a44 + 5)) {
-            if ((b44 - 1.25) <= weight1a44) {
-                System.out.println("4.Set 데드리프트 " + b44 + "kg(권장 Reps 3회)");
+        if (deadliftweight44 < b44 && b44 <= (deadliftweight44 + 5)) {
+            if ((b44 - 1.25) <= deadliftweight44) {
+                System.out.println("4.Set 데드리프트 " + b44 + "kg(권장 Reps2 3회)");
             }
-            if ((b44 - 3.75) <= weight1a44 && weight1a44 < (b44 - 1.25)) {
-                System.out.println("4.Set 데드리프트 " + (b44 - 2.5) + "kg(권장 Reps 3회)");
+            if ((b44 - 3.75) <= deadliftweight44 && deadliftweight44 < (b44 - 1.25)) {
+                System.out.println("4.Set 데드리프트 " + (b44 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b44 - 5) <= weight1a44 && weight1a44 < (b44 - 3.75)) {
-                System.out.println("4.Set 데드리프트 " + (b44 - 5) + "kg(권장 Reps 3회)");
+            if ((b44 - 5) <= deadliftweight44 && deadliftweight44 < (b44 - 3.75)) {
+                System.out.println("4.Set 데드리프트 " + (b44 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weight1a44 < (b44 + 1.25)) {
-                System.out.println("4.Set 데드리프트 " + b44 + "kg(권장 Reps 3회)");
+            if (deadliftweight44 < (b44 + 1.25)) {
+                System.out.println("4.Set 데드리프트 " + b44 + "kg(권장 Reps2 3회)");
             }
-            if ((b44 + 1.25) <= weight1a44 && weight1a44 < (b44 + 3.75)) {
-                System.out.println("4.Set 데드리프트 " + (b44 + 2.5) + "kg(권장 Reps 3회)");
+            if ((b44 + 1.25) <= deadliftweight44 && deadliftweight44 < (b44 + 3.75)) {
+                System.out.println("4.Set 데드리프트 " + (b44 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b44 + 3.75) <= weight1a44 && weight1a44 < (b44 + 5)) {
-                System.out.println("4.Set 데드리프트 " + (b44 + 5) + "kg(권장 Reps 3회)");
+            if ((b44 + 3.75) <= deadliftweight44 && deadliftweight44 < (b44 + 5)) {
+                System.out.println("4.Set 데드리프트 " + (b44 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps1a4 = scanner.nextDouble();
+        double reps21a4 = scanner.nextDouble();
 
-        double weight1a55 = num2 * 0.85;
-        double b55 = Math.round(weight1a55 / 10) * 10;
+        double deadliftweight55 = deadlift1rm * 0.85;
+        double b55 = Math.round(deadliftweight55 / 10) * 10;
 
-        if (weight1a55 < b55 && b55 <= (weight1a55 + 5)) {
-            if ((b55 - 1.25) <= weight1a55) {
-                System.out.println("5.Set 데드리프트 " + b55 + "kg(권장 Reps 5회)");
+        if (deadliftweight55 < b55 && b55 <= (deadliftweight55 + 5)) {
+            if ((b55 - 1.25) <= deadliftweight55) {
+                System.out.println("5.Set 데드리프트 " + b55 + "kg(권장 Reps2 5회)");
             }
-            if ((b55 - 3.75) <= weight1a55 && weight1a55 < (b55 - 1.25)) {
-                System.out.println("5.Set 데드리프트 " + (b55 - 2.5) + "kg(권장 Reps 5회)");
+            if ((b55 - 3.75) <= deadliftweight55 && deadliftweight55 < (b55 - 1.25)) {
+                System.out.println("5.Set 데드리프트 " + (b55 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((b55 - 5) <= weight1a55 && weight1a55 < (b55 - 3.75)) {
-                System.out.println("5.Set 데드리프트 " + (b55 - 5) + "kg(권장 Reps 5회)");
+            if ((b55 - 5) <= deadliftweight55 && deadliftweight55 < (b55 - 3.75)) {
+                System.out.println("5.Set 데드리프트 " + (b55 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (weight1a55 < (b55 + 1.25)) {
-                System.out.println("5.Set 데드리프트 " + b55 + "kg(권장 Reps 5회)");
+            if (deadliftweight55 < (b55 + 1.25)) {
+                System.out.println("5.Set 데드리프트 " + b55 + "kg(권장 Reps2 5회)");
             }
-            if ((b55 + 1.25) <= weight1a55 && weight1a55 < (b55 + 3.75)) {
-                System.out.println("5.Set 데드리프트 " + (b55 + 2.5) + "kg(권장 Reps 5회)");
+            if ((b55 + 1.25) <= deadliftweight55 && deadliftweight55 < (b55 + 3.75)) {
+                System.out.println("5.Set 데드리프트 " + (b55 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((b55 + 3.75) <= weight1a55 && weight1a55 < (b55 + 5)) {
-                System.out.println("5.Set 데드리프트 " + (b55 + 5) + "kg(권장 Reps 5회)");
+            if ((b55 + 3.75) <= deadliftweight55 && deadliftweight55 < (b55 + 5)) {
+                System.out.println("5.Set 데드리프트 " + (b55 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps1a5 = scanner.nextDouble();
+        double reps21a5 = scanner.nextDouble();
 
-        double weight1a66 = num2 * 0.80;
-        double b66 = Math.round(weight1a66 / 10) * 10;
+        double deadliftweight66 = deadlift1rm * 0.80;
+        double b66 = Math.round(deadliftweight66 / 10) * 10;
 
-        if (weight1a66 < b66 && b66 <= (weight1a66 + 5)) {
-            if ((b66 - 1.25) <= weight1a66) {
-                System.out.println("6.Set 데드리프트 " + b66 + "kg(권장 Reps 3회)");
+        if (deadliftweight66 < b66 && b66 <= (deadliftweight66 + 5)) {
+            if ((b66 - 1.25) <= deadliftweight66) {
+                System.out.println("6.Set 데드리프트 " + b66 + "kg(권장 Reps2 3회)");
             }
-            if ((b66 - 3.75) <= weight1a66 && weight1a66 < (b66 - 1.25)) {
-                System.out.println("6.Set 데드리프트 " + (b66 - 2.5) + "kg(권장 Reps 3회)");
+            if ((b66 - 3.75) <= deadliftweight66 && deadliftweight66 < (b66 - 1.25)) {
+                System.out.println("6.Set 데드리프트 " + (b66 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b66 - 5) <= weight1a66 && weight1a66 < (b66 - 3.75)) {
-                System.out.println("6.Set 데드리프트 " + (b66 - 5) + "kg(권장 Reps 3회)");
+            if ((b66 - 5) <= deadliftweight66 && deadliftweight66 < (b66 - 3.75)) {
+                System.out.println("6.Set 데드리프트 " + (b66 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weight1a66 < (b66 + 1.25)) {
-                System.out.println("6.Set 데드리프트 " + b66 + "kg(권장 Reps 3회)");
+            if (deadliftweight66 < (b66 + 1.25)) {
+                System.out.println("6.Set 데드리프트 " + b66 + "kg(권장 Reps2 3회)");
             }
-            if ((b66 + 1.25) <= weight1a66 && weight1a66 < (b66 + 3.75)) {
-                System.out.println("6.Set 데드리프트 " + (b66 + 2.5) + "kg(권장 Reps 3회)");
+            if ((b66 + 1.25) <= deadliftweight66 && deadliftweight66 < (b66 + 3.75)) {
+                System.out.println("6.Set 데드리프트 " + (b66 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b66 + 3.75) <= weight1a66 && weight1a66 < (b66 + 5)) {
-                System.out.println("6.Set 데드리프트 " + (b66 + 5) + "kg(권장 Reps 3회)");
+            if ((b66 + 3.75) <= deadliftweight66 && deadliftweight66 < (b66 + 5)) {
+                System.out.println("6.Set 데드리프트 " + (b66 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps1a6 = scanner.nextDouble();
+        double reps21a6 = scanner.nextDouble();
 
-        double weight1a77 = num2 * 0.75;
-        double b77 = Math.round(weight1a77 / 10) * 10;
+        double deadliftweight77 = deadlift1rm * 0.75;
+        double b77 = Math.round(deadliftweight77 / 10) * 10;
 
-        if (weight1a77 < b77 && b77 <= (weight1a77 + 5)) {
-            if ((b77 - 1.25) <= weight1a77) {
-                System.out.println("7.Set 데드리프트 " + b77 + "kg(권장 Reps 5회)");
+        if (deadliftweight77 < b77 && b77 <= (deadliftweight77 + 5)) {
+            if ((b77 - 1.25) <= deadliftweight77) {
+                System.out.println("7.Set 데드리프트 " + b77 + "kg(권장 Reps2 5회)");
             }
-            if ((b77 - 3.75) <= weight1a77 && weight1a77 < (b77 - 1.25)) {
-                System.out.println("7.Set 데드리프트 " + (b77 - 2.5) + "kg(권장 Reps 5회)");
+            if ((b77 - 3.75) <= deadliftweight77 && deadliftweight77 < (b77 - 1.25)) {
+                System.out.println("7.Set 데드리프트 " + (b77 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((b77 - 5) <= weight1a77 && weight1a77 < (b77 - 3.75)) {
-                System.out.println("7.Set 데드리프트 " + (b77 - 5) + "kg(권장 Reps 5회)");
+            if ((b77 - 5) <= deadliftweight77 && deadliftweight77 < (b77 - 3.75)) {
+                System.out.println("7.Set 데드리프트 " + (b77 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (weight1a77 < (b77 + 1.25)) {
-                System.out.println("7.Set 데드리프트 " + b77 + "kg(권장 Reps 5회)");
+            if (deadliftweight77 < (b77 + 1.25)) {
+                System.out.println("7.Set 데드리프트 " + b77 + "kg(권장 Reps2 5회)");
             }
-            if ((b77 + 1.25) <= weight1a77 && weight1a77 < (b77 + 3.75)) {
-                System.out.println("7.Set 데드리프트 " + (b77 + 2.5) + "kg(권장 Reps 5회)");
+            if ((b77 + 1.25) <= deadliftweight77 && deadliftweight77 < (b77 + 3.75)) {
+                System.out.println("7.Set 데드리프트 " + (b77 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((b77 + 3.75) <= weight1a77 && weight1a77 < (b77 + 5)) {
-                System.out.println("7.Set 데드리프트 " + (b77 + 5) + "kg(권장 Reps 5회)");
+            if ((b77 + 3.75) <= deadliftweight77 && deadliftweight77 < (b77 + 5)) {
+                System.out.println("7.Set 데드리프트 " + (b77 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps1a7 = scanner.nextDouble();
+        double reps21a7 = scanner.nextDouble();
 
-        double weight1a88 = num2 * 0.70;
-        double b88 = Math.round(weight1a88 / 10) * 10;
+        double deadliftweight88 = deadlift1rm * 0.70;
+        double b88 = Math.round(deadliftweight88 / 10) * 10;
 
-        if (weight1a88 < b88 && b88 <= (weight1a88 + 5)) {
-            if ((b88 - 1.25) <= weight1a88) {
-                System.out.println("8.Set 데드리프트 " + b88 + "kg(권장 Reps 3회)");
+        if (deadliftweight88 < b88 && b88 <= (deadliftweight88 + 5)) {
+            if ((b88 - 1.25) <= deadliftweight88) {
+                System.out.println("8.Set 데드리프트 " + b88 + "kg(권장 Reps2 3회)");
             }
-            if ((b88 - 3.75) <= weight1a88 && weight1a88 < (b88 - 1.25)) {
-                System.out.println("8.Set 데드리프트 " + (b88 - 2.5) + "kg(권장 Reps 3회)");
+            if ((b88 - 3.75) <= deadliftweight88 && deadliftweight88 < (b88 - 1.25)) {
+                System.out.println("8.Set 데드리프트 " + (b88 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b88 - 5) <= weight1a88 && weight1a88 < (b88 - 3.75)) {
-                System.out.println("8.Set 데드리프트 " + (b88 - 5) + "kg(권장 Reps 3회)");
+            if ((b88 - 5) <= deadliftweight88 && deadliftweight88 < (b88 - 3.75)) {
+                System.out.println("8.Set 데드리프트 " + (b88 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (weight1a88 < (b88 + 1.25)) {
-                System.out.println("8.Set 데드리프트 " + b88 + "kg(권장 Reps 3회)");
+            if (deadliftweight88 < (b88 + 1.25)) {
+                System.out.println("8.Set 데드리프트 " + b88 + "kg(권장 Reps2 3회)");
             }
-            if ((b88 + 1.25) <= weight1a88 && weight1a88 < (b88 + 3.75)) {
-                System.out.println("8.Set 데드리프트 " + (b88 + 2.5) + "kg(권장 Reps 3회)");
+            if ((b88 + 1.25) <= deadliftweight88 && deadliftweight88 < (b88 + 3.75)) {
+                System.out.println("8.Set 데드리프트 " + (b88 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b88 + 3.75) <= weight1a88 && weight1a88 < (b88 + 5)) {
-                System.out.println("8.Set 데드리프트 " + (b88 + 5) + "kg(권장 Reps 3회)");
+            if ((b88 + 3.75) <= deadliftweight88 && deadliftweight88 < (b88 + 5)) {
+                System.out.println("8.Set 데드리프트 " + (b88 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.print("몇 Reps2 수행하셨습니까?");
 
-        double reps1a8 = scanner.nextDouble();
+        double reps21a8 = scanner.nextDouble();
 
-        double weight1a99 = num2 * 0.65;
-        double b99 = Math.round(weight1a99 / 10) * 10;
+        double deadliftweight99 = deadlift1rm * 0.65;
+        double b99 = Math.round(deadliftweight99 / 10) * 10;
 
-        if (weight1a99 < b99 && b99 <= (weight1a99 + 5)) {
-            if ((b99 - 1.25) <= weight1a99) {
-                System.out.println("9.Set 데드리프트 " + b99 + "kg(권장 Reps 1회 이상)");
+        if (deadliftweight99 < b99 && b99 <= (deadliftweight99 + 5)) {
+            if ((b99 - 1.25) <= deadliftweight99) {
+                System.out.println("9.Set 데드리프트 " + b99 + "kg(권장 Reps2 1회 이상)");
             }
-            if ((b99 - 3.75) <= weight1a99 && weight1a99 < (b99 - 1.25)) {
-                System.out.println("9.Set 데드리프트 " + (b99 - 2.5) + "kg(권장 Reps 1회 이상)");
+            if ((b99 - 3.75) <= deadliftweight99 && deadliftweight99 < (b99 - 1.25)) {
+                System.out.println("9.Set 데드리프트 " + (b99 - 2.5) + "kg(권장 Reps2 1회 이상)");
             }
-            if ((b99 - 5) <= weight1a99 && weight1a99 < (b99 - 3.75)) {
-                System.out.println("9.Set 데드리프트 " + (b99 - 5) + "kg(권장 Reps 1회 이상)");
+            if ((b99 - 5) <= deadliftweight99 && deadliftweight99 < (b99 - 3.75)) {
+                System.out.println("9.Set 데드리프트 " + (b99 - 5) + "kg(권장 Reps2 1회 이상)");
             }
         } else {
-            if (weight1a99 < (b99 + 1.25)) {
-                System.out.println("9.Set 데드리프트 " + b99 + "kg(권장 Reps 1회 이상)");
+            if (deadliftweight99 < (b99 + 1.25)) {
+                System.out.println("9.Set 데드리프트 " + b99 + "kg(권장 Reps2 1회 이상)");
             }
-            if ((b99 + 1.25) <= weight1a99 && weight1a99 < (b99 + 3.75)) {
-                System.out.println("9.Set 데드리프트 " + (b99 + 2.5) + "kg(권장 Reps 1회 이상)");
+            if ((b99 + 1.25) <= deadliftweight99 && deadliftweight99 < (b99 + 3.75)) {
+                System.out.println("9.Set 데드리프트 " + (b99 + 2.5) + "kg(권장 Reps2 1회 이상)");
             }
-            if ((b99 + 3.75) <= weight1a99 && weight1a99 < (b99 + 5)) {
-                System.out.println("9.Set 데드리프트 " + (b99 + 5) + "kg(권장 Reps 1회 이상)");
+            if ((b99 + 3.75) <= deadliftweight99 && deadliftweight99 < (b99 + 5)) {
+                System.out.println("9.Set 데드리프트 " + (b99 + 5) + "kg(권장 Reps2 1회 이상)");
             }
         }
 
-        System.out.println("몇 Reps 수행하셨습니까?");
+        System.out.println("몇 Reps2 수행하셨습니까?");
 
-        int asista2a = random.nextInt(4);
+        int asistworkouta2a = random.nextInt(4);
 
-        double reps1a9 = scanner.nextDouble();
+        double reps21a9 = scanner.nextDouble();
 
-        if (reps1a3 >= 11) {
-            num2 = (num2 + 10);
+        if (reps21a3 >= 11) {
+            deadlift1rm = (deadlift1rm + 10);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 10kg 증량후 시작합니다!!");
         }
-        if (reps1a3 >= 8 && reps1a3 < 11) {
-            num2 = (num2 + 7.5);
+        if (reps21a3 >= 8 && reps21a3 < 11) {
+            deadlift1rm = (deadlift1rm + 7.5);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 7.5kg 증량후 시작합니다!!");
         }
-        if (reps1a3 >= 5 && reps1a3 < 8) {
-            num2 = (num2 + 5);
+        if (reps21a3 >= 5 && reps21a3 < 8) {
+            deadlift1rm = (deadlift1rm + 5);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 5kg 증량후 시작합니다!!");
         }
-        if (reps1a3 >= 2 && reps1a3 < 5) {
-            num2 = (num2 + 2.5);
+        if (reps21a3 >= 2 && reps21a3 < 5) {
+            deadlift1rm = (deadlift1rm + 2.5);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 2.5kg 증량후 시작합니다!!");
         }
-        if (reps1a3 < 2) {
-            num2 = (num2);
+        if (reps21a3 < 2) {
+            deadlift1rm = (deadlift1rm);
             System.out.println("아쉽네요!! 컨디션 조절후 다시 증량 해봅시다!!");
         }
 
         //보조운동
-        if (asista2a == 0) {
+        if (asistworkouta2a == 0) {
             System.out.println("마무리 보조운동 추천!!!! 랫풀 다운 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        if (asista2a == 1) {
+        if (asistworkouta2a == 1) {
             System.out.println("마무리 보조운동 추천!!!! 바벨 로우 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        if (asista2a == 2) {
+        if (asistworkouta2a == 2) {
             System.out.println("마무리 보조운동 추천!!!! 케이블 로우 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        if (asista2a == 3) {
+        if (asistworkouta2a == 3) {
             System.out.println("마무리 보조운동 추천!!!! 풀업 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
@@ -1719,304 +1730,304 @@ public class HealthTraining {
         System.out.println("-----------2주차------------");
         System.out.println("금요일 스쿼트");
 
-        double weight1b11 = num3 * 0.75;
-        double c11 = Math.round(weight1b11 / 10) * 10;
+        double squtweight11 = squt1rm * 0.75;
+        double c11 = Math.round(squtweight11 / 10) * 10;
 
-        if (weight1b11 < c11 && c11 <= (weight1b11 + 5)) {
-            if ((c11 - 1.25) <= weight1b11) {
-                System.out.println("1.Set 스쿼트 " + c11 + "kg(권장 Reps 5회)");
+        if (squtweight11 < c11 && c11 <= (squtweight11 + 5)) {
+            if ((c11 - 1.25) <= squtweight11) {
+                System.out.println("1.Set 스쿼트 " + c11 + "kg(권장 Reps2 5회)");
             }
-            if ((c11 - 3.75) <= weight1b11 && weight1b11 < (c11 - 1.25)) {
-                System.out.println("1.Set 스쿼트 " + (c11 - 2.5) + "kg(권장 Reps 5회)");
+            if ((c11 - 3.75) <= squtweight11 && squtweight11 < (c11 - 1.25)) {
+                System.out.println("1.Set 스쿼트 " + (c11 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((c11 - 5) <= weight1b11 && weight1b11 < (c11 - 3.75)) {
-                System.out.println("1.Set 스쿼트 " + (c11 - 5) + "kg(권장 Reps 5회)");
+            if ((c11 - 5) <= squtweight11 && squtweight11 < (c11 - 3.75)) {
+                System.out.println("1.Set 스쿼트 " + (c11 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (weight1b11 < (c11 + 1.25)) {
-                System.out.println("1.Set 스쿼트 " + c11 + "kg(권장 Reps 5회)");
+            if (squtweight11 < (c11 + 1.25)) {
+                System.out.println("1.Set 스쿼트 " + c11 + "kg(권장 Reps2 5회)");
             }
-            if ((c11 + 1.25) <= weight1b11 && weight1b11 < (c11 + 3.75)) {
-                System.out.println("1.Set 스쿼트 " + (c11 + 2.5) + "kg(권장 Reps 5회)");
+            if ((c11 + 1.25) <= squtweight11 && squtweight11 < (c11 + 3.75)) {
+                System.out.println("1.Set 스쿼트 " + (c11 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((c11 + 3.75) <= weight1b11 && weight1b11 < (c11 + 5)) {
-                System.out.println("1.Set 스쿼트 " + (c11 + 5) + "kg(권장 Reps 5회)");
+            if ((c11 + 3.75) <= squtweight11 && squtweight11 < (c11 + 5)) {
+                System.out.println("1.Set 스쿼트 " + (c11 + 5) + "kg(권장 Reps2 5회)");
+            }
+        }
+
+        System.out.print("몇 Reps2 수행하셨습니까?");
+
+        double reps22a1 = scanner.nextDouble();
+
+        double squtweight22 = squt1rm * 0.85;
+        double c22 = Math.round(squtweight22 / 10) * 10;
+
+        if (squtweight22 < c22 && c22 <= (squtweight22 + 5)) {
+            if ((c22 - 1.25) <= squtweight22) {
+                System.out.println("2.Set 스쿼트 " + c22 + "kg(권장 Reps2 3회)");
+            }
+            if ((c22 - 3.75) <= squtweight22 && squtweight22 < (c22 - 1.25)) {
+                System.out.println("2.Set 스쿼트 " + (c22 - 2.5) + "kg(권장 Reps2 3회)");
+            }
+            if ((c22 - 5) <= squtweight22 && squtweight22 < (c22 - 3.75)) {
+                System.out.println("2.Set 스쿼트 " + (c22 - 5) + "kg(권장 Reps2 3회)");
+            }
+        } else {
+            if (squtweight22 < (c22 + 1.25)) {
+                System.out.println("2.Set 스쿼트 " + c22 + "kg(권장 Reps2 3회)");
+            }
+            if ((c22 + 1.25) <= squtweight22 && squtweight22 < (c22 + 3.75)) {
+                System.out.println("2.Set 스쿼트 " + (c22 + 2.5) + "kg(권장 Reps2 3회)");
+            }
+            if ((c22 + 3.75) <= squtweight22 && squtweight22 < (c22 + 5)) {
+                System.out.println("2.Set 스쿼트 " + (c22 + 5) + "kg(권장 Reps2 3회)");
+            }
+        }
+
+        System.out.print("몇 Reps2 수행하셨습니까?");
+
+        double reps22a2 = scanner.nextDouble();
+
+        double squtweight33 = squt1rm * 0.95;
+        double c33 = Math.round(squtweight33 / 10) * 10;
+
+        if (squtweight33 < c33 && c33 <= (squtweight33 + 5)) {
+            if ((c33 - 1.25) <= squtweight33) {
+                System.out.println("3.Set 스쿼트 " + c33 + "kg(권장 Reps2 1회)");
+            }
+            if ((c33 - 3.75) <= squtweight33 && squtweight33 < (c33 - 1.25)) {
+                System.out.println("3.Set 스쿼트 " + (c33 - 2.5) + "kg(권장 Reps2 1회)");
+            }
+            if ((c33 - 5) <= squtweight33 && squtweight33 < (c33 - 3.75)) {
+                System.out.println("3.Set 스쿼트 " + (c33 - 5) + "kg(권장 Reps2 1회)");
+            }
+        } else {
+            if (squtweight33 < (c33 + 1.25)) {
+                System.out.println("3.Set 스쿼트 " + c33 + "kg(권장 Reps2 1회)");
+            }
+            if ((c33 + 1.25) <= squtweight33 && squtweight33 < (c33 + 3.75)) {
+                System.out.println("3.Set 스쿼트 " + (c33 + 2.5) + "kg(권장 Reps2 1회)");
+            }
+            if ((c33 + 3.75) <= squtweight33 && squtweight33 < (c33 + 5)) {
+                System.out.println("3.Set 스쿼트 " + (c33 + 5) + "kg(권장 Reps2 1회)");
+            }
+        }
+
+        System.out.print("몇 Reps2 수행하셨습니까?");
+
+        double reps22a3 = scanner.nextDouble();
+
+        double squtweight44 = squt1rm * 0.90;
+        double c44 = Math.round(squtweight44 / 10) * 10;
+
+        if (squtweight44 < c44 && c44 <= (squtweight44 + 5)) {
+            if ((c44 - 1.25) <= squtweight44) {
+                System.out.println("4.Set 스쿼트 " + c44 + "kg(권장 Reps2 3회)");
+            }
+            if ((c44 - 3.75) <= squtweight44 && squtweight44 < (c44 - 1.25)) {
+                System.out.println("4.Set 스쿼트 " + (c44 - 2.5) + "kg(권장 Reps2 3회)");
+            }
+            if ((c44 - 5) <= squtweight44 && squtweight44 < (c44 - 3.75)) {
+                System.out.println("4.Set 스쿼트 " + (c44 - 5) + "kg(권장 Reps2 3회)");
+            }
+        } else {
+            if (squtweight44 < (c44 + 1.25)) {
+                System.out.println("4.Set 스쿼트 " + c44 + "kg(권장 Reps2 3회)");
+            }
+            if ((c44 + 1.25) <= squtweight44 && squtweight44 < (c44 + 3.75)) {
+                System.out.println("4.Set 스쿼트 " + (c44 + 2.5) + "kg(권장 Reps2 3회)");
+            }
+            if ((c44 + 3.75) <= squtweight44 && squtweight44 < (c44 + 5)) {
+                System.out.println("4.Set 스쿼트 " + (c44 + 5) + "kg(권장 Reps2 3회)");
+            }
+        }
+
+        System.out.print("몇 Reps2 수행하셨습니까?");
+
+        double reps22a4 = scanner.nextDouble();
+
+        double squtweight55 = squt1rm * 0.85;
+        double c55 = Math.round(squtweight55 / 10) * 10;
+
+        if (squtweight55 < c55 && c55 <= (squtweight55 + 5)) {
+            if ((c55 - 1.25) <= squtweight55) {
+                System.out.println("5.Set 스쿼트 " + c55 + "kg(권장 Reps2 5회)");
+            }
+            if ((c55 - 3.75) <= squtweight55 && squtweight55 < (c55 - 1.25)) {
+                System.out.println("5.Set 스쿼트 " + (c55 - 2.5) + "kg(권장 Reps2 5회)");
+            }
+            if ((c55 - 5) <= squtweight55 && squtweight55 < (c55 - 3.75)) {
+                System.out.println("5.Set 스쿼트 " + (c55 - 5) + "kg(권장 Reps2 5회)");
+            }
+        } else {
+            if (squtweight55 < (c55 + 1.25)) {
+                System.out.println("5.Set 스쿼트 " + c55 + "kg(권장 Reps2 5회)");
+            }
+            if ((c55 + 1.25) <= squtweight55 && squtweight55 < (c55 + 3.75)) {
+                System.out.println("5.Set 스쿼트 " + (c55 + 2.5) + "kg(권장 Reps2 5회)");
+            }
+            if ((c55 + 3.75) <= squtweight55 && squtweight55 < (c55 + 5)) {
+                System.out.println("5.Set 스쿼트 " + (c55 + 5) + "kg(권장 Reps2 5회)");
+            }
+        }
+
+        System.out.print("몇 Reps2 수행하셨습니까?");
+
+        double reps22a5 = scanner.nextDouble();
+
+        double squtweight66 = squt1rm * 0.80;
+        double c66 = Math.round(squtweight66 / 10) * 10;
+
+        if (squtweight66 < c66 && c66 <= (squtweight66 + 5)) {
+            if ((c66 - 1.25) <= squtweight66) {
+                System.out.println("6.Set 스쿼트 " + c66 + "kg(권장 Reps2 3회)");
+            }
+            if ((c66 - 3.75) <= squtweight66 && squtweight66 < (c66 - 1.25)) {
+                System.out.println("6.Set 스쿼트 " + (c66 - 2.5) + "kg(권장 Reps2 3회)");
+            }
+            if ((c66 - 5) <= squtweight66 && squtweight66 < (c66 - 3.75)) {
+                System.out.println("6.Set 스쿼트 " + (c66 - 5) + "kg(권장 Reps2 3회)");
+            }
+        } else {
+            if (squtweight66 < (c66 + 1.25)) {
+                System.out.println("6.Set 스쿼트 " + c66 + "kg(권장 Reps2 3회)");
+            }
+            if ((c66 + 1.25) <= squtweight66 && squtweight66 < (c66 + 3.75)) {
+                System.out.println("6.Set 스쿼트 " + (c66 + 2.5) + "kg(권장 Reps2 3회)");
+            }
+            if ((c66 + 3.75) <= squtweight66 && squtweight66 < (c66 + 5)) {
+                System.out.println("6.Set 스쿼트 " + (c66 + 5) + "kg(권장 Reps2 3회)");
+            }
+        }
+
+        System.out.print("몇 Reps2 수행하셨습니까?");
+
+        double reps22a6 = scanner.nextDouble();
+
+        double squtweight77 = squt1rm * 0.75;
+        double c77 = Math.round(squtweight77 / 10) * 10;
+
+        if (squtweight77 < c77 && c77 <= (squtweight77 + 5)) {
+            if ((c77 - 1.25) <= squtweight77) {
+                System.out.println("7.Set 스쿼트 " + c77 + "kg(권장 Reps2 5회)");
+            }
+            if ((c77 - 3.75) <= squtweight77 && squtweight77 < (c77 - 1.25)) {
+                System.out.println("7.Set 스쿼트 " + (c77 - 2.5) + "kg(권장 Reps2 5회)");
+            }
+            if ((c77 - 5) <= squtweight77 && squtweight77 < (c77 - 3.75)) {
+                System.out.println("7.Set 스쿼트 " + (c77 - 5) + "kg(권장 Reps2 5회)");
+            }
+        } else {
+            if (squtweight77 < (c77 + 1.25)) {
+                System.out.println("7.Set 스쿼트 " + c77 + "kg(권장 Reps2 5회)");
+            }
+            if ((c77 + 1.25) <= squtweight77 && squtweight77 < (c77 + 3.75)) {
+                System.out.println("7.Set 스쿼트 " + (c77 + 2.5) + "kg(권장 Reps2 5회)");
+            }
+            if ((c77 + 3.75) <= squtweight77 && squtweight77 < (c77 + 5)) {
+                System.out.println("7.Set 스쿼트 " + (c77 + 5) + "kg(권장 Reps2 5회)");
+            }
+        }
+
+        System.out.print("몇 Reps2 수행하셨습니까?");
+
+        double reps22a7 = scanner.nextDouble();
+
+        double squtweight88 = squt1rm * 0.70;
+        double c88 = Math.round(squtweight88 / 10) * 10;
+
+        if (squtweight88 < c88 && c88 <= (squtweight88 + 5)) {
+            if ((c88 - 1.25) <= squtweight88) {
+                System.out.println("8.Set 스쿼트 " + c88 + "kg(권장 Reps2 3회)");
+            }
+            if ((c88 - 3.75) <= squtweight88 && squtweight88 < (c88 - 1.25)) {
+                System.out.println("8.Set 스쿼트 " + (c88 - 2.5) + "kg(권장 Reps2 3회)");
+            }
+            if ((c88 - 5) <= squtweight88 && squtweight88 < (c88 - 3.75)) {
+                System.out.println("8.Set 스쿼트 " + (c88 - 5) + "kg(권장 Reps2 3회)");
+            }
+        } else {
+            if (squtweight88 < (c88 + 1.25)) {
+                System.out.println("8.Set 스쿼트 " + c88 + "kg(권장 Reps2 3회)");
+            }
+            if ((c88 + 1.25) <= squtweight88 && squtweight88 < (c88 + 3.75)) {
+                System.out.println("8.Set 스쿼트 " + (c88 + 2.5) + "kg(권장 Reps2 3회)");
+            }
+            if ((c88 + 3.75) <= squtweight88 && squtweight88 < (c88 + 5)) {
+                System.out.println("8.Set 스쿼트 " + (c88 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
         System.out.print("몇 Reps 수행하셨습니까?");
 
-        double reps2a1 = scanner.nextDouble();
+        double reps22a8 = scanner.nextDouble();
 
-        double weight1b22 = num3 * 0.85;
-        double c22 = Math.round(weight1b22 / 10) * 10;
+        double squtweight99 = squt1rm * 0.65;
+        double c99 = Math.round(squtweight99 / 10) * 10;
 
-        if (weight1b22 < c22 && c22 <= (weight1b22 + 5)) {
-            if ((c22 - 1.25) <= weight1b22) {
-                System.out.println("2.Set 스쿼트 " + c22 + "kg(권장 Reps 3회)");
+        if (squtweight99 < c99 && c99 <= (squtweight99 + 5)) {
+            if ((c99 - 1.25) <= squtweight99) {
+                System.out.println("9.Set 스쿼트 " + c99 + "kg(권장 Reps2 1회 이상)");
             }
-            if ((c22 - 3.75) <= weight1b22 && weight1b22 < (c22 - 1.25)) {
-                System.out.println("2.Set 스쿼트 " + (c22 - 2.5) + "kg(권장 Reps 3회)");
+            if ((c99 - 3.75) <= squtweight99 && squtweight99 < (c99 - 1.25)) {
+                System.out.println("9.Set 스쿼트 " + (c99 - 2.5) + "kg(권장 Reps2 1회 이상)");
             }
-            if ((c22 - 5) <= weight1b22 && weight1b22 < (c22 - 3.75)) {
-                System.out.println("2.Set 스쿼트 " + (c22 - 5) + "kg(권장 Reps 3회)");
+            if ((c99 - 5) <= squtweight99 && squtweight99 < (c99 - 3.75)) {
+                System.out.println("9.Set 스쿼트 " + (c99 - 5) + "kg(권장 Reps2 1회 이상)");
             }
         } else {
-            if (weight1b22 < (c22 + 1.25)) {
-                System.out.println("2.Set 스쿼트 " + c22 + "kg(권장 Reps 3회)");
+            if (squtweight99 < (c99 + 1.25)) {
+                System.out.println("9.Set 스쿼트 " + c99 + "kg(권장 Reps2 1회 이상)");
             }
-            if ((c22 + 1.25) <= weight1b22 && weight1b22 < (c22 + 3.75)) {
-                System.out.println("2.Set 스쿼트 " + (c22 + 2.5) + "kg(권장 Reps 3회)");
+            if ((c99 + 1.25) <= squtweight99 && squtweight99 < (c99 + 3.75)) {
+                System.out.println("9.Set 스쿼트 " + (c99 + 2.5) + "kg(권장 Reps2 1회 이상)");
             }
-            if ((c22 + 3.75) <= weight1b22 && weight1b22 < (c22 + 5)) {
-                System.out.println("2.Set 스쿼트 " + (c22 + 5) + "kg(권장 Reps 3회)");
+            if ((c99 + 3.75) <= squtweight99 && squtweight99 < (c99 + 5)) {
+                System.out.println("9.Set 스쿼트 " + (c99 + 5) + "kg(권장 Reps2 1회 이상)");
             }
         }
 
-        System.out.print("몇 Reps 수행하셨습니까?");
+        System.out.println("몇 Reps2 수행하셨습니까?");
 
-        double reps2a2 = scanner.nextDouble();
+        int asistworkouta3a = random.nextInt(4);
 
-        double weight1b33 = num3 * 0.95;
-        double c33 = Math.round(weight1b33 / 10) * 10;
+        double reps22a9 = scanner.nextDouble();
 
-        if (weight1b33 < c33 && c33 <= (weight1b33 + 5)) {
-            if ((c33 - 1.25) <= weight1b33) {
-                System.out.println("3.Set 스쿼트 " + c33 + "kg(권장 Reps 1회)");
-            }
-            if ((c33 - 3.75) <= weight1b33 && weight1b33 < (c33 - 1.25)) {
-                System.out.println("3.Set 스쿼트 " + (c33 - 2.5) + "kg(권장 Reps 1회)");
-            }
-            if ((c33 - 5) <= weight1b33 && weight1b33 < (c33 - 3.75)) {
-                System.out.println("3.Set 스쿼트 " + (c33 - 5) + "kg(권장 Reps 1회)");
-            }
-        } else {
-            if (weight1b33 < (c33 + 1.25)) {
-                System.out.println("3.Set 스쿼트 " + c33 + "kg(권장 Reps 1회)");
-            }
-            if ((c33 + 1.25) <= weight1b33 && weight1b33 < (c33 + 3.75)) {
-                System.out.println("3.Set 스쿼트 " + (c33 + 2.5) + "kg(권장 Reps 1회)");
-            }
-            if ((c33 + 3.75) <= weight1b33 && weight1b33 < (c33 + 5)) {
-                System.out.println("3.Set 스쿼트 " + (c33 + 5) + "kg(권장 Reps 1회)");
-            }
-        }
-
-        System.out.print("몇 Reps 수행하셨습니까?");
-
-        double reps2a3 = scanner.nextDouble();
-
-        double weight1b44 = num3 * 0.90;
-        double c44 = Math.round(weight1b44 / 10) * 10;
-
-        if (weight1b44 < c44 && c44 <= (weight1b44 + 5)) {
-            if ((c44 - 1.25) <= weight1b44) {
-                System.out.println("4.Set 스쿼트 " + c44 + "kg(권장 Reps 3회)");
-            }
-            if ((c44 - 3.75) <= weight1b44 && weight1b44 < (c44 - 1.25)) {
-                System.out.println("4.Set 스쿼트 " + (c44 - 2.5) + "kg(권장 Reps 3회)");
-            }
-            if ((c44 - 5) <= weight1b44 && weight1b44 < (c44 - 3.75)) {
-                System.out.println("4.Set 스쿼트 " + (c44 - 5) + "kg(권장 Reps 3회)");
-            }
-        } else {
-            if (weight1b44 < (c44 + 1.25)) {
-                System.out.println("4.Set 스쿼트 " + c44 + "kg(권장 Reps 3회)");
-            }
-            if ((c44 + 1.25) <= weight1b44 && weight1b44 < (c44 + 3.75)) {
-                System.out.println("4.Set 스쿼트 " + (c44 + 2.5) + "kg(권장 Reps 3회)");
-            }
-            if ((c44 + 3.75) <= weight1b44 && weight1b44 < (c44 + 5)) {
-                System.out.println("4.Set 스쿼트 " + (c44 + 5) + "kg(권장 Reps 3회)");
-            }
-        }
-
-        System.out.print("몇 Reps 수행하셨습니까?");
-
-        double reps2a4 = scanner.nextDouble();
-
-        double weight1b55 = num3 * 0.85;
-        double c55 = Math.round(weight1b55 / 10) * 10;
-
-        if (weight1b55 < c55 && c55 <= (weight1b55 + 5)) {
-            if ((c55 - 1.25) <= weight1b55) {
-                System.out.println("5.Set 스쿼트 " + c55 + "kg(권장 Reps 5회)");
-            }
-            if ((c55 - 3.75) <= weight1b55 && weight1b55 < (c55 - 1.25)) {
-                System.out.println("5.Set 스쿼트 " + (c55 - 2.5) + "kg(권장 Reps 5회)");
-            }
-            if ((c55 - 5) <= weight1b55 && weight1b55 < (c55 - 3.75)) {
-                System.out.println("5.Set 스쿼트 " + (c55 - 5) + "kg(권장 Reps 5회)");
-            }
-        } else {
-            if (weight1b55 < (c55 + 1.25)) {
-                System.out.println("5.Set 스쿼트 " + c55 + "kg(권장 Reps 5회)");
-            }
-            if ((c55 + 1.25) <= weight1b55 && weight1b55 < (c55 + 3.75)) {
-                System.out.println("5.Set 스쿼트 " + (c55 + 2.5) + "kg(권장 Reps 5회)");
-            }
-            if ((c55 + 3.75) <= weight1b55 && weight1b55 < (c55 + 5)) {
-                System.out.println("5.Set 스쿼트 " + (c55 + 5) + "kg(권장 Reps 5회)");
-            }
-        }
-
-        System.out.print("몇 Reps 수행하셨습니까?");
-
-        double reps2a5 = scanner.nextDouble();
-
-        double weight1b66 = num3 * 0.80;
-        double c66 = Math.round(weight1b66 / 10) * 10;
-
-        if (weight1b66 < c66 && c66 <= (weight1b66 + 5)) {
-            if ((c66 - 1.25) <= weight1b66) {
-                System.out.println("6.Set 스쿼트 " + c66 + "kg(권장 Reps 3회)");
-            }
-            if ((c66 - 3.75) <= weight1b66 && weight1b66 < (c66 - 1.25)) {
-                System.out.println("6.Set 스쿼트 " + (c66 - 2.5) + "kg(권장 Reps 3회)");
-            }
-            if ((c66 - 5) <= weight1b66 && weight1b66 < (c66 - 3.75)) {
-                System.out.println("6.Set 스쿼트 " + (c66 - 5) + "kg(권장 Reps 3회)");
-            }
-        } else {
-            if (weight1b66 < (c66 + 1.25)) {
-                System.out.println("6.Set 스쿼트 " + c66 + "kg(권장 Reps 3회)");
-            }
-            if ((c66 + 1.25) <= weight1b66 && weight1b66 < (c66 + 3.75)) {
-                System.out.println("6.Set 스쿼트 " + (c66 + 2.5) + "kg(권장 Reps 3회)");
-            }
-            if ((c66 + 3.75) <= weight1b66 && weight1b66 < (c66 + 5)) {
-                System.out.println("6.Set 스쿼트 " + (c66 + 5) + "kg(권장 Reps 3회)");
-            }
-        }
-
-        System.out.print("몇 Reps 수행하셨습니까?");
-
-        double reps2a6 = scanner.nextDouble();
-
-        double weight1b77 = num3 * 0.75;
-        double c77 = Math.round(weight1b77 / 10) * 10;
-
-        if (weight1b77 < c77 && c77 <= (weight1b77 + 5)) {
-            if ((c77 - 1.25) <= weight1b77) {
-                System.out.println("7.Set 스쿼트 " + c77 + "kg(권장 Reps 5회)");
-            }
-            if ((c77 - 3.75) <= weight1b77 && weight1b77 < (c77 - 1.25)) {
-                System.out.println("7.Set 스쿼트 " + (c77 - 2.5) + "kg(권장 Reps 5회)");
-            }
-            if ((c77 - 5) <= weight1b77 && weight1b77 < (c77 - 3.75)) {
-                System.out.println("7.Set 스쿼트 " + (c77 - 5) + "kg(권장 Reps 5회)");
-            }
-        } else {
-            if (weight1b77 < (c77 + 1.25)) {
-                System.out.println("7.Set 스쿼트 " + c77 + "kg(권장 Reps 5회)");
-            }
-            if ((c77 + 1.25) <= weight1b77 && weight1b77 < (c77 + 3.75)) {
-                System.out.println("7.Set 스쿼트 " + (c77 + 2.5) + "kg(권장 Reps 5회)");
-            }
-            if ((c77 + 3.75) <= weight1b77 && weight1b77 < (c77 + 5)) {
-                System.out.println("7.Set 스쿼트 " + (c77 + 5) + "kg(권장 Reps 5회)");
-            }
-        }
-
-        System.out.print("몇 Reps 수행하셨습니까?");
-
-        double reps2a7 = scanner.nextDouble();
-
-        double weight1b88 = num3 * 0.70;
-        double c88 = Math.round(weight1b88 / 10) * 10;
-
-        if (weight1b88 < c88 && c88 <= (weight1b88 + 5)) {
-            if ((c88 - 1.25) <= weight1b88) {
-                System.out.println("8.Set 스쿼트 " + c88 + "kg(권장 Reps 3회)");
-            }
-            if ((c88 - 3.75) <= weight1b88 && weight1b88 < (c88 - 1.25)) {
-                System.out.println("8.Set 스쿼트 " + (c88 - 2.5) + "kg(권장 Reps 3회)");
-            }
-            if ((c88 - 5) <= weight1b88 && weight1b88 < (c88 - 3.75)) {
-                System.out.println("8.Set 스쿼트 " + (c88 - 5) + "kg(권장 Reps 3회)");
-            }
-        } else {
-            if (weight1b88 < (c88 + 1.25)) {
-                System.out.println("8.Set 스쿼트 " + c88 + "kg(권장 Reps 3회)");
-            }
-            if ((c88 + 1.25) <= weight1b88 && weight1b88 < (c88 + 3.75)) {
-                System.out.println("8.Set 스쿼트 " + (c88 + 2.5) + "kg(권장 Reps 3회)");
-            }
-            if ((c88 + 3.75) <= weight1b88 && weight1b88 < (c88 + 5)) {
-                System.out.println("8.Set 스쿼트 " + (c88 + 5) + "kg(권장 Reps 3회)");
-            }
-        }
-
-        System.out.print("몇 Reps 수행하셨습니까?");
-
-        double reps2a8 = scanner.nextDouble();
-
-        double weight1b99 = num3 * 0.65;
-        double c99 = Math.round(weight1b99 / 10) * 10;
-
-        if (weight1b99 < c99 && c99 <= (weight1b99 + 5)) {
-            if ((c99 - 1.25) <= weight1b99) {
-                System.out.println("9.Set 스쿼트 " + c99 + "kg(권장 Reps 1회 이상)");
-            }
-            if ((c99 - 3.75) <= weight1b99 && weight1b99 < (c99 - 1.25)) {
-                System.out.println("9.Set 스쿼트 " + (c99 - 2.5) + "kg(권장 Reps 1회 이상)");
-            }
-            if ((c99 - 5) <= weight1b99 && weight1b99 < (c99 - 3.75)) {
-                System.out.println("9.Set 스쿼트 " + (c99 - 5) + "kg(권장 Reps 1회 이상)");
-            }
-        } else {
-            if (weight1b99 < (c99 + 1.25)) {
-                System.out.println("9.Set 스쿼트 " + c99 + "kg(권장 Reps 1회 이상)");
-            }
-            if ((c99 + 1.25) <= weight1b99 && weight1b99 < (c99 + 3.75)) {
-                System.out.println("9.Set 스쿼트 " + (c99 + 2.5) + "kg(권장 Reps 1회 이상)");
-            }
-            if ((c99 + 3.75) <= weight1b99 && weight1b99 < (c99 + 5)) {
-                System.out.println("9.Set 스쿼트 " + (c99 + 5) + "kg(권장 Reps 1회 이상)");
-            }
-        }
-
-        System.out.println("몇 Reps 수행하셨습니까?");
-
-        int asista3a = random.nextInt(4);
-
-        double reps2a9 = scanner.nextDouble();
-
-        if (reps2a3 >= 11) {
-            num3 = (num3 + 10);
+        if (reps22a3 >= 11) {
+            squt1rm = (squt1rm + 10);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 10kg 증량후 시작합니다!!");
         }
-        if (reps2a3 >= 8 && reps2a3 < 11) {
-            num3 = (num3 + 7.5);
+        if (reps22a3 >= 8 && reps22a3 < 11) {
+            squt1rm = (squt1rm + 7.5);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 7.5kg 증량후 시작합니다!!");
         }
-        if (reps2a3 >= 5 && reps2a3 < 8) {
-            num3 = (num3 + 5);
+        if (reps22a3 >= 5 && reps22a3 < 8) {
+            squt1rm = (squt1rm + 5);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 5kg 증량후 시작합니다!!");
         }
-        if (reps2a3 >= 2 && reps2a3 < 5) {
-            num3 = (num3 + 2.5);
+        if (reps22a3 >= 2 && reps22a3 < 5) {
+            squt1rm = (squt1rm + 2.5);
             System.out.println("잘하셨습니다!! 다음 주 부터는 훈련무게 2.5kg 증량후 시작합니다!!");
         }
-        if (reps2a3 < 2) {
-            num3 = (num3);
+        if (reps22a3 < 2) {
+            squt1rm = (squt1rm);
             System.out.println("아쉽네요!! 컨디션 조절후 다시 증량 해봅시다!!");
         }
 
         //보조운동
-        if (asista3a == 0) {
+        if (asistworkouta3a == 0) {
             System.out.println("마무리 보조운동 추천!!!! 레그 익스텐션 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        if (asista3a == 1) {
+        if (asistworkouta3a == 1) {
             System.out.println("마무리 보조운동 추천!!!! 레그 프레스 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        if (asista3a == 2) {
+        if (asistworkouta3a == 2) {
             System.out.println("마무리 보조운동 추천!!!! 레그 컬 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
-        if (asista == 3) {
+        if (asistworkouta3a == 3) {
             System.out.println("마무리 보조운동 추천!!!! 핵 스쿼트 3Set!!");
             System.out.println("이것만하면 집에 갈수있다!!");
         }
@@ -2031,11 +2042,11 @@ public class HealthTraining {
         }
 
         System.out.println("프로그램이 종료되었습니다!");
-        System.out.println("벤치프레스 1rm: " + num1 +"(kg)");
-        System.out.println("데드리프트 1rm: " + num2 +"(kg)");
-        System.out.println("스쿼트 1rm: " + num2 +"(kg)");
+        System.out.println("벤치프레스 1rm: " + benchpress1rm + "(kg)");
+        System.out.println("데드리프트 1rm: " + deadlift1rm + "(kg)");
+        System.out.println("스쿼트 1rm: " + squt1rm + "(kg)");
 
-        if((num1+num2+num3)>=500){
+        if ((benchpress1rm + deadlift1rm + squt1rm) >= 500) {
             System.out.println("축하합니다. 당신은 언더아머를 입을 자격이 있습니다!");
         }
         System.out.println("프로그램을 처음부터 다시 시작하시오");
