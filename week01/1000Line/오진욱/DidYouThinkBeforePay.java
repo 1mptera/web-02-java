@@ -57,7 +57,7 @@ public class DidYouThinkBeforePay {
         double inputTotalExpenditure = scanner.nextDouble();
 
         int inputYesOrNo;
-        int inputFourSelection;
+        int inputSelection;
 
         // 소비보다 지출이 큰 경우 처리
         if (inputIncome < inputTotalExpenditure) {
@@ -246,13 +246,13 @@ public class DidYouThinkBeforePay {
             System.out.println("******* 맞춤별 패션 추천을 시작합니다. *******");
             System.out.println("가장 필요한 옷이 무엇인가요? 숫자로 입력하세요");
             System.out.println("1. 상의\n2. 하의\n3. 신발\n4. 모자");
-            inputFourSelection = scanner.nextInt();
+            inputSelection = scanner.nextInt();
 
             System.out.println("참고할 만한 사이트를 연결해드릴게요!");
 
             //상의 추천
             if (isMale) {
-                if (inputFourSelection == 1) {
+                if (inputSelection == 1) {
                     if (inputAge.equals("10대")) {
                         System.out.println("최신 유행하는 " + inputAge + inputGender + "상의을 보여드릴게요");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/searchV3/result?q=%EC%83%81%EC%9D%98&t=post&f={%22price%22:[1000,200000],%22selectedCategory%22:%22%22,%22selectedSubCategory%22:%22%22,%22item%22:[],%22bodyShape%22:{%22bodyShapeCode%22:%22%22,%22bodyShapeDetailCode%22:%22%22},%22tpo%22:[],%22season%22:[],%22mood%22:[],%22color%22:[],%22gender%22:[%22MEN%22],%22age%22:[18,20]}&vt=2&st=POPULAR_STYLE&android-ptr=false");
@@ -276,7 +276,7 @@ public class DidYouThinkBeforePay {
             }
 
             if (isFemale) {
-                if (inputFourSelection == 1) {
+                if (inputSelection == 1) {
                     if (inputAge.equals("10대")) {
                         System.out.println("최신 유행하는 " + inputAge + inputGender + "상의을 보여드릴게요");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/searchV3/result?q=%EC%83%81%EC%9D%98&t=post&f={%22price%22:[1000,200000],%22selectedCategory%22:%22%22,%22selectedSubCategory%22:%22%22,%22item%22:[],%22bodyShape%22:{%22bodyShapeCode%22:%22%22,%22bodyShapeDetailCode%22:%22%22},%22tpo%22:[],%22season%22:[],%22mood%22:[],%22color%22:[],%22gender%22:[%22WOMEN%22],%22age%22:[18,19]}&vt=2&st=POPULAR_STYLE&android-ptr=false");
@@ -301,7 +301,7 @@ public class DidYouThinkBeforePay {
 
             //하의 추천
             if (isMale) {
-                if (inputFourSelection == 2) {
+                if (inputSelection == 2) {
                     if (inputAge.equals("10대")) {
                         System.out.println("최신 유행하는 " + inputAge + inputGender + "하의을 보여드릴게요");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/searchV3/result?q=%ED%95%98%EC%9D%98&t=post&f={%22price%22:[1000,200000],%22selectedCategory%22:%22%22,%22selectedSubCategory%22:%22%22,%22item%22:[],%22bodyShape%22:{%22bodyShapeCode%22:%22%22,%22bodyShapeDetailCode%22:%22%22},%22tpo%22:[],%22season%22:[],%22mood%22:[],%22color%22:[],%22gender%22:[%22MEN%22],%22age%22:[18,19]}&vt=2&st=POPULAR_STYLE&android-ptr=false");
@@ -325,7 +325,7 @@ public class DidYouThinkBeforePay {
             }
 
             if (isFemale) {
-                if (inputFourSelection == 2) {
+                if (inputSelection == 2) {
                     if (inputAge.equals("10대")) {
                         System.out.println("최신 유행하는 " + inputAge + inputGender + "하의을 보여드릴게요");
                         System.out.println("링크를 참고하세요 https://onthelook.co.kr/searchV3/result?q=%ED%95%98%EC%9D%98&t=post&f={%22price%22:[1000,200000],%22selectedCategory%22:%22%22,%22selectedSubCategory%22:%22%22,%22item%22:[],%22bodyShape%22:{%22bodyShapeCode%22:%22%22,%22bodyShapeDetailCode%22:%22%22},%22tpo%22:[],%22season%22:[],%22mood%22:[],%22color%22:[],%22gender%22:[%22WOMEN%22],%22age%22:[18,19]}&vt=2&st=POPULAR_STYLE");
@@ -350,7 +350,7 @@ public class DidYouThinkBeforePay {
 
             //신발 추천
             if (isMale) {
-                if (inputFourSelection == 3) {
+                if (inputSelection == 3) {
                     if (inputAge.equals("10대")) {
                         System.out.println("최신 유행하는 " + inputAge + inputGender + "신발을 보여드릴게요");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/searchV3/result?q=%EC%8B%A0%EB%B0%9C&t=post&f={%22price%22:[1000,200000],%22selectedCategory%22:%22%22,%22selectedSubCategory%22:%22%22,%22item%22:[],%22bodyShape%22:{%22bodyShapeCode%22:%22%22,%22bodyShapeDetailCode%22:%22%22},%22tpo%22:[],%22season%22:[],%22mood%22:[],%22color%22:[],%22gender%22:[%22MEN%22],%22age%22:[18,19]}&vt=2&st=POPULAR_STYLE");
@@ -374,7 +374,7 @@ public class DidYouThinkBeforePay {
             }
 
             if (isFemale) {
-                if (inputFourSelection == 1) {
+                if (inputSelection == 1) {
                     if (inputAge.equals("10대")) {
                         System.out.println("최신 유행하는 " + inputAge + inputGender + "신발을 보여드릴게요");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/searchV3/result?q=%EC%8B%A0%EB%B0%9C&t=post&f={%22price%22:[1000,200000],%22selectedCategory%22:%22%22,%22selectedSubCategory%22:%22%22,%22item%22:[],%22bodyShape%22:{%22bodyShapeCode%22:%22%22,%22bodyShapeDetailCode%22:%22%22},%22tpo%22:[],%22season%22:[],%22mood%22:[],%22color%22:[],%22gender%22:[%22WOMEN%22],%22age%22:[18,19]}&vt=2&st=POPULAR_STYLE&android-ptr=false");
@@ -399,7 +399,7 @@ public class DidYouThinkBeforePay {
 
             //모자 추천
             if (isMale) {
-                if (inputFourSelection == 4) {
+                if (inputSelection == 4) {
                     if (inputAge.equals("10대")) {
                         System.out.println("최신 유행하는 " + inputAge + inputGender + "모자을 보여드릴게요");
                         System.out.println("https://onthelook.co.kr/searchV3/result?q=%EB%AA%A8%EC%9E%90&t=post&f={%22price%22:[1000,200000],%22selectedCategory%22:%22%22,%22selectedSubCategory%22:%22%22,%22item%22:[],%22bodyShape%22:{%22bodyShapeCode%22:%22%22,%22bodyShapeDetailCode%22:%22%22},%22tpo%22:[],%22season%22:[],%22mood%22:[],%22color%22:[],%22gender%22:[%22MEN%22],%22age%22:[18,19]}&vt=2&st=POPULAR_STYLE&android-ptr=false");
@@ -423,7 +423,7 @@ public class DidYouThinkBeforePay {
             }
 
             if (isFemale) {
-                if (inputFourSelection == 4) {
+                if (inputSelection == 4) {
                     if (inputAge.equals("10대")) {
                         System.out.println("최신 유행하는 " + inputAge + inputGender + "모자을 보여드릴게요");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/searchV3/result?q=%EB%AA%A8%EC%9E%90&t=post&f={%22price%22:[1000,200000],%22selectedCategory%22:%22%22,%22selectedSubCategory%22:%22%22,%22item%22:[],%22bodyShape%22:{%22bodyShapeCode%22:%22%22,%22bodyShapeDetailCode%22:%22%22},%22tpo%22:[],%22season%22:[],%22mood%22:[],%22color%22:[],%22gender%22:[%22WOMEN%22],%22age%22:[18,19]}&vt=2&st=POPULAR_STYLE&android-ptr=false");
@@ -451,181 +451,182 @@ public class DidYouThinkBeforePay {
             //패션스타일 조사 -> 추천코디 제안.
             System.out.println("선호하는 패션 스타일을 입력하세요.");
             System.out.println("1. 미니멀\n2. 시티보이\n3. 캐주얼\n4. 스트릿");
-            inputFourSelection = scanner.nextInt();
+            inputSelection = scanner.nextInt();
 
             if (isMale) {
                 if (heightRange.equals("150대")) {
-                    if (inputFourSelection == 1) {
+                    if (inputSelection == 1) {
                         System.out.println(heightRange + "대" + inputGender + " 미니멀 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22MEN%22],%22styleTagIds%22:[1],%22weight%22:[],%22height%22:[150,159]}");
                     }
 
-                    if (inputFourSelection == 2) {
+                    if (inputSelection == 2) {
                         System.out.println(heightRange + "대" + inputGender + " 시티보이 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22MEN%22],%22styleTagIds%22:[27],%22weight%22:[],%22height%22:[150,159],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 3) {
+                    if (inputSelection == 3) {
                         System.out.println(heightRange + "대" + inputGender + " 캐주얼 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22MEN%22],%22styleTagIds%22:[4,5],%22weight%22:[],%22height%22:[150,159],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 4) {
+                    if (inputSelection == 4) {
                         System.out.println(heightRange + "대" + inputGender + " 스트릿 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22MEN%22],%22styleTagIds%22:[12],%22weight%22:[],%22height%22:[150,159],%22bodyType%22:[]}");
                     }
                 }
 
                 if (heightRange.equals("160대")) {
-                    if (inputFourSelection == 1) {
+                    if (inputSelection == 1) {
                         System.out.println(heightRange + "대" + inputGender + " 미니멀 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22MEN%22],%22styleTagIds%22:[1],%22weight%22:[],%22height%22:[160,169],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 2) {
+                    if (inputSelection == 2) {
                         System.out.println(heightRange + "대" + inputGender + " 시티보이 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22MEN%22],%22styleTagIds%22:[27],%22weight%22:[],%22height%22:[160,169],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 3) {
+                    if (inputSelection == 3) {
                         System.out.println(heightRange + "대" + inputGender + " 캐주얼 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22MEN%22],%22styleTagIds%22:[4,5],%22weight%22:[],%22height%22:[160,169],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 4) {
+                    if (inputSelection == 4) {
                         System.out.println(heightRange + "대" + inputGender + " 스트릿 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22MEN%22],%22styleTagIds%22:[12],%22weight%22:[],%22height%22:[160,169],%22bodyType%22:[]}");
                     }
                 }
 
                 if (heightRange.equals("170대")) {
-                    if (inputFourSelection == 1) {
+                    if (inputSelection == 1) {
                         System.out.println(heightRange + "대" + inputGender + " 미니멀 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22MEN%22],%22styleTagIds%22:[1],%22weight%22:[],%22height%22:[170,179],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 2) {
+                    if (inputSelection == 2) {
                         System.out.println(heightRange + "대" + inputGender + " 시티보이 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22MEN%22],%22styleTagIds%22:[27],%22weight%22:[],%22height%22:[170,179],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 3) {
+                    if (inputSelection == 3) {
                         System.out.println(heightRange + "대" + inputGender + " 캐주얼 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22MEN%22],%22styleTagIds%22:[4,5],%22weight%22:[],%22height%22:[170,179],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 4) {
+                    if (inputSelection == 4) {
                         System.out.println(heightRange + "대" + inputGender + " 스트릿 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22MEN%22],%22styleTagIds%22:[12],%22weight%22:[],%22height%22:[170,179],%22bodyType%22:[]}");
                     }
                 }
 
                 if (heightRange.equals("180대")) {
-                    if (inputFourSelection == 1) {
+                    if (inputSelection == 1) {
                         System.out.println(heightRange + "대" + inputGender + " 미니멀 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22MEN%22],%22styleTagIds%22:[1],%22weight%22:[],%22height%22:[180,189],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 2) {
+                    if (inputSelection == 2) {
                         System.out.println(heightRange + "대" + inputGender + " 시티보이 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22MEN%22],%22styleTagIds%22:[27],%22weight%22:[],%22height%22:[180,189],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 3) {
+                    if (inputSelection == 3) {
                         System.out.println(heightRange + "대" + inputGender + " 캐주얼 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22MEN%22],%22styleTagIds%22:[4,5],%22weight%22:[],%22height%22:[180,189],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 4) {
+                    if (inputSelection == 4) {
                         System.out.println(heightRange + "대" + inputGender + " 스트릿 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22MEN%22],%22styleTagIds%22:[12],%22weight%22:[],%22height%22:[180,189],%22bodyType%22:[]}");
                     }
                 }
             }
 
-            if (isFemale) {if (heightRange.equals("150대")) {
-                if (inputFourSelection == 1) {
-                    System.out.println(heightRange + "대" + inputGender + " 미니멀 스타일을 보여드릴게요.");
-                    System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[1],%22weight%22:[],%22height%22:[150,159],%22bodyType%22:[]}");
-                }
+            if (isFemale) {
+                if (heightRange.equals("150대")) {
+                    if (inputSelection == 1) {
+                        System.out.println(heightRange + "대" + inputGender + " 미니멀 스타일을 보여드릴게요.");
+                        System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[1],%22weight%22:[],%22height%22:[150,159],%22bodyType%22:[]}");
+                    }
 
-                if (inputFourSelection == 2) {
-                    System.out.println(heightRange + "대" + inputGender + " 시티보이 스타일을 보여드릴게요.");
-                    System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[27],%22weight%22:[],%22height%22:[150,159],%22bodyType%22:[]}");
-                }
+                    if (inputSelection == 2) {
+                        System.out.println(heightRange + "대" + inputGender + " 시티보이 스타일을 보여드릴게요.");
+                        System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[27],%22weight%22:[],%22height%22:[150,159],%22bodyType%22:[]}");
+                    }
 
-                if (inputFourSelection == 3) {
-                    System.out.println(heightRange + "대" + inputGender + " 캐주얼 스타일을 보여드릴게요.");
-                    System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[4,5],%22weight%22:[],%22height%22:[150,159],%22bodyType%22:[]}");
-                }
+                    if (inputSelection == 3) {
+                        System.out.println(heightRange + "대" + inputGender + " 캐주얼 스타일을 보여드릴게요.");
+                        System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[4,5],%22weight%22:[],%22height%22:[150,159],%22bodyType%22:[]}");
+                    }
 
-                if (inputFourSelection == 4) {
-                    System.out.println(heightRange + "대" + inputGender + " 스트릿 스타일을 보여드릴게요.");
-                    System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[12],%22weight%22:[],%22height%22:[150,159],%22bodyType%22:[]}");
+                    if (inputSelection == 4) {
+                        System.out.println(heightRange + "대" + inputGender + " 스트릿 스타일을 보여드릴게요.");
+                        System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[12],%22weight%22:[],%22height%22:[150,159],%22bodyType%22:[]}");
+                    }
                 }
-            }
 
                 if (heightRange.equals("160대")) {
-                    if (inputFourSelection == 1) {
+                    if (inputSelection == 1) {
                         System.out.println(heightRange + "대" + inputGender + " 미니멀 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[1],%22weight%22:[],%22height%22:[160,169],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 2) {
+                    if (inputSelection == 2) {
                         System.out.println(heightRange + "대" + inputGender + " 시티보이 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[27],%22weight%22:[],%22height%22:[160,169],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 3) {
+                    if (inputSelection == 3) {
                         System.out.println(heightRange + "대" + inputGender + " 캐주얼 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[5,4],%22weight%22:[],%22height%22:[160,169],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 4) {
+                    if (inputSelection == 4) {
                         System.out.println(heightRange + "대" + inputGender + " 스트릿 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[12],%22weight%22:[],%22height%22:[160,169],%22bodyType%22:[]}");
                     }
                 }
 
                 if (heightRange.equals("170대")) {
-                    if (inputFourSelection == 1) {
+                    if (inputSelection == 1) {
                         System.out.println(heightRange + "대" + inputGender + " 미니멀 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[1],%22weight%22:[],%22height%22:[170,179],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 2) {
+                    if (inputSelection == 2) {
                         System.out.println(heightRange + "대" + inputGender + " 시티보이 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[27],%22weight%22:[],%22height%22:[170,179],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 3) {
+                    if (inputSelection == 3) {
                         System.out.println(heightRange + "대" + inputGender + " 캐주얼 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[4,5],%22weight%22:[],%22height%22:[170,179],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 4) {
+                    if (inputSelection == 4) {
                         System.out.println(heightRange + "대" + inputGender + " 스트릿 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[12],%22weight%22:[],%22height%22:[170,179],%22bodyType%22:[]}");
                     }
                 }
 
                 if (heightRange.equals("180대")) {
-                    if (inputFourSelection == 1) {
+                    if (inputSelection == 1) {
                         System.out.println(heightRange + "대" + inputGender + " 미니멀 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[1],%22weight%22:[],%22height%22:[180,189],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 2) {
+                    if (inputSelection == 2) {
                         System.out.println(heightRange + "대" + inputGender + " 시티보이 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[27],%22weight%22:[],%22height%22:[180,189],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 3) {
+                    if (inputSelection == 3) {
                         System.out.println(heightRange + "대" + inputGender + " 캐주얼 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22WOMEN%22],%22styleTagIds%22:[4,5],%22weight%22:[],%22height%22:[180,189],%22bodyType%22:[]}");
                     }
 
-                    if (inputFourSelection == 4) {
+                    if (inputSelection == 4) {
                         System.out.println(heightRange + "대" + inputGender + " 스트릿 스타일을 보여드릴게요.");
                         System.out.println("링크를 참고하세요: https://onthelook.co.kr/?initFilter={%22orderType%22:%22NEW%22,%22season%22:[%22SPRING%22,%22SUMMER%22,%22FALL%22,%22WINTER%22],%22gender%22:[%22MEN%22],%22styleTagIds%22:[12],%22weight%22:[],%22height%22:[180,189],%22bodyType%22:[]}");
                     }
@@ -633,28 +634,136 @@ public class DidYouThinkBeforePay {
             }
         }
 
+        //교통비
+        System.out.println("******* 교통비 분석을 시작합니다.🚎 *******");
+        System.out.println("평소 이동수단을 골라주세요");
+        System.out.println("1. only 자가용\n2.only 대중교통 \n3. 둘다");
+        inputSelection = scanner.nextInt();
+
+        int insuranceFee = 0;
+        double oilFee = 0;
+
+        int busFee = 1500;
+        int busCount = 0;
+        int averageTaxiFee = 0;
+        double taxiCount = 0;
+
+        if (inputSelection == 1) {
+            System.out.println("only 자가용을 선택하셨습니다.");
+            System.out.println("보험비를 입력해주세요 (원)");
+            insuranceFee = scanner.nextInt();
+
+            oilFee = transportationExpenditure - insuranceFee;
+
+            System.out.println("보험비: " + insuranceFee);
+            System.out.println("기름값: " + oilFee);
+        }
+
+        if (inputSelection == 2) {
+            System.out.println("only 자가용을 선택하셨습니다.");
+            System.out.println("하루 대중교통 이용 횟수를 입력해주세요");
+            busCount = scanner.nextInt();
+
+            System.out.println("택시 한 번 탈때 평균 요금를 입력해주세요");
+            averageTaxiFee = scanner.nextInt();
+            taxiCount = (transportationExpenditure - (30 * busCount * busFee)) / averageTaxiFee;
+
+            System.out.println("하루 대중교통 이용 횟수: " + busCount);
+            System.out.println("택시 평균 요금 : " + averageTaxiFee);
+            System.out.println("한달에 탈 수 있는 택시 횟수: " + taxiCount);
+        }
+
+        if (inputSelection == 3) {
+            System.out.println("둘 다를 선택하셨습니다.");
+            System.out.println("보험비를 입력해주세요 (원)");
+            insuranceFee = scanner.nextInt();
+
+            System.out.println("하루 대중교통 이용 횟수를 입력해주세요");
+            busCount = scanner.nextInt();
+
+            System.out.println("택시 한 번 탈때 평균 요금를 입력해주세요");
+            averageTaxiFee = scanner.nextInt();
+            double oilFeeAndTaxiFee = transportationExpenditure - (30 * busCount * busFee) - insuranceFee;
+
+            System.out.println("보험비: " + insuranceFee);
+            System.out.println("하루 대중교통 이용 횟수: " + busCount);
+            System.out.println("택시 평균 요금 : " + averageTaxiFee);
+            System.out.println("가용 가능한 기름값과 택시값: " + oilFeeAndTaxiFee);
+        }
+
+        //주거비
+        System.out.println("******* 주거비 분석을 시작합니다.🚎 *******");
+
+        System.out.println("주거의 형태가 어떻게 되시나요?");
+        System.out.println("1. 매매\n2. 전세\n3. 월세");
+        inputSelection = scanner.nextInt();
+
+        if (inputSelection == 1) {
+            System.out.println("매매를 하셨군요!");
+            System.out.println("대출이 있으신가요?");
+            System.out.println("1. yes\n2.no");
+            inputYesOrNo = scanner.nextInt();
+
+            double withdrawAmount = 0;
+            double withdrawRate = 0;
+            double monthlyWithdrawFee = 0;
+
+            if (inputYesOrNo == 1) {
+                System.out.println("대출의 금액을 입력해주세요");
+                withdrawAmount = scanner.nextDouble();
+
+                System.out.println("대출의 금리을 입력해주세요");
+                withdrawRate = scanner.nextDouble();
+
+                monthlyWithdrawFee = (withdrawAmount * (1 + withdrawRate/100)) / 12;
+            }
+        }
+
+        if (inputSelection == 1) {
+            System.out.println("대출이 있으신가요?");
+            System.out.println("1. yes\n2.no");
+            inputYesOrNo = scanner.nextInt();
+
+            double withdrawAmount = 0;
+            double withdrawRate = 0;
+            double monthlyWithdrawFee = 0;
+
+            if (inputYesOrNo == 1) {
+                System.out.println("대출의 금액을 입력해주세요");
+                withdrawAmount = scanner.nextDouble();
+
+                System.out.println("대출의 금리을 입력해주세요");
+                withdrawRate = scanner.nextDouble();
+
+                monthlyWithdrawFee = (withdrawAmount * (1 + withdrawAmount/100)) / 12;
+            }
+        }
+
+        if (inputSelection == 1) {
+            System.out.println("대출이 있으신가요?");
+            System.out.println("1. yes\n2.no");
+            inputYesOrNo = scanner.nextInt();
+
+            double withdrawAmount = 0;
+            double withdrawRate = 0;
+            double monthlyWithdrawFee = 0;
+
+            if (inputYesOrNo == 1) {
+                System.out.println("대출의 금액을 입력해주세요");
+                withdrawAmount = scanner.nextDouble();
+
+                System.out.println("대출의 금리을 입력해주세요");
+                withdrawRate = scanner.nextDouble();
+
+                monthlyWithdrawFee = (withdrawAmount * (1 + withdrawAmount/100)) / 12;
+            }
+        }
 
 
-//        //교통비
-//        System.out.println("******* 교통비 분석을 시작합니다.🍔 *******");
-//        System.out.println("하루에 몇 끼니를 드시나요?");
-//        int mealTime = scanner.nextInt();
-//
-//        System.out.println("한달에 몇번 외식하시나요?");
-//        int eatOutTime = scanner.nextInt();
-//
-//        System.out.println("외식의 평균비용은 어느정도 인가요?");
-//        double eatOutPrice = scanner.nextDouble();
 
-//        // 평소 식사비용 계산 (외식 안하는 경우)
-//        double usualMealTimeMonthly = 30 * mealTime - eatOutTime;
-//        double usualMealTotalPrice = (foodExpenditure - eatOutPrice * eatOutTime) / usualMealTimeMonthly;
-//
-//        System.out.println("******* 당신의 월별 식비 분석🐔 *******");
-//        System.out.println("평균 외식 비용: " + eatOutPrice);
-//        System.out.println("외식 횟수: " + eatOutTime);
-//        System.out.println("외식 외에 평소 평균 식사비용: " + usualMealTotalPrice);
-//
+
+        // 기타비용
+
 //        //오락
 //        System.out.println("******* 오락비용 분석을 시작합니다.🍔 *******");
 //        System.out.println("하루에 몇 끼니를 드시나요?");
