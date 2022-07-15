@@ -11,16 +11,17 @@ public class RockScissorsPaper {
         String computerPick = null;
 
         System.out.println("가위바위보!");
-        System.out.print("나: " );
+        System.out.print("나: ");
         String yourPick = scanner.nextLine();
 
-        if(randomNumber <=1){
+
+        if (randomNumber >= 0 && randomNumber < 1) {
             computerPick = "가위";
         }
-        if(randomNumber >=1 && randomNumber <=2  ){
+        if (randomNumber >= 1 && randomNumber < 2) {
             computerPick = "바위";
         }
-        if(randomNumber >=2 && randomNumber <=3 ){
+        if (randomNumber >= 2 && randomNumber <= 3) {
             computerPick = "보";
         }
 
@@ -34,15 +35,15 @@ public class RockScissorsPaper {
         boolean yourScissor = yourPick.equals("가위");
         boolean yourPaper = yourPick.equals("보");
 
-        if (computerPick.equals(yourPick)){
+        if (computerPick.equals(yourPick)) {
             System.out.println("비겼다!");
         }
 
-        if((yourRock && comScissor) || (yourScissor && comPaper) || (yourPaper && comRock) ){
+        if ((yourRock && comScissor) || (yourScissor && comPaper) || (yourPaper && comRock)) {
             System.out.println("이겼다!");
         }
 
-        if((yourRock && comPaper) || (yourScissor && comRock) || (yourPaper && comScissor) ){
+        if ((yourRock && comPaper) || (yourScissor && comRock) || (yourPaper && comScissor)) {
             System.out.println("졌다!");
         }
     }
