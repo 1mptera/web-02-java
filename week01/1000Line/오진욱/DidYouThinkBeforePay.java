@@ -44,7 +44,6 @@ public class DidYouThinkBeforePay {
             heightRange = "180대";
         }
 
-
         if (!inputAge.equals("10대") && !inputAge.equals("20대") && !inputAge.equals("30대") && !inputAge.equals("40대")) {
             System.out.println("연령대를 정확히 입력해주세요!");
             return;
@@ -165,7 +164,7 @@ public class DidYouThinkBeforePay {
 
         percentLeft = percentLeft - inputPercentHouseExpenditure;
 
-        System.out.println( "주거 비용에 " + inputPercentHouseExpenditure + "%를 할당하셨습니다. 추가로 " + percentLeft + "% 할당 할 수 있습니다.");
+        System.out.println("주거 비용에 " + inputPercentHouseExpenditure + "%를 할당하셨습니다. 추가로 " + percentLeft + "% 할당 할 수 있습니다.");
 
         //기타 지출비용 입력
         System.out.println("기타 지출비용을 입력하세요. (10%단위)");
@@ -895,16 +894,16 @@ public class DidYouThinkBeforePay {
 
                 monthlyWithdrawFee = monthlyRent + (withdrawAmount * (withdrawRate / 100)) / 12;
             }
-            System.out.println("당신의 주거비는: " + monthlyWithdrawFee +  "원 입니다.");
+            System.out.println("당신의 주거비는: " + monthlyWithdrawFee + "원 입니다.");
 
-            if (monthlyWithdrawFee > houseExpenditure ) {
+            if (monthlyWithdrawFee > houseExpenditure) {
                 System.out.println(" 주거비용이 예산보다 큽니다. 다른 예산을 줄이세요.");
             }
-            if (monthlyWithdrawFee <= houseExpenditure ) {
+            if (monthlyWithdrawFee <= houseExpenditure) {
                 System.out.println(" 당신의 주거비용은 " + monthlyWithdrawFee + "원 입니다. ");
-                System.out.println(" 예산에서 " + (monthlyWithdrawFee - houseExpenditure ) + "원이나 아끼셨네요! ");
+                System.out.println(" 예산에서 " + (monthlyWithdrawFee - houseExpenditure) + "원이나 아끼셨네요! ");
             }
-            if (monthlyWithdrawFee < 0 ) {
+            if (monthlyWithdrawFee < 0) {
                 System.out.println("올바른 금액을 입력해주세요!");
                 return;
             }
@@ -920,20 +919,19 @@ public class DidYouThinkBeforePay {
 
         int totalPhoneFee = phoneFee + phoneAdditionalFee;
 
-        if (totalPhoneFee > phoneExpenditure ) {
+        if (totalPhoneFee > phoneExpenditure) {
             System.out.println(" 핸드폰비이 예산보다 큽니다. 다른 예산을 줄이세요.");
         }
-        if (totalPhoneFee <= houseExpenditure ) {
+        if (totalPhoneFee <= houseExpenditure) {
             System.out.println(" 당신의 핸드폰 비용은 " + totalPhoneFee + "원 입니다. ");
-            System.out.println(" 예산에서 " + (totalPhoneFee - phoneExpenditure ) + "원이나 아끼셨네요! ");
+            System.out.println(" 예산에서 " + (totalPhoneFee - phoneExpenditure) + "원이나 아끼셨네요! ");
         }
-        if (totalPhoneFee < 0 ) {
+        if (totalPhoneFee < 0) {
             System.out.println("올바른 금액을 입력해주세요!");
             return;
         }
 
         System.out.println("이용해주셔서 감사합니다!");
-
     }
 
     public static void pause() {
