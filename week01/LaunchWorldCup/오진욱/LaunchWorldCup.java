@@ -19,9 +19,12 @@ public class LaunchWorldCup {
         String westernMeal3 = "스테이크";
         String westernMeal4 = "피자";
 
-        int round1;
-        int round2;
-        int round3;
+        int round1 = 0;
+        int round2 = 0;
+        int finalRound = 0;
+
+        String finalFood1 = "";
+        String finalFood2 = "";
 
         System.out.println("점심 월드컵!");
         System.out.println("-------카테고리 선택-------");
@@ -34,51 +37,31 @@ public class LaunchWorldCup {
             System.out.println("1." + chineseMeal1 + "vs 2." + chineseMeal2);
             round1 = scanner.nextInt();
 
+            if (round1 == 1) {
+                finalFood1 = chineseMeal1;
+            }
+            if (round1 == 2) {
+                finalFood1 = chineseMeal2;
+            }
+
             System.out.println("1." + chineseMeal3 + "vs 2." + chineseMeal4);
             round2 = scanner.nextInt();
 
-            if (round1 == 1 && round2 == 1) {
-                System.out.println("1." + chineseMeal1 + "vs 2." + chineseMeal3);
-                round3 = scanner.nextInt();
-
-                if (round3 == 1) {
-                    System.out.println("오늘의 점심은" + chineseMeal1 + "입니다!");
-                    return;
-                }
-                System.out.println("오늘의 점심은" + chineseMeal3 + "입니다!");
+            if (round2 == 1) {
+                finalFood2 = chineseMeal3;
+            }
+            if (round2 == 2) {
+                finalFood2 = chineseMeal4;
             }
 
-            if (round1 == 1 && round2 == 2) {
-                System.out.println("1." + chineseMeal1 + "vs 2." + chineseMeal4);
-                round3 = scanner.nextInt();
+            System.out.println("1." + finalFood1 + "vs 2." + finalFood2);
+            finalRound = scanner.nextInt();
 
-                if (round3 == 1) {
-                    System.out.println("오늘의 점심은" + chineseMeal1 + "입니다!");
-                    return;
-                }
-                System.out.println("오늘의 점심은" + chineseMeal4 + "입니다!");
+            if (finalRound == 1){
+                System.out.println("오늘의 점심은 " + finalFood1 + " 입니다!");
             }
-
-            if (round1 == 2 && round2 == 1) {
-                System.out.println("1." + chineseMeal2 + "vs 2." + chineseMeal3);
-                round3 = scanner.nextInt();
-
-                if (round3 == 1) {
-                    System.out.println("오늘의 점심은 " + chineseMeal2 + "입니다!");
-                    return;
-                }
-                System.out.println("오늘의 점심은 " + chineseMeal3 + "입니다!");
-            }
-
-            if (round1 == 2 && round2 == 2) {
-                System.out.println("1." + chineseMeal2 + "vs 2." + chineseMeal4);
-                round3 = scanner.nextInt();
-
-                if (round3 == 1) {
-                    System.out.println("오늘의 점심은 " + chineseMeal2 + "입니다!");
-                    return;
-                }
-                System.out.println("오늘의 점심은 " + chineseMeal4 + "입니다!");
+            if (finalRound == 2){
+                System.out.println("오늘의 점심은 " + finalFood2 + " 입니다!");
             }
         }
 
@@ -87,110 +70,71 @@ public class LaunchWorldCup {
             System.out.println("1." + japaneseMeal1 + "vs 2." + japaneseMeal2);
             round1 = scanner.nextInt();
 
+            if (round1 == 1) {
+                finalFood1 = japaneseMeal1;
+            }
+            if (round1 == 2) {
+                finalFood1 = japaneseMeal2;
+            }
+
             System.out.println("1." + japaneseMeal3 + "vs 2." + japaneseMeal4);
             round2 = scanner.nextInt();
 
-            if (round1 == 1 && round2 == 1) {
-                System.out.println("1." + japaneseMeal1 + "vs 2." + japaneseMeal3);
-                round3 = scanner.nextInt();
-
-                if (round3 == 1) {
-                    System.out.println("오늘의 점심은" + japaneseMeal1 + "입니다!");
-                    return;
-                }
-                System.out.println("오늘의 점심은" + japaneseMeal3 + "입니다!");
+            if (round2 == 1) {
+                finalFood2 = japaneseMeal3;
+            }
+            if (round2 == 2) {
+                finalFood2 = japaneseMeal4;
             }
 
-            if (round1 == 1 && round2 == 2) {
-                System.out.println("1." + japaneseMeal1 + "vs 2." + japaneseMeal4);
-                round3 = scanner.nextInt();
+            System.out.println("1." + finalFood1 + "vs 2." + finalFood2);
+            finalRound = scanner.nextInt();
 
-                if (round3 == 1) {
-                    System.out.println("오늘의 점심은" + japaneseMeal1 + "입니다!");
-                    return;
-                }
-                System.out.println("오늘의 점심은" + japaneseMeal4 + "입니다!");
+            if (finalRound == 1){
+                System.out.println("오늘의 점심은 " + finalFood1 + " 입니다!");
             }
-
-            if (round1 == 2 && round2 == 1) {
-                System.out.println("1." + japaneseMeal2 + "vs 2." + japaneseMeal3);
-                round3 = scanner.nextInt();
-
-                if (round3 == 1) {
-                    System.out.println("오늘의 점심은 " + japaneseMeal2 + "입니다!");
-                    return;
-                }
-                System.out.println("오늘의 점심은 " + japaneseMeal3 + "입니다!");
-            }
-
-            if (round1 == 2 && round2 == 2) {
-                System.out.println("1." + japaneseMeal2 + "vs 2." + japaneseMeal4);
-                round3 = scanner.nextInt();
-
-                if (round3 == 1) {
-                    System.out.println("오늘의 점심은 " + japaneseMeal2 + "입니다!");
-                    return;
-                }
-                System.out.println("오늘의 점심은 " + japaneseMeal4 + "입니다!");
+            if (finalRound == 2){
+                System.out.println("오늘의 점심은 " + finalFood2 + " 입니다!");
             }
         }
 
         //양식
-        if (categorySelect == 1) {
+        if (categorySelect == 4) {
             System.out.println("1." + westernMeal1 + "vs 2." + westernMeal2);
             round1 = scanner.nextInt();
+
+            if (round1 == 1) {
+                finalFood1 = westernMeal1;
+            }
+            if (round1 == 2) {
+                finalFood1 = westernMeal2;
+            }
 
             System.out.println("1." + westernMeal3 + "vs 2." + westernMeal4);
             round2 = scanner.nextInt();
 
-            if (round1 == 1 && round2 == 1) {
-                System.out.println("1." + westernMeal1 + "vs 2." + westernMeal3);
-                round3 = scanner.nextInt();
-
-                if (round3 == 1) {
-                    System.out.println("오늘의 점심은" + westernMeal1 + "입니다!");
-                    return;
-                }
-                System.out.println("오늘의 점심은" + westernMeal3 + "입니다!");
+            if (round2 == 1) {
+                finalFood2 = westernMeal3;
+            }
+            if (round2 == 2) {
+                finalFood2 = westernMeal4;
             }
 
-            if (round1 == 1 && round2 == 2) {
-                System.out.println("1." + westernMeal1 + "vs 2." + westernMeal4);
-                round3 = scanner.nextInt();
+            System.out.println("1." + finalFood1 + "vs 2." + finalFood2);
+            finalRound = scanner.nextInt();
 
-                if (round3 == 1) {
-                    System.out.println("오늘의 점심은" + westernMeal1 + "입니다!");
-                    return;
-                }
-                System.out.println("오늘의 점심은" + westernMeal4 + "입니다!");
+            if (finalRound == 1){
+                System.out.println("오늘의 점심은 " + finalFood1 + " 입니다!");
             }
-
-            if (round1 == 2 && round2 == 1) {
-                System.out.println("1." + westernMeal2 + "vs 2." + westernMeal3);
-                round3 = scanner.nextInt();
-
-                if (round3 == 1) {
-                    System.out.println("오늘의 점심은 " + westernMeal2 + "입니다!");
-                    return;
-                }
-                System.out.println("오늘의 점심은 " + westernMeal3 + "입니다!");
-            }
-
-            if (round1 == 2 && round2 == 2) {
-                System.out.println("1." + westernMeal2 + "vs 2." + westernMeal4);
-                round3 = scanner.nextInt();
-
-                if (round3 == 1) {
-                    System.out.println("오늘의 점심은 " + westernMeal2 + "입니다!");
-                    return;
-                }
-                System.out.println("오늘의 점심은 " + westernMeal4 + "입니다!");
+            if (finalRound == 2){
+                System.out.println("오늘의 점심은 " + finalFood2 + " 입니다!");
             }
         }
 
         //한식
-        if (categorySelect == 4) {
-            System.out.println("한식은 선택지가 없습니다. \n오늘의 점심은 제육볶음입니다!");
+        if (categorySelect == 3) {
+            System.out.println("한식은 선택지가 없습니다.");
+            System.out.println("오늘의 점심은 제육볶음 입니다!");
         }
     }
 }
