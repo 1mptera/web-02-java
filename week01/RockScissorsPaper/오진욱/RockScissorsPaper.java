@@ -6,7 +6,7 @@ public class RockScissorsPaper {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        double randomNumber = random.nextDouble(3);
+        int randomNumber = random.nextInt(3);
 
         String computerPick = null;
 
@@ -14,14 +14,13 @@ public class RockScissorsPaper {
         System.out.print("나: ");
         String yourPick = scanner.nextLine();
 
-
-        if (randomNumber >= 0 && randomNumber < 1) {
+        if (randomNumber == 0) {
             computerPick = "가위";
         }
-        if (randomNumber >= 1 && randomNumber < 2) {
+        if (randomNumber == 1) {
             computerPick = "바위";
         }
-        if (randomNumber >= 2 && randomNumber <= 3) {
+        if (randomNumber == 2) {
             computerPick = "보";
         }
 
@@ -34,6 +33,11 @@ public class RockScissorsPaper {
         boolean yourRock = yourPick.equals("바위");
         boolean yourScissor = yourPick.equals("가위");
         boolean yourPaper = yourPick.equals("보");
+
+        if (!yourRock && !yourScissor && !yourPaper) {
+            System.out.println("가위, 바위, 보 중 하나를 입력하세요!");
+            return;
+        }
 
         if (computerPick.equals(yourPick)) {
             System.out.println("비겼다!");
