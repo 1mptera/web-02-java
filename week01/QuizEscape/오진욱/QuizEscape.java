@@ -14,7 +14,7 @@ public class QuizEscape {
 
         System.out.println("자바감옥 탈출 퀴즈 게임!");
 
-        levelCounter += levelCounter;
+        levelCounter += 1;
         System.out.println("------1단계 문제-------");
         System.out.println("자바의 보일러플레이트 코드 순서대로 번호를 입력하시오.");
         System.out.println("1. void");
@@ -34,7 +34,7 @@ public class QuizEscape {
         System.out.println(levelCounter + "단계 문제를 통과하셨습니다!");
 
 //      2단계
-        levelCounter += levelCounter;
+        levelCounter += 1;
         System.out.println("------2단계 문제-------");
         System.out.println("저장 공간이 큰 타입부터 번호를 입력하시오.");
         System.out.println("1. byte");
@@ -53,7 +53,7 @@ public class QuizEscape {
         System.out.println(levelCounter + "단계 문제를 통과하셨습니다!");
 
 //      3단계
-        levelCounter += levelCounter;
+        levelCounter += 1;
         System.out.println("------2단계 문제-------");
         System.out.println("연산자 우선순위가 높은 순서대로 번호를 입력하시오.");
         System.out.println("1. *");
@@ -73,7 +73,7 @@ public class QuizEscape {
         System.out.println(levelCounter + "단계 문제를 통과하셨습니다!");
 
 //      4단계
-        levelCounter += levelCounter;
+        levelCounter += 1;
         System.out.println("------4단계 문제-------");
         System.out.println("저장 공간이 작은 타입부터 번호를 입력하세요");
         System.out.println("1. float");
@@ -92,7 +92,7 @@ public class QuizEscape {
         System.out.println(levelCounter + "단계 문제를 통과하셨습니다!");
 
 //      5단계
-        levelCounter = levelCounter + 1;
+        levelCounter += 1;
         System.out.println("------5단계 문제-------");
         System.out.println("자바 프로그램 실행 순서대로 번호를 입력하시오");
         System.out.println("1. 자바 소스코드를 바이트코드로 변환");
