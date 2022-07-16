@@ -27,7 +27,7 @@ public class Comzalral {
 
             System.out.println("틀렸습니다. 정답: " + answer1);
         }
-        
+
         //문제2
         System.out.println("------------ 문제 2 ------------");
         System.out.println("RAM 는 무엇의 줄임말 일까요?");
@@ -219,7 +219,7 @@ public class Comzalral {
         }
 
         //총 점수
-        System.out.println("\n------------ 최종 결과 ------------");
+        System.out.println("------------ 최종 결과 ------------");
         System.out.println("최종 점수: " + count + "점");
 
         if (8 < count) {
