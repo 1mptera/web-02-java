@@ -12,8 +12,8 @@ public class Dice {
         int answer = scanner.nextInt();
 
         //데굴데굴!
-        int result = random.nextInt(6);
-        System.out.println("주사위 수: " + (result+1));
+        int result = random.nextInt(6)+1;
+        System.out.println("주사위 수: " + result);
 
         //과연? 예측여부
         if (answer == result){
