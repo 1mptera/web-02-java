@@ -1159,27 +1159,27 @@ public class HealthTraining {
         double reps22a = scanner.nextDouble();
 
         double benchpressweight13 = benchpress1rm * 0.95;
-        double a33 = Math.round(benchpressweight13 / 10) * 10;
+        double benchroundoff33 = Math.round(benchpressweight13 / 10) * 10;
 
-        if (benchpressweight13 < a33 && a33 <= (benchpressweight13 + 5)) {
-            if ((a33 - 1.25) <= benchpressweight13) {
-                System.out.println("3.Set 벤치프레스 " + a33 + "kg(권장 Reps2 1회)");
+        if (benchpressweight13 < benchroundoff33 && benchroundoff33 <= (benchpressweight13 + 5)) {
+            if ((benchroundoff33 - 1.25) <= benchpressweight13) {
+                System.out.println("3.Set 벤치프레스 " + benchroundoff33 + "kg(권장 Reps2 1회)");
             }
-            if ((a33 - 3.75) <= benchpressweight13 && benchpressweight13 < (a33 - 1.25)) {
-                System.out.println("3.Set 벤치프레스 " + (a33 - 2.5) + "kg(권장 Reps2 1회)");
+            if ((benchroundoff33 - 3.75) <= benchpressweight13 && benchpressweight13 < (benchroundoff33 - 1.25)) {
+                System.out.println("3.Set 벤치프레스 " + (benchroundoff33 - 2.5) + "kg(권장 Reps2 1회)");
             }
-            if ((a33 - 5) <= benchpressweight13 && benchpressweight13 < (a33 - 3.75)) {
-                System.out.println("3.Set 벤치프레스 " + (a33 - 5) + "kg(권장 Reps2 1회)");
+            if ((benchroundoff33 - 5) <= benchpressweight13 && benchpressweight13 < (benchroundoff33 - 3.75)) {
+                System.out.println("3.Set 벤치프레스 " + (benchroundoff33 - 5) + "kg(권장 Reps2 1회)");
             }
         } else {
-            if (benchpressweight13 < (a33 + 1.25)) {
-                System.out.println("3.Set 벤치프레스 " + a33 + "kg(권장 Reps2 1회)");
+            if (benchpressweight13 < (benchroundoff33 + 1.25)) {
+                System.out.println("3.Set 벤치프레스 " + benchroundoff33 + "kg(권장 Reps2 1회)");
             }
-            if ((a33 + 1.25) <= benchpressweight13 && benchpressweight13 < (a33 + 3.75)) {
-                System.out.println("3.Set 벤치프레스 " + (a33 + 2.5) + "kg(권장 Reps2 1회)");
+            if ((benchroundoff33 + 1.25) <= benchpressweight13 && benchpressweight13 < (benchroundoff33 + 3.75)) {
+                System.out.println("3.Set 벤치프레스 " + (benchroundoff33 + 2.5) + "kg(권장 Reps2 1회)");
             }
-            if ((a33 + 3.75) <= benchpressweight13 && benchpressweight13 < (a33 + 5)) {
-                System.out.println("3.Set 벤치프레스 " + (a33 + 5) + "kg(권장 Reps2 1회)");
+            if ((benchroundoff33 + 3.75) <= benchpressweight13 && benchpressweight13 < (benchroundoff33 + 5)) {
+                System.out.println("3.Set 벤치프레스 " + (benchroundoff33 + 5) + "kg(권장 Reps2 1회)");
             }
         }
 
@@ -1188,27 +1188,27 @@ public class HealthTraining {
         double reps23a = scanner.nextDouble();
 
         double benchpressweight14 = benchpress1rm * 0.90;
-        double a44 = Math.round(benchpressweight14 / 10) * 10;
+        double benchroundoff44 = Math.round(benchpressweight14 / 10) * 10;
 
-        if (benchpressweight14 < a44 && a44 <= (benchpressweight14 + 5)) {
-            if ((a44 - 1.25) <= benchpressweight14) {
-                System.out.println("4.Set 벤치프레스 " + a44 + "kg(권장 Reps2 3회)");
+        if (benchpressweight14 < benchroundoff44 && benchroundoff44 <= (benchpressweight14 + 5)) {
+            if ((benchroundoff44 - 1.25) <= benchpressweight14) {
+                System.out.println("4.Set 벤치프레스 " + benchroundoff44 + "kg(권장 Reps2 3회)");
             }
-            if ((a44 - 3.75) <= benchpressweight14 && benchpressweight14 < (a44 - 1.25)) {
-                System.out.println("4.Set 벤치프레스 " + (a44 - 2.5) + "kg(권장 Reps2 3회)");
+            if ((benchroundoff44 - 3.75) <= benchpressweight14 && benchpressweight14 < (benchroundoff44 - 1.25)) {
+                System.out.println("4.Set 벤치프레스 " + (benchroundoff44 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a44 - 5) <= benchpressweight14 && benchpressweight14 < (a44 - 3.75)) {
-                System.out.println("4.Set 벤치프레스 " + (a44 - 5) + "kg(권장 Reps2 3회)");
+            if ((benchroundoff44 - 5) <= benchpressweight14 && benchpressweight14 < (benchroundoff44 - 3.75)) {
+                System.out.println("4.Set 벤치프레스 " + (benchroundoff44 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (benchpressweight14 < (a44 + 1.25)) {
-                System.out.println("4.Set 벤치프레스 " + a44 + "kg(권장 Reps2 3회)");
+            if (benchpressweight14 < (benchroundoff44 + 1.25)) {
+                System.out.println("4.Set 벤치프레스 " + benchroundoff44 + "kg(권장 Reps2 3회)");
             }
-            if ((a44 + 1.25) <= benchpressweight14 && benchpressweight14 < (a44 + 3.75)) {
-                System.out.println("4.Set 벤치프레스 " + (a44 + 2.5) + "kg(권장 Reps2 3회)");
+            if ((benchroundoff44 + 1.25) <= benchpressweight14 && benchpressweight14 < (benchroundoff44 + 3.75)) {
+                System.out.println("4.Set 벤치프레스 " + (benchroundoff44 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a44 + 3.75) <= benchpressweight14 && benchpressweight14 < (a44 + 5)) {
-                System.out.println("4.Set 벤치프레스 " + (a44 + 5) + "kg(권장 Reps2 3회)");
+            if ((benchroundoff44 + 3.75) <= benchpressweight14 && benchpressweight14 < (benchroundoff44 + 5)) {
+                System.out.println("4.Set 벤치프레스 " + (benchroundoff44 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
@@ -1217,27 +1217,27 @@ public class HealthTraining {
         double reps24a = scanner.nextDouble();
 
         double benchpressweight15 = benchpress1rm * 0.85;
-        double a55 = Math.round(benchpressweight15 / 10) * 10;
+        double benchroundoff55 = Math.round(benchpressweight15 / 10) * 10;
 
-        if (benchpressweight15 < a55 && a55 <= (benchpressweight15 + 5)) {
-            if ((a55 - 1.25) <= benchpressweight15) {
-                System.out.println("5.Set 벤치프레스 " + a55 + "kg(권장 Reps2 5회)");
+        if (benchpressweight15 < benchroundoff55 && benchroundoff55 <= (benchpressweight15 + 5)) {
+            if ((benchroundoff55 - 1.25) <= benchpressweight15) {
+                System.out.println("5.Set 벤치프레스 " + benchroundoff55 + "kg(권장 Reps2 5회)");
             }
-            if ((a55 - 3.75) <= benchpressweight15 && benchpressweight15 < (a55 - 1.25)) {
-                System.out.println("5.Set 벤치프레스 " + (a55 - 2.5) + "kg(권장 Reps2 5회)");
+            if ((benchroundoff55 - 3.75) <= benchpressweight15 && benchpressweight15 < (benchroundoff55 - 1.25)) {
+                System.out.println("5.Set 벤치프레스 " + (benchroundoff55 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((a55 - 5) <= benchpressweight15 && benchpressweight15 < (a55 - 3.75)) {
-                System.out.println("5.Set 벤치프레스 " + (a55 - 5) + "kg(권장 Reps2 5회)");
+            if ((benchroundoff55 - 5) <= benchpressweight15 && benchpressweight15 < (benchroundoff55 - 3.75)) {
+                System.out.println("5.Set 벤치프레스 " + (benchroundoff55 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (benchpressweight15 < (a55 + 1.25)) {
-                System.out.println("5.Set 벤치프레스 " + a55 + "kg(권장 Reps2 5회)");
+            if (benchpressweight15 < (benchroundoff55 + 1.25)) {
+                System.out.println("5.Set 벤치프레스 " + benchroundoff55 + "kg(권장 Reps2 5회)");
             }
-            if ((a55 + 1.25) <= benchpressweight15 && benchpressweight15 < (a55 + 3.75)) {
-                System.out.println("5.Set 벤치프레스 " + (a55 + 2.5) + "kg(권장 Reps2 5회)");
+            if ((benchroundoff55 + 1.25) <= benchpressweight15 && benchpressweight15 < (benchroundoff55 + 3.75)) {
+                System.out.println("5.Set 벤치프레스 " + (benchroundoff55 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((a55 + 3.75) <= benchpressweight15 && benchpressweight15 < (a55 + 5)) {
-                System.out.println("5.Set 벤치프레스 " + (a55 + 5) + "kg(권장 Reps2 5회)");
+            if ((benchroundoff55 + 3.75) <= benchpressweight15 && benchpressweight15 < (benchroundoff55 + 5)) {
+                System.out.println("5.Set 벤치프레스 " + (benchroundoff55 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
@@ -1246,27 +1246,27 @@ public class HealthTraining {
         double reps25a = scanner.nextDouble();
 
         double benchpressweight16 = benchpress1rm * 0.80;
-        double a66 = Math.round(benchpressweight16 / 10) * 10;
+        double benchroundoff66 = Math.round(benchpressweight16 / 10) * 10;
 
-        if (benchpressweight16 < a66 && a66 <= (benchpressweight16 + 5)) {
-            if ((a66 - 1.25) <= benchpressweight16) {
-                System.out.println("6.Set 벤치프레스 " + a66 + "kg(권장 Reps2 3회)");
+        if (benchpressweight16 < benchroundoff66 && benchroundoff66 <= (benchpressweight16 + 5)) {
+            if ((benchroundoff66 - 1.25) <= benchpressweight16) {
+                System.out.println("6.Set 벤치프레스 " + benchroundoff66 + "kg(권장 Reps2 3회)");
             }
-            if ((a66 - 3.75) <= benchpressweight16 && benchpressweight16 < (a66 - 1.25)) {
-                System.out.println("6.Set 벤치프레스 " + (a66 - 2.5) + "kg(권장 Reps2 3회)");
+            if ((benchroundoff66 - 3.75) <= benchpressweight16 && benchpressweight16 < (benchroundoff66 - 1.25)) {
+                System.out.println("6.Set 벤치프레스 " + (benchroundoff66 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a66 - 5) <= benchpressweight16 && benchpressweight16 < (a66 - 3.75)) {
-                System.out.println("6.Set 벤치프레스 " + (a66 - 5) + "kg(권장 Reps2 3회)");
+            if ((benchroundoff66 - 5) <= benchpressweight16 && benchpressweight16 < (benchroundoff66 - 3.75)) {
+                System.out.println("6.Set 벤치프레스 " + (benchroundoff66 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (benchpressweight16 < (a66 + 1.25)) {
-                System.out.println("6.Set 벤치프레스 " + a66 + "kg(권장 Reps2 3회)");
+            if (benchpressweight16 < (benchroundoff66 + 1.25)) {
+                System.out.println("6.Set 벤치프레스 " + benchroundoff66 + "kg(권장 Reps2 3회)");
             }
-            if ((a66 + 1.25) <= benchpressweight16 && benchpressweight16 < (a66 + 3.75)) {
-                System.out.println("6.Set 벤치프레스 " + (a66 + 2.5) + "kg(권장 Reps2 3회)");
+            if ((benchroundoff66 + 1.25) <= benchpressweight16 && benchpressweight16 < (benchroundoff66 + 3.75)) {
+                System.out.println("6.Set 벤치프레스 " + (benchroundoff66 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a66 + 3.75) <= benchpressweight16 && benchpressweight16 < (a66 + 5)) {
-                System.out.println("6.Set 벤치프레스 " + (a66 + 5) + "kg(권장 Reps2 3회)");
+            if ((benchroundoff66 + 3.75) <= benchpressweight16 && benchpressweight16 < (benchroundoff66 + 5)) {
+                System.out.println("6.Set 벤치프레스 " + (benchroundoff66 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
@@ -1275,27 +1275,27 @@ public class HealthTraining {
         double reps26a = scanner.nextDouble();
 
         double benchpressweight17 = benchpress1rm * 0.75;
-        double a77 = Math.round(benchpressweight17 / 10) * 10;
+        double benchroundoff77 = Math.round(benchpressweight17 / 10) * 10;
 
-        if (benchpressweight17 < a77 && a77 <= (benchpressweight17 + 5)) {
-            if ((a77 - 1.25) <= benchpressweight17) {
-                System.out.println("7.Set 벤치프레스 " + a77 + "kg(권장 Reps2 5회)");
+        if (benchpressweight17 < benchroundoff77 && benchroundoff77 <= (benchpressweight17 + 5)) {
+            if ((benchroundoff77 - 1.25) <= benchpressweight17) {
+                System.out.println("7.Set 벤치프레스 " + benchroundoff77 + "kg(권장 Reps2 5회)");
             }
-            if ((a77 - 3.75) <= benchpressweight17 && benchpressweight17 < (a77 - 1.25)) {
-                System.out.println("7.Set 벤치프레스 " + (a77 - 2.5) + "kg(권장 Reps2 5회)");
+            if ((benchroundoff77 - 3.75) <= benchpressweight17 && benchpressweight17 < (benchroundoff77 - 1.25)) {
+                System.out.println("7.Set 벤치프레스 " + (benchroundoff77 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((a77 - 5) <= benchpressweight17 && benchpressweight17 < (a77 - 3.75)) {
-                System.out.println("7.Set 벤치프레스 " + (a77 - 5) + "kg(권장 Reps2 5회)");
+            if ((benchroundoff77 - 5) <= benchpressweight17 && benchpressweight17 < (benchroundoff77 - 3.75)) {
+                System.out.println("7.Set 벤치프레스 " + (benchroundoff77 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (benchpressweight17 < (a77 + 1.25)) {
-                System.out.println("7.Set 벤치프레스 " + a77 + "kg(권장 Reps2 5회)");
+            if (benchpressweight17 < (benchroundoff77 + 1.25)) {
+                System.out.println("7.Set 벤치프레스 " + benchroundoff77 + "kg(권장 Reps2 5회)");
             }
-            if ((a77 + 1.25) <= benchpressweight17 && benchpressweight17 < (a77 + 3.75)) {
-                System.out.println("7.Set 벤치프레스 " + (a77 + 2.5) + "kg(권장 Reps2 5회)");
+            if ((benchroundoff77 + 1.25) <= benchpressweight17 && benchpressweight17 < (benchroundoff77 + 3.75)) {
+                System.out.println("7.Set 벤치프레스 " + (benchroundoff77 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((a77 + 3.75) <= benchpressweight17 && benchpressweight17 < (a77 + 5)) {
-                System.out.println("7.Set 벤치프레스 " + (a77 + 5) + "kg(권장 Reps2 5회)");
+            if ((benchroundoff77 + 3.75) <= benchpressweight17 && benchpressweight17 < (benchroundoff77 + 5)) {
+                System.out.println("7.Set 벤치프레스 " + (benchroundoff77 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
@@ -1304,27 +1304,27 @@ public class HealthTraining {
         double reps27a = scanner.nextDouble();
 
         double benchpressweight18 = benchpress1rm * 0.70;
-        double a88 = Math.round(benchpressweight18 / 10) * 10;
+        double benchroundoff88 = Math.round(benchpressweight18 / 10) * 10;
 
-        if (benchpressweight18 < a88 && a88 <= (benchpressweight18 + 5)) {
-            if ((a88 - 1.25) <= benchpressweight18) {
-                System.out.println("8.Set 벤치프레스 " + a88 + "kg(권장 Reps2 3회)");
+        if (benchpressweight18 < benchroundoff88 && benchroundoff88 <= (benchpressweight18 + 5)) {
+            if ((benchroundoff88 - 1.25) <= benchpressweight18) {
+                System.out.println("8.Set 벤치프레스 " + benchroundoff88 + "kg(권장 Reps2 3회)");
             }
-            if ((a88 - 3.75) <= benchpressweight18 && benchpressweight18 < (a88 - 1.25)) {
-                System.out.println("8.Set 벤치프레스 " + (a88 - 2.5) + "kg(권장 Reps2 3회)");
+            if ((benchroundoff88 - 3.75) <= benchpressweight18 && benchpressweight18 < (benchroundoff88 - 1.25)) {
+                System.out.println("8.Set 벤치프레스 " + (benchroundoff88 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a88 - 5) <= benchpressweight18 && benchpressweight18 < (a88 - 3.75)) {
-                System.out.println("8.Set 벤치프레스 " + (a88 - 5) + "kg(권장 Reps2 3회)");
+            if ((benchroundoff88 - 5) <= benchpressweight18 && benchpressweight18 < (benchroundoff88 - 3.75)) {
+                System.out.println("8.Set 벤치프레스 " + (benchroundoff88 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (benchpressweight18 < (a88 + 1.25)) {
-                System.out.println("8.Set 벤치프레스 " + a88 + "kg(권장 Reps2 3회)");
+            if (benchpressweight18 < (benchroundoff88 + 1.25)) {
+                System.out.println("8.Set 벤치프레스 " + benchroundoff88 + "kg(권장 Reps2 3회)");
             }
-            if ((a88 + 1.25) <= benchpressweight18 && benchpressweight18 < (a88 + 3.75)) {
-                System.out.println("8.Set 벤치프레스 " + (a88 + 2.5) + "kg(권장 Reps2 3회)");
+            if ((benchroundoff88 + 1.25) <= benchpressweight18 && benchpressweight18 < (benchroundoff88 + 3.75)) {
+                System.out.println("8.Set 벤치프레스 " + (benchroundoff88 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((a88 + 3.75) <= benchpressweight18 && benchpressweight18 < (a88 + 5)) {
-                System.out.println("8.Set 벤치프레스 " + (a88 + 5) + "kg(권장 Reps2 3회)");
+            if ((benchroundoff88 + 3.75) <= benchpressweight18 && benchpressweight18 < (benchroundoff88 + 5)) {
+                System.out.println("8.Set 벤치프레스 " + (benchroundoff88 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
@@ -1333,27 +1333,27 @@ public class HealthTraining {
         double reps28a = scanner.nextDouble();
 
         double benchpressweight19 = benchpress1rm * 0.65;
-        double a99 = Math.round(benchpressweight19 / 10) * 10;
+        double benchroundoff99 = Math.round(benchpressweight19 / 10) * 10;
 
-        if (benchpressweight19 < a99 && a99 <= (benchpressweight19 + 5)) {
-            if ((a99 - 1.25) <= benchpressweight19) {
-                System.out.println("9.Set 벤치프레스 " + a99 + "kg(권장 Reps2 1회 이상)");
+        if (benchpressweight19 < benchroundoff99 && benchroundoff99 <= (benchpressweight19 + 5)) {
+            if ((benchroundoff99 - 1.25) <= benchpressweight19) {
+                System.out.println("9.Set 벤치프레스 " + benchroundoff99 + "kg(권장 Reps2 1회 이상)");
             }
-            if ((a99 - 3.75) <= benchpressweight19 && benchpressweight19 < (a99 - 1.25)) {
-                System.out.println("9.Set 벤치프레스 " + (a99 - 2.5) + "kg(권장 Reps2 1회 이상)");
+            if ((benchroundoff99 - 3.75) <= benchpressweight19 && benchpressweight19 < (benchroundoff99 - 1.25)) {
+                System.out.println("9.Set 벤치프레스 " + (benchroundoff99 - 2.5) + "kg(권장 Reps2 1회 이상)");
             }
-            if ((a99 - 5) <= benchpressweight19 && benchpressweight19 < (a99 - 3.75)) {
-                System.out.println("9.Set 벤치프레스 " + (a99 - 5) + "kg(권장 Reps2 1회 이상)");
+            if ((benchroundoff99 - 5) <= benchpressweight19 && benchpressweight19 < (benchroundoff99 - 3.75)) {
+                System.out.println("9.Set 벤치프레스 " + (benchroundoff99 - 5) + "kg(권장 Reps2 1회 이상)");
             }
         } else {
-            if (benchpressweight19 < (a99 + 1.25)) {
-                System.out.println("9.Set 벤치프레스 " + a99 + "kg(권장 Reps2 1회 이상)");
+            if (benchpressweight19 < (benchroundoff99 + 1.25)) {
+                System.out.println("9.Set 벤치프레스 " + benchroundoff99 + "kg(권장 Reps2 1회 이상)");
             }
-            if ((a99 + 1.25) <= benchpressweight19 && benchpressweight19 < (a99 + 3.75)) {
-                System.out.println("9.Set 벤치프레스 " + (a99 + 2.5) + "kg(권장 Reps2 1회 이상)");
+            if ((benchroundoff99 + 1.25) <= benchpressweight19 && benchpressweight19 < (benchroundoff99 + 3.75)) {
+                System.out.println("9.Set 벤치프레스 " + (benchroundoff99 + 2.5) + "kg(권장 Reps2 1회 이상)");
             }
-            if ((a99 + 3.75) <= benchpressweight19 && benchpressweight19 < (a99 + 5)) {
-                System.out.println("9.Set 벤치프레스 " + (a99 + 5) + "kg(권장 Reps2 1회 이상)");
+            if ((benchroundoff99 + 3.75) <= benchpressweight19 && benchpressweight19 < (benchroundoff99 + 5)) {
+                System.out.println("9.Set 벤치프레스 " + (benchroundoff99 + 5) + "kg(권장 Reps2 1회 이상)");
             }
         }
 
@@ -1416,27 +1416,27 @@ public class HealthTraining {
         System.out.println("수요일 데드리프트");
 
         double deadliftweight11 = deadlift1rm * 0.75;
-        double b11 = Math.round(deadliftweight11 / 10) * 10;
+        double deadliftroundoff11 = Math.round(deadliftweight11 / 10) * 10;
 
-        if (deadliftweight11 < b11 && b11 <= (deadliftweight11 + 5)) {
-            if ((b11 - 1.25) <= deadliftweight11) {
-                System.out.println("1.Set 데드리프트 " + b11 + "kg(권장 Reps2 5회)");
+        if (deadliftweight11 < deadliftroundoff11 && deadliftroundoff11 <= (deadliftweight11 + 5)) {
+            if ((deadliftroundoff11 - 1.25) <= deadliftweight11) {
+                System.out.println("1.Set 데드리프트 " + deadliftroundoff11 + "kg(권장 Reps2 5회)");
             }
-            if ((b11 - 3.75) <= deadliftweight11 && deadliftweight11 < (b11 - 1.25)) {
-                System.out.println("1.Set 데드리프트 " + (b11 - 2.5) + "kg(권장 Reps2 5회)");
+            if ((deadliftroundoff11 - 3.75) <= deadliftweight11 && deadliftweight11 < (deadliftroundoff11 - 1.25)) {
+                System.out.println("1.Set 데드리프트 " + (deadliftroundoff11 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((b11 - 5) <= deadliftweight11 && deadliftweight11 < (b11 - 3.75)) {
-                System.out.println("1.Set 데드리프트 " + (b11 - 5) + "kg(권장 Reps2 5회)");
+            if ((deadliftroundoff11 - 5) <= deadliftweight11 && deadliftweight11 < (deadliftroundoff11 - 3.75)) {
+                System.out.println("1.Set 데드리프트 " + (deadliftroundoff11 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (deadliftweight11 < (b11 + 1.25)) {
-                System.out.println("1.Set 데드리프트 " + b11 + "kg(권장 Reps2 5회)");
+            if (deadliftweight11 < (deadliftroundoff11 + 1.25)) {
+                System.out.println("1.Set 데드리프트 " + deadliftroundoff11 + "kg(권장 Reps2 5회)");
             }
-            if ((b11 + 1.25) <= deadliftweight11 && deadliftweight11 < (b11 + 3.75)) {
-                System.out.println("1.Set 데드리프트 " + (b11 + 2.5) + "kg(권장 Reps2 5회)");
+            if ((deadliftroundoff11 + 1.25) <= deadliftweight11 && deadliftweight11 < (deadliftroundoff11 + 3.75)) {
+                System.out.println("1.Set 데드리프트 " + (deadliftroundoff11 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((b11 + 3.75) <= deadliftweight11 && deadliftweight11 < (b11 + 5)) {
-                System.out.println("1.Set 데드리프트 " + (b11 + 5) + "kg(권장 Reps2 5회)");
+            if ((deadliftroundoff11 + 3.75) <= deadliftweight11 && deadliftweight11 < (deadliftroundoff11 + 5)) {
+                System.out.println("1.Set 데드리프트 " + (deadliftroundoff11 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
@@ -1445,27 +1445,27 @@ public class HealthTraining {
         double reps21a1 = scanner.nextDouble();
 
         double deadliftweight22 = deadlift1rm * 0.85;
-        double b22 = Math.round(deadliftweight22 / 10) * 10;
+        double deadliftroundoff22 = Math.round(deadliftweight22 / 10) * 10;
 
-        if (deadliftweight22 < b22 && b22 <= (deadliftweight22 + 5)) {
-            if ((b22 - 1.25) <= deadliftweight22) {
-                System.out.println("2.Set 데드리프트 " + b22 + "kg(권장 Reps2 3회)");
+        if (deadliftweight22 < deadliftroundoff22 && deadliftroundoff22 <= (deadliftweight22 + 5)) {
+            if ((deadliftroundoff22 - 1.25) <= deadliftweight22) {
+                System.out.println("2.Set 데드리프트 " + deadliftroundoff22 + "kg(권장 Reps2 3회)");
             }
-            if ((b22 - 3.75) <= deadliftweight22 && deadliftweight22 < (b22 - 1.25)) {
-                System.out.println("2.Set 데드리프트 " + (b22 - 2.5) + "kg(권장 Reps2 3회)");
+            if ((deadliftroundoff22 - 3.75) <= deadliftweight22 && deadliftweight22 < (deadliftroundoff22 - 1.25)) {
+                System.out.println("2.Set 데드리프트 " + (deadliftroundoff22 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b22 - 5) <= deadliftweight22 && deadliftweight22 < (b22 - 3.75)) {
-                System.out.println("2.Set 데드리프트 " + (b22 - 5) + "kg(권장 Reps2 3회)");
+            if ((deadliftroundoff22 - 5) <= deadliftweight22 && deadliftweight22 < (deadliftroundoff22 - 3.75)) {
+                System.out.println("2.Set 데드리프트 " + (deadliftroundoff22 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (deadliftweight22 < (b22 + 1.25)) {
-                System.out.println("2.Set 데드리프트 " + b22 + "kg(권장 Reps2 3회)");
+            if (deadliftweight22 < (deadliftroundoff22 + 1.25)) {
+                System.out.println("2.Set 데드리프트 " + deadliftroundoff22 + "kg(권장 Reps2 3회)");
             }
-            if ((b22 + 1.25) <= deadliftweight22 && deadliftweight22 < (b22 + 3.75)) {
-                System.out.println("2.Set 데드리프트 " + (b22 + 2.5) + "kg(권장 Reps2 3회)");
+            if ((deadliftroundoff22 + 1.25) <= deadliftweight22 && deadliftweight22 < (deadliftroundoff22 + 3.75)) {
+                System.out.println("2.Set 데드리프트 " + (deadliftroundoff22 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b22 + 3.75) <= deadliftweight22 && deadliftweight22 < (b22 + 5)) {
-                System.out.println("2.Set 데드리프트 " + (b22 + 5) + "kg(권장 Reps2 3회)");
+            if ((deadliftroundoff22 + 3.75) <= deadliftweight22 && deadliftweight22 < (deadliftroundoff22 + 5)) {
+                System.out.println("2.Set 데드리프트 " + (deadliftroundoff22 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
@@ -1474,27 +1474,27 @@ public class HealthTraining {
         double reps21a2 = scanner.nextDouble();
 
         double deadliftweight33 = deadlift1rm * 0.95;
-        double b33 = Math.round(deadliftweight33 / 10) * 10;
+        double deadliftroundoff33 = Math.round(deadliftweight33 / 10) * 10;
 
-        if (deadliftweight33 < b33 && b33 <= (deadliftweight33 + 5)) {
-            if ((b33 - 1.25) <= deadliftweight33) {
-                System.out.println("3.Set 데드리프트 " + b33 + "kg(권장 Reps2 1회)");
+        if (deadliftweight33 < deadliftroundoff33 && deadliftroundoff33 <= (deadliftweight33 + 5)) {
+            if ((deadliftroundoff33 - 1.25) <= deadliftweight33) {
+                System.out.println("3.Set 데드리프트 " + deadliftroundoff33 + "kg(권장 Reps2 1회)");
             }
-            if ((b33 - 3.75) <= deadliftweight33 && deadliftweight33 < (b33 - 1.25)) {
-                System.out.println("3.Set 데드리프트 " + (b33 - 2.5) + "kg(권장 Reps2 1회)");
+            if ((deadliftroundoff33 - 3.75) <= deadliftweight33 && deadliftweight33 < (deadliftroundoff33 - 1.25)) {
+                System.out.println("3.Set 데드리프트 " + (deadliftroundoff33 - 2.5) + "kg(권장 Reps2 1회)");
             }
-            if ((b33 - 5) <= deadliftweight33 && deadliftweight33 < (b33 - 3.75)) {
-                System.out.println("3.Set 데드리프트 " + (b33 - 5) + "kg(권장 Reps2 1회)");
+            if ((deadliftroundoff33 - 5) <= deadliftweight33 && deadliftweight33 < (deadliftroundoff33 - 3.75)) {
+                System.out.println("3.Set 데드리프트 " + (deadliftroundoff33 - 5) + "kg(권장 Reps2 1회)");
             }
         } else {
-            if (deadliftweight33 < (b33 + 1.25)) {
-                System.out.println("3.Set 데드리프트 " + b33 + "kg(권장 Reps2 1회)");
+            if (deadliftweight33 < (deadliftroundoff33 + 1.25)) {
+                System.out.println("3.Set 데드리프트 " + deadliftroundoff33 + "kg(권장 Reps2 1회)");
             }
-            if ((b33 + 1.25) <= deadliftweight33 && deadliftweight33 < (b33 + 3.75)) {
-                System.out.println("3.Set 데드리프트 " + (b33 + 2.5) + "kg(권장 Reps2 1회)");
+            if ((deadliftroundoff33 + 1.25) <= deadliftweight33 && deadliftweight33 < (deadliftroundoff33 + 3.75)) {
+                System.out.println("3.Set 데드리프트 " + (deadliftroundoff33 + 2.5) + "kg(권장 Reps2 1회)");
             }
-            if ((b33 + 3.75) <= deadliftweight33 && deadliftweight33 < (b33 + 5)) {
-                System.out.println("3.Set 데드리프트 " + (b33 + 5) + "kg(권장 Reps2 1회)");
+            if ((deadliftroundoff33 + 3.75) <= deadliftweight33 && deadliftweight33 < (deadliftroundoff33 + 5)) {
+                System.out.println("3.Set 데드리프트 " + (deadliftroundoff33 + 5) + "kg(권장 Reps2 1회)");
             }
         }
 
@@ -1503,27 +1503,27 @@ public class HealthTraining {
         double reps21a3 = scanner.nextDouble();
 
         double deadliftweight44 = deadlift1rm * 0.90;
-        double b44 = Math.round(deadliftweight44 / 10) * 10;
+        double deadliftroundoff44 = Math.round(deadliftweight44 / 10) * 10;
 
-        if (deadliftweight44 < b44 && b44 <= (deadliftweight44 + 5)) {
-            if ((b44 - 1.25) <= deadliftweight44) {
-                System.out.println("4.Set 데드리프트 " + b44 + "kg(권장 Reps2 3회)");
+        if (deadliftweight44 < deadliftroundoff44 && deadliftroundoff44 <= (deadliftweight44 + 5)) {
+            if ((deadliftroundoff44 - 1.25) <= deadliftweight44) {
+                System.out.println("4.Set 데드리프트 " + deadliftroundoff44 + "kg(권장 Reps2 3회)");
             }
-            if ((b44 - 3.75) <= deadliftweight44 && deadliftweight44 < (b44 - 1.25)) {
-                System.out.println("4.Set 데드리프트 " + (b44 - 2.5) + "kg(권장 Reps2 3회)");
+            if ((deadliftroundoff44 - 3.75) <= deadliftweight44 && deadliftweight44 < (deadliftroundoff44 - 1.25)) {
+                System.out.println("4.Set 데드리프트 " + (deadliftroundoff44 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b44 - 5) <= deadliftweight44 && deadliftweight44 < (b44 - 3.75)) {
-                System.out.println("4.Set 데드리프트 " + (b44 - 5) + "kg(권장 Reps2 3회)");
+            if ((deadliftroundoff44 - 5) <= deadliftweight44 && deadliftweight44 < (deadliftroundoff44 - 3.75)) {
+                System.out.println("4.Set 데드리프트 " + (deadliftroundoff44 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (deadliftweight44 < (b44 + 1.25)) {
-                System.out.println("4.Set 데드리프트 " + b44 + "kg(권장 Reps2 3회)");
+            if (deadliftweight44 < (deadliftroundoff44 + 1.25)) {
+                System.out.println("4.Set 데드리프트 " + deadliftroundoff44 + "kg(권장 Reps2 3회)");
             }
-            if ((b44 + 1.25) <= deadliftweight44 && deadliftweight44 < (b44 + 3.75)) {
-                System.out.println("4.Set 데드리프트 " + (b44 + 2.5) + "kg(권장 Reps2 3회)");
+            if ((deadliftroundoff44 + 1.25) <= deadliftweight44 && deadliftweight44 < (deadliftroundoff44 + 3.75)) {
+                System.out.println("4.Set 데드리프트 " + (deadliftroundoff44 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b44 + 3.75) <= deadliftweight44 && deadliftweight44 < (b44 + 5)) {
-                System.out.println("4.Set 데드리프트 " + (b44 + 5) + "kg(권장 Reps2 3회)");
+            if ((deadliftroundoff44 + 3.75) <= deadliftweight44 && deadliftweight44 < (deadliftroundoff44 + 5)) {
+                System.out.println("4.Set 데드리프트 " + (deadliftroundoff44 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
@@ -1532,27 +1532,27 @@ public class HealthTraining {
         double reps21a4 = scanner.nextDouble();
 
         double deadliftweight55 = deadlift1rm * 0.85;
-        double b55 = Math.round(deadliftweight55 / 10) * 10;
+        double deadliftroundoff55 = Math.round(deadliftweight55 / 10) * 10;
 
-        if (deadliftweight55 < b55 && b55 <= (deadliftweight55 + 5)) {
-            if ((b55 - 1.25) <= deadliftweight55) {
-                System.out.println("5.Set 데드리프트 " + b55 + "kg(권장 Reps2 5회)");
+        if (deadliftweight55 < deadliftroundoff55 && deadliftroundoff55 <= (deadliftweight55 + 5)) {
+            if ((deadliftroundoff55 - 1.25) <= deadliftweight55) {
+                System.out.println("5.Set 데드리프트 " + deadliftroundoff55 + "kg(권장 Reps2 5회)");
             }
-            if ((b55 - 3.75) <= deadliftweight55 && deadliftweight55 < (b55 - 1.25)) {
-                System.out.println("5.Set 데드리프트 " + (b55 - 2.5) + "kg(권장 Reps2 5회)");
+            if ((deadliftroundoff55 - 3.75) <= deadliftweight55 && deadliftweight55 < (deadliftroundoff55 - 1.25)) {
+                System.out.println("5.Set 데드리프트 " + (deadliftroundoff55 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((b55 - 5) <= deadliftweight55 && deadliftweight55 < (b55 - 3.75)) {
-                System.out.println("5.Set 데드리프트 " + (b55 - 5) + "kg(권장 Reps2 5회)");
+            if ((deadliftroundoff55 - 5) <= deadliftweight55 && deadliftweight55 < (deadliftroundoff55 - 3.75)) {
+                System.out.println("5.Set 데드리프트 " + (deadliftroundoff55 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (deadliftweight55 < (b55 + 1.25)) {
-                System.out.println("5.Set 데드리프트 " + b55 + "kg(권장 Reps2 5회)");
+            if (deadliftweight55 < (deadliftroundoff55 + 1.25)) {
+                System.out.println("5.Set 데드리프트 " + deadliftroundoff55 + "kg(권장 Reps2 5회)");
             }
-            if ((b55 + 1.25) <= deadliftweight55 && deadliftweight55 < (b55 + 3.75)) {
-                System.out.println("5.Set 데드리프트 " + (b55 + 2.5) + "kg(권장 Reps2 5회)");
+            if ((deadliftroundoff55 + 1.25) <= deadliftweight55 && deadliftweight55 < (deadliftroundoff55 + 3.75)) {
+                System.out.println("5.Set 데드리프트 " + (deadliftroundoff55 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((b55 + 3.75) <= deadliftweight55 && deadliftweight55 < (b55 + 5)) {
-                System.out.println("5.Set 데드리프트 " + (b55 + 5) + "kg(권장 Reps2 5회)");
+            if ((deadliftroundoff55 + 3.75) <= deadliftweight55 && deadliftweight55 < (deadliftroundoff55 + 5)) {
+                System.out.println("5.Set 데드리프트 " + (deadliftroundoff55 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
@@ -1561,27 +1561,27 @@ public class HealthTraining {
         double reps21a5 = scanner.nextDouble();
 
         double deadliftweight66 = deadlift1rm * 0.80;
-        double b66 = Math.round(deadliftweight66 / 10) * 10;
+        double deadliftroundoff66 = Math.round(deadliftweight66 / 10) * 10;
 
-        if (deadliftweight66 < b66 && b66 <= (deadliftweight66 + 5)) {
-            if ((b66 - 1.25) <= deadliftweight66) {
-                System.out.println("6.Set 데드리프트 " + b66 + "kg(권장 Reps2 3회)");
+        if (deadliftweight66 < deadliftroundoff66 && deadliftroundoff66 <= (deadliftweight66 + 5)) {
+            if ((deadliftroundoff66 - 1.25) <= deadliftweight66) {
+                System.out.println("6.Set 데드리프트 " + deadliftroundoff66 + "kg(권장 Reps2 3회)");
             }
-            if ((b66 - 3.75) <= deadliftweight66 && deadliftweight66 < (b66 - 1.25)) {
-                System.out.println("6.Set 데드리프트 " + (b66 - 2.5) + "kg(권장 Reps2 3회)");
+            if ((deadliftroundoff66 - 3.75) <= deadliftweight66 && deadliftweight66 < (deadliftroundoff66 - 1.25)) {
+                System.out.println("6.Set 데드리프트 " + (deadliftroundoff66 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b66 - 5) <= deadliftweight66 && deadliftweight66 < (b66 - 3.75)) {
-                System.out.println("6.Set 데드리프트 " + (b66 - 5) + "kg(권장 Reps2 3회)");
+            if ((deadliftroundoff66 - 5) <= deadliftweight66 && deadliftweight66 < (deadliftroundoff66 - 3.75)) {
+                System.out.println("6.Set 데드리프트 " + (deadliftroundoff66 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (deadliftweight66 < (b66 + 1.25)) {
-                System.out.println("6.Set 데드리프트 " + b66 + "kg(권장 Reps2 3회)");
+            if (deadliftweight66 < (deadliftroundoff66 + 1.25)) {
+                System.out.println("6.Set 데드리프트 " + deadliftroundoff66 + "kg(권장 Reps2 3회)");
             }
-            if ((b66 + 1.25) <= deadliftweight66 && deadliftweight66 < (b66 + 3.75)) {
-                System.out.println("6.Set 데드리프트 " + (b66 + 2.5) + "kg(권장 Reps2 3회)");
+            if ((deadliftroundoff66 + 1.25) <= deadliftweight66 && deadliftweight66 < (deadliftroundoff66 + 3.75)) {
+                System.out.println("6.Set 데드리프트 " + (deadliftroundoff66 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b66 + 3.75) <= deadliftweight66 && deadliftweight66 < (b66 + 5)) {
-                System.out.println("6.Set 데드리프트 " + (b66 + 5) + "kg(권장 Reps2 3회)");
+            if ((deadliftroundoff66 + 3.75) <= deadliftweight66 && deadliftweight66 < (deadliftroundoff66 + 5)) {
+                System.out.println("6.Set 데드리프트 " + (deadliftroundoff66 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
@@ -1590,27 +1590,27 @@ public class HealthTraining {
         double reps21a6 = scanner.nextDouble();
 
         double deadliftweight77 = deadlift1rm * 0.75;
-        double b77 = Math.round(deadliftweight77 / 10) * 10;
+        double deadliftroundoff77 = Math.round(deadliftweight77 / 10) * 10;
 
-        if (deadliftweight77 < b77 && b77 <= (deadliftweight77 + 5)) {
-            if ((b77 - 1.25) <= deadliftweight77) {
-                System.out.println("7.Set 데드리프트 " + b77 + "kg(권장 Reps2 5회)");
+        if (deadliftweight77 < deadliftroundoff77 && deadliftroundoff77 <= (deadliftweight77 + 5)) {
+            if ((deadliftroundoff77 - 1.25) <= deadliftweight77) {
+                System.out.println("7.Set 데드리프트 " + deadliftroundoff77 + "kg(권장 Reps2 5회)");
             }
-            if ((b77 - 3.75) <= deadliftweight77 && deadliftweight77 < (b77 - 1.25)) {
-                System.out.println("7.Set 데드리프트 " + (b77 - 2.5) + "kg(권장 Reps2 5회)");
+            if ((deadliftroundoff77 - 3.75) <= deadliftweight77 && deadliftweight77 < (deadliftroundoff77 - 1.25)) {
+                System.out.println("7.Set 데드리프트 " + (deadliftroundoff77 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((b77 - 5) <= deadliftweight77 && deadliftweight77 < (b77 - 3.75)) {
-                System.out.println("7.Set 데드리프트 " + (b77 - 5) + "kg(권장 Reps2 5회)");
+            if ((deadliftroundoff77 - 5) <= deadliftweight77 && deadliftweight77 < (deadliftroundoff77 - 3.75)) {
+                System.out.println("7.Set 데드리프트 " + (deadliftroundoff77 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (deadliftweight77 < (b77 + 1.25)) {
-                System.out.println("7.Set 데드리프트 " + b77 + "kg(권장 Reps2 5회)");
+            if (deadliftweight77 < (deadliftroundoff77 + 1.25)) {
+                System.out.println("7.Set 데드리프트 " + deadliftroundoff77 + "kg(권장 Reps2 5회)");
             }
-            if ((b77 + 1.25) <= deadliftweight77 && deadliftweight77 < (b77 + 3.75)) {
-                System.out.println("7.Set 데드리프트 " + (b77 + 2.5) + "kg(권장 Reps2 5회)");
+            if ((deadliftroundoff77 + 1.25) <= deadliftweight77 && deadliftweight77 < (deadliftroundoff77 + 3.75)) {
+                System.out.println("7.Set 데드리프트 " + (deadliftroundoff77 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((b77 + 3.75) <= deadliftweight77 && deadliftweight77 < (b77 + 5)) {
-                System.out.println("7.Set 데드리프트 " + (b77 + 5) + "kg(권장 Reps2 5회)");
+            if ((deadliftroundoff77 + 3.75) <= deadliftweight77 && deadliftweight77 < (deadliftroundoff77 + 5)) {
+                System.out.println("7.Set 데드리프트 " + (deadliftroundoff77 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
@@ -1619,27 +1619,27 @@ public class HealthTraining {
         double reps21a7 = scanner.nextDouble();
 
         double deadliftweight88 = deadlift1rm * 0.70;
-        double b88 = Math.round(deadliftweight88 / 10) * 10;
+        double deadliftroundoff88 = Math.round(deadliftweight88 / 10) * 10;
 
-        if (deadliftweight88 < b88 && b88 <= (deadliftweight88 + 5)) {
-            if ((b88 - 1.25) <= deadliftweight88) {
-                System.out.println("8.Set 데드리프트 " + b88 + "kg(권장 Reps2 3회)");
+        if (deadliftweight88 < deadliftroundoff88 && deadliftroundoff88 <= (deadliftweight88 + 5)) {
+            if ((deadliftroundoff88 - 1.25) <= deadliftweight88) {
+                System.out.println("8.Set 데드리프트 " + deadliftroundoff88 + "kg(권장 Reps2 3회)");
             }
-            if ((b88 - 3.75) <= deadliftweight88 && deadliftweight88 < (b88 - 1.25)) {
-                System.out.println("8.Set 데드리프트 " + (b88 - 2.5) + "kg(권장 Reps2 3회)");
+            if ((deadliftroundoff88 - 3.75) <= deadliftweight88 && deadliftweight88 < (deadliftroundoff88 - 1.25)) {
+                System.out.println("8.Set 데드리프트 " + (deadliftroundoff88 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b88 - 5) <= deadliftweight88 && deadliftweight88 < (b88 - 3.75)) {
-                System.out.println("8.Set 데드리프트 " + (b88 - 5) + "kg(권장 Reps2 3회)");
+            if ((deadliftroundoff88 - 5) <= deadliftweight88 && deadliftweight88 < (deadliftroundoff88 - 3.75)) {
+                System.out.println("8.Set 데드리프트 " + (deadliftroundoff88 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (deadliftweight88 < (b88 + 1.25)) {
-                System.out.println("8.Set 데드리프트 " + b88 + "kg(권장 Reps2 3회)");
+            if (deadliftweight88 < (deadliftroundoff88 + 1.25)) {
+                System.out.println("8.Set 데드리프트 " + deadliftroundoff88 + "kg(권장 Reps2 3회)");
             }
-            if ((b88 + 1.25) <= deadliftweight88 && deadliftweight88 < (b88 + 3.75)) {
-                System.out.println("8.Set 데드리프트 " + (b88 + 2.5) + "kg(권장 Reps2 3회)");
+            if ((deadliftroundoff88 + 1.25) <= deadliftweight88 && deadliftweight88 < (deadliftroundoff88 + 3.75)) {
+                System.out.println("8.Set 데드리프트 " + (deadliftroundoff88 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((b88 + 3.75) <= deadliftweight88 && deadliftweight88 < (b88 + 5)) {
-                System.out.println("8.Set 데드리프트 " + (b88 + 5) + "kg(권장 Reps2 3회)");
+            if ((deadliftroundoff88 + 3.75) <= deadliftweight88 && deadliftweight88 < (deadliftroundoff88 + 5)) {
+                System.out.println("8.Set 데드리프트 " + (deadliftroundoff88 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
@@ -1648,27 +1648,27 @@ public class HealthTraining {
         double reps21a8 = scanner.nextDouble();
 
         double deadliftweight99 = deadlift1rm * 0.65;
-        double b99 = Math.round(deadliftweight99 / 10) * 10;
+        double deadliftroundoff99 = Math.round(deadliftweight99 / 10) * 10;
 
-        if (deadliftweight99 < b99 && b99 <= (deadliftweight99 + 5)) {
-            if ((b99 - 1.25) <= deadliftweight99) {
-                System.out.println("9.Set 데드리프트 " + b99 + "kg(권장 Reps2 1회 이상)");
+        if (deadliftweight99 < deadliftroundoff99 && deadliftroundoff99 <= (deadliftweight99 + 5)) {
+            if ((deadliftroundoff99 - 1.25) <= deadliftweight99) {
+                System.out.println("9.Set 데드리프트 " + deadliftroundoff99 + "kg(권장 Reps2 1회 이상)");
             }
-            if ((b99 - 3.75) <= deadliftweight99 && deadliftweight99 < (b99 - 1.25)) {
-                System.out.println("9.Set 데드리프트 " + (b99 - 2.5) + "kg(권장 Reps2 1회 이상)");
+            if ((deadliftroundoff99 - 3.75) <= deadliftweight99 && deadliftweight99 < (deadliftroundoff99 - 1.25)) {
+                System.out.println("9.Set 데드리프트 " + (deadliftroundoff99 - 2.5) + "kg(권장 Reps2 1회 이상)");
             }
-            if ((b99 - 5) <= deadliftweight99 && deadliftweight99 < (b99 - 3.75)) {
-                System.out.println("9.Set 데드리프트 " + (b99 - 5) + "kg(권장 Reps2 1회 이상)");
+            if ((deadliftroundoff99 - 5) <= deadliftweight99 && deadliftweight99 < (deadliftroundoff99 - 3.75)) {
+                System.out.println("9.Set 데드리프트 " + (deadliftroundoff99 - 5) + "kg(권장 Reps2 1회 이상)");
             }
         } else {
-            if (deadliftweight99 < (b99 + 1.25)) {
-                System.out.println("9.Set 데드리프트 " + b99 + "kg(권장 Reps2 1회 이상)");
+            if (deadliftweight99 < (deadliftroundoff99 + 1.25)) {
+                System.out.println("9.Set 데드리프트 " + deadliftroundoff99 + "kg(권장 Reps2 1회 이상)");
             }
-            if ((b99 + 1.25) <= deadliftweight99 && deadliftweight99 < (b99 + 3.75)) {
-                System.out.println("9.Set 데드리프트 " + (b99 + 2.5) + "kg(권장 Reps2 1회 이상)");
+            if ((deadliftroundoff99 + 1.25) <= deadliftweight99 && deadliftweight99 < (deadliftroundoff99 + 3.75)) {
+                System.out.println("9.Set 데드리프트 " + (deadliftroundoff99 + 2.5) + "kg(권장 Reps2 1회 이상)");
             }
-            if ((b99 + 3.75) <= deadliftweight99 && deadliftweight99 < (b99 + 5)) {
-                System.out.println("9.Set 데드리프트 " + (b99 + 5) + "kg(권장 Reps2 1회 이상)");
+            if ((deadliftroundoff99 + 3.75) <= deadliftweight99 && deadliftweight99 < (deadliftroundoff99 + 5)) {
+                System.out.println("9.Set 데드리프트 " + (deadliftroundoff99 + 5) + "kg(권장 Reps2 1회 이상)");
             }
         }
 
@@ -1731,27 +1731,27 @@ public class HealthTraining {
         System.out.println("금요일 스쿼트");
 
         double squtweight11 = squt1rm * 0.75;
-        double c11 = Math.round(squtweight11 / 10) * 10;
+        double squtroundoff11 = Math.round(squtweight11 / 10) * 10;
 
-        if (squtweight11 < c11 && c11 <= (squtweight11 + 5)) {
-            if ((c11 - 1.25) <= squtweight11) {
-                System.out.println("1.Set 스쿼트 " + c11 + "kg(권장 Reps2 5회)");
+        if (squtweight11 < squtroundoff11 && squtroundoff11 <= (squtweight11 + 5)) {
+            if ((squtroundoff11 - 1.25) <= squtweight11) {
+                System.out.println("1.Set 스쿼트 " + squtroundoff11 + "kg(권장 Reps2 5회)");
             }
-            if ((c11 - 3.75) <= squtweight11 && squtweight11 < (c11 - 1.25)) {
-                System.out.println("1.Set 스쿼트 " + (c11 - 2.5) + "kg(권장 Reps2 5회)");
+            if ((squtroundoff11 - 3.75) <= squtweight11 && squtweight11 < (squtroundoff11 - 1.25)) {
+                System.out.println("1.Set 스쿼트 " + (squtroundoff11 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((c11 - 5) <= squtweight11 && squtweight11 < (c11 - 3.75)) {
-                System.out.println("1.Set 스쿼트 " + (c11 - 5) + "kg(권장 Reps2 5회)");
+            if ((squtroundoff11 - 5) <= squtweight11 && squtweight11 < (squtroundoff11 - 3.75)) {
+                System.out.println("1.Set 스쿼트 " + (squtroundoff11 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (squtweight11 < (c11 + 1.25)) {
-                System.out.println("1.Set 스쿼트 " + c11 + "kg(권장 Reps2 5회)");
+            if (squtweight11 < (squtroundoff11 + 1.25)) {
+                System.out.println("1.Set 스쿼트 " + squtroundoff11 + "kg(권장 Reps2 5회)");
             }
-            if ((c11 + 1.25) <= squtweight11 && squtweight11 < (c11 + 3.75)) {
-                System.out.println("1.Set 스쿼트 " + (c11 + 2.5) + "kg(권장 Reps2 5회)");
+            if ((squtroundoff11 + 1.25) <= squtweight11 && squtweight11 < (squtroundoff11 + 3.75)) {
+                System.out.println("1.Set 스쿼트 " + (squtroundoff11 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((c11 + 3.75) <= squtweight11 && squtweight11 < (c11 + 5)) {
-                System.out.println("1.Set 스쿼트 " + (c11 + 5) + "kg(권장 Reps2 5회)");
+            if ((squtroundoff11 + 3.75) <= squtweight11 && squtweight11 < (squtroundoff11 + 5)) {
+                System.out.println("1.Set 스쿼트 " + (squtroundoff11 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
@@ -1760,27 +1760,27 @@ public class HealthTraining {
         double reps22a1 = scanner.nextDouble();
 
         double squtweight22 = squt1rm * 0.85;
-        double c22 = Math.round(squtweight22 / 10) * 10;
+        double squtroundoff22 = Math.round(squtweight22 / 10) * 10;
 
-        if (squtweight22 < c22 && c22 <= (squtweight22 + 5)) {
-            if ((c22 - 1.25) <= squtweight22) {
-                System.out.println("2.Set 스쿼트 " + c22 + "kg(권장 Reps2 3회)");
+        if (squtweight22 < squtroundoff22 && squtroundoff22 <= (squtweight22 + 5)) {
+            if ((squtroundoff22 - 1.25) <= squtweight22) {
+                System.out.println("2.Set 스쿼트 " + squtroundoff22 + "kg(권장 Reps2 3회)");
             }
-            if ((c22 - 3.75) <= squtweight22 && squtweight22 < (c22 - 1.25)) {
-                System.out.println("2.Set 스쿼트 " + (c22 - 2.5) + "kg(권장 Reps2 3회)");
+            if ((squtroundoff22 - 3.75) <= squtweight22 && squtweight22 < (squtroundoff22 - 1.25)) {
+                System.out.println("2.Set 스쿼트 " + (squtroundoff22 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((c22 - 5) <= squtweight22 && squtweight22 < (c22 - 3.75)) {
-                System.out.println("2.Set 스쿼트 " + (c22 - 5) + "kg(권장 Reps2 3회)");
+            if ((squtroundoff22 - 5) <= squtweight22 && squtweight22 < (squtroundoff22 - 3.75)) {
+                System.out.println("2.Set 스쿼트 " + (squtroundoff22 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (squtweight22 < (c22 + 1.25)) {
-                System.out.println("2.Set 스쿼트 " + c22 + "kg(권장 Reps2 3회)");
+            if (squtweight22 < (squtroundoff22 + 1.25)) {
+                System.out.println("2.Set 스쿼트 " + squtroundoff22 + "kg(권장 Reps2 3회)");
             }
-            if ((c22 + 1.25) <= squtweight22 && squtweight22 < (c22 + 3.75)) {
-                System.out.println("2.Set 스쿼트 " + (c22 + 2.5) + "kg(권장 Reps2 3회)");
+            if ((squtroundoff22 + 1.25) <= squtweight22 && squtweight22 < (squtroundoff22 + 3.75)) {
+                System.out.println("2.Set 스쿼트 " + (squtroundoff22 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((c22 + 3.75) <= squtweight22 && squtweight22 < (c22 + 5)) {
-                System.out.println("2.Set 스쿼트 " + (c22 + 5) + "kg(권장 Reps2 3회)");
+            if ((squtroundoff22 + 3.75) <= squtweight22 && squtweight22 < (squtroundoff22 + 5)) {
+                System.out.println("2.Set 스쿼트 " + (squtroundoff22 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
@@ -1789,27 +1789,27 @@ public class HealthTraining {
         double reps22a2 = scanner.nextDouble();
 
         double squtweight33 = squt1rm * 0.95;
-        double c33 = Math.round(squtweight33 / 10) * 10;
+        double squtroundoff33 = Math.round(squtweight33 / 10) * 10;
 
-        if (squtweight33 < c33 && c33 <= (squtweight33 + 5)) {
-            if ((c33 - 1.25) <= squtweight33) {
-                System.out.println("3.Set 스쿼트 " + c33 + "kg(권장 Reps2 1회)");
+        if (squtweight33 < squtroundoff33 && squtroundoff33 <= (squtweight33 + 5)) {
+            if ((squtroundoff33 - 1.25) <= squtweight33) {
+                System.out.println("3.Set 스쿼트 " + squtroundoff33 + "kg(권장 Reps2 1회)");
             }
-            if ((c33 - 3.75) <= squtweight33 && squtweight33 < (c33 - 1.25)) {
-                System.out.println("3.Set 스쿼트 " + (c33 - 2.5) + "kg(권장 Reps2 1회)");
+            if ((squtroundoff33 - 3.75) <= squtweight33 && squtweight33 < (squtroundoff33 - 1.25)) {
+                System.out.println("3.Set 스쿼트 " + (squtroundoff33 - 2.5) + "kg(권장 Reps2 1회)");
             }
-            if ((c33 - 5) <= squtweight33 && squtweight33 < (c33 - 3.75)) {
-                System.out.println("3.Set 스쿼트 " + (c33 - 5) + "kg(권장 Reps2 1회)");
+            if ((squtroundoff33 - 5) <= squtweight33 && squtweight33 < (squtroundoff33 - 3.75)) {
+                System.out.println("3.Set 스쿼트 " + (squtroundoff33 - 5) + "kg(권장 Reps2 1회)");
             }
         } else {
-            if (squtweight33 < (c33 + 1.25)) {
-                System.out.println("3.Set 스쿼트 " + c33 + "kg(권장 Reps2 1회)");
+            if (squtweight33 < (squtroundoff33 + 1.25)) {
+                System.out.println("3.Set 스쿼트 " + squtroundoff33 + "kg(권장 Reps2 1회)");
             }
-            if ((c33 + 1.25) <= squtweight33 && squtweight33 < (c33 + 3.75)) {
-                System.out.println("3.Set 스쿼트 " + (c33 + 2.5) + "kg(권장 Reps2 1회)");
+            if ((squtroundoff33 + 1.25) <= squtweight33 && squtweight33 < (squtroundoff33 + 3.75)) {
+                System.out.println("3.Set 스쿼트 " + (squtroundoff33 + 2.5) + "kg(권장 Reps2 1회)");
             }
-            if ((c33 + 3.75) <= squtweight33 && squtweight33 < (c33 + 5)) {
-                System.out.println("3.Set 스쿼트 " + (c33 + 5) + "kg(권장 Reps2 1회)");
+            if ((squtroundoff33 + 3.75) <= squtweight33 && squtweight33 < (squtroundoff33 + 5)) {
+                System.out.println("3.Set 스쿼트 " + (squtroundoff33 + 5) + "kg(권장 Reps2 1회)");
             }
         }
 
@@ -1818,27 +1818,27 @@ public class HealthTraining {
         double reps22a3 = scanner.nextDouble();
 
         double squtweight44 = squt1rm * 0.90;
-        double c44 = Math.round(squtweight44 / 10) * 10;
+        double squtroundoff44 = Math.round(squtweight44 / 10) * 10;
 
-        if (squtweight44 < c44 && c44 <= (squtweight44 + 5)) {
-            if ((c44 - 1.25) <= squtweight44) {
-                System.out.println("4.Set 스쿼트 " + c44 + "kg(권장 Reps2 3회)");
+        if (squtweight44 < squtroundoff44 && squtroundoff44 <= (squtweight44 + 5)) {
+            if ((squtroundoff44 - 1.25) <= squtweight44) {
+                System.out.println("4.Set 스쿼트 " + squtroundoff44 + "kg(권장 Reps2 3회)");
             }
-            if ((c44 - 3.75) <= squtweight44 && squtweight44 < (c44 - 1.25)) {
-                System.out.println("4.Set 스쿼트 " + (c44 - 2.5) + "kg(권장 Reps2 3회)");
+            if ((squtroundoff44 - 3.75) <= squtweight44 && squtweight44 < (squtroundoff44 - 1.25)) {
+                System.out.println("4.Set 스쿼트 " + (squtroundoff44 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((c44 - 5) <= squtweight44 && squtweight44 < (c44 - 3.75)) {
-                System.out.println("4.Set 스쿼트 " + (c44 - 5) + "kg(권장 Reps2 3회)");
+            if ((squtroundoff44 - 5) <= squtweight44 && squtweight44 < (squtroundoff44 - 3.75)) {
+                System.out.println("4.Set 스쿼트 " + (squtroundoff44 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (squtweight44 < (c44 + 1.25)) {
-                System.out.println("4.Set 스쿼트 " + c44 + "kg(권장 Reps2 3회)");
+            if (squtweight44 < (squtroundoff44 + 1.25)) {
+                System.out.println("4.Set 스쿼트 " + squtroundoff44 + "kg(권장 Reps2 3회)");
             }
-            if ((c44 + 1.25) <= squtweight44 && squtweight44 < (c44 + 3.75)) {
-                System.out.println("4.Set 스쿼트 " + (c44 + 2.5) + "kg(권장 Reps2 3회)");
+            if ((squtroundoff44 + 1.25) <= squtweight44 && squtweight44 < (squtroundoff44 + 3.75)) {
+                System.out.println("4.Set 스쿼트 " + (squtroundoff44 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((c44 + 3.75) <= squtweight44 && squtweight44 < (c44 + 5)) {
-                System.out.println("4.Set 스쿼트 " + (c44 + 5) + "kg(권장 Reps2 3회)");
+            if ((squtroundoff44 + 3.75) <= squtweight44 && squtweight44 < (squtroundoff44 + 5)) {
+                System.out.println("4.Set 스쿼트 " + (squtroundoff44 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
@@ -1847,27 +1847,27 @@ public class HealthTraining {
         double reps22a4 = scanner.nextDouble();
 
         double squtweight55 = squt1rm * 0.85;
-        double c55 = Math.round(squtweight55 / 10) * 10;
+        double squtroundoff55 = Math.round(squtweight55 / 10) * 10;
 
-        if (squtweight55 < c55 && c55 <= (squtweight55 + 5)) {
-            if ((c55 - 1.25) <= squtweight55) {
-                System.out.println("5.Set 스쿼트 " + c55 + "kg(권장 Reps2 5회)");
+        if (squtweight55 < squtroundoff55 && squtroundoff55 <= (squtweight55 + 5)) {
+            if ((squtroundoff55 - 1.25) <= squtweight55) {
+                System.out.println("5.Set 스쿼트 " + squtroundoff55 + "kg(권장 Reps2 5회)");
             }
-            if ((c55 - 3.75) <= squtweight55 && squtweight55 < (c55 - 1.25)) {
-                System.out.println("5.Set 스쿼트 " + (c55 - 2.5) + "kg(권장 Reps2 5회)");
+            if ((squtroundoff55 - 3.75) <= squtweight55 && squtweight55 < (squtroundoff55 - 1.25)) {
+                System.out.println("5.Set 스쿼트 " + (squtroundoff55 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((c55 - 5) <= squtweight55 && squtweight55 < (c55 - 3.75)) {
-                System.out.println("5.Set 스쿼트 " + (c55 - 5) + "kg(권장 Reps2 5회)");
+            if ((squtroundoff55 - 5) <= squtweight55 && squtweight55 < (squtroundoff55 - 3.75)) {
+                System.out.println("5.Set 스쿼트 " + (squtroundoff55 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (squtweight55 < (c55 + 1.25)) {
-                System.out.println("5.Set 스쿼트 " + c55 + "kg(권장 Reps2 5회)");
+            if (squtweight55 < (squtroundoff55 + 1.25)) {
+                System.out.println("5.Set 스쿼트 " + squtroundoff55 + "kg(권장 Reps2 5회)");
             }
-            if ((c55 + 1.25) <= squtweight55 && squtweight55 < (c55 + 3.75)) {
-                System.out.println("5.Set 스쿼트 " + (c55 + 2.5) + "kg(권장 Reps2 5회)");
+            if ((squtroundoff55 + 1.25) <= squtweight55 && squtweight55 < (squtroundoff55 + 3.75)) {
+                System.out.println("5.Set 스쿼트 " + (squtroundoff55 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((c55 + 3.75) <= squtweight55 && squtweight55 < (c55 + 5)) {
-                System.out.println("5.Set 스쿼트 " + (c55 + 5) + "kg(권장 Reps2 5회)");
+            if ((squtroundoff55 + 3.75) <= squtweight55 && squtweight55 < (squtroundoff55 + 5)) {
+                System.out.println("5.Set 스쿼트 " + (squtroundoff55 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
@@ -1876,27 +1876,27 @@ public class HealthTraining {
         double reps22a5 = scanner.nextDouble();
 
         double squtweight66 = squt1rm * 0.80;
-        double c66 = Math.round(squtweight66 / 10) * 10;
+        double squtroundoff66 = Math.round(squtweight66 / 10) * 10;
 
-        if (squtweight66 < c66 && c66 <= (squtweight66 + 5)) {
-            if ((c66 - 1.25) <= squtweight66) {
-                System.out.println("6.Set 스쿼트 " + c66 + "kg(권장 Reps2 3회)");
+        if (squtweight66 < squtroundoff66 && squtroundoff66 <= (squtweight66 + 5)) {
+            if ((squtroundoff66 - 1.25) <= squtweight66) {
+                System.out.println("6.Set 스쿼트 " + squtroundoff66 + "kg(권장 Reps2 3회)");
             }
-            if ((c66 - 3.75) <= squtweight66 && squtweight66 < (c66 - 1.25)) {
-                System.out.println("6.Set 스쿼트 " + (c66 - 2.5) + "kg(권장 Reps2 3회)");
+            if ((squtroundoff66 - 3.75) <= squtweight66 && squtweight66 < (squtroundoff66 - 1.25)) {
+                System.out.println("6.Set 스쿼트 " + (squtroundoff66 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((c66 - 5) <= squtweight66 && squtweight66 < (c66 - 3.75)) {
-                System.out.println("6.Set 스쿼트 " + (c66 - 5) + "kg(권장 Reps2 3회)");
+            if ((squtroundoff66 - 5) <= squtweight66 && squtweight66 < (squtroundoff66 - 3.75)) {
+                System.out.println("6.Set 스쿼트 " + (squtroundoff66 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (squtweight66 < (c66 + 1.25)) {
-                System.out.println("6.Set 스쿼트 " + c66 + "kg(권장 Reps2 3회)");
+            if (squtweight66 < (squtroundoff66 + 1.25)) {
+                System.out.println("6.Set 스쿼트 " + squtroundoff66 + "kg(권장 Reps2 3회)");
             }
-            if ((c66 + 1.25) <= squtweight66 && squtweight66 < (c66 + 3.75)) {
-                System.out.println("6.Set 스쿼트 " + (c66 + 2.5) + "kg(권장 Reps2 3회)");
+            if ((squtroundoff66 + 1.25) <= squtweight66 && squtweight66 < (squtroundoff66 + 3.75)) {
+                System.out.println("6.Set 스쿼트 " + (squtroundoff66 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((c66 + 3.75) <= squtweight66 && squtweight66 < (c66 + 5)) {
-                System.out.println("6.Set 스쿼트 " + (c66 + 5) + "kg(권장 Reps2 3회)");
+            if ((squtroundoff66 + 3.75) <= squtweight66 && squtweight66 < (squtroundoff66 + 5)) {
+                System.out.println("6.Set 스쿼트 " + (squtroundoff66 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
@@ -1905,27 +1905,27 @@ public class HealthTraining {
         double reps22a6 = scanner.nextDouble();
 
         double squtweight77 = squt1rm * 0.75;
-        double c77 = Math.round(squtweight77 / 10) * 10;
+        double squtroundoff77 = Math.round(squtweight77 / 10) * 10;
 
-        if (squtweight77 < c77 && c77 <= (squtweight77 + 5)) {
-            if ((c77 - 1.25) <= squtweight77) {
-                System.out.println("7.Set 스쿼트 " + c77 + "kg(권장 Reps2 5회)");
+        if (squtweight77 < squtroundoff77 && squtroundoff77 <= (squtweight77 + 5)) {
+            if ((squtroundoff77 - 1.25) <= squtweight77) {
+                System.out.println("7.Set 스쿼트 " + squtroundoff77 + "kg(권장 Reps2 5회)");
             }
-            if ((c77 - 3.75) <= squtweight77 && squtweight77 < (c77 - 1.25)) {
-                System.out.println("7.Set 스쿼트 " + (c77 - 2.5) + "kg(권장 Reps2 5회)");
+            if ((squtroundoff77 - 3.75) <= squtweight77 && squtweight77 < (squtroundoff77 - 1.25)) {
+                System.out.println("7.Set 스쿼트 " + (squtroundoff77 - 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((c77 - 5) <= squtweight77 && squtweight77 < (c77 - 3.75)) {
-                System.out.println("7.Set 스쿼트 " + (c77 - 5) + "kg(권장 Reps2 5회)");
+            if ((squtroundoff77 - 5) <= squtweight77 && squtweight77 < (squtroundoff77 - 3.75)) {
+                System.out.println("7.Set 스쿼트 " + (squtroundoff77 - 5) + "kg(권장 Reps2 5회)");
             }
         } else {
-            if (squtweight77 < (c77 + 1.25)) {
-                System.out.println("7.Set 스쿼트 " + c77 + "kg(권장 Reps2 5회)");
+            if (squtweight77 < (squtroundoff77 + 1.25)) {
+                System.out.println("7.Set 스쿼트 " + squtroundoff77 + "kg(권장 Reps2 5회)");
             }
-            if ((c77 + 1.25) <= squtweight77 && squtweight77 < (c77 + 3.75)) {
-                System.out.println("7.Set 스쿼트 " + (c77 + 2.5) + "kg(권장 Reps2 5회)");
+            if ((squtroundoff77 + 1.25) <= squtweight77 && squtweight77 < (squtroundoff77 + 3.75)) {
+                System.out.println("7.Set 스쿼트 " + (squtroundoff77 + 2.5) + "kg(권장 Reps2 5회)");
             }
-            if ((c77 + 3.75) <= squtweight77 && squtweight77 < (c77 + 5)) {
-                System.out.println("7.Set 스쿼트 " + (c77 + 5) + "kg(권장 Reps2 5회)");
+            if ((squtroundoff77 + 3.75) <= squtweight77 && squtweight77 < (squtroundoff77 + 5)) {
+                System.out.println("7.Set 스쿼트 " + (squtroundoff77 + 5) + "kg(권장 Reps2 5회)");
             }
         }
 
@@ -1934,27 +1934,27 @@ public class HealthTraining {
         double reps22a7 = scanner.nextDouble();
 
         double squtweight88 = squt1rm * 0.70;
-        double c88 = Math.round(squtweight88 / 10) * 10;
+        double squtroundoff88 = Math.round(squtweight88 / 10) * 10;
 
-        if (squtweight88 < c88 && c88 <= (squtweight88 + 5)) {
-            if ((c88 - 1.25) <= squtweight88) {
-                System.out.println("8.Set 스쿼트 " + c88 + "kg(권장 Reps2 3회)");
+        if (squtweight88 < squtroundoff88 && squtroundoff88 <= (squtweight88 + 5)) {
+            if ((squtroundoff88 - 1.25) <= squtweight88) {
+                System.out.println("8.Set 스쿼트 " + squtroundoff88 + "kg(권장 Reps2 3회)");
             }
-            if ((c88 - 3.75) <= squtweight88 && squtweight88 < (c88 - 1.25)) {
-                System.out.println("8.Set 스쿼트 " + (c88 - 2.5) + "kg(권장 Reps2 3회)");
+            if ((squtroundoff88 - 3.75) <= squtweight88 && squtweight88 < (squtroundoff88 - 1.25)) {
+                System.out.println("8.Set 스쿼트 " + (squtroundoff88 - 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((c88 - 5) <= squtweight88 && squtweight88 < (c88 - 3.75)) {
-                System.out.println("8.Set 스쿼트 " + (c88 - 5) + "kg(권장 Reps2 3회)");
+            if ((squtroundoff88 - 5) <= squtweight88 && squtweight88 < (squtroundoff88 - 3.75)) {
+                System.out.println("8.Set 스쿼트 " + (squtroundoff88 - 5) + "kg(권장 Reps2 3회)");
             }
         } else {
-            if (squtweight88 < (c88 + 1.25)) {
-                System.out.println("8.Set 스쿼트 " + c88 + "kg(권장 Reps2 3회)");
+            if (squtweight88 < (squtroundoff88 + 1.25)) {
+                System.out.println("8.Set 스쿼트 " + squtroundoff88 + "kg(권장 Reps2 3회)");
             }
-            if ((c88 + 1.25) <= squtweight88 && squtweight88 < (c88 + 3.75)) {
-                System.out.println("8.Set 스쿼트 " + (c88 + 2.5) + "kg(권장 Reps2 3회)");
+            if ((squtroundoff88 + 1.25) <= squtweight88 && squtweight88 < (squtroundoff88 + 3.75)) {
+                System.out.println("8.Set 스쿼트 " + (squtroundoff88 + 2.5) + "kg(권장 Reps2 3회)");
             }
-            if ((c88 + 3.75) <= squtweight88 && squtweight88 < (c88 + 5)) {
-                System.out.println("8.Set 스쿼트 " + (c88 + 5) + "kg(권장 Reps2 3회)");
+            if ((squtroundoff88 + 3.75) <= squtweight88 && squtweight88 < (squtroundoff88 + 5)) {
+                System.out.println("8.Set 스쿼트 " + (squtroundoff88 + 5) + "kg(권장 Reps2 3회)");
             }
         }
 
@@ -1963,27 +1963,27 @@ public class HealthTraining {
         double reps22a8 = scanner.nextDouble();
 
         double squtweight99 = squt1rm * 0.65;
-        double c99 = Math.round(squtweight99 / 10) * 10;
+        double squtroundoff99 = Math.round(squtweight99 / 10) * 10;
 
-        if (squtweight99 < c99 && c99 <= (squtweight99 + 5)) {
-            if ((c99 - 1.25) <= squtweight99) {
-                System.out.println("9.Set 스쿼트 " + c99 + "kg(권장 Reps2 1회 이상)");
+        if (squtweight99 < squtroundoff99 && squtroundoff99 <= (squtweight99 + 5)) {
+            if ((squtroundoff99 - 1.25) <= squtweight99) {
+                System.out.println("9.Set 스쿼트 " + squtroundoff99 + "kg(권장 Reps2 1회 이상)");
             }
-            if ((c99 - 3.75) <= squtweight99 && squtweight99 < (c99 - 1.25)) {
-                System.out.println("9.Set 스쿼트 " + (c99 - 2.5) + "kg(권장 Reps2 1회 이상)");
+            if ((squtroundoff99 - 3.75) <= squtweight99 && squtweight99 < (squtroundoff99 - 1.25)) {
+                System.out.println("9.Set 스쿼트 " + (squtroundoff99 - 2.5) + "kg(권장 Reps2 1회 이상)");
             }
-            if ((c99 - 5) <= squtweight99 && squtweight99 < (c99 - 3.75)) {
-                System.out.println("9.Set 스쿼트 " + (c99 - 5) + "kg(권장 Reps2 1회 이상)");
+            if ((squtroundoff99 - 5) <= squtweight99 && squtweight99 < (squtroundoff99 - 3.75)) {
+                System.out.println("9.Set 스쿼트 " + (squtroundoff99 - 5) + "kg(권장 Reps2 1회 이상)");
             }
         } else {
-            if (squtweight99 < (c99 + 1.25)) {
-                System.out.println("9.Set 스쿼트 " + c99 + "kg(권장 Reps2 1회 이상)");
+            if (squtweight99 < (squtroundoff99 + 1.25)) {
+                System.out.println("9.Set 스쿼트 " + squtroundoff99 + "kg(권장 Reps2 1회 이상)");
             }
-            if ((c99 + 1.25) <= squtweight99 && squtweight99 < (c99 + 3.75)) {
-                System.out.println("9.Set 스쿼트 " + (c99 + 2.5) + "kg(권장 Reps2 1회 이상)");
+            if ((squtroundoff99 + 1.25) <= squtweight99 && squtweight99 < (squtroundoff99 + 3.75)) {
+                System.out.println("9.Set 스쿼트 " + (squtroundoff99 + 2.5) + "kg(권장 Reps2 1회 이상)");
             }
-            if ((c99 + 3.75) <= squtweight99 && squtweight99 < (c99 + 5)) {
-                System.out.println("9.Set 스쿼트 " + (c99 + 5) + "kg(권장 Reps2 1회 이상)");
+            if ((squtroundoff99 + 3.75) <= squtweight99 && squtweight99 < (squtroundoff99 + 5)) {
+                System.out.println("9.Set 스쿼트 " + (squtroundoff99 + 5) + "kg(권장 Reps2 1회 이상)");
             }
         }
 
