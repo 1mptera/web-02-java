@@ -13,11 +13,11 @@ public class Megaboard {
         double totalFee = 1000 + 150 * usedMin;
 
         if (isParkingzone) {
-            totalFee = totalFee * 0.9;
+            totalFee *= 0.9;
         }
 
         if (!isParkingzone) {
-            totalFee = totalFee + 3000;
+            totalFee += 3000;
         }
 
         System.out.println("요금: " + totalFee + "원");
