@@ -21,6 +21,7 @@ public class BaseballGame {
 
         int[] answer = new int[]{shuffleAnswer[0], shuffleAnswer[1], shuffleAnswer[2]};
 
+        System.out.print("Answer: ");
         for (int i = 0; i < answer.length; i += 1) {
             System.out.print(answer[i] + "\t");
         }
@@ -29,13 +30,13 @@ public class BaseballGame {
         while (true) {
             int strike = 0;
             int ball = 0;
+            boolean isOverlap = false;
 
             //입력
             System.out.print("Guess numbers: ");
             int guessNumber1 = scanner.nextInt();
             int guessNumber2 = scanner.nextInt();
             int guessNumber3 = scanner.nextInt();
-            System.out.println("");
 
             guess[0] = guessNumber1;
             guess[1] = guessNumber2;
@@ -45,7 +46,7 @@ public class BaseballGame {
             for (int i = 0; i < guess.length; i += 1) {
                 for (int j = 0; j < guess.length; j += 1) {
                     if (i != j && guess[i] == guess[j]){
-                        System.out.println("서로 다른 숫자를 넣어주세요!");
+                        isOverlap = true;
                     }
 
                     if (answer[i] == guess[i]) {
@@ -60,6 +61,10 @@ public class BaseballGame {
             }
 
             //출력
+            if (isOverlap == true){
+                System.out.println("서로 다른 숫자를 넣어주세요!");
+
+            }
             if (strike == 0 && ball == 0) {
                 System.out.println("No count");
                 continue;
@@ -72,6 +77,7 @@ public class BaseballGame {
 
             System.out.println(strike + " strike");
             System.out.println(ball + " ball");
+            System.out.println("");
         }
     }
 }
