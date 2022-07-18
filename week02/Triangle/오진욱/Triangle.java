@@ -6,13 +6,6 @@ public class Triangle {
         Scanner scanner = new Scanner(System.in);
         String star = "";
 
-//        마지막 단 : 2n -1
-//        줄마다 빈칸 : n - 1 (양옆)
-//        n = height
-//        * 수 : 2n -1
-//        n시작 되는곳 : 높이 - (n-1)
-
-
         while(true){
             //입력
             System.out.println("삼각형의 높이를 입력해주세요(2 이상 20 미만)");
