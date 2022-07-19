@@ -12,29 +12,43 @@ public class Circle {
         //준비
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("반지름을 입력하세요 : ");
-        //입력
-        int radius = scanner.nextInt();
-        int diameter = 2 * radius + 1;
-
         String star = "";
 
-        //처리
-        for (int i = 0; i <= diameter; i += 1) {
-            for (int j = 0; j <= diameter; j += 1) {
-                boolean circleDefinition = Math.pow((radius - i), 2) + Math.pow((radius - j), 2) <= Math.pow(radius, 2);
-                if (circleDefinition) {
-                    star += "*";
-                }
+        System.out.println("원 출력 프로그램");
+        System.out.println("---------------------");
 
-                if (!circleDefinition) {
-                    star += " ";
-                }
+        while (true){
+            System.out.println("반지름을 입력하세요 : ");
+            //입력
+            int radius = scanner.nextInt();
+            int diameter = 2 * radius + 1;
+
+            System.out.println("");
+
+            //처리
+            boolean radiusSize = radius > 2 && radius < 20;
+
+            if (!radiusSize){
+                System.out.println("다시 입력해주세요!");
+                continue;
             }
-            star += "\n";
-        }
 
-        //출력
-        System.out.println(star);
+            for (int i = 0; i < diameter; i += 1) {
+                for (int j = 0; j < diameter; j += 1) {
+                    boolean circleDefinition = Math.pow((radius - i), 2) + Math.pow((radius - j), 2) <= Math.pow(radius, 2);
+                    if (circleDefinition) {
+                        star += "*";
+                    }
+
+                    if (!circleDefinition) {
+                        star += " ";
+                    }
+                }
+                star += "\n";
+            }
+            //출력
+            System.out.println(star);
+            break;
+        }
     }
 }
