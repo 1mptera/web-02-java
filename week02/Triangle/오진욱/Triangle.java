@@ -4,9 +4,10 @@ public class Triangle {
     public static void main(String[] args){
         //준비
         Scanner scanner = new Scanner(System.in);
-        String star = "";
 
-        while(true){
+        boolean exit = true;
+
+        while(exit){
             //입력
             System.out.println("삼각형의 높이를 입력해주세요(2 이상 20 미만)");
             int triangleHeight = scanner.nextInt();
@@ -21,17 +22,16 @@ public class Triangle {
             for (int i = 1; i <= triangleHeight; i += 1){
                 for (int j = 1; j<= triangleBase ; j +=1){
                     if (j >= triangleHeight - i + 1 && j <= triangleHeight +i -1 ){
-                        star += "*";
+                        //출력
+                        System.out.print("*");
                         continue;
                     }
-                    star += " ";
+                    System.out.print(" ");
                 }
-                star += "\n";
+                System.out.println("");
             }
 
-            //출력
-            System.out.println(star);
-            return;
+            exit = false;
         }
     }
 }
