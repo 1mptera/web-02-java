@@ -26,7 +26,7 @@ public class Diamond {
         }
 
         for (int i = 1; i < size + 1; i += 1) {
-            for (int j = 1; j < base; j += 1) {
+            for (int j = 1; j <= base; j += 1) {
                 if (j >= size - i + 1 && j <= size + i - 1) {
                     starDiamond += "*";
                     continue;
