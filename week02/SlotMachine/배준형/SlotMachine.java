@@ -7,7 +7,7 @@ public class SlotMachine {
         Random random = new Random();
 
         double credit = 5000;
-        double got = 0;
+        double reward = 0;
 
         int[] numbers = new int[3];
 
@@ -27,23 +27,25 @@ public class SlotMachine {
                 return;
             }
 
-            got = 1000 * (numbers[0] + numbers[1] + numbers[2]) / 20;
+            credit -= 1000;
+
+            reward = 1000 * (numbers[0] + numbers[1] + numbers[2]) / 20;
 
             for (int i = 0; i < 3; i += 1){
                 if (numbers[i] == 7){
-                    got *= 4;
+                    reward *= 4;
                 }
 
                 if (numbers[i] == 4 || numbers[i] == 8 || numbers[i] == 9){
-                    got *= 0.5;
+                    reward *= 0.5;
                 }
             }
 
             System.out.println("Line: " + numbers[0] + " . " + numbers[1] + " . " + numbers[2]);
 
-            credit += got - 1000;
+            credit += reward;
 
-            System.out.println("You won " + got +" !!!!!");
+            System.out.println("You won " + reward +" !!!!!");
             System.out.println("Credit: " + credit);
             System.out.println();
 
