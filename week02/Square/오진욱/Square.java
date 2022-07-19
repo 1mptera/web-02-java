@@ -5,9 +5,9 @@ public class Square {
         //준비
         Scanner scanner = new Scanner(System.in);
 
-        String star = "";
+        int finish = 0;
 
-        while (true) {
+        while (finish < 1) {
             //입력
             System.out.println("한 변의 길이를 입력해 주세요(2 이상 20 미만)");
             int squareLength = scanner.nextInt();
@@ -20,14 +20,13 @@ public class Square {
 
             for (int i = 0; i < squareLength; i += 1) {
                 for (int j = 0; j < squareLength; j += 1) {
-                    star += "*";
+                    System.out.print("*");
                 }
-                star += "\n";
+                System.out.println("");
             }
 
             //출력
-            System.out.println(star);
-            return;
+            finish =1;
         }
     }
 }
