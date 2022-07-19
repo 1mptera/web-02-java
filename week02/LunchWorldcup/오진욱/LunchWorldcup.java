@@ -15,11 +15,11 @@ public class LunchWorldcup {
         String[] finalRound = new String[2];
         String winner = "";
 
-
         int[] roundLength = new int[]{round16.length, round8.length, round4.length, semiFinalRound.length, finalRound.length};
 
         boolean firstOption = true;
         boolean secondOption = true;
+        boolean isNot1or2 = false;
 
         int selectFood = 0;
 
@@ -45,9 +45,6 @@ public class LunchWorldcup {
                 }
             }
 
-// 원하는 것 : 첫 라운드 : 16강 배열 받기 -> 토너먼트 진행 -> 추린것 가지고 새 배열에 넣기 -> 토너먼트 - > 추린것 새배열 -> 토너먼트
-// 현재 라운드 배열 선언 -> 다음라운드 배열 선언
-
             System.out.println("");
             System.out.println("-----------------");
             System.out.println("점심 메뉴 월드컵 " + roundLength[i] + "강");
@@ -67,7 +64,11 @@ public class LunchWorldcup {
 
                 if (!firstOption && !secondOption) {
                     System.out.println("1번과 2번중에 입력해주세요!");
-                    break;
+
+                    isNot1or2 = true;
+
+                    j -= 2;
+                    continue;
                 }
 
                 if (firstOption) {
@@ -100,9 +101,5 @@ public class LunchWorldcup {
         }
 
         System.out.println("오늘의 점심은 " + winner + " 입니다.");
-        //입력
-        //처리
-        //출력
     }
 }
-
