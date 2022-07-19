@@ -9,75 +9,100 @@ public class LunchWorldcup {
                 "라멘", "쌀국수", "곰탕", "국밥", "파타이", "텐동", "제육볶음", "쭈꾸미 볶음", "부대찌개", "김치찌개", "우동", "냉면",
                 "냉모밀", "국수", "생선구이", "육회비빔밥", "물회국수", "뼈해장국", "닭갈비", "마라탕", "샌드위치", "타코"};
 
-        String[] round8 = new String[8];
-        String[] round4 = new String[4];
+        String[] round8 = new String[16];
+        String[] round4 = new String[8];
+        String[] semiFinalRound = new String[4];
         String[] finalRound = new String[2];
+        String winner = "";
 
-        boolean selectFirst = true;
-        boolean selectSecond = true;
 
-        String winnerFood = "";
+        int[] roundLength = new int[]{round16.length, round8.length, round4.length, semiFinalRound.length, finalRound.length};
+
+        boolean firstOption = true;
+        boolean secondOption = true;
+
         int selectFood = 0;
 
-        while (true) {
+        for (int i = 0; i < roundLength.length; i += 1) {
+            String[] round = new String[roundLength[i]];
+            String[] nextRound = new String[roundLength[i] / 2];
+
+            for (int j = 0; j < round.length; j += 1) {
+                if (i == 0) {
+                    round[j] = round16[j];
+                }
+                if (i == 1) {
+                    round[j] = round8[j];
+                }
+                if (i == 2) {
+                    round[j] = round4[j];
+                }
+                if (i == 3) {
+                    round[j] = semiFinalRound[j];
+                }
+                if (i == 4) {
+                    round[j] = finalRound[j];
+                }
+            }
+
+// 원하는 것 : 첫 라운드 : 16강 배열 받기 -> 토너먼트 진행 -> 추린것 가지고 새 배열에 넣기 -> 토너먼트 - > 추린것 새배열 -> 토너먼트
+// 현재 라운드 배열 선언 -> 다음라운드 배열 선언
+
+            System.out.println("");
             System.out.println("-----------------");
-            System.out.println("점심 메뉴 월드컵 16강");
+            System.out.println("점심 메뉴 월드컵 " + roundLength[i] + "강");
             System.out.println("-----------------");
             System.out.println("");
             System.out.println("선호하는 메뉴를 번호로 선택해주세요");
             System.out.println("");
 
-            for (int i = 0; i < round16.length; i += 2) {
-                if (!selectFirst && !selectSecond) {
-                    System.out.println();
-                    break;
+            for (int j = 0; j < roundLength[i]; j += 2) {
+                for (int k = 0; k < 2; k += 1) {
+                    System.out.println((k + 1) + ". " + round[j + k]);
                 }
-                for (int j = 0; j < 2; j += 1) {
-                    System.out.println((j + 1) + ". " + round16[i + j]);
-                }
+
                 selectFood = scanner.nextInt();
+                firstOption = selectFood == 1;
+                secondOption = selectFood == 2;
 
-                selectFirst = selectFood == 1;
-                selectSecond = selectFood == 2;
-
-                if (!selectFirst && !selectSecond) {
+                if (!firstOption && !secondOption) {
                     System.out.println("1번과 2번중에 입력해주세요!");
                     break;
                 }
-                if (selectFood == 1) {
-                    for (int j = 0; j < round8.length; j += 1) {
-                        round8[j] = round16[i];
-                    }
-                    if (selectFood == 2) {
-                        for (int j = 0; j < round8.length; j += 1) {
-                            round8[j] = round16[i + 1];
-                        }
-                    }
+
+                if (firstOption) {
+                    nextRound[j / 2] = round[j];
                 }
-                if (selectFood == 1) {
-                    for (int j = 0; j < round8.length; j += 1) {
-                        round8[j] = round16[i];
-                    }
-                    if (selectFood == 2) {
-                        for (int j = 0; j < round8.length; j += 1) {
-                            round8[j] = round16[i + 1];
-                        }
-                    }
+
+                if (secondOption) {
+                    nextRound[j / 2] = round[j + 1];
                 }
-                if (selectFood == 1) {
-                    for (int j = 0; j < round8.length; j += 1) {
-                        round8[j] = round16[i];
-                    }
-                    if (selectFood == 2) {
-                        for (int j = 0; j < round8.length; j += 1) {
-                            round8[j] = round16[i + 1];
-                        }
-                    }
+                winner = nextRound[0];
+            }
+
+            for (int j = 0; j < nextRound.length; j +=1){
+                if (i == 0){
+                    round8[j] = nextRound[j];
+                }
+                if (i == 1){
+                    round4[j] = nextRound[j];
+                }
+                if (i == 2){
+                    semiFinalRound[j] = nextRound[j];
+                }
+                if (i == 3){
+                    finalRound[j] = nextRound[j];
+                }
+                if (i ==4 ){
+                    winner = nextRound[j];
                 }
             }
         }
+
+        System.out.println("오늘의 점심은 " + winner + " 입니다.");
         //입력
         //처리
         //출력
     }
 }
+
