@@ -16,6 +16,7 @@ public class BaseballGame {
         int[] answer = new int[3];
         for (int i = 0; i < answer.length; i += 1) {
             answer[i] = shuffleNumbers[i];
+            System.out.println(answer[i]);
         }
 
         int[] guess = new int[3];
@@ -23,7 +24,7 @@ public class BaseballGame {
         int strike = 0;
         int ball = 0;
 
-        while (strike == 3) {
+        while (strike < 3) {
             strike = 0;
             ball = 0;
 
@@ -35,9 +36,11 @@ public class BaseballGame {
             for (int i = 0; i < guess.length; i += 1) {
                 guess[i] = 0;
                 guess[i] = scanner.nextInt();
+
                 if (guess[i] > 9 || guess[i] < 0) {
                     isOutRanged = true;
                 }
+
                 if (i != 0 && guess[i] == guess[i - 1]) {
                     isOverlapped = true;
                 }
@@ -60,19 +63,21 @@ public class BaseballGame {
                         strike += 1;
                         break;
                     }
+
                     if (guess[i] == answer[j]) {
                         ball += 1;
-
                     }
                 }
             }
 
             //출력
             System.out.println(strike + " Strike");
-            System.out.println(strike + " Strike");
+            System.out.println(ball + " Ball");
 
+            if (strike == 3 ){
+                System.out.println("You win!");
+            }
+            System.out.println("");
         }
-
-
     }
 }
