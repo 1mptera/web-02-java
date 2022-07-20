@@ -27,6 +27,7 @@ public class DeliveryTycoon {
         int hp = 0;
         int money = 0;
         int fame = 0;
+        int foodCost=0;
 
         long time = 0;
         boolean fail = false;
@@ -39,8 +40,20 @@ public class DeliveryTycoon {
         String shortDash = "---------------";
         String longDash = "---------------------------------";
 
-        String[] menu = new String[]{"햄버거", "족발", "피자", "케이크", "커피", "치킨"};
+        String hamburger = "1. 햄버거";
+        String pizza = "2. 피자";
+        String chicken = "3. 치킨";
+        String coffee = "4. 커피";
+        String cake = "5. 케이크";
+        String jokbal = "6. 족발";
+
+        String[] menu = new String[]{hamburger, pizza, chicken, coffee, cake, jokbal};
+
         String[] item = new String[]{"자양강장제", "광고", "도박"};
+
+
+        String[] store = new String[]{"노점상", "푸드 트럭", "구멍가게", "레스토랑"};
+        String level = "";
 
         int[] orderOrder = new int[]{1, 2, 3, 4, 5, 6};
 
@@ -50,6 +63,8 @@ public class DeliveryTycoon {
             hp = 1000;
             money = 1000;
             fame = 0;
+
+            playing = false;
 
             //입력
             System.out.println(shortDash);
@@ -63,16 +78,32 @@ public class DeliveryTycoon {
             int select = scanner.nextInt();
 
             if (select == 2) {
-                exit = false;
+                exit = true;
             }
 
             if (select == 1) {
                 System.out.println("이름을 입력해주세요 : ");
+
+                scanner.nextLine();
                 name = scanner.nextLine();
 
                 while (!playing) {
+                    shop = false;
 
-                    System.out.println(day + "일차 " + name + "의 노점상");
+                    if (money <= 2000 && fame <= 20) {
+                        level = store[0];
+                    }
+                    if (money > 2000 && fame > 20) {
+                        level = store[1];
+                    }
+                    if (money > 5000 && fame > 50) {
+                        level = store[2];
+                    }
+                    if (money > 8000 && fame > 80) {
+                        level = store[3];
+                    }
+
+                    System.out.println(day + "일차 " + name + "의 " + level);
                     System.out.println(longDash);
                     System.out.println("체력 : " + hp + ", 자산 : " + money + "원, 인지도: " + fame);
                     System.out.println(longDash);
@@ -84,6 +115,7 @@ public class DeliveryTycoon {
                     select = scanner.nextInt();
 
                     if (select == 3) {
+                        playing = true;
                         continue;
                     }
 
@@ -91,22 +123,43 @@ public class DeliveryTycoon {
                         System.out.println(longDash);
                         System.out.println("체력 : " + hp + ", 자산 : " + money + "원, 인지도: " + fame);
                         System.out.println(longDash);
+
                         for (int i = 0; i < 5; i += 1) {
                             over10s = false;
                             fail = false;
                             long start = System.currentTimeMillis();
                             int order = random.nextInt(6) + 1;
+
                             System.out.println(order + "개의 음식주문이 들어왔습니다. (10초안에 음식을 완성해주세요!)");
 
-                            for (int j = 1; j <= order; j += 1) {
-                                order = random.nextInt(6) + 1;             //TODO : order 섞어서 넣기 (셔플)
-                                System.out.println(order + ". " + menu[j - 1]);       //TODO : 메뉴 섞어서 넣기 (셔플)
+                            for (int j = 0; j <= 20; j += 1) {
+                                int x = random.nextInt(6);
+                                int y = random.nextInt(6);
+                                ;     //TODO : order 섞어서 넣기 (셔플)
+                                String temp = menu[x];
 
-                                select = scanner.nextInt();
+                                menu[x] = menu[y];
+                                menu[y] = temp;
+
+
                             }
 
-//                        if() ~                        //배달 순서 입력 -> 틀리면 fail
-//                        boolean fail = true
+                            for (int j = 0; j < order; j += 1) {           //TODO : 나중에 리팩터링
+                                System.out.println(menu[i]);
+                            }
+                            for (int j = 0; j < order; j += 1) {
+                                int current = Integer.parseInt(menu[i].substring(0, 1));
+
+                                System.out.println("음식준비:");
+
+                                select = scanner.nextInt();
+
+                                if (select != current) {
+                                    fail = true;
+
+                                }
+                            }
+
 
                             while (over10s) {
                                 time = (System.currentTimeMillis() - start) / 1000;
@@ -143,34 +196,38 @@ public class DeliveryTycoon {
                             }
 
                             if (select == 1) {
-                                System.out.println("자양강장제 구입! 내 자산: " + (money - 10));
-                                System.out.println("체력 회복! 내 체력: " + (hp + 100));
+                                money -= 10;
+                                hp += 100;
+                                System.out.println("자양강장제 구입! 내 자산: " + money);
+                                System.out.println("체력 회복! 내 체력: " + hp);
                                 continue;
                             }
 
                             if (select == 2) {
-                                System.out.println("광고 구입! 내 자산: " + (money - 300));
-                                System.out.println("인지도 상승! 내 인지도: " + (fame + 10));
+                                money -= 300;
+                                fame += 10;
+                                System.out.println("광고 구입! 내 자산: " + money);
+                                System.out.println("인지도 상승! 내 인지도: " + fame);
                             }
 
                             if (select == 3) {
-                                System.out.println("복권 구입! 내 자산: " + (money - 50));
+                                money -= 50;
+                                System.out.println("복권 구입! 내 자산: " + money);
                                 int gamble = random.nextInt(10);
-                                if (gamble <5){
-                                    System.out.println("도박 성공! 내 자산: " + (money *2));
-                                }
-                                System.out.println("도박 실패! 내 자산: " + money);
-                            }
 
+                                if (gamble < 5) {
+                                    money *= 2;
+                                    System.out.println("도박 성공! 내 자산: " + money);
+                                }
+
+                                if (gamble >= 5) {
+                                    System.out.println("도박 실패! 내 자산: " + money);
+                                }
+                            }
                         }
                     }                                   //상점
-
                 }                                       // playing
             }
-
-
-            //처리
-            //출력
         }                                               //exit
     }
 }
