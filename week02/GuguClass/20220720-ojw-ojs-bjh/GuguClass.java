@@ -16,9 +16,12 @@ public class GuguClass {
 
                 System.out.print("\t");
 
-                if(i + 2 < 10){
-                    System.out.print((i + 2) + (" * ") + j + " = " + (i + 2) * j);
+                if (i + 2 == 10) {
+                    System.out.println();
+                    continue;
                 }
+
+                System.out.print((i + 2) + (" * ") + j + " = " + (i + 2) * j);
 
                 System.out.println();
             }
