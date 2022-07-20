@@ -4,7 +4,6 @@
 // 중심부터 테두리 *까지의 길이 : root(|r - i|^2 + |r - j|^2) < r
 // r^2
 
-
 import java.util.Scanner;
 
 public class Circle {
@@ -14,10 +13,12 @@ public class Circle {
 
         String star = "";
 
+        boolean exit = false;
+
         System.out.println("원 출력 프로그램");
         System.out.println("---------------------");
 
-        while (true){
+        while (!exit){
             System.out.println("반지름을 입력하세요 : ");
             //입력
             int radius = scanner.nextInt();
@@ -46,9 +47,10 @@ public class Circle {
                 }
                 star += "\n";
             }
-            //출력
-            System.out.println(star);
-            break;
+
+            exit = true;
         }
+        //출력
+        System.out.println(star);
     }
 }
