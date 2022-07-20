@@ -34,11 +34,14 @@ public class DeliveryTycoon {
 
         boolean exit = false;
         boolean playing = false;
+        boolean shop = false;
 
         String shortDash = "---------------";
         String longDash = "---------------------------------";
 
         String[] menu = new String[]{"햄버거", "족발", "피자", "케이크", "커피", "치킨"};
+        String[] item = new String[]{"자양강장제", "광고", "도박"};
+
         int[] orderOrder = new int[]{1, 2, 3, 4, 5, 6};
 
 
@@ -67,7 +70,7 @@ public class DeliveryTycoon {
                 System.out.println("이름을 입력해주세요 : ");
                 name = scanner.nextLine();
 
-                while (!playing){
+                while (!playing) {
 
                     System.out.println(day + "일차 " + name + "의 노점상");
                     System.out.println(longDash);
@@ -118,11 +121,48 @@ public class DeliveryTycoon {
                         continue;
                     }                                   //가게 오픈
 
-                    if (select ==2) {
-                        System.out.println(shortDash);
-                        System.out.println("플렉스 상점");
-                        System.out.println(shortDash);
-                        System.out.println("1. 자양강장제");
+                    if (select == 2) {
+                        while (!shop) {
+                            System.out.println(shortDash);
+                            System.out.println("플렉스 상점");
+                            System.out.println(shortDash);
+                            System.out.println("1. 자양강장제 : 체력 100 회 - 10만원");
+                            System.out.println("2. 광고: 인지도 +10 -300만원");
+                            System.out.println("3. 도박: 50%확률로 자산 X 2 - 50만원");
+                            System.out.println("4. 상점 나가기");
+
+                            select = scanner.nextInt();
+                            if (select != 1 && select != 2 && select != 3 && select != 4) {
+                                System.out.println("1, 2, 3, 4번 중에 골라 주세요!");
+                                continue;
+                            }
+
+                            if (select == 4) {
+                                shop = true;
+                                continue;
+                            }
+
+                            if (select == 1) {
+                                System.out.println("자양강장제 구입! 내 자산: " + (money - 10));
+                                System.out.println("체력 회복! 내 체력: " + (hp + 100));
+                                continue;
+                            }
+
+                            if (select == 2) {
+                                System.out.println("광고 구입! 내 자산: " + (money - 300));
+                                System.out.println("인지도 상승! 내 인지도: " + (fame + 10));
+                            }
+
+                            if (select == 3) {
+                                System.out.println("복권 구입! 내 자산: " + (money - 50));
+                                int gamble = random.nextInt(10);
+                                if (gamble <5){
+                                    System.out.println("도박 성공! 내 자산: " + (money *2));
+                                }
+                                System.out.println("도박 실패! 내 자산: " + money);
+                            }
+
+                        }
                     }                                   //상점
 
                 }                                       // playing
