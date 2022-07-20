@@ -7,6 +7,7 @@ public class DeliveryTycoon {
         Random random = new Random();
 
         String shortdash = "---------------";
+        String name = "";
 
         System.out.println(shortdash);
         System.out.println("딜리버리 타이쿤 게임");
@@ -16,29 +17,49 @@ public class DeliveryTycoon {
         int health = 1000;
         int money = 1000;
         int awareness = 0;
-
+        int option = 3;
 
         while (true) {
 
-            System.out.println("메뉴를 선택해주세요");
-            System.out.println("1. 게임시작");
-            System.out.println("2. 게임종료");
+            if (option == 3) {
+                System.out.println("메뉴를 선택해주세요");
+                System.out.println("1. 게임시작");
+                System.out.println("2. 게임종료");
 
-            int option = scanner.nextInt();
+                option = scanner.nextInt();
 
-            if (option == 2) {
-                return;
+                if (option == 2) {
+                    return;
+                }
+
+                System.out.println("주인공 이름을 입력해주세요");
+
+                scanner.nextLine();
+                name = scanner.nextLine();
+
+                day = 1;
+                health = 1000;
+                money = 1000;
+                awareness = 0;
             }
-
-            System.out.println("주인공 이름을 입력해주세요");
-
-            scanner.nextLine();
-            String name = scanner.nextLine();
 
             String dash = "------------------------------------------";
             String status = "체력: " + health + ", 자산: " + money + "만원, 인지도: " + awareness;
+            String storelevel = "노점상";
 
-            System.out.println(day + "일차 " + name + "의 노점상");
+            if (money > 2000 && awareness > 20){
+                storelevel = "푸드 트럭";
+            }
+
+            if (money > 5000 && awareness > 50){
+                storelevel = "구멍 가게";
+            }
+
+            if (money > 8000 && awareness > 80){
+                storelevel = "레스토랑";
+            }
+
+            System.out.println(day + "일차 " + name + "의 " + storelevel);
             System.out.println(dash);
             System.out.println(status);
             System.out.println(dash);
@@ -49,13 +70,24 @@ public class DeliveryTycoon {
 
             option = scanner.nextInt();
 
+            if (option == 1 && health < 500){
+                System.out.println("체력이 부족합니다. 체력을 보충해 주세요! 내 체력: " + health);
+                System.out.println();
+                continue;
+            }
+
             //todo 음식 배달 게임 구현
             if (option == 1) {
+                int revenue = 0;
+
                 for (int i = 0; i < 5; i += 1) {
                     System.out.println(dash);
                     System.out.println(status);
                     System.out.println(dash);
+
+
                 }
+
                 System.out.println(day + "일차 가게 마감!");
                 System.out.println("총 수익: ");
                 System.out.println("인지도: " + awareness);
