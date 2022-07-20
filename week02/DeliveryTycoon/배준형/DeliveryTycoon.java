@@ -1,5 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class DeliveryTycoon {
     public static void main(String[] args) {
@@ -47,15 +49,15 @@ public class DeliveryTycoon {
             String status = "체력: " + health + ", 자산: " + money + "만원, 인지도: " + awareness;
             String storelevel = "노점상";
 
-            if (money > 2000 && awareness > 20){
+            if (money > 2000 && awareness > 20) {
                 storelevel = "푸드 트럭";
             }
 
-            if (money > 5000 && awareness > 50){
+            if (money > 5000 && awareness > 50) {
                 storelevel = "구멍 가게";
             }
 
-            if (money > 8000 && awareness > 80){
+            if (money > 8000 && awareness > 80) {
                 storelevel = "레스토랑";
             }
 
@@ -70,7 +72,7 @@ public class DeliveryTycoon {
 
             option = scanner.nextInt();
 
-            if (option == 1 && health < 500){
+            if (option == 1 && health < 500) {
                 System.out.println("체력이 부족합니다. 체력을 보충해 주세요! 내 체력: " + health);
                 System.out.println();
                 continue;
@@ -79,12 +81,30 @@ public class DeliveryTycoon {
             //todo 음식 배달 게임 구현
             if (option == 1) {
                 int revenue = 0;
+                int order = random.nextInt(6) + 1;
+
+                String[] foods = new String[]{"1. 햄버거", "2. 피자", "3. 치킨", "4. 커피", "5. 케이크", "6. 족발"};
+
+                int[] answers = new int[order];
 
                 for (int i = 0; i < 5; i += 1) {
                     System.out.println(dash);
                     System.out.println(status);
                     System.out.println(dash);
+                    System.out.println(order+ "개의 주문이 들어 왔습니다. (10초 안에 음식을 완성해주세요)");
 
+                    Timer timer=new Timer();
+                    TimerTask task=new TimerTask(){
+                        public void run() {
+                            System.out.println("주문이 틀렸습니다! " + "만원의 손해가 발생했습니다.");
+
+                            if (){
+                                timer.cancel();
+                            }
+                        }
+                    };
+
+                    timer.schedule(task, 10000);
 
                 }
 
