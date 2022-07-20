@@ -26,10 +26,11 @@ public class SlotMachine {
             System.out.println("Want to Play? 1. Yes, 2. No");
             int yesOrNo = scanner.nextInt();
 
-            int countSeven = 0;
-            int count489 = 0;
+            int advantageCount = 0;
+            int disadvantageCount = 0;
             double basicPrice = 0;
-            double got = 0;
+            double totalPrice = 0;
+            double reward = 0;
 
             //처리
             if (yesOrNo != 1 && yesOrNo != 2) {
@@ -50,21 +51,22 @@ public class SlotMachine {
                     realSlotMachine[i] = randomSlotNumber[slotNumber];
 
                     if (realSlotMachine[i] == 7) {
-                        countSeven += 1;
+                        advantageCount += 1;
                     }
                     if (realSlotMachine[i] == 4 || realSlotMachine[i] == 8 || realSlotMachine[i] == 9) {
-                        count489 += 1;
+                        disadvantageCount += 1;
                     }
 
-                    basicPrice += slotCharge * realSlotMachine[i] / 20;
+                    basicPrice = slotCharge * realSlotMachine[i] / 20;
+                    totalPrice += basicPrice;
                 }
 
-                got = basicPrice * Math.pow(4, countSeven) * Math.pow(0.5, count489);
-                credit += got;
+                reward = totalPrice * Math.pow(4, advantageCount) * Math.pow(0.5, disadvantageCount);
+                credit += reward;
 
                 //출력
                 System.out.println("Line: " + realSlotMachine[0] + " . " + realSlotMachine[1] + " . " + realSlotMachine[2]);
-                System.out.println("You won " + got + " !!!!!");
+                System.out.println("You won " + reward + " !!!!!");
                 System.out.println("Credit: " + credit);
 
                 if (credit < 1000) {
