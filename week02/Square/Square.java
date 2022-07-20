@@ -21,13 +21,13 @@ public class Square {
 
         if (answer >= 2 && answer < 20) {
             for (int i = 0; i < answer; i += 1) {
-                length += "\n";
                 for (int j = 0; j < answer; j += 1) {
-                    length += "*";
+                    System.out.print("*");
+                    continue;
                 }
+
+                System.out.println();
             }
         }
-
-        System.out.println(length);
     }
 }
