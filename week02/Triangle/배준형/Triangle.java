@@ -16,10 +16,11 @@ public class Triangle {
 
         for (int i = 0; i < high; i += 1) {
 
-            System.out.print(" ".repeat(high - (i + 1)));
+            int blank = high - i + 1;
+            int star = 2 * i + 1;
 
-            System.out.print("*".repeat(2 * i + 1));
-
+            System.out.print(" ".repeat(blank));
+            System.out.print("*".repeat(star));
             System.out.println();
         }
     }
