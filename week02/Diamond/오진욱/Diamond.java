@@ -12,29 +12,30 @@ public class Diamond {
 
         while (true) {
             //입력
-            int rhombusLength = scanner.nextInt();
-            int rhombusHeight = 2 * rhombusLength - 1;
+            int diamondLength = scanner.nextInt();
+            int diamondHeight = 2 * diamondLength - 1;
 
             //처리
-            if (rhombusLength < 1 || rhombusLength > 10) {
+            if (diamondLength < 1 || diamondLength > 10) {
                 System.out.println("다시 입력해주세요");
                 continue;
             }
 
-            for (int i = 1; i <= rhombusHeight; i += 1) {
-                for (int j = 1; j <= rhombusHeight; j += 1) {
-                    if (i <= rhombusLength) {
-                        if (j - rhombusLength <= i - 1 && j - rhombusLength >= 1 - i) {
-                                System.out.print("*");
+            for (int i = 1; i <= diamondHeight; i += 1) {
+                for (int j = 1; j <= diamondHeight; j += 1) {
+                    if (i <= diamondLength) {
+                        if (Math.abs(j - diamondLength) <= Math.abs(i - 1)) {
+                            System.out.print("*");
+
                             continue;
                         }
-                        System.out.print("O");
+                        System.out.print(" ");
                     }
 
-                    if (i > rhombusLength) {
-                        if (j <= i - rhombusLength || j >= rhombusHeight - (i - rhombusLength) + 1) {
+                    if (i > diamondLength) {
+                        if (j <= i - diamondLength || j >= diamondHeight - (i - diamondLength) + 1) {
+                            System.out.print(" ");
 
-                            System.out.print("O");
                             continue;
                         }
                         System.out.print("*");
