@@ -9,13 +9,13 @@ public class DeliveryTycoon {
         int[] foodPrice = new int[]{1, 5, 3, 1, 2, 4};
         int[] select = new int[]{1, 2, 3, 4, 5, 6};
 
-        int date = 0;
+        int date = 1;
         int money = 1000;
         int hp = 1000;
         int popularity = 0;
-        int ordersPrice = 0;
 
         String[] storeName = new String[]{"노점상", "푸드 트럭", "구멍 가게", "레스토랑"};
+
         String currentLevel = "";
 
         System.out.println("---------------");
@@ -31,11 +31,10 @@ public class DeliveryTycoon {
 
         String name = scanner.next();
 
-
         while (true) {
-            date += 1;
 
             currentLevel = storeName[0];
+
             if (money > 2000 && popularity > 20) {
                 currentLevel = storeName[1];
             }
@@ -57,6 +56,7 @@ public class DeliveryTycoon {
 
             if (choose == 1) {
                 for (int i = 0; i < 5; i += 1) {
+                    int ordersPrice = 0;
 
                     int[] numberOfOrders = new int[]{1, 2, 3, 4, 5, 6};
 
@@ -87,7 +87,6 @@ public class DeliveryTycoon {
                         select[y] = temp3;
                     }
 
-
                     for (int j = 0; j < numberOfOrders[i]; j += 1) {
                         System.out.println(foodMenu[j]);
                         ordersPrice += foodPrice[j];
@@ -112,8 +111,9 @@ public class DeliveryTycoon {
                 }
             }
 
-
+            date += 1;
             if (choose == 2) {
+                date -= 1;
                 while (choose != 4) {
                     System.out.println("-----------------------");
                     System.out.println("플렉스 상점");
@@ -155,7 +155,6 @@ public class DeliveryTycoon {
                         if (!succes) {
                             System.out.println("도박 실패! 내 자산: " + money);
                         }
-                        date += 1;
                         continue;
                     }
                 }
@@ -177,7 +176,6 @@ public class DeliveryTycoon {
                 if (choose == 2) {
                     break;
                 }
-
             }
         }
     }
