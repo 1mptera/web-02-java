@@ -15,13 +15,15 @@ public class SlotMachine {
         Random random = new Random();
         DecimalFormat decimalFormat = new DecimalFormat("##00.0");
 
-        int[] randomSlotNumber = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
-        int[] realSlotMachine = new int[3];
+        int[] slotNumbers = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[] selectedNumbers = new int[3];
 
         int credit = 5000;
         int slotCharge = 1000;
 
-        while (true) {
+        boolean exit = false;
+
+        while (!exit) {
             //입력
             System.out.println("Want to Play? 1. Yes, 2. No");
             int yesOrNo = scanner.nextInt();
@@ -46,18 +48,18 @@ public class SlotMachine {
             if (yesOrNo == 1) {
                 credit -= slotCharge;
 
-                for (int i = 0; i < realSlotMachine.length; i += 1) {
+                for (int i = 0; i < selectedNumbers.length; i += 1) {
                     int slotNumber = random.nextInt(9);
-                    realSlotMachine[i] = randomSlotNumber[slotNumber];
+                    selectedNumbers[i] = slotNumbers[slotNumber];
 
-                    if (realSlotMachine[i] == 7) {
+                    if (selectedNumbers[i] == 7) {
                         advantageCount += 1;
                     }
-                    if (realSlotMachine[i] == 4 || realSlotMachine[i] == 8 || realSlotMachine[i] == 9) {
+                    if (selectedNumbers[i] == 4 || selectedNumbers[i] == 8 || selectedNumbers[i] == 9) {
                         disadvantageCount += 1;
                     }
 
-                    basicPrice = slotCharge * realSlotMachine[i] / 20;
+                    basicPrice = slotCharge * selectedNumbers[i] / 20;
                     totalPrice += basicPrice;
                 }
 
@@ -65,20 +67,20 @@ public class SlotMachine {
                 credit += reward;
 
                 //출력
-                System.out.println("Line: " + realSlotMachine[0] + " . " + realSlotMachine[1] + " . " + realSlotMachine[2]);
+                System.out.println("Line: " + selectedNumbers[0] + " . " + selectedNumbers[1] + " . " + selectedNumbers[2]);
                 System.out.println("You won " + reward + " !!!!!");
                 System.out.println("Credit: " + credit);
 
                 if (credit < 1000) {
                     System.out.println("Need credit? Go home!");
                     System.out.println("bye bye ~");
-                    return;
+                    exit = true;
                 }
 
                 if (credit > 10000) {
                     System.out.println("Winner!!");
                     System.out.println("bye bye ~");
-                    return;
+                    exit = true;
                 }
             }
         }
