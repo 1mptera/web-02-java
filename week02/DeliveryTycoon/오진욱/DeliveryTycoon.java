@@ -91,7 +91,6 @@ public class DeliveryTycoon {
                 while (!playing) {
                     shop = false;
 
-
                     if (money <= 2000 && fame <= 20) {
                         level = store[0];
                     }
@@ -122,7 +121,11 @@ public class DeliveryTycoon {
                     }
 
                     if (select == 1) {
-//                        if(hp < 500)
+                        if(hp < 500){
+                            System.out.println("체력이 부족합니다. 체력을 보충해주세요! 내 체력: " + hp);
+                            System.out.println();
+                            continue;
+                        }
 
                         for (int i = 0; i < 20; i += 1) {
                             int x = random.nextInt(orderOrder.length);
