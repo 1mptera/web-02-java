@@ -8,6 +8,7 @@ public class DeliveryTycoon {
         String[] foodMenu = new String[]{"1. 햄버거", "2. 피자", "3. 치킨", "4. 커피", "5. 케이크", "6. 족발"};
         int[] foodPrice = new int[]{1, 5, 3, 1, 2, 4};
         int[] select = new int[]{1, 2, 3, 4, 5, 6};
+        int[] answer = new int[6];
 
         int date = 1;
         int money = 1000;
@@ -27,11 +28,11 @@ public class DeliveryTycoon {
 
         int choose = scanner.nextInt();
 
-        System.out.println("주인공 이름을 입력해주세요");
-
-        String name = scanner.next();
-
         if (choose == 1) {
+            System.out.println("주인공 이름을 입력해주세요");
+
+            String name = scanner.next();
+
             while (true) {
 
                 currentLevel = storeName[0];
@@ -53,9 +54,16 @@ public class DeliveryTycoon {
                 System.out.println("1. 가게 오픈하기");
                 System.out.println("2. 상점");
                 System.out.println("3. 메뉴로 돌아가기");
+
                 choose = scanner.nextInt();
 
                 if (choose == 1) {
+                    if (hp < 500) {
+                        System.out.println("체력이 부족합니다. 체력을 보충해 주세요! 내 체력: " + hp);
+                        continue;
+                    }
+                    int sum = 0;
+
                     for (int i = 0; i < 5; i += 1) {
                         int ordersPrice = 0;
 
@@ -99,14 +107,25 @@ public class DeliveryTycoon {
 
                         for (int j = 0; j < numberOfOrders[i]; j += 1) {
                             System.out.println("음식 준비: ");
-                            choose = scanner.nextInt();
-
-                            if (choose != select[j]) {
+                            answer[j] = scanner.nextInt();
+                            if (answer[j] != select[j]) {
                                 money -= ordersPrice;
+                                sum -= ordersPrice;
                                 System.out.println("주문이 틀렸습니다! " + ordersPrice + " 만원의 손해가 발생했습니다.");
                                 System.out.println("내 자산: " + money);
                                 System.out.println();
-                                continue;
+                                break;
+                            }
+
+                            if (answer[numberOfOrders[i] - 1] == select[numberOfOrders[i] - 1]) {
+                                long afterTime = System.currentTimeMillis();
+                                long playTime = (afterTime - beforeTime) / 1000;
+                                money += ordersPrice;
+                                sum += ordersPrice;
+
+                                System.out.println("음식 준비 완료! 소요시간: " + playTime);
+                                System.out.println("배달완료! 수익: " + ordersPrice);
+                                System.out.println();
                             }
                         }
 
@@ -115,19 +134,25 @@ public class DeliveryTycoon {
 
                         if (playTime > 10) {
                             money -= ordersPrice;
+                            sum -= ordersPrice;
                             System.out.println("음식 준비 완료! 소요시간: " + playTime);
                             System.out.println("주문시간 초과했습니다! " + ordersPrice + " 만원의 손해가 발생했습니다.");
                             System.out.println();
                             continue;
                         }
-
-                        money += ordersPrice;
-                        System.out.println("음식 준비 완료! 소요시간: " + playTime);
-                        System.out.println("배달완료! 수익: " + ordersPrice);
-                        System.out.println();
                     }
+
+                    date += 1;
+                    hp -= 500;
+
+                    System.out.println();
+                    System.out.println("1일차 가게 마감!");
+                    System.out.println("총 수익: " + sum);
+                    System.out.println("인지도: " + popularity);
+                    System.out.println("체력소모: -500");
+                    System.out.println();
+                    continue;
                 }
-                date += 1;
 
                 if (choose == 2) {
                     date -= 1;
@@ -175,16 +200,20 @@ public class DeliveryTycoon {
                             continue;
                         }
                     }
+                    continue;
                 }
 
                 if (choose == 3) {
+                    System.out.println();
                     System.out.println("메뉴를 선택해주세요");
                     System.out.println("1. 게임시작");
                     System.out.println("2. 게임종료");
 
                     choose = scanner.nextInt();
+
                     if (choose == 1) {
                         date = 1;
+                        System.out.println();
                         System.out.println("주인공 이름을 입력해주세요");
 
                         name = scanner.next();
