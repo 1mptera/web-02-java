@@ -140,12 +140,10 @@ public class DeliveryTycoon {
 
                                 menu[x] = menu[y];
                                 menu[y] = temp;
-
-
                             }
 
                             for (int j = 0; j < order; j += 1) {           //TODO : 나중에 리팩터링
-                                System.out.println(menu[i]);
+                                System.out.println(menu[j]);
                             }
                             for (int j = 0; j < order; j += 1) {
                                 int current = Integer.parseInt(menu[i].substring(0, 1));
@@ -156,8 +154,11 @@ public class DeliveryTycoon {
 
                                 if (select != current) {
                                     fail = true;
-
                                 }
+                            }
+
+                            if (fail == true){
+                                System.out.println("주문에 틀렸습니다!");
                             }
 
 
