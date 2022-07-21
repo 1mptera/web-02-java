@@ -34,7 +34,6 @@ public class DeliveryTycoon {
             String name = scanner.next();
 
             while (true) {
-
                 currentLevel = storeName[0];
 
                 if (money > 2000 && popularity > 20) {
@@ -155,7 +154,6 @@ public class DeliveryTycoon {
                 }
 
                 if (choose == 2) {
-                    date -= 1;
                     while (choose != 4) {
                         System.out.println("-----------------------");
                         System.out.println("플렉스 상점");
@@ -213,6 +211,10 @@ public class DeliveryTycoon {
 
                     if (choose == 1) {
                         date = 1;
+                        money = 1000;
+                        hp = 1000;
+                        popularity = 0;
+
                         System.out.println();
                         System.out.println("주인공 이름을 입력해주세요");
 
