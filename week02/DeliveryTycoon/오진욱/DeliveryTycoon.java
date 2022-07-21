@@ -133,9 +133,7 @@ public class DeliveryTycoon {
                             orderOrder[y] = temp;
                         }
 
-
                         totalGet = 0;
-
 
                         for (int i = 0; i < 5; i += 1) {
                             for (int j = 0; j <= 20; j += 1) {
@@ -162,7 +160,6 @@ public class DeliveryTycoon {
                             System.out.println("체력 : " + hp + ", 자산 : " + money + "만 원, 인지도: " + fame);
                             System.out.println(longDash);
 
-
                             System.out.println(order + "개의 음식주문이 들어왔습니다. (10초안에 음식을 완성해주세요!)");
 
                             for (int j = 0; j < order; j += 1) {           //TODO : 나중에 리팩터링
@@ -182,6 +179,8 @@ public class DeliveryTycoon {
                                     break;
                                 }
                             }
+
+                            time = (System.currentTimeMillis() - start) / 1000;
 
                             if (fail == true) {
                                 totalGet -= foodCost;
