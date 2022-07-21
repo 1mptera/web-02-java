@@ -27,7 +27,8 @@ public class DeliveryTycoon {
         int hp = 0;
         int money = 0;
         int fame = 0;
-        int foodCost=0;
+        int foodCost = 0;
+        int totalGet = 0;
 
         long time = 0;
         boolean fail = false;
@@ -48,6 +49,7 @@ public class DeliveryTycoon {
         String jokbal = "6. 족발";
 
         String[] menu = new String[]{hamburger, pizza, chicken, coffee, cake, jokbal};
+        int[] price = new int[]{1, 5, 3, 1, 2, 4};
 
         String[] item = new String[]{"자양강장제", "광고", "도박"};
 
@@ -56,7 +58,6 @@ public class DeliveryTycoon {
         String level = "";
 
         int[] orderOrder = new int[]{1, 2, 3, 4, 5, 6};
-
 
         while (!exit) {
             day = 1;
@@ -90,6 +91,7 @@ public class DeliveryTycoon {
                 while (!playing) {
                     shop = false;
 
+
                     if (money <= 2000 && fame <= 20) {
                         level = store[0];
                     }
@@ -120,56 +122,104 @@ public class DeliveryTycoon {
                     }
 
                     if (select == 1) {
-                        System.out.println(longDash);
-                        System.out.println("체력 : " + hp + ", 자산 : " + money + "원, 인지도: " + fame);
-                        System.out.println(longDash);
+//                        if(hp < 500)
+
+                        for (int i = 0; i < 20; i += 1) {
+                            int x = random.nextInt(orderOrder.length);
+                            int y = random.nextInt(orderOrder.length);
+                            int temp = orderOrder[x];
+
+                            orderOrder[x] = orderOrder[y];
+                            orderOrder[y] = temp;
+                        }
+
+
+                        totalGet = 0;
+
 
                         for (int i = 0; i < 5; i += 1) {
+                            for (int j = 0; j <= 20; j += 1) {
+                                int x = random.nextInt(6);
+                                int y = random.nextInt(6);    //TODO : order 섞어서 넣기 (셔플)
+
+                                String tempMenu = menu[x];
+                                menu[x] = menu[y];
+                                menu[y] = tempMenu;
+
+                                int tempPrice = price[x];
+                                price[x] = price[y];
+                                price[y] = tempPrice;
+                            }
+
+                            foodCost = 0;
                             over10s = false;
                             fail = false;
+
                             long start = System.currentTimeMillis();
-                            int order = random.nextInt(6) + 1;
+                            int order = orderOrder[i];
+
+                            System.out.println(longDash);
+                            System.out.println("체력 : " + hp + ", 자산 : " + money + "만 원, 인지도: " + fame);
+                            System.out.println(longDash);
+
 
                             System.out.println(order + "개의 음식주문이 들어왔습니다. (10초안에 음식을 완성해주세요!)");
 
-                            for (int j = 0; j <= 20; j += 1) {
-                                int x = random.nextInt(6);
-                                int y = random.nextInt(6);
-                                ;     //TODO : order 섞어서 넣기 (셔플)
-                                String temp = menu[x];
-
-                                menu[x] = menu[y];
-                                menu[y] = temp;
-                            }
-
                             for (int j = 0; j < order; j += 1) {           //TODO : 나중에 리팩터링
                                 System.out.println(menu[j]);
+
+                                foodCost += price[j];
                             }
+
                             for (int j = 0; j < order; j += 1) {
-                                int current = Integer.parseInt(menu[i].substring(0, 1));
+                                int current = Integer.parseInt(menu[j].substring(0, 1));
 
                                 System.out.println("음식준비:");
 
                                 select = scanner.nextInt();
-
                                 if (select != current) {
                                     fail = true;
+                                    break;
                                 }
                             }
 
-                            if (fail == true){
-                                System.out.println("주문에 틀렸습니다!");
+                            if (fail == true) {
+                                totalGet -= foodCost;
+                                money -= foodCost;
+
+                                System.out.println("주문이 틀렸습니다! " + foodCost + "만원의 손해가 발생했습니다.");
+
+                                System.out.println("내 자산: " + money);
                             }
 
+                            if (fail == false) {
+                                System.out.println("음식 준비 완료! 소요시간: " + time);
 
-                            while (over10s) {
-                                time = (System.currentTimeMillis() - start) / 1000;
                                 if (time > 10) {
-                                    over10s = true;
-                                    fail = true;
+                                    totalGet -= foodCost;
+                                    money -= foodCost;
+                                    fame -= 1;
+
+                                    System.out.println("주문 시간이 초과했습니다! " + foodCost + " 만원의 손해가 발생했습니다.");
+
+                                    System.out.println("내 자산: " + money);
+                                    continue;
                                 }
+
+                                totalGet += foodCost;
+                                money += foodCost;
+                                fame += 1;
+                                System.out.println("배달완료! 수익: " + foodCost + " 만원");
                             }
+                            System.out.println();
+
                         }
+                        System.out.println(day + "일차 가게 마감!");
+                        System.out.println("총 수익: " + totalGet + "만 원");            //TODO : 총수익 채우기
+                        System.out.println("인지도: " + fame);
+                        System.out.println("체력소모: -500");
+                        System.out.println();
+
                         day += 1;
                         hp -= 500;
                         continue;
