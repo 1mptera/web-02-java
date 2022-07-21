@@ -1,7 +1,4 @@
-import java.util.Random;
-import java.util.Scanner;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 
 public class DeliveryTycoon {
     public static void main(String[] args) {
@@ -81,37 +78,103 @@ public class DeliveryTycoon {
             //todo 음식 배달 게임 구현
             if (option == 1) {
                 int revenue = 0;
-                int order = random.nextInt(6) + 1;
+                int totalrevenue = 0;
 
                 String[] foods = new String[]{"1. 햄버거", "2. 피자", "3. 치킨", "4. 커피", "5. 케이크", "6. 족발"};
-
-                int[] answers = new int[order];
+                int[] price = new int[]{1, 5, 3, 1, 2, 4};
 
                 for (int i = 0; i < 5; i += 1) {
+                    for (int j = 0; j < 20; j += 1) {
+                        int x = random.nextInt(6);
+                        int y = random.nextInt(6);
+                        String temp = foods[x];
+                        foods[x] = foods[y];
+                        foods[y] = temp;
+
+                        int tempPrice = price[x];
+                        price[x] = price[y];
+                        price[y] = tempPrice;
+                    }
+
+                    int order = random.nextInt(6) + 1;
+
+                    int[] answers = new int[order];
+                    String[] restr = new String[order];
+
+
                     System.out.println(dash);
                     System.out.println(status);
                     System.out.println(dash);
-                    System.out.println(order+ "개의 주문이 들어 왔습니다. (10초 안에 음식을 완성해주세요)");
+                    System.out.println(order + "개의 주문이 들어 왔습니다. (10초 안에 음식을 완성해주세요)");
 
-                    Timer timer=new Timer();
-                    TimerTask task=new TimerTask(){
-                        public void run() {
-                            System.out.println("주문이 틀렸습니다! " + "만원의 손해가 발생했습니다.");
+                    revenue = 0;
+                    int singleprice = 0;
 
-                            if (){
-                                timer.cancel();
-                            }
+                    boolean success = true;
+
+                    long start = System.currentTimeMillis();
+
+                    for (int j = 0; j < order; j += 1) {
+                        System.out.println(foods[j]);
+
+                        singleprice += price[j];
+                    }
+
+                    for (int j = 0; j < order; j += 1) {
+                        System.out.println("음식준비:");
+
+                        answers[j] = scanner.nextInt();
+
+                        restr[j] = foods[j].replaceAll("[^0-9]", "");
+
+
+                        if (answers[j] != Integer.parseInt(restr[j])){
+                            success = false;
+                            break;
                         }
-                    };
+                    }
 
-                    timer.schedule(task, 10000);
+                    long end = System.currentTimeMillis();
+                    long time = (end - start) / 1000;
+
+                    if (success == false){
+                        revenue -= singleprice;
+                        awareness -= 1;
+                        totalrevenue += revenue;
+
+                        System.out.println("주문이 틀렸습니다! " + revenue + " 만원의 손해가 발생했습니다.");
+
+                        continue;
+                    }
+
+                    if (time > 10) {
+                        revenue -= singleprice;
+                        awareness -= 1;
+
+                        System.out.println("음식 준비 완료! 소요시간: " + time);
+                        System.out.println("주문이 틀렸습니다! " + revenue + " 만원의 손해가 발생했습니다.");
+
+
+                    }
+
+                    if (time <= 10) {
+                        revenue += singleprice;
+                        awareness += 1;
+
+                        System.out.println("음식 준비 완료! 소요시간: " + time);
+                        System.out.println("배달완료! 수익: " + revenue + " 만원");
+
+                    }
+
+                    totalrevenue += revenue;
 
                 }
 
                 System.out.println(day + "일차 가게 마감!");
-                System.out.println("총 수익: ");
+                System.out.println("총 수익: " + totalrevenue + " 만원");
                 System.out.println("인지도: " + awareness);
                 System.out.println("체력 소모: - 500");
+                money += totalrevenue;
                 health -= 500;
                 day += 1;
             }
