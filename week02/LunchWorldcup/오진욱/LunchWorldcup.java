@@ -7,11 +7,6 @@ public class LunchWorldcup {
 
         int roundCount = 6;
 
-//        for (int i = 1; i <= roundCount; i += 1) {
-//            int length = (int) Math.pow(2, roundCount - i);
-//            String [] round = new String[length];
-//        }
-
         String [] temp = new String[(int)Math.pow(2, roundCount -1)];
 
         String[] foodDB = new String[]{"피자", "햄버거", "돈까스", "카레", "짜장면", "탄탄면", "떡볶이", "파스타", "연어덮밥", "초밥",
@@ -30,7 +25,6 @@ public class LunchWorldcup {
                 }
                 round[j] = temp[j];
             }
-
 
             System.out.println("");
             System.out.println("-----------------");
