@@ -16,21 +16,21 @@ public class LunchWorldcup {
         for (int i = 1; i <roundCount; i += 1) {
             int length = (int) Math.pow(2, roundCount -i);
 
-            String [] round = new String[length];
+            String [] foods = new String[length];
 
-            for (int j = 0; j < round.length; j += 1) {
+            for (int j = 0; j < foods.length; j += 1) {
                 if ( i == 1){
-                    round[j] = foodDB[j];
+                    foods[j] = foodDB[j];
                     continue;
                 }
-                round[j] = temp[j];
+                foods[j] = temp[j];
             }
 
-            System.out.println("");
+            System.out.println();
             System.out.println("-----------------");
 
             if (i < roundCount -1) {
-                System.out.println("점심 메뉴 월드컵 " + round.length/2 + "강");
+                System.out.println("점심 메뉴 월드컵 " + foods.length/2 + "강");
             }
 
             if (i == roundCount -1) {
@@ -38,16 +38,16 @@ public class LunchWorldcup {
             }
 
             System.out.println("-----------------");
-            System.out.println("");
+            System.out.println();
             System.out.println("선호하는 메뉴를 번호로 선택해주세요");
-            System.out.println("");
+            System.out.println();
 
-            for (int j = 0; j < round.length; j += 2) {
+            for (int j = 0; j < foods.length; j += 2) {
                 int x = j;
-                System.out.println("1. " + round[x]);
+                System.out.println("1. " + foods[x]);
 
                 x += 1;
-                System.out.println("2. " + round[x]);
+                System.out.println("2. " + foods[x]);
 
                 int select = scanner.nextInt();
 
@@ -58,11 +58,11 @@ public class LunchWorldcup {
                 }
 
                 if (select == 1) {
-                    temp[j / 2] = round[j];
+                    temp[j / 2] = foods[j];
                 }
 
                 if (select == 2) {
-                    temp[j / 2] = round[j + 1];
+                    temp[j / 2] = foods[j + 1];
                 }
             }
         }
