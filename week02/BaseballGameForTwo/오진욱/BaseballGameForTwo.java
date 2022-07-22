@@ -4,60 +4,99 @@
 import java.util.Scanner;
 
 public class BaseballGameForTwo {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int strike1 = 0;
-        int strike2 = 0;
+        int[] strike = new int[2];
+        int[] ball = new int[2];
 
-        int ball1 = 0;
-        int ball2 = 0;
+        int[] number1 = new int[]{4, 6, 1};
+        int[] number2 = new int[]{8, 3, 6};
 
-        int [] number1 = new int[]{4, 6, 1};
-        int [] number2 = new int[]{8, 3, 6};
+        int[] answer = new int[3];
 
-        int[] answer1 = new int[3];
-        int[] answer2 = new int[3];
+        int player = 1;
+        int winner = 0;
 
-        while(strike1 < 3 && strike2 < 3){
-            strike1 = 0;
-            ball1 = 0;
+        String longDash = "=================================";
 
+        System.out.println(longDash);
+        System.out.println("2인용 숫자야구 게임");
+        System.out.println(longDash);
 
+        while (strike[0] < 3 && strike[1] < 3) {
+            System.out.println("player: " + player);
 
+            for (int i = 0; i < strike.length; i += 1) {
+                strike[i] = 0;
+                ball[i] = 0;
+            }
 
-            System.out.print("Player(n) - Guess numbers: ");
+            int index = player - 1;
 
-            answer1[0] = scanner.nextInt();
-            answer1[1] = scanner.nextInt();
-            answer1[2] = scanner.nextInt();
+            int[] number = new int[3];
 
-            for (int i = 0 ; i < answer1.length; i +=1){
-                for (int j = 0; j < answer1.length; j += 1){
-                    if (answer1[i] == number1[j]){
-                        if (i == j){
-                            strike1 +=1;
-
-                            continue;
-                        }
-                        ball1 +=1;
-                    }
+            for (int i = 0; i < number.length; i += 1) {
+                if (player == 1) {
+                    number[i] = number1[i];
+                }
+                if (player == 2) {
+                    number[i] = number2[i];
                 }
             }
 
-            System.out.println("-----Player(n)님의 score -----");
+            System.out.print("Player" + player + " - Guess numbers: ");
 
-            if (strike1 != 0) {
-                System.out.println(strike1 + " strike");
+            answer[0] = scanner.nextInt();
+            answer[1] = scanner.nextInt();
+            answer[2] = scanner.nextInt();
+
+            for (int i = 0; i < answer.length; i += 1) {
+                for (int j = 0; j < answer.length; j += 1) {
+                    if (answer[i] != number[j]) {
+
+                        continue;
+                    }
+
+                    if (i == j) {
+                        strike[index] += 1;
+
+                        continue;
+                    }
+
+                    ball[index] += 1;
+                }
             }
 
-            if (ball1 != 0) {
-                System.out.println(ball1 + " ball");
+            System.out.println("-----Player" + player + "님의 score -----");
+
+            if (strike[index] != 0) {
+                System.out.println(strike[index] + " strike");
             }
 
-            if (strike1 == 0 && ball1 == 0){
+            if (ball[index] != 0) {
+                System.out.println(ball[index] + " ball");
+            }
+
+            if (strike[index] == 0 && ball[index] == 0) {
                 System.out.println("No count");
             }
+
+            System.out.println();
+
+            winner = player;
+
+            if (player == 1) {
+                player += 1;
+                continue;
+            }
+
+            player -= 1;
+            continue;
         }
+
+        System.out.println(longDash);
+        System.out.println("Winner is Player" + winner);
+        System.out.println(longDash);
     }
 }
