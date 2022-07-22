@@ -6,9 +6,9 @@ public class DeliveryTycoon {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         String[] foodMenus = new String[]{"1. 햄버거", "2. 피자", "3. 치킨", "4. 커피", "5. 케이크", "6. 족발"};
-        int[] foodPrice = new int[]{1, 5, 3, 1, 2, 4};
-        int[] order = new int[]{1, 2, 3, 4, 5, 6};
-        int[] answer = new int[6];
+        int[] foodPrices = new int[]{1, 5, 3, 1, 2, 4};
+        int[] orderLists = new int[]{1, 2, 3, 4, 5, 6};
+        int[] answers = new int[6];
 
         int date = 1;
         int money = 1000;
@@ -78,13 +78,13 @@ public class DeliveryTycoon {
                             foodMenus[x] = foodMenus[y];
                             foodMenus[y] = temp1;
 
-                            int temp2 = foodPrice[x];
-                            foodPrice[x] = foodPrice[y];
-                            foodPrice[y] = temp2;
+                            int temp2 = foodPrices[x];
+                            foodPrices[x] = foodPrices[y];
+                            foodPrices[y] = temp2;
 
-                            int temp3 = order[x];
-                            order[x] = order[y];
-                            order[y] = temp3;
+                            int temp3 = orderLists[x];
+                            orderLists[x] = orderLists[y];
+                            orderLists[y] = temp3;
                         }
 
                         for (int j = 0; j < 20; j += 1) {
@@ -102,13 +102,13 @@ public class DeliveryTycoon {
 
                         for (int j = 0; j < numberOfOrders[i]; j += 1) {
                             System.out.println(foodMenus[j]);
-                            ordersPrice += foodPrice[j];
+                            ordersPrice += foodPrices[j];
                         }
 
                         for (int j = 0; j < numberOfOrders[i]; j += 1) {
                             System.out.println("음식 준비: ");
-                            answer[j] = scanner.nextInt();
-                            if (answer[j] != order[j]) {
+                            answers[j] = scanner.nextInt();
+                            if (answers[j] != orderLists[j]) {
                                 money -= ordersPrice;
                                 sum -= ordersPrice;
                                 System.out.println("주문이 틀렸습니다! " + ordersPrice + " 만원의 손해가 발생했습니다.");
@@ -117,7 +117,7 @@ public class DeliveryTycoon {
                                 break;
                             }
 
-                            if (answer[numberOfOrders[i] - 1] == order[numberOfOrders[i] - 1]) {
+                            if (answers[numberOfOrders[i] - 1] == orderLists[numberOfOrders[i] - 1]) {
                                 long afterTime = System.currentTimeMillis();
                                 long playTime = (afterTime - beforeTime) / 1000;
                                 money += ordersPrice;
