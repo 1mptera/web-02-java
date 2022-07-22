@@ -5,10 +5,6 @@ public class Square {
         //준비
         Scanner scanner = new Scanner(System.in);
 
-        String star = "";
-
-        boolean exit = false;
-
         //입력
         System.out.println("한 변의 길이를 입력해 주세요(2 이상 20 미만)");
         int squareLength = scanner.nextInt();
