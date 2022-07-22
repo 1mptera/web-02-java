@@ -10,15 +10,24 @@ public class BaseballGameForTwo {
         int ball = 0;
 
         int playerNumber = 0;
-        int[] numbers = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[] player1Numbers = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[] player2Numbers = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
         int[] playerGuess = new int[3];
 
         for (int i = 0; i < 20; i += 1) {
             int x = random.nextInt(10);
             int y = random.nextInt(10);
-            int temp = numbers[x];
-            numbers[x] = numbers[y];
-            numbers[y] = temp;
+            int temp = player1Numbers[x];
+            player1Numbers[x] = player1Numbers[y];
+            player1Numbers[y] = temp;
+        }
+
+        for (int i =0; i<20 ; i+=1){
+            int x = random.nextInt(10);
+            int y = random.nextInt(10);
+            int temp2 = player2Numbers[x];
+            player2Numbers[x] = player2Numbers[y];
+            player2Numbers[y] = temp2;
         }
 
         System.out.println("==================================");
@@ -31,23 +40,49 @@ public class BaseballGameForTwo {
             ball = 0;
             playerNumber += 1;
 
-            System.out.print("Player" + playerNumber + " - Guess number: ");
-
-            for (int i = 0; i < 3; i += 1) {
-                playerGuess[i] = scanner.nextInt();
+            if (playerNumber > 2) {
+                playerNumber = 1;
             }
 
-            for (int i = 0; i < 3; i += 1) {
-                for (int j = 0; j < 3; j += 1) {
-                    if (numbers[i] != playerGuess[j]) {
-                        continue;
-                    }
+            System.out.print("Player" + playerNumber + " - Guess number: ");
 
-                    if (i == j) {
-                        strike += 1;
-                        continue;
+            if (playerNumber == 1) {
+                for (int i = 0; i < 3; i += 1) {
+                    playerGuess[i] = scanner.nextInt();
+                }
+
+                for (int i = 0; i < 3; i += 1) {
+                    for (int j = 0; j < 3; j += 1) {
+                        if (player1Numbers[i] != playerGuess[j]) {
+                            continue;
+                        }
+
+                        if (i == j) {
+                            strike += 1;
+                            continue;
+                        }
+                        ball += 1;
                     }
-                    ball += 1;
+                }
+            }
+
+            if (playerNumber == 2) {
+                for (int i = 0; i < 3; i += 1) {
+                    playerGuess[i] = scanner.nextInt();
+                }
+
+                for (int i = 0; i < 3; i += 1) {
+                    for (int j = 0; j < 3; j += 1) {
+                        if (player2Numbers[i] != playerGuess[j]) {
+                            continue;
+                        }
+
+                        if (i == j) {
+                            strike += 1;
+                            continue;
+                        }
+                        ball += 1;
+                    }
                 }
             }
 
@@ -65,9 +100,6 @@ public class BaseballGameForTwo {
             }
             System.out.println();
 
-            if (playerNumber > 2) {
-                playerNumber = 1;
-            }
         }
 
         System.out.println("==================================");
