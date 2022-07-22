@@ -21,10 +21,6 @@ public class BaseballGameForTwo {
             numbers[y] = temp;
         }
 
-        for (int i = 0; i < numbers.length; i += 1) {
-            System.out.print(numbers[i] + "\t");
-        }
-
         System.out.println("==================================");
         System.out.println("         2인용 숫자 야구 게임");
         System.out.println("==================================");
