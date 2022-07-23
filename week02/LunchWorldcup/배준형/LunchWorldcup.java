@@ -93,6 +93,6 @@ public class LunchWorldcup {
             NumberOfRounds -= 1;
         }
 
-                System.out.println("오늘의 점심은 " + foods[0] + "입니다");
+        System.out.println("오늘의 점심은 " + foods[0] + "입니다");
     }
 }
