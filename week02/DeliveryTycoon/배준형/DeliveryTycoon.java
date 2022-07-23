@@ -74,7 +74,7 @@ public class DeliveryTycoon {
 
             if (option == 1) {
                 int sales = 0;
-                int totalrevenue = 0;
+                int TotalRevenue = 0;
 
                 String[] foods = new String[]{"1. 햄버거", "2. 피자", "3. 치킨", "4. 커피", "5. 케이크", "6. 족발"};
                 int[] price = new int[]{1, 5, 3, 1, 2, 4};
@@ -95,7 +95,7 @@ public class DeliveryTycoon {
                     int order = random.nextInt(6) + 1;
 
                     int[] answers = new int[order];
-                    String[] restr = new String[order];
+                    String[] FoodNameProcessing = new String[order];
 
                     System.out.println("------------------------------------------");
                     System.out.println(status);
@@ -120,9 +120,9 @@ public class DeliveryTycoon {
 
                         answers[j] = scanner.nextInt();
 
-                        restr[j] = foods[j].replaceAll("[^0-9]", "");
+                        FoodNameProcessing[j] = foods[j].replaceAll("[^0-9]", "");
 
-                        if (answers[j] != Integer.parseInt(restr[j])){
+                        if (answers[j] != Integer.parseInt(FoodNameProcessing[j])){
                             success = false;
                             break;
                         }
@@ -158,15 +158,15 @@ public class DeliveryTycoon {
                         System.out.println("배달완료! 수익: " + sales + " 만원");
                     }
 
-                    totalrevenue += sales;
+                    TotalRevenue += sales;
                 }
 
                 System.out.println(day + "일차 가게 마감!");
-                System.out.println("총 수익: " + totalrevenue + " 만원");
+                System.out.println("총 수익: " + TotalRevenue + " 만원");
                 System.out.println("인지도: " + awareness);
                 System.out.println("체력 소모: - 500");
 
-                money += totalrevenue;
+                money += TotalRevenue;
                 health -= 500;
                 day += 1;
             }
@@ -204,7 +204,7 @@ public class DeliveryTycoon {
                         money -= 50;
 
                         int multiplier = random.nextInt(2) + 1;
-                        
+
                         System.out.println("복권 구입! 내 자산: " + money);
 
                         money *= multiplier;
