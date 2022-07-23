@@ -8,70 +8,91 @@ public class LunchWorldcup {
                 "라멘", "쌀국수", "곰탕", "국밥", "파타이", "텐동", "제육볶음", "쭈꾸미 볶음", "부대찌개", "김치찌개", "우동", "냉면",
                 "냉모밀", "국수", "생선구이", "육회비빔밥", "물회국수", "뼈해장국", "닭갈비", "마라탕", "샌드위치", "타코"};
 
-        String[] foods = new String[foodmenu.length/2];
+        int NumberOfRounds = 5;
 
-        while (true) {
+        String[] foods = new String[foodmenu.length / 2];
+
+        while (NumberOfRounds > 0) {
+
+            int round = foodmenu.length / 2;
+
+            if (NumberOfRounds % 2 == 0) {
+                round = foods.length / 2;
+            }
+
             System.out.println("점심 메뉴 월드컵");
             System.out.println();
             System.out.println("----------------");
-            System.out.println("점심 메뉴 월드컵 " + foodmenu.length / 2 + "강");
+
+            if (NumberOfRounds != 1) {
+                System.out.println("점심 메뉴 월드컵 " + round + "강");
+            }
+
+            if (NumberOfRounds == 1) {
+                System.out.println("점심 메뉴 월드컵 결승전!");
+            }
+
             System.out.println("----------------");
             System.out.println();
             System.out.println("선호하는 메뉴를 선택해주세요.");
             System.out.println();
 
-            for (int i = 0; i < foodmenu.length; i += 2) {
+            for (int j = 0; j < round * 2; j += 2) {
                 int option = 0;
 
                 while (option != 1 && option != 2) {
-                    System.out.println("1. " + foodmenu[i]);
-                    System.out.println("2. " + foodmenu[i + 1]);
+                    int x = j / 2;
+
+                    if (NumberOfRounds % 2 == 1) {
+                        System.out.println("1. " + foodmenu[j]);
+                        System.out.println("2. " + foodmenu[j + 1]);
+                    }
+
+                    if (NumberOfRounds % 2 == 0) {
+                        System.out.println("1. " + foods[j]);
+                        System.out.println("2. " + foods[j + 1]);
+                    }
 
                     option = scanner.nextInt();
 
                     if (option != 1 && option != 2) {
                         System.out.println("다시 입력해주세요");
                     }
-                    int x = i / 2;
 
-                    if (option == 1) {
-                        foods[x] = foodmenu[i];
+                    if (NumberOfRounds % 2 == 0) {
+                        if (option == 1) {
+                            foodmenu[x] = foods[j];
+                        }
+
+                        if (option == 2) {
+                            foodmenu[x] = foods[j + 1];
+                        }
                     }
 
-                    if (option == 2) {
-                        foods[x] = foodmenu[i + 1];
+                    if (NumberOfRounds % 2 == 1) {
+                        if (option == 1) {
+                            foods[x] = foodmenu[j];
+                        }
+
+                        if (option == 2) {
+                            foods[x] = foodmenu[j + 1];
+                        }
                     }
                 }
             }
 
+            if (NumberOfRounds % 2 == 0) {
+                foods = new String[round / 2];
+
+                NumberOfRounds -= 1;
+                continue;
+            }
+
+            foodmenu = new String[round / 2];
+
+            NumberOfRounds -= 1;
         }
 
-        System.out.println("----------------");
-        System.out.println("점심 메뉴 월드컵 결승전!");
-        System.out.println("----------------");
-        System.out.println();
-        System.out.println("선호하는 메뉴를 선택해주세요.");
-        System.out.println();
-
-        int option = 0;
-
-        while (option != 1 && option != 2) {
-            System.out.println("1. " + foodmenu[0]);
-            System.out.println("2. " + foodmenu[1]);
-
-            option = scanner.nextInt();
-
-            if (option != 1 && option != 2) {
-                System.out.println("다시 입력해주세요");
-            }
-
-            if (option == 1) {
-                System.out.println("오늘의 점심은 " + foodmenu[0] + "입니다");
-            }
-
-            if (option == 2) {
-                System.out.println("오늘의 점심은 " + foodmenu[1] + "입니다");
-            }
-        }
+                System.out.println("오늘의 점심은 " + foods[0] + "입니다");
     }
 }
