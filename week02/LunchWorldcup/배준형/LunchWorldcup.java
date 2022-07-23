@@ -13,10 +13,10 @@ public class LunchWorldcup {
         String[] foods = new String[foodmenu.length / 2];
 
         while (NumberOfRounds > 0) {
-
+            boolean OddRound = NumberOfRounds % 2 == 1;
             int round = foodmenu.length / 2;
 
-            if (NumberOfRounds % 2 == 0) {
+            if (!OddRound) {
                 round = foods.length / 2;
             }
 
@@ -43,12 +43,12 @@ public class LunchWorldcup {
                 while (option != 1 && option != 2) {
                     int x = j / 2;
 
-                    if (NumberOfRounds % 2 == 1) {
+                    if (OddRound) {
                         System.out.println("1. " + foodmenu[j]);
                         System.out.println("2. " + foodmenu[j + 1]);
                     }
 
-                    if (NumberOfRounds % 2 == 0) {
+                    if (!OddRound) {
                         System.out.println("1. " + foods[j]);
                         System.out.println("2. " + foods[j + 1]);
                     }
@@ -59,7 +59,7 @@ public class LunchWorldcup {
                         System.out.println("다시 입력해주세요");
                     }
 
-                    if (NumberOfRounds % 2 == 0) {
+                    if (!OddRound) {
                         if (option == 1) {
                             foodmenu[x] = foods[j];
                         }
@@ -69,7 +69,7 @@ public class LunchWorldcup {
                         }
                     }
 
-                    if (NumberOfRounds % 2 == 1) {
+                    if (OddRound) {
                         if (option == 1) {
                             foods[x] = foodmenu[j];
                         }
@@ -81,7 +81,7 @@ public class LunchWorldcup {
                 }
             }
 
-            if (NumberOfRounds % 2 == 0) {
+            if (!OddRound) {
                 foods = new String[round / 2];
 
                 NumberOfRounds -= 1;
