@@ -1,16 +1,8 @@
 import java.util.*;
-
 public class DeliveryTycoon {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-
-        String shortdash = "---------------";
-        String name = "";
-
-        System.out.println(shortdash);
-        System.out.println("딜리버리 타이쿤 게임");
-        System.out.println(shortdash);
 
         int day = 1;
         int health = 1000;
@@ -18,16 +10,23 @@ public class DeliveryTycoon {
         int awareness = 0;
         int option = 3;
 
-        while (true) {
+        String name = "";
 
+        System.out.println("---------------");
+        System.out.println("딜리버리 타이쿤 게임");
+        System.out.println("---------------");
+
+        boolean playing = true;
+
+        while (playing) {
             if (option == 3) {
                 System.out.println("메뉴를 선택해주세요");
                 System.out.println("1. 게임시작");
                 System.out.println("2. 게임종료");
 
-                option = scanner.nextInt();
+                int MainMenu = scanner.nextInt();
 
-                if (option == 2) {
+                if (MainMenu == 2) {
                     return;
                 }
 
@@ -42,7 +41,6 @@ public class DeliveryTycoon {
                 awareness = 0;
             }
 
-            String dash = "------------------------------------------";
             String status = "체력: " + health + ", 자산: " + money + "만원, 인지도: " + awareness;
             String storelevel = "노점상";
 
@@ -59,13 +57,12 @@ public class DeliveryTycoon {
             }
 
             System.out.println(day + "일차 " + name + "의 " + storelevel);
-            System.out.println(dash);
+            System.out.println("------------------------------------------");
             System.out.println(status);
-            System.out.println(dash);
+            System.out.println("------------------------------------------");
             System.out.println("1. 가게 오픈하기");
             System.out.println("2. 상점");
             System.out.println("3. 메뉴로 돌아가기");
-
 
             option = scanner.nextInt();
 
@@ -75,9 +72,8 @@ public class DeliveryTycoon {
                 continue;
             }
 
-            //todo 음식 배달 게임 구현
             if (option == 1) {
-                int revenue = 0;
+                int sales = 0;
                 int totalrevenue = 0;
 
                 String[] foods = new String[]{"1. 햄버거", "2. 피자", "3. 치킨", "4. 커피", "5. 케이크", "6. 족발"};
@@ -101,14 +97,13 @@ public class DeliveryTycoon {
                     int[] answers = new int[order];
                     String[] restr = new String[order];
 
-
-                    System.out.println(dash);
+                    System.out.println("------------------------------------------");
                     System.out.println(status);
-                    System.out.println(dash);
+                    System.out.println("------------------------------------------");
                     System.out.println(order + "개의 주문이 들어 왔습니다. (10초 안에 음식을 완성해주세요)");
 
-                    revenue = 0;
-                    int singleprice = 0;
+                    sales = 0;
+                    int DeliveryFee = 0;
 
                     boolean success = true;
 
@@ -117,7 +112,7 @@ public class DeliveryTycoon {
                     for (int j = 0; j < order; j += 1) {
                         System.out.println(foods[j]);
 
-                        singleprice += price[j];
+                        DeliveryFee += price[j];
                     }
 
                     for (int j = 0; j < order; j += 1) {
@@ -127,7 +122,6 @@ public class DeliveryTycoon {
 
                         restr[j] = foods[j].replaceAll("[^0-9]", "");
 
-
                         if (answers[j] != Integer.parseInt(restr[j])){
                             success = false;
                             break;
@@ -135,45 +129,43 @@ public class DeliveryTycoon {
                     }
 
                     long end = System.currentTimeMillis();
-                    long time = (end - start) / 1000;
+                    long LeadTime = (end - start) / 1000;
 
                     if (success == false){
-                        revenue -= singleprice;
+                        sales -= DeliveryFee;
                         awareness -= 1;
-                        totalrevenue += revenue;
+                        money += sales;
 
-                        System.out.println("주문이 틀렸습니다! " + revenue + " 만원의 손해가 발생했습니다.");
+                        System.out.println("주문이 틀렸습니다! " + sales + " 만원의 손해가 발생했습니다.");
+                        System.out.println("내 자산: " + money);
 
                         continue;
                     }
 
-                    if (time > 10) {
-                        revenue -= singleprice;
+                    if (LeadTime > 10) {
+                        sales -= DeliveryFee;
                         awareness -= 1;
 
-                        System.out.println("음식 준비 완료! 소요시간: " + time);
-                        System.out.println("주문이 틀렸습니다! " + revenue + " 만원의 손해가 발생했습니다.");
-
-
+                        System.out.println("음식 준비 완료! 소요시간: " + LeadTime);
+                        System.out.println("주문 시간이 초과했습니다! " + sales + " 만원의 손해가 발생했습니다.");
                     }
 
-                    if (time <= 10) {
-                        revenue += singleprice;
+                    if (LeadTime <= 10) {
+                        sales += DeliveryFee;
                         awareness += 1;
 
-                        System.out.println("음식 준비 완료! 소요시간: " + time);
-                        System.out.println("배달완료! 수익: " + revenue + " 만원");
-
+                        System.out.println("음식 준비 완료! 소요시간: " + LeadTime);
+                        System.out.println("배달완료! 수익: " + sales + " 만원");
                     }
 
-                    totalrevenue += revenue;
-
+                    totalrevenue += sales;
                 }
 
                 System.out.println(day + "일차 가게 마감!");
                 System.out.println("총 수익: " + totalrevenue + " 만원");
                 System.out.println("인지도: " + awareness);
                 System.out.println("체력 소모: - 500");
+
                 money += totalrevenue;
                 health -= 500;
                 day += 1;
@@ -181,9 +173,9 @@ public class DeliveryTycoon {
 
             if (option == 2) {
                 while (true) {
-                    System.out.println(shortdash);
+                    System.out.println("---------------");
                     System.out.println("플렉스 상점");
-                    System.out.println(shortdash);
+                    System.out.println("---------------");
                     System.out.println("1. 자양강장제: 체력 100회복 - 10 만원");
                     System.out.println("2. 광고: 인지도 +10 - 300 만원");
                     System.out.println("3. 도박: 50% 확률로 자산 X 2 - 50 만원");
@@ -212,8 +204,7 @@ public class DeliveryTycoon {
                         money -= 50;
 
                         int multiplier = random.nextInt(2) + 1;
-
-
+                        
                         System.out.println("복권 구입! 내 자산: " + money);
 
                         money *= multiplier;
