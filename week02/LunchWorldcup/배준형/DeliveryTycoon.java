@@ -73,73 +73,55 @@ public class DeliveryTycoon {
             }
 
             if (option == 1) {
-                int sales = 0;
                 int TotalRevenue = 0;
 
                 String[] menus = new String[]{"1. 햄버거", "2. 피자", "3. 치킨", "4. 커피", "5. 케이크", "6. 족발"};
                 int[] price = new int[]{1, 5, 3, 1, 2, 4};
 
-                int[] orders = new int[menus.length];
-
-                for (int i = 0; i < menus.length; i += 1) {
-                    int food = random.nextInt(menus.length) + 1;
-
-                    if (i == 0) {
-                        orders[i] = food;
-                    }
-
-                    for (int j = 0; j < i; j += 1) {
-                        if (food == orders[j]) {
-                            i -= 1;
-                            break;
-                        }
-
-                        orders[i] = food;
-                    }
-                }
-
                 for (int i = 0; i < 5; i += 1) {
-                    for (int j = 0; j < 30; j += 1) {
-                        int x = random.nextInt(6);
-                        int y = random.nextInt(6);
-                        String temp = menus[x];
-                        menus[x] = menus[y];
-                        menus[y] = temp;
+                    int orderConut = random.nextInt(menus.length) + 1;
+                    int[] orders = new int[orderConut];
 
-                        int tempPrice = price[x];
-                        price[x] = price[y];
-                        price[y] = tempPrice;
+                    for (int j = 0; j < orders.length; j += 1) {
+                        int food = random.nextInt(menus.length);
+
+                        for (int k = 0; k < j; k += 1) {
+                            if (food == orders[k]) {
+                                j -= 1;
+                                break;
+                            }
+
+                            orders[j] = food;
+                        }
                     }
 
-                    int order = random.nextInt(6) + 1;
-
-                    int[] answers = new int[order];
-                    String[] FoodNameProcessing = new String[order];
+                    int[] answers = new int[orders.length];
+                    String[] FoodNameProcessing = new String[orders.length];
 
                     System.out.println("------------------------------------------");
                     System.out.println(status);
                     System.out.println("------------------------------------------");
-                    System.out.println(order + "개의 주문이 들어 왔습니다. (10초 안에 음식을 완성해주세요)");
+                    System.out.println(orders.length + "개의 주문이 들어 왔습니다. (10초 안에 음식을 완성해주세요)");
 
-                    sales = 0;
+                    int sales = 0;
                     int DeliveryFee = 0;
 
                     boolean success = true;
 
                     long start = System.currentTimeMillis();
 
-                    for (int j = 0; j < order; j += 1) {
-                        System.out.println(menus[j]);
+                    for (int j = 0; j < orders.length; j += 1) {
+                        System.out.println(menus[orders[j]]);
 
-                        DeliveryFee += price[j];
+                        DeliveryFee += price[orders[j]];
                     }
 
-                    for (int j = 0; j < order; j += 1) {
+                    for (int j = 0; j < orders.length; j += 1) {
                         System.out.println("음식준비:");
 
                         answers[j] = scanner.nextInt();
 
-                        FoodNameProcessing[j] = menus[j].replaceAll("[^0-9]", "");
+                        FoodNameProcessing[j] = menus[orders[j]].substring(0, 1);
 
                         if (answers[j] != Integer.parseInt(FoodNameProcessing[j])){
                             success = false;
@@ -152,8 +134,8 @@ public class DeliveryTycoon {
 
                     if (success == false){
                         sales -= DeliveryFee;
-                        awareness -= 1;
                         money += sales;
+                        awareness -= 1;
 
                         System.out.println("주문이 틀렸습니다! " + sales + " 만원의 손해가 발생했습니다.");
                         System.out.println("내 자산: " + money);
