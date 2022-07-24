@@ -19,8 +19,8 @@ public class LunchWorldcup {
             System.out.println();
             System.out.println("----------------");
 
-            boolean finals = i == 4;
-            
+            boolean finals = i == 5;
+
             if (!finals) {
                 System.out.println("점심 메뉴 월드컵 " + round + "강");
             }
