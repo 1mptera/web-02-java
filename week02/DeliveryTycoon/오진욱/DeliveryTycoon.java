@@ -15,7 +15,7 @@ public class DeliveryTycoon {
         int deliveryFee = 0;
         int totalGet = 0;
 
-        String[] menus = new String[]{"1. 햄버거", "2. 피자", "3. 치킨", "4. 커피", "5. 케이크", "6. 족발"};
+        String[] foods = new String[]{"1. 햄버거", "2. 피자", "3. 치킨", "4. 커피", "5. 케이크", "6. 족발"};
         int[] foodPrices = new int[]{1, 5, 3, 1, 2, 4};
 
         long prepareTime = 0;
@@ -44,9 +44,10 @@ public class DeliveryTycoon {
             System.out.println("딜리버리 타이쿤 게임");
             System.out.println(shortDash);
 
+            String[] selectMenus = new String[]{"1. 게임시작", "2. 게임종료"};
             System.out.println("메뉴를 선택해주세요");
-            System.out.println("1. 게임시작");
-            System.out.println("2. 게임종료");
+            System.out.println(selectMenus[0]);
+            System.out.println(selectMenus[1]);
 
             int selection = scanner.nextInt();
 
@@ -87,9 +88,10 @@ public class DeliveryTycoon {
                     System.out.println("체력 : " + hp + ", 자산 : " + money + "원, 인지도: " + fame);
                     System.out.println(longDash);
 
-                    System.out.println("1. 가게 오픈하기");
-                    System.out.println("2. 상점");
-                    System.out.println("3. 메뉴로 돌아가기");
+                    String[] playOptions = new String[]{"1. 가게 오픈하기", "2. 상점", "3. 메뉴로 돌아가기"};
+                    System.out.println(playOptions[0]);
+                    System.out.println(playOptions[1]);
+                    System.out.println(playOptions[2]);
 
                     selection = scanner.nextInt();
 
@@ -116,10 +118,10 @@ public class DeliveryTycoon {
 
                         totalGet = 0;
 
-                        int[] orders = new int[menus.length];
+                        int[] orders = new int[foods.length];
 
-                        for (int i = 0; i < menus.length; i += 1) {
-                            int food = random.nextInt(menus.length) + 1;
+                        for (int i = 0; i < foods.length; i += 1) {
+                            int food = random.nextInt(foods.length) + 1;
 
                             if (i == 0) {
                                 orders[i] = food;
@@ -142,9 +144,9 @@ public class DeliveryTycoon {
                                 int x = random.nextInt(6);
                                 int y = random.nextInt(6);
 
-                                String tempMenu = menus[x];
-                                menus[x] = menus[y];
-                                menus[y] = tempMenu;
+                                String tempMenu = foods[x];
+                                foods[x] = foods[y];
+                                foods[y] = tempMenu;
 
                                 int tempPrice = foodPrices[x];
                                 foodPrices[x] = foodPrices[y];
@@ -169,7 +171,7 @@ public class DeliveryTycoon {
                             System.out.println(order + "개의 음식주문이 들어왔습니다. (10초안에 음식을 완성해주세요!)");
 
                             for (int j = 0; j < order; j += 1) {
-                                System.out.println(menus[j]);
+                                System.out.println(foods[j]);
 
                                 deliveryFee += foodPrices[j];
                             }
@@ -183,7 +185,7 @@ public class DeliveryTycoon {
                             }
 
                             for (int j = 0; j < order; j += 1) {
-                                int menuNumber = Integer.parseInt(menus[j].substring(0, 1));
+                                int menuNumber = Integer.parseInt(foods[j].substring(0, 1));
 
                                 System.out.println("음식준비:");
 
