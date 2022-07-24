@@ -18,7 +18,6 @@ public class DeliveryTycoon {
         String[] menus = new String[]{"1. 햄버거", "2. 피자", "3. 치킨", "4. 커피", "5. 케이크", "6. 족발"};
         int[] foodPrices = new int[]{1, 5, 3, 1, 2, 4};
 
-
         long prepareTime = 0;
         boolean deliveryOk = true;
 
@@ -28,7 +27,6 @@ public class DeliveryTycoon {
 
         String shortDash = "---------------";
         String longDash = "---------------------------------";
-
 
         int shuffleTime = 20;
 
@@ -134,7 +132,6 @@ public class DeliveryTycoon {
                                     break;
                                 }
                                 orders[i] = food;
-                                //order 에는 랜덤 인덱스가 저장.
                             }
                         }
 
@@ -159,9 +156,6 @@ public class DeliveryTycoon {
 
                             long start = System.currentTimeMillis();
 
-                            //문제점 : orders의 길이 : foods.length
-                            //i = 5
-
                             if (i >= orders.length) {
                                 continue;
                             }
@@ -173,7 +167,6 @@ public class DeliveryTycoon {
                             System.out.println(longDash);
 
                             System.out.println(order + "개의 음식주문이 들어왔습니다. (10초안에 음식을 완성해주세요!)");
-
 
                             for (int j = 0; j < order; j += 1) {
                                 System.out.println(menus[j]);
