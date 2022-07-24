@@ -164,8 +164,6 @@ public class DeliveryTycoon {
 
                                 selection = scanner.nextInt();
 
-                                System.out.println("selection " + selection);
-                                System.out.println("menuNumber " + menuNumber);
                                 if (selection != menuNumber) {
                                     deliveryOk = false;
 
