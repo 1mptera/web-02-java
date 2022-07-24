@@ -12,18 +12,20 @@ public class LunchWorldcup {
 
         String[] foods = new String[foodmenu.length / 2];
 
-        while (NumberOfRounds > 0) {
+        for (int i = 1; i <= NumberOfRounds; i += 1 ) {
             int round = foodmenu.length / 2;
 
             System.out.println("점심 메뉴 월드컵");
             System.out.println();
             System.out.println("----------------");
 
-            if (NumberOfRounds != 1) {
+            boolean finals = i == 4;
+            
+            if (!finals) {
                 System.out.println("점심 메뉴 월드컵 " + round + "강");
             }
 
-            if (NumberOfRounds == 1) {
+            if (finals) {
                 System.out.println("점심 메뉴 월드컵 결승전!");
             }
 
@@ -59,8 +61,6 @@ public class LunchWorldcup {
             foodmenu = foods;
 
             foods = new String[round / 2];
-
-            NumberOfRounds -= 1;
         }
 
         System.out.println("오늘의 점심은 " + foodmenu[0] + "입니다");
