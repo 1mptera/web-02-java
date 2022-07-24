@@ -28,8 +28,6 @@ public class DeliveryTycoon {
         String shortDash = "---------------";
         String longDash = "---------------------------------";
 
-        int shuffleTime = 20;
-
         String[] stores = new String[]{"노점상", "푸드 트럭", "구멍가게", "레스토랑"};
         String level = "";
 
@@ -118,39 +116,20 @@ public class DeliveryTycoon {
 
                         totalGet = 0;
 
-                        int[] orders = new int[foods.length];
-
-                        for (int i = 0; i < foods.length; i += 1) {
-                            int food = random.nextInt(foods.length) + 1;
-
-                            if (i == 0) {
-                                orders[i] = food;
-                            }
-
-                            for (int j = 0; j < i; j += 1) {
-                                if (food == orders[j]) {
-                                    i -= 1;
-
-                                    break;
-                                }
-                                orders[i] = food;
-                            }
-                        }
-
                         for (int i = 0; i < 5; i += 1) {
-                            int order = 0;
+                            int orderCount = random.nextInt(foods.length) + 1;
+                            int[] orders  = new int[orderCount];
 
-                            for (int j = 0; j <= shuffleTime; j += 1) {
-                                int x = random.nextInt(6);
-                                int y = random.nextInt(6);
+                            for (int j = 0; j < orderCount ; j +=1 ){
+                                int food = random.nextInt(foods.length);
 
-                                String tempMenu = foods[x];
-                                foods[x] = foods[y];
-                                foods[y] = tempMenu;
-
-                                int tempPrice = foodPrices[x];
-                                foodPrices[x] = foodPrices[y];
-                                foodPrices[y] = tempPrice;
+                                for (int k = 0; k < j; k += 1){
+                                    if(food == orders[k]){
+                                        j -= 1;
+                                        break;
+                                    }
+                                    orders[j]= food;
+                                }
                             }
 
                             deliveryFee = 0;
@@ -158,22 +137,16 @@ public class DeliveryTycoon {
 
                             long start = System.currentTimeMillis();
 
-                            if (i >= orders.length) {
-                                continue;
-                            }
-
-                            order = orders[i];
-
                             System.out.println(longDash);
                             System.out.println("체력 : " + hp + ", 자산 : " + money + "만 원, 인지도: " + fame);
                             System.out.println(longDash);
 
-                            System.out.println(order + "개의 음식주문이 들어왔습니다. (10초안에 음식을 완성해주세요!)");
+                            System.out.println(orders.length + "개의 음식주문이 들어왔습니다. (10초안에 음식을 완성해주세요!)");
 
-                            for (int j = 0; j < order; j += 1) {
-                                System.out.println(foods[j]);
+                            for (int j = 0; j < orders.length; j += 1) {
+                                System.out.println(foods[orders[j]]);
 
-                                deliveryFee += foodPrices[j];
+                                deliveryFee += foodPrices[orders[j]];
                             }
 
                             if (deliveryFee > money) {
@@ -184,13 +157,15 @@ public class DeliveryTycoon {
                                 break;
                             }
 
-                            for (int j = 0; j < order; j += 1) {
-                                int menuNumber = Integer.parseInt(foods[j].substring(0, 1));
+                            for (int j = 0; j < orders.length; j += 1) {
+                                int menuNumber = Integer.parseInt(foods[orders[j]].substring(0, 1));
 
                                 System.out.println("음식준비:");
 
                                 selection = scanner.nextInt();
 
+                                System.out.println("selection " + selection);
+                                System.out.println("menuNumber " + menuNumber);
                                 if (selection != menuNumber) {
                                     deliveryOk = false;
 
