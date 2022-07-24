@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class LunchWorldcup {
+public class A {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -38,8 +38,8 @@ public class LunchWorldcup {
                 while (option != 1 && option != 2) {
                     int x = j / 2;
 
-                    System.out.println("1. " + foodmenu[j]);
-                    System.out.println("2. " + foodmenu[j + 1]);
+                        System.out.println("1. " + foodmenu[j]);
+                        System.out.println("2. " + foodmenu[j + 1]);
 
                     option = scanner.nextInt();
 
@@ -47,13 +47,14 @@ public class LunchWorldcup {
                         System.out.println("다시 입력해주세요");
                     }
 
-                    if (option == 1) {
-                        foods[x] = foodmenu[j];
-                    }
+                        if (option == 1) {
+                            foods[x] = foodmenu[j];
+                        }
 
-                    if (option == 2) {
-                        foods[x] = foodmenu[j + 1];
-                    }
+                        if (option == 2) {
+                            foods[x] = foodmenu[j + 1];
+                        }
+
                 }
             }
             foodmenu = foods;
