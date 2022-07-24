@@ -4,17 +4,17 @@ public class DeliveryTycoon {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        int day = 1;
-        int health = 1000;
-        int money = 1000;
+        int day = 0;
+        int health = 0;
+        int money = 0;
         int awareness = 0;
-        int option = 3;
-
         String name = "";
 
         System.out.println("---------------");
         System.out.println("딜리버리 타이쿤 게임");
         System.out.println("---------------");
+
+        int option = 3;
 
         boolean playing = true;
 
@@ -42,21 +42,21 @@ public class DeliveryTycoon {
             }
 
             String status = "체력: " + health + ", 자산: " + money + "만원, 인지도: " + awareness;
-            String storelevel = "노점상";
+            String StoreLevel = "노점상";
 
             if (money > 2000 && awareness > 20) {
-                storelevel = "푸드 트럭";
+                StoreLevel = "푸드 트럭";
             }
 
             if (money > 5000 && awareness > 50) {
-                storelevel = "구멍 가게";
+                StoreLevel = "구멍 가게";
             }
 
             if (money > 8000 && awareness > 80) {
-                storelevel = "레스토랑";
+                StoreLevel = "레스토랑";
             }
 
-            System.out.println(day + "일차 " + name + "의 " + storelevel);
+            System.out.println(day + "일차 " + name + "의 " + StoreLevel);
             System.out.println("------------------------------------------");
             System.out.println(status);
             System.out.println("------------------------------------------");
@@ -76,16 +76,35 @@ public class DeliveryTycoon {
                 int sales = 0;
                 int TotalRevenue = 0;
 
-                String[] foods = new String[]{"1. 햄버거", "2. 피자", "3. 치킨", "4. 커피", "5. 케이크", "6. 족발"};
+                String[] menus = new String[]{"1. 햄버거", "2. 피자", "3. 치킨", "4. 커피", "5. 케이크", "6. 족발"};
                 int[] price = new int[]{1, 5, 3, 1, 2, 4};
 
+                int[] orders = new int[menus.length];
+
+                for (int i = 0; i < menus.length; i += 1) {
+                    int food = random.nextInt(menus.length) + 1;
+
+                    if (i == 0) {
+                        orders[i] = food;
+                    }
+
+                    for (int j = 0; j < i; j += 1) {
+                        if (food == orders[j]) {
+                            i -= 1;
+                            break;
+                        }
+
+                        orders[i] = food;
+                    }
+                }
+
                 for (int i = 0; i < 5; i += 1) {
-                    for (int j = 0; j < 20; j += 1) {
+                    for (int j = 0; j < 30; j += 1) {
                         int x = random.nextInt(6);
                         int y = random.nextInt(6);
-                        String temp = foods[x];
-                        foods[x] = foods[y];
-                        foods[y] = temp;
+                        String temp = menus[x];
+                        menus[x] = menus[y];
+                        menus[y] = temp;
 
                         int tempPrice = price[x];
                         price[x] = price[y];
@@ -110,7 +129,7 @@ public class DeliveryTycoon {
                     long start = System.currentTimeMillis();
 
                     for (int j = 0; j < order; j += 1) {
-                        System.out.println(foods[j]);
+                        System.out.println(menus[j]);
 
                         DeliveryFee += price[j];
                     }
@@ -120,7 +139,7 @@ public class DeliveryTycoon {
 
                         answers[j] = scanner.nextInt();
 
-                        FoodNameProcessing[j] = foods[j].replaceAll("[^0-9]", "");
+                        FoodNameProcessing[j] = menus[j].replaceAll("[^0-9]", "");
 
                         if (answers[j] != Integer.parseInt(FoodNameProcessing[j])){
                             success = false;
@@ -171,8 +190,10 @@ public class DeliveryTycoon {
                 day += 1;
             }
 
+            boolean shopping = true;
+
             if (option == 2) {
-                while (true) {
+                while (shopping) {
                     System.out.println("---------------");
                     System.out.println("플렉스 상점");
                     System.out.println("---------------");
@@ -184,6 +205,11 @@ public class DeliveryTycoon {
                     int purchasechoice = scanner.nextInt();
 
                     if (purchasechoice == 1) {
+                        if (money < 10){
+                            System.out.println("돈이 부족합니다.");
+                            continue;
+                        }
+
                         money -= 10;
                         health += 100;
 
@@ -192,6 +218,11 @@ public class DeliveryTycoon {
                     }
 
                     if (purchasechoice == 2) {
+                        if (money < 300){
+                            System.out.println("돈이 부족합니다.");
+                            continue;
+                        }
+
                         money -= 300;
                         awareness += 10;
 
@@ -201,6 +232,11 @@ public class DeliveryTycoon {
 
 
                     if (purchasechoice == 3) {
+                        if (money < 50){
+                            System.out.println("돈이 부족합니다.");
+                            continue;
+                        }
+
                         money -= 50;
 
                         int multiplier = random.nextInt(2) + 1;
@@ -219,7 +255,8 @@ public class DeliveryTycoon {
                     }
 
                     if (purchasechoice == 4) {
-                        break;
+                        shopping = false;
+                        continue;
                     }
                 }
             }
