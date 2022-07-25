@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+
 public class MakaoBank {
     private JFrame frame;
     private JPanel contentPanel;
@@ -42,6 +43,7 @@ public class MakaoBank {
 
         return button;
     }
+
     private JButton createTransferButton() {
         JButton button = new JButton("송금");
         button.addActionListener(event -> {
@@ -51,6 +53,7 @@ public class MakaoBank {
 
         return button;
     }
+
     private JButton createTransactionsButton() {
         JButton button = new JButton("거래 내역");
         button.addActionListener(event -> {
@@ -59,6 +62,7 @@ public class MakaoBank {
         });
         return button;
     }
+
     private void showContentPanel(JPanel panel) {
         contentPanel.removeAll();
         contentPanel.add(panel);
