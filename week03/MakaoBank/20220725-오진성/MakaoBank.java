@@ -2,13 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MakaoBank {
-
     private JFrame frame;
     private JPanel contentPanel;
     private  Account account;
-
     public static void main(String[] args) {
         MakaoBank application = new MakaoBank();
+
         application.run();
     }
 
@@ -20,8 +19,8 @@ public class MakaoBank {
         frame.setVisible(true);
 
         initmenu();
-        initcotentPanel();
 
+        initcotentPanel();
     }
 
     private void initcotentPanel() {
@@ -34,7 +33,9 @@ public class MakaoBank {
         frame.add(panel, BorderLayout.PAGE_START);
 
         panel.add(createAmountPanel());
+
         panel.add(createTranferPanel());
+
         panel.add(createTransactionsPanel());
 
         frame.setVisible(true);
@@ -42,25 +43,19 @@ public class MakaoBank {
 
     private JButton createTransactionsPanel() {
         JButton button = new JButton("거래 내역");
-        button.addActionListener(event -> {
-            showContentPanel(new TransactionPanel());
-        });
+        button.addActionListener(event -> showContentPanel(new TransactionPanel(account)));
         return button;
     }
 
     private JButton createTranferPanel() {
         JButton button = new JButton("송금");
-        button.addActionListener(event -> {
-            showContentPanel(new TransferPanel(account));
-        });
+        button.addActionListener(event -> showContentPanel(new TransferPanel(account)));
         return button;
     }
 
     private JButton createAmountPanel() {
         JButton button = new JButton("보유 금액");
-        button.addActionListener(event -> {
-            showContentPanel(new AmountPanel(account));
-        });
+        button.addActionListener(event -> showContentPanel(new AmountPanel(account)));
         return button;
     }
 

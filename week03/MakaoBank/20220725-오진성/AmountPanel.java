@@ -1,15 +1,15 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class AmountPanel extends JPanel {
-    AmountPanel(Account account){
+    AmountPanel(Account account) {
+        long amount = account.getAmount();
+        String number = account.getNumber();
 
+        this.setLayout(new GridLayout(2, 1));
 
-       long amount = account.getAmount();
+        this.add(new JLabel(number));
 
-        JLabel label = new JLabel(String.valueOf(amount));
-        this.add(label);
-
+        this.add(new JLabel("잔액 " + amount + "원"));
     }
-
-
 }

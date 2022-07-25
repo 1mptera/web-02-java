@@ -2,25 +2,21 @@ import javax.swing.*;
 import java.awt.*;
 
 public class TransferPanel extends JPanel {
-    TransferPanel(Account account){
+    private Account account;
 
+    TransferPanel(Account account) {
+        this.account = account;
 
-        setLayout(new GridLayout(3,1));
+        setLayout(new GridLayout(3, 1));
 
-        JLabel label = new JLabel("송금하기");
-        this.add(label);
+        this.add(new JLabel("송금하기"));
 
-        JTextField  textField= new JTextField(10);
-        this.add(textField);
+        this.add(new JTextField(10));
 
         JButton button = new JButton("송금");
-        button.addActionListener(event ->{
-            long amount = Long.parseLong(textField.getText());
-            account.tranfer(amount);
-
+        button.addActionListener(event -> {
+            account.tranfer(Long.parseLong(new JTextField(10).getText()));
         });
         this.add(button);
-
-
     }
 }
