@@ -2,33 +2,65 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Calculator {
-    public static void main(String[] args){
+    private Calculation calculation;
+    private JTextField textField;
+    private JPanel panel;
+    public static void main(String[] args) {
         Calculator application = new Calculator();
 
         application.run();
     }
 
     private void run() {
+        calculation = new Calculation();
         JFrame frame = new JFrame("Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400,300);
+        frame.setSize(400, 600);
 
-        JTextField textField = new JTextField(10);
-        textField.setText("0");
+        textField = new JTextField(10);
+        display(calculation.getcurrentnumber());
+        textField.enableInputMethods(false);
         textField.setHorizontalAlignment(SwingConstants.RIGHT);
         frame.add(textField, BorderLayout.PAGE_START);
 
-        JPanel panel = new JPanel();
+        panel = new JPanel();
         frame.add(panel);
+        panel.setLayout(new GridLayout(4, 4));
 
-        panel.setLayout(new GridLayout(4,3));
+        initNumberButtons();
+        initOperatorButtons();
 
-               int[] numbers = new int[9];
-        for(int i = 0 ; i <10 ; i+=1){
-           numbers[i] = i+1;
-        }
-        JButton button = new JButton("i")
-
+        frame.pack();
         frame.setVisible(true);
+    }
+
+    private void initOperatorButtons() {
+
+        for (String operator : calculation.getOperators()) {
+            JButton button = new JButton(operator);
+            button.addActionListener(event -> {
+                calculation.caculate();
+                calculation.updateOperator(operator);
+                display(calculation.getaccumulator());
+            });
+            panel.add(button);
+        }
+    }
+
+    private void initNumberButtons() {
+        for (int i = 0; i < 10; i += 1) {
+            int numbers = (i + 1) % 10;
+            JButton button = new JButton(Integer.toString(numbers));
+            button.addActionListener(event -> {
+                calculation.addnumber(numbers);
+                display(calculation.getcurrentnumber());
+            });
+
+            panel.add(button);
+        }
+    }
+
+    private void display(Long number) {
+        textField.setText(Long.toString(number));
     }
 }
